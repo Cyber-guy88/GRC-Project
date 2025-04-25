@@ -323,39 +323,10 @@
         // Update current year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         
-        // Check if user is logged in
         document.addEventListener('DOMContentLoaded', function() {
-            // Ensure userData is properly synced with login state
-            const userEmail = sessionStorage.getItem('userEmail') || localStorage.getItem('userEmail');
-            
-            // If not logged in, redirect to login page
-            if (!userEmail) {
-                // Clear any stale data
-                localStorage.removeItem('userData');
-                window.location.href = 'login.html';
-                return;
-            }
-            
             // Get user name from storage or from stored users
             let userName = sessionStorage.getItem('userName') || localStorage.getItem('userName');
             
-            // If userName is not available, try to find it in stored users
-            if (!userName) {
-                const storedUsers = JSON.parse(localStorage.getItem('grcUsers') || '[]');
-                const user = storedUsers.find(u => u.email === userEmail);
-                
-                if (user) {
-                    userName = user.fullName;
-                    // Save it for future use
-                    if (localStorage.getItem('userEmail')) {
-                        localStorage.setItem('userName', userName);
-                    } else {
-                        sessionStorage.setItem('userName', userName);
-                    }
-                }
-            }
-            
-            // Update the user name in the navigation
             if (userName) {
                 document.getElementById('userName').textContent = userName;
             }
