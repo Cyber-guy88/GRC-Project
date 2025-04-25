@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise GRC Portal | Home</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/chatbot-fix.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f4c81',
+                        secondary: '#334155',
+                        success: '#059669',
+                        warning: '#ca8a04',
+                        danger: '#dc2626',      
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .profile-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 100;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .dropdown-content a i {
+            margin-right: 10px;
+            width: 16px;
+            text-align: center;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f5f9;
+        }
+        
+        .profile-dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .profile-dropdown .profile-btn {
+            cursor: pointer;
+        }
+        
+        .logout-item {
+            color: #ef4444 !important;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .logout-item:hover {
+            background-color: #fef2f2 !important;
+        }
+        
+        /* Adjust header container */
+        .header-container {
+            padding: 0 2rem;
+            justify-content: space-between;
+        }
+        
+        /* Remove extra margin/padding from nav items */
+        nav ul {
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-shield-alt"></i> GRC Portal
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact-us</a></li>
+
+                    <li><a href="about.html">About</a></li>
+
+
+                    <li class="profile-dropdown">
+                        <a href="#" class="profile-btn">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="userName">Your Profile</span>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="profile.html">
+                                <i class="fas fa-user"></i>
+                                View Profile
+                            </a>
+                            <a href="#" id="logoutLink" class="logout-item">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="headdd animate-fadeInUp">Welcome, Accelerate your GRC journey</h1>
+            <p class="head2 animate-fadeInUp animate-delay-100">Your one-stop destination for Governance, Risk, and Compliance solutions.</p>
+            <a href="#services" class="btn animate-fadeInUp animate-delay-200">
+                Explore Services
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="learn-grc" class="learn-grc">
+        <h2>Learn more about GRC</h2>
+        <p class="grc-description">
+            GRC stands for Governance, Risk, and Compliance. It represents a strategy for managing an organization's overall governance, risk management, and compliance with regulations. Governance ensures accountability and ethical leadership, Risk focuses on identifying and mitigating potential challenges, and Compliance ensures adherence to laws and policies. Together, GRC helps maintain efficiency, transparency, and control within an organization.
+        </p>
+        
+        <div class="grc-cards">
+            <div class="grc-card">
+                <div class="card-icon">
+                    <i class="fas fa-balance-scale text-4xl text-primary"></i>
+                </div>
+                <h3>Governance</h3>
+                <p>Establish clear leadership structures, policies, and procedures to ensure accountability and responsible decision-making throughout your organization.</p>
+                <a href="governance.html" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="grc-card">
+                <div class="card-icon">
+                    <i class="fas fa-chart-line text-4xl text-primary"></i>
+                </div>
+                <h3>Risk Management</h3>
+                <p>Identify, assess, and mitigate potential threats to your organization with comprehensive risk management frameworks and strategies.</p>
+                <a href="rsk.html" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="grc-card">
+                <div class="card-icon">
+                    <i class="fas fa-clipboard-check text-4xl text-primary"></i>
+                </div>
+                <h3>Compliance</h3>
+                <p>Ensure your organization adheres to relevant laws, regulations, standards, and internal policies to avoid penalties and maintain trust.</p>
+                <a href="compliance.html" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="grc-card">
+                <div class="card-icon">
+                    <i class="fas fa-magnifying-glass-chart text-4xl text-primary"></i>
+                </div>
+                <h3>Audit</h3>
+                <p>Evaluate your organization's operations, controls, and processes through systematic assessment to verify compliance and improve overall effectiveness.</p>
+                <a href="Audit.html" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services1">
+        <h2>Our Services</h2>
+        <div class="service-boxes" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+            <div class="service-box">
+                <div class="icon-container mb-4">
+                    <i class="fas fa-sitemap text-4xl text-primary"></i>
+                </div>
+                <a href="frame.html">GRC Frameworks</a>
+                <p class="mt-4 text-gray-600">Explore various compliance and security frameworks to enhance your organization's governance, risk, and compliance posture.</p>
+            </div>
+            <div class="service-box">
+                <div class="icon-container mb-4">
+                    <i class="fas fa-clipboard-check text-4xl text-primary"></i>
+                </div>
+                <a href="asses_list.html">Assessment of Compliance</a>
+                <p class="mt-4 text-gray-600">Evaluate your readiness for key compliance standards including SOC 2, ISO 27001, HIPAA, PCI DSS, and NIST frameworks.</p>
+            </div>
+            <div class="service-box">
+                <div class="icon-container mb-4">
+                    <i class="fas fa-lightbulb text-4xl text-primary"></i>
+                </div>
+                <a href="suggestion.html">GRC Frameworks Suggestion</a>
+                <p class="mt-4 text-gray-600">Receive tailored framework recommendations based on your organization's profile and specific compliance needs.</p>
+            </div>
+            <div class="service-box">
+                <div class="icon-container mb-4">
+                    <i class="fas fa-tools text-4xl text-primary"></i>
+                </div>
+                <a href="tools.html">Curated List of GRC Tools</a>
+                <p class="mt-4 text-gray-600">Discover the most popular and trending GRC tools currently used by leading companies to streamline governance, risk, and compliance processes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="assesment1" id="assesment">
+        <h2>How to Improve</h2>
+        <!-- Assessment content first -->
+        <div class="assessment-left">
+            <div class="assesment-boxes">
+                <p>Our platform provides self-assessment tools to help you track your GRC journey. These tools are designed to give you insights into your current compliance status, identify potential gaps, and guide your improvement efforts. Please note that these are not certified assessments or professional services, but rather self-guided resources to help you understand and work toward GRC certification readiness.</p>
+            </div>
+        </div>
+
+        <!-- Horizontal cycle below -->
+        <div class="compliance-cycle">
+            <div class="cycle-steps">
+                <div class="cycle-step">
+                    <h3><i class="fas fa-clipboard-list mr-2"></i>1. Assess & Score</h3>
+                    <p>Conduct an initial assessment to identify gaps.</p>
+                </div>
+                <div class="cycle-step">
+                    <h3><i class="fas fa-tools mr-2"></i>2. Remediate & Improve</h3>
+                    <p>Address identified gaps and implement corrective actions.</p>
+                </div>
+                <div class="cycle-step">
+                    <h3><i class="fas fa-search mr-2"></i>3. Review & Validate</h3>
+                    <p>Reassess improvements and ensure effectiveness.</p>
+                </div>
+                <div class="cycle-step">
+                    <h3><i class="fas fa-sync-alt mr-2"></i>4. Reassess & Optimize</h3>
+                    <p>Perform another assessment to measure progress.</p>
+                </div>
+                <div class="cycle-step">
+                    <h3><i class="fas fa-check-circle mr-2"></i>5. Comply & Maintain</h3>
+                    <p>Achieve compliance and continuously monitor for adherence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="footer-separator">
+
+    <footer class="bg-[#0a3258] text-gray-300 py-10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-5">
+            <!-- Company Section -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Career</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Editorial Team</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Protection</a></li>
+                </ul>
+            </div>
+            
+            <!-- More Section -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">More</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Terms & Condition</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Privacy</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Advertise</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Join as Advisors</a></li>
+                </ul>
+            </div>
+            
+            <!-- Our Partner Section -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Our Partners</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Enterprise Security</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Compliance Solutions</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Risk Consulting</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Section -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                <p class="mb-2">Nr. Visat Three Roads, Visat – Gandhinagar Highway, Chandkheda, Ahmedabad – 382424, Gujarat</p>
+                <p class="mb-2">+91 9016740830</p>
+                <p><a href="mailto:meghank@grcportal.net" class="hover:text-blue-400 transition-colors">meghank@grcportal.net</a></p>
+                <div class="flex space-x-3 mt-4">
+                    <a href="#" class="text-gray-300 hover:text-blue-400 transition-colors text-xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-blue-400 transition-colors text-xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-blue-400 transition-colors text-xl"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright Section -->
+        <div class="border-t border-gray-700 mt-8 pt-4 text-center">
+            <p>Copyright &copy; <span id="currentYear">2023</span> GRC Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // Update current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Check if user is logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure userData is properly synced with login state
+            const userEmail = sessionStorage.getItem('userEmail') || localStorage.getItem('userEmail');
+            
+            // If not logged in, redirect to login page
+            if (!userEmail) {
+                // Clear any stale data
+                localStorage.removeItem('userData');
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Get user name from storage or from stored users
+            let userName = sessionStorage.getItem('userName') || localStorage.getItem('userName');
+            
+            // If userName is not available, try to find it in stored users
+            if (!userName) {
+                const storedUsers = JSON.parse(localStorage.getItem('grcUsers') || '[]');
+                const user = storedUsers.find(u => u.email === userEmail);
+                
+                if (user) {
+                    userName = user.fullName;
+                    // Save it for future use
+                    if (localStorage.getItem('userEmail')) {
+                        localStorage.setItem('userName', userName);
+                    } else {
+                        sessionStorage.setItem('userName', userName);
+                    }
+                }
+            }
+            
+            // Update the user name in the navigation
+            if (userName) {
+                document.getElementById('userName').textContent = userName;
+            }
+            
+            // Add logout functionality
+            document.getElementById('logoutLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Clear all user data from storage
+                sessionStorage.removeItem('userEmail');
+                sessionStorage.removeItem('userName');
+                localStorage.removeItem('userEmail');
+                localStorage.removeItem('userName');
+                localStorage.removeItem('userData');
+                
+                // Redirect to login page
+                window.location.href = 'login.html';
+            });
+        });
+        
+        // Force scroll to top on page refresh
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+
+        // Alternative method
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        }
+        
+        // Handle header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Enhanced Smooth Scrolling for all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Only process internal links (not # alone which is sometimes used for buttons)
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Account for header height
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Add animation classes to elements when they come into view
+        const addAnimationOnScroll = () => {
+            const sections = document.querySelectorAll('section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-section');
+                        // Stop observing after animation is added
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        };
+        
+        // Run the animation if the browser supports IntersectionObserver
+        if ('IntersectionObserver' in window) {
+            addAnimationOnScroll();
+        }
+        
+        // Add event listener for the logout button in the dropdown menu
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoutBtn = document.getElementById('logoutNavBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Clear user data from storage
+                    localStorage.removeItem('userData');
+                    sessionStorage.removeItem('userData');
+                    // Redirect to login page
+                    window.location.href = 'login.html';
+                });
+            }
+        });
+    </script>
+
+     <!-- Chatbot -->
+     <div id="chatbotButton" class="pulse">
+        <i class="fas fa-robot"></i>
+        <div class="button-glow"></div>
+        <span class="tooltip">Ask GRC Assistant</span>
+    </div>
+    
+    <div id="chatbotWindow">
+        <div class="chatbot-header">
+            <h3>
+                <i class="fas fa-shield-alt"></i>
+                GRC Assistant
+                <span class="status-indicator">Online</span>
+            </h3>
+            <div class="header-controls">
+                <button class="minimize-chatbot">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="close-chatbot">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="chatbot-body">
+            <div id="chatbotMessages"></div>
+            
+            <div class="chatbot-input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="userInput" placeholder="Ask me anything about GRC...">
+                </div>
+                <button id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+ <script src="chatbot.js"></script>
+ <script src="chatbot-debug.js"></script>
+    <!-- <script src="integration.js"></script> -->
+    
+    <!-- Direct initialization of chatbot -->
+    <script>
+        // Wait for page to fully load, then initialize chatbot
+        window.addEventListener('load', function() {
+            console.log('Window fully loaded, forcing chatbot initialization');
+            
+            // Attempt to initialize chatbot directly after a short delay
+            setTimeout(function() {
+                if (typeof window.initChatbot === 'function') {
+                    console.log('Directly calling chatbot initialization');
+                    window.initChatbot();
+                } else {
+                    console.error('initChatbot function not found in global scope');
+                }
+                
+                // Enable the chatbot button explicitly
+                const chatbotButton = document.getElementById('chatbotButton');
+                if (chatbotButton) {
+                    chatbotButton.style.display = 'flex';
+                    console.log('Chatbot button display set to flex');
+                    
+                    // Force click handler to ensure it works
+                    chatbotButton.addEventListener('click', function() {
+                        console.log('Direct click handler fired');
+                        const chatbotWindow = document.getElementById('chatbotWindow');
+                        if (chatbotWindow) {
+                            if (chatbotWindow.style.display === 'flex') {
+                                chatbotWindow.style.display = 'none';
+                                chatbotWindow.classList.remove('active');
+                            } else {
+                                chatbotWindow.style.display = 'flex';
+                                setTimeout(() => {
+                                    chatbotWindow.classList.add('active');
+                                }, 10);
+                            }
+                        }
+                    });
+                }
+            }, 500);
+        });
+    </script>
+
+</body>
+</html>
+
+

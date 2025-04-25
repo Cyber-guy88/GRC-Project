@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security & Compliance Frameworks</title>
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <h2>Frameworks List</h2>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search Framework..." onkeyup="searchFramework()">
+        </div>
+    </nav>
+
+    <header>
+        <h1>Compliance & Security Frameworks</h1>
+        <p>Your complete guide to industry regulations and best practices.</p>
+    </header>
+
+    <section class="container">
+        <!-- Category Filters -->
+        <div class="category-filters">
+            <button class="category-btn active" data-category="all">
+                <i class="fas fa-globe"></i>
+                <span>All Frameworks</span>
+            </button>
+            <button class="category-btn" data-category="governance">
+                <i class="fas fa-building"></i>
+                <span>Governance</span>
+            </button>
+            <button class="category-btn" data-category="risk">
+                <i class="fas fa-shield-alt"></i>
+                <span>Risk Management</span>
+            </button>
+            <button class="category-btn" data-category="compliance">
+                <i class="fas fa-check-circle"></i>
+                <span>Compliance</span>
+            </button>
+        </div>
+
+        <div class="accordion">
+            <!-- Framework Cards - Auto Generated from JS -->
+            <!-- CERT-IN Framework Card (Manually Added) -->
+            <div class="framework-card" data-category="compliance">
+                <div class="card-header">
+                    <div class="card-icon compliance">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>CERT-IN</h3>
+                </div>
+                <div class="card-content">
+                    <h4 class="card-title">Indian Computer Emergency Response Team</h4>
+                    <p class="card-description">The CERT-IN framework is a cornerstone of India's cybersecurity strategy, providing regulations for incident reporting, vulnerability management, and cybersecurity compliance for organizations operating in India.</p>
+                    <div class="tag-container">
+                        <span class="framework-tag compliance">Cybersecurity</span>
+                        <span class="framework-tag compliance">India</span>
+                        <span class="framework-tag compliance">Incident Response</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="card-btn btn-learn" onclick="window.location.href='certin.html'">
+                            <i class="fas fa-book"></i>
+                            <span>Learn More</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script defer src="frame.js"></script>
+</body>
+</html>
+
+

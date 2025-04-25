@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO27001 Compliance Checklist</title>
+    <link rel="stylesheet" href="css/iso27001_score.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ISO27001 Compliance Checklist</h1>
+            <div class="score-container">
+                <div class="score">Score: <span id="totalScore">0</span>%</div>
+                <button id="generateReport" class="btn">Generate Report</button>
+            </div>
+        </header>
+
+        <div class="checklist-container">
+            <!-- Section 5 -->
+            <section class="checklist-section">
+                <h2>5. Information security policies</h2>
+                <div class="subsection">
+                    <h3>5.1 Management direction for information security</h3>
+                    <div class="checklist-item">
+                        <h4>5.1.1 Policies for information security</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="5.1.1" data-weight="33.33">
+                                    Security policies exist?
+                                </label>
+                            </div>
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="5.1.1" data-weight="33.33">
+                                    All policies approved by management?
+                                </label>
+                            </div>
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="5.1.1" data-weight="33.33">
+                                    Evidence of compliance?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6 -->
+            <section class="checklist-section">
+                <h2>6. Organization of information security</h2>
+                <div class="subsection">
+                    <h3>6.1 Information security roles and responsibilities</h3>
+                    <div class="checklist-item">
+                        <h4>6.1.1 Security roles and responsibilities</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="6.1.1" data-weight="100">
+                                    Roles and responsibilities defined?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <h4>6.1.2 Segregation of duties</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="6.1.2" data-weight="100">
+                                    Segregation of duties defined?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <h4>6.1.3 Contact with authorities</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="6.1.3" data-weight="100">
+                                    Verification body / authority contacted for compliance verification?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <h4>6.1.4 Contact with special interest groups</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="6.1.4" data-weight="100">
+                                    Establish contact with special interest groups regarding compliance?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <h4>6.1.5 Information security in project management</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="6.1.5" data-weight="100">
+                                    Evidence of information security in project management?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>6.2 Mobile devices and teleworking</h3>
+                    <div class="checklist-item">
+                        <h4>6.2.1 Mobile device policy</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="6.2.1" data-weight="100">
+                                    Defined policy for mobile devices?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <h4>6.2.2 Teleworking</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="6.2.2" data-weight="100">
+                                    Defined policy for working remotely?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Section 7 -->
+            <section class="checklist-section">
+                <h2>7. Human Resources Security</h2>
+                <div class="subsection">
+                    <h3>7.1 Prior to Employment</h3>
+                    <div class="checklist-item">
+                        <h4>7.1.1 Screening</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="7.1.1" data-weight="100">
+                                    Defined policy for screening employees prior to employment?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>7.1.2 Terms and Conditions of Employment</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="7.1.2" data-weight="100">
+                                    Defined policy for HR terms and conditions of employment?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>7.2 During Employment</h3>
+                    <div class="checklist-item">
+                        <h4>7.2.1 Management Responsibilities</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="7.2.1" data-weight="100">
+                                    Defined policy for management responsibilities?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>7.2.2 Information Security Awareness, Education, and Training</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="7.2.2" data-weight="100">
+                                    Defined policy for information security awareness, education, and training?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>7.2.3 Disciplinary Process</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="7.2.3" data-weight="100">
+                                    Defined policy for disciplinary process regarding information security?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>7.3 Termination and Change of Employment</h3>
+                    <div class="checklist-item">
+                        <h4>7.3.1 Termination or Change-of-Employment Responsibilities</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="7.3.1" data-weight="100">
+                                    Defined policy for HR termination or change-of-employment regarding information security?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 8 -->
+            <section class="checklist-section">
+                <h2>8. Asset Management</h2>
+                <div class="subsection">
+                    <h3>8.1 Responsibilities for Assets</h3>
+                    <div class="checklist-item">
+                        <h4>8.1.1 Inventory of Assets</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="8.1.1" data-weight="100">
+                                    Complete inventory list of assets?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>8.1.2 Ownership of Assets</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="8.1.2" data-weight="100">
+                                    Complete ownership list of assets?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>8.1.3 Acceptable Use of Assets</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="8.1.3" data-weight="100">
+                                    Defined acceptable use of assets policy?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>8.1.4 Return of Assets</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="8.1.4" data-weight="100">
+                                    Defined return of assets policy?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>8.2 Information Classification</h3>
+                    <div class="checklist-item">
+                        <h4>8.2.1 Classification of Information</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="8.2.1" data-weight="100">
+                                    Defined policy for classification of information?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>8.2.2 Labeling of Information</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="8.2.2" data-weight="100">
+                                    Defined policy for labeling of information?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>8.2.3 Handling of Assets</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="8.2.3" data-weight="100">
+                                    Defined policy for handling of assets?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>8.3 Media Handling</h3>
+                    <div class="checklist-item">
+                        <h4>8.3.1 Management of Removable Media</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="8.3.1" data-weight="100">
+                                    Defined policy for management of removable media?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>8.3.2 Disposal of Media</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="8.3.2" data-weight="100">
+                                    Defined policy for disposal of media?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>8.3.3 Physical Media Transfer</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="8.3.3" data-weight="100">
+                                    Defined policy for physical media transfer?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 9 -->
+            <section class="checklist-section">
+                <h2>9. Access Control</h2>
+                <div class="subsection">
+                    <h3>9.1 Business Requirements of Access Control</h3>
+                    <div class="checklist-item">
+                        <h4>9.1.1 Access Control Policy</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.1.1" data-weight="100">
+                                    Defined policy for access control?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>9.1.2 Access to Networks and Network Services</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.1.2" data-weight="100">
+                                    Defined policy for access to networks and network services?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>9.2 User Access Management</h3>
+                    <div class="checklist-item">
+                        <h4>9.2.1 User Registration and De-registration</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.2.1" data-weight="100">
+                                    Defined policy for user registration and de-registration?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>9.2.2 User Access Provisioning</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.2.2" data-weight="100">
+                                    Defined policy for user access provisioning?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>9.2.3 Management of Privileged Access Rights</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.2.3" data-weight="100">
+                                    Defined policy for management of privileged access rights?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>9.2.4 Management of Secret Authentication Information of Users</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.2.4" data-weight="100">
+                                    Defined policy for management of secret authentication information of users?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>9.2.5 Review of User Access Rights</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.2.5" data-weight="100">
+                                    Defined policy for review of user access rights?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>9.2.6 Removal or Adjustment of Access Rights</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.2.6" data-weight="100">
+                                    Defined policy for removal or adjustment of access rights?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>9.3 User Responsibilities</h3>
+                    <div class="checklist-item">
+                        <h4>9.3.1 Use of Secret Authentication Information</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.3.1" data-weight="100">
+                                    Defined policy for use of secret authentication information?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>9.4 System and Application Access Control</h3>
+                    <div class="checklist-item">
+                        <h4>9.4.1 Information Access Restrictions</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.4.1" data-weight="100">
+                                    Defined policy for information access restrictions?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>9.4.2 Secure Log-in Procedures</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.4.2" data-weight="100">
+                                    Defined policy for secure log-in procedures?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>9.4.3 Password Management Systems</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.4.3" data-weight="100">
+                                    Defined policy for password management systems?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>9.4.4 Use of Privileged Utility Programs</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.4.4" data-weight="100">
+                                    Defined policy for use of privileged utility programs?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>9.4.5 Access Control to Program Source Code</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="9.4.5" data-weight="100">
+                                    Defined policy for access control to program source code?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 10 -->
+            <section class="checklist-section">
+                <h2>10. Cryptography</h2>
+                <div class="subsection">
+                    <h3>10.1 Cryptographic Controls</h3>
+                    <div class="checklist-item">
+                        <h4>10.1.1 Policy on the Use of Cryptographic Controls</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="10.1.1" data-weight="100">
+                                    Defined policy for use of cryptographic controls?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>10.1.2 Key Management</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="10.1.2" data-weight="100">
+                                    Defined policy for key management?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 11 -->
+            <section class="checklist-section">
+                <h2>11. Physical and Environmental Security</h2>
+                <div class="subsection">
+                    <h3>11.1 Secure Areas</h3>
+                    <div class="checklist-item">
+                        <h4>11.1.1 Physical Security Perimeter</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.1.1" data-weight="100">
+                                    Defined policy for physical security perimeter?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>11.1.2 Physical Entry Controls</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.1.2" data-weight="100">
+                                    Defined policy for physical entry controls?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>11.1.3 Securing Offices, Rooms, and Facilities</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.1.3" data-weight="100">
+                                    Defined policy for securing offices, rooms, and facilities?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>11.1.4 Protection Against External and Environmental Threats</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.1.4" data-weight="100">
+                                    Defined policy for protection against external and environmental threats?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>11.1.5 Working in Secure Areas</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.1.5" data-weight="100">
+                                    Defined policy for working in secure areas?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>11.1.6 Delivery and Loading Areas</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.1.6" data-weight="100">
+                                    Defined policy for delivery and loading areas?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>11.2 Equipment Security</h3>
+                    <div class="checklist-item">
+                        <h4>11.2.1 Equipment Siting and Protection</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.2.1" data-weight="100">
+                                    Defined policy for equipment siting and protection?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>11.2.2 Supporting Utilities</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.2.2" data-weight="100">
+                                    Defined policy for supporting utilities?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>11.2.3 Cabling Security</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.2.3" data-weight="100">
+                                    Defined policy for cabling security?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>11.2.4 Equipment Maintenance</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.2.4" data-weight="100">
+                                    Defined policy for equipment maintenance?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>11.2.5 Removal of Assets</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.2.5" data-weight="100">
+                                    Defined policy for removal of assets?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>11.2.6 Security of Equipment and Assets Off-Premises</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.2.6" data-weight="100">
+                                    Defined policy for security of equipment and assets off-premises?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>11.2.7 Secure Disposal or Re-use of Equipment</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.2.7" data-weight="100">
+                                    Secure disposal or re-use of equipment?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>11.2.8 Unattended User Equipment</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.2.8" data-weight="100">
+                                    Defined policy for unattended user equipment?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>11.2.9 Clear Desk and Clear Screen Policy</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="11.2.9" data-weight="100">
+                                    Defined policy for clear desk and clear screen policy?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 12 -->
+            <section class="checklist-section">
+                <h2>12. Operations Security</h2>
+                <div class="subsection">
+                    <h3>12.1 Operational Procedures and Responsibilities</h3>
+                    <div class="checklist-item">
+                        <h4>12.1.1 Documented Operating Procedures</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.1.1" data-weight="100">
+                                    Defined policy for documented operating procedures?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>12.1.2 Change Management</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.1.2" data-weight="100">
+                                    Defined policy for change management?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>12.1.3 Capacity Management</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.1.3" data-weight="100">
+                                    Defined policy for capacity management?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>12.1.4 Separation of Development, Testing, and Operational Environments</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.1.4" data-weight="100">
+                                    Defined policy for separation of development, testing, and operational environments?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>12.2 Protection from Malware</h3>
+                    <div class="checklist-item">
+                        <h4>12.2.1 Controls Against Malware</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.2.1" data-weight="100">
+                                    Defined policy for controls against malware?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>12.3 System Backup</h3>
+                    <div class="checklist-item">
+                        <h4>12.3.1 Backup</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.3.1" data-weight="100">
+                                    Defined policy for backing up systems?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>12.3.2 Information Backup</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.3.2" data-weight="100">
+                                    Defined policy for information backup?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>12.4 Logging and Monitoring</h3>
+                    <div class="checklist-item">
+                        <h4>12.4.1 Event Logging</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.4.1" data-weight="100">
+                                    Defined policy for event logging?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>12.4.2 Protection of Log Information</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.4.2" data-weight="100">
+                                    Defined policy for protection of log information?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>12.4.3 Administrator and Operator Logs</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.4.3" data-weight="100">
+                                    Defined policy for administrator and operator logs?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>12.4.4 Clock Synchronization</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.4.4" data-weight="100">
+                                    Defined policy for clock synchronization?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>12.5 Control of Operational Software</h3>
+                    <div class="checklist-item">
+                        <h4>12.5.1 Installation of Software on Operational Systems</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.5.1" data-weight="100">
+                                    Defined policy for installation of software on operational systems?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>12.6 Technical Vulnerability Management</h3>
+                    <div class="checklist-item">
+                        <h4>12.6.1 Management of Technical Vulnerabilities</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.6.1" data-weight="100">
+                                    Defined policy for management of technical vulnerabilities?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>12.6.2 Restriction on Software Installation</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.6.2" data-weight="100">
+                                    Defined policy for restriction on software installation?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>12.7 Information Systems Audit Considerations</h3>
+                    <div class="checklist-item">
+                        <h4>12.7.1 Information System Audit Control</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="12.7.1" data-weight="100">
+                                    Defined policy for information system audit control?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 13 -->
+            <section class="checklist-section">
+                <h2>13. Communication Security</h2>
+                <div class="subsection">
+                    <h3>13.1 Network Security Management</h3>
+                    <div class="checklist-item">
+                        <h4>13.1.1 Network Controls</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="13.1.1" data-weight="100">
+                                    Defined policy for network controls?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>13.1.2 Security of Network Services</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="13.1.2" data-weight="100">
+                                    Defined policy for security of network services?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>13.1.3 Segregation in Networks</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="13.1.3" data-weight="100">
+                                    Defined policy for segregation in networks?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>13.2 Information Transfer</h3>
+                    <div class="checklist-item">
+                        <h4>13.2.1 Information Transfer Policies and Procedures</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="13.2.1" data-weight="100">
+                                    Defined policy for information transfer policies and procedures?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>13.2.2 Agreements on Information Transfer</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="13.2.2" data-weight="100">
+                                    Defined policy for agreements on information transfer?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>13.2.3 Electronic Messaging</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="13.2.3" data-weight="100">
+                                    Defined policy for electronic messaging?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>13.2.4 Confidentiality or Non-Disclosure Agreements</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="13.2.4" data-weight="100">
+                                    Defined policy for confidentiality or non-disclosure agreements?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 14 -->
+            <section class="checklist-section">
+                <h2>14. System Acquisition, Development, and Maintenance</h2>
+                <div class="subsection">
+                    <h3>14.1 Security Requirements of Information Systems</h3>
+                    <div class="checklist-item">
+                        <h4>14.1.1 Information Security Requirements Analysis and Specification</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="14.1.1" data-weight="100">
+                                    Defined policy for information security requirements analysis and specification?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>14.1.2 Securing Application Services on Public Networks</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="14.1.2" data-weight="100">
+                                    Defined policy for securing application services on public networks?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>14.1.3 Protecting Application Service Transactions</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="14.1.3" data-weight="100">
+                                    Defined policy for protecting application service transactions?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>14.2 Security in Development and Support Processes</h3>
+                    <div class="checklist-item">
+                        <h4>14.2.1 In-House Development</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="14.2.1" data-weight="100">
+                                    Defined policy for in-house development?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 15 -->
+            <section class="checklist-section">
+                <h2>15. Supplier Relationships</h2>
+                <div class="subsection">
+                    <h3>15.1 Information Security in Supplier Relationships</h3>
+                    <div class="checklist-item">
+                        <h4>15.1.1 Supplier Relationships</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="15.1.1" data-weight="100">
+                                    Defined policy for supplier relationships?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 16 -->
+            <section class="checklist-section">
+                <h2>16. Information Security Incident Management</h2>
+                <div class="subsection">
+                    <h3>16.1 Management of Information Security Incidents and Improvements</h3>
+                    <div class="checklist-item">
+                        <h4>16.1.1 Information Security Management</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="16.1.1" data-weight="100">
+                                    Defined policy for information security management?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 17 -->
+            <section class="checklist-section">
+                <h2>17. Information Security Aspects of Business Continuity Management</h2>
+                <div class="subsection">
+                    <h3>17.1 Information Security Continuity</h3>
+                    <div class="checklist-item">
+                        <h4>17.1.1 Information Security Continuity</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="17.1.1" data-weight="100">
+                                    Defined policy for information security continuity?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>17.2 Redundancies</h3>
+                    <div class="checklist-item">
+                        <h4>17.2.1 Redundancies</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="17.2.1" data-weight="100">
+                                    Defined policy for redundancies?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 18 -->
+            <section class="checklist-section">
+                <h2>18. Compliance</h2>
+                <div class="subsection">
+                    <h3>18.1 Compliance with Legal and Contractual Requirements</h3>
+                    <div class="checklist-item">
+                        <h4>18.1.1 Identification of Applicable Legislation and Contractual Requirements</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="18.1.1" data-weight="100">
+                                    Defined policy for identification of applicable legislation and contractual requirements?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <h4>18.1.2 Intellectual Property Rights</h4>
+                        <div class="questions">
+                            <div class="question">
+                                <label>
+                                    <input type="checkbox" data-section="18.1.2" data-weight="100">
+                                    Defined policy for intellectual property rights?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>ISO27001 Compliance Report</h2>
+            <div id="reportContent"></div>
+            <button id="downloadReport" class="btn">Download Report</button>
+        </div>
+    </div>
+
+    <script src="iso27001_score.js"></script>
+</body>
+</html> 
+

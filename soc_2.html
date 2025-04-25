@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC 2 Readiness Assessment</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/soc_2.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shield-alt"></i>
+                GRC Portal
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="login.html" class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Assessment Container -->
+    <div class="assessment-container">
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+            <div class="progress-step active" data-step="1">1</div>
+            <div class="progress-step" data-step="2">2</div>
+            <div class="progress-step" data-step="3">3</div>
+            <div class="progress-step" data-step="4">4</div>
+            <div class="progress-step" data-step="5">5</div>
+            <div class="progress-step" data-step="6">6</div>
+            <div class="progress-step" data-step="7">7</div>
+        </div>
+
+        <!-- Assessment Cards -->
+        <div class="assessment-cards">
+            <!-- Welcome Card -->
+            <div class="card" data-card="1" style="display: block;">
+                <h2>Welcome to SOC 2 Readiness Assessment Journey</h2>
+                <p>Let's get started with your assessment</p>
+                <div class="card-footer">
+                    <button class="next-btn" onclick="nextCard(1)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Identify Your Scope Card -->
+            <div class="card" data-card="2">
+                <h2>Identify Your Scope</h2>
+                <div class="content">
+                    <div class="scope-item">
+                        <div class="scope-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="scope-text">
+                            <h3>Trust Services Criteria (TSC)</h3>
+                            <p>Understand the key components:</p>
+                            <ul>
+                                <li><span class="highlight">Security</span> (Mandatory)</li>
+                                <li>Availability</li>
+                                <li>Processing Integrity</li>
+                                <li>Confidentiality</li>
+                                <li>Privacy</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="scope-item">
+                        <div class="scope-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div class="scope-text">
+                            <h3>System Identification</h3>
+                            <p>Identify and document:</p>
+                            <ul>
+                                <li>Relevant systems</li>
+                                <li>Policies</li>
+                                <li>Procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="scope-item">
+                        <div class="scope-icon">
+                            <i class="fas fa-folder-open"></i>
+                        </div>
+                        <div class="scope-text">
+                            <h3>Documentation Requirements</h3>
+                            <p>Gather essential documents:</p>
+                            <ul>
+                                <li>Asset inventory list</li>
+                                <li>Change management procedures</li>
+                                <li>System backup protocols</li>
+                                <li>Incident response plans</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="prev-btn" onclick="prevCard(2)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="next-btn" onclick="nextCard(2)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Choose Report Type Card -->
+            <div class="card" data-card="3">
+                <h2>Choose Your Report Type</h2>
+                <div class="content">
+                    <div class="report-intro">
+                        <div class="scope-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <p>Decide between SOC 2 Type I and Type II reports based on your organization's needs.</p>
+                    </div>
+
+                    <div class="report-comparison">
+                        <div class="report-type">
+                            <div class="report-header">
+                                <i class="fas fa-camera"></i>
+                                <h3>SOC 2 Type I</h3>
+                                <p class="analogy">"Like a photograph of your security controls"</p>
+                            </div>
+                            <ul class="report-features">
+                                <li><strong>Focus:</strong> Design of controls at a specific point in time</li>
+                                <li><strong>Timeframe:</strong> Snapshot in time</li>
+                                <li><strong>Scope:</strong> Less comprehensive</li>
+                                <li><strong>Cost:</strong> Less expensive</li>
+                                <li><strong>Purpose:</strong> Demonstrates that controls are properly designed</li>
+                            </ul>
+                        </div>
+
+                        <div class="report-type">
+                            <div class="report-header">
+                                <i class="fas fa-video"></i>
+                                <h3>SOC 2 Type II</h3>
+                                <p class="analogy">"Like a documentary of your security controls"</p>
+                            </div>
+                            <ul class="report-features">
+                                <li><strong>Focus:</strong> Design and operational effectiveness of controls</li>
+                                <li><strong>Timeframe:</strong> Period of time (3-12 months)</li>
+                                <li><strong>Scope:</strong> More comprehensive</li>
+                                <li><strong>Cost:</strong> More expensive</li>
+                                <li><strong>Purpose:</strong> Demonstrates both design and operational effectiveness</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="key-difference">
+                        <div class="scope-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="difference-text">
+                            <h3>Key Difference</h3>
+                            <p>The main difference between Type 1 and Type 2 reports is the assessment period and depth. Type 1 assesses controls at a specific moment, while Type 2 evaluates both design and effectiveness over an extended period.</p>
+                        </div>
+                    </div>
+
+                    <div class="decision-note">
+                        <div class="scope-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="note-text">
+                            <h3>Making Your Decision</h3>
+                            <p>Consider your organization's:</p>
+                            <ul>
+                                <li>Budget constraints</li>
+                                <li>Time requirements</li>
+                                <li>Client requirements</li>
+                                <li>Compliance needs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="prev-btn" onclick="prevCard(3)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="next-btn" onclick="nextCard(3)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Risk Assessment Card -->
+            <div class="card" data-card="4">
+                <h2>Conduct a Risk Assessment</h2>
+                <div class="content">
+                    <div class="risk-intro">
+                        <div class="scope-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="risk-text">
+                            <h3>Understanding Risk Assessment</h3>
+                            <p>A vital step in your SOC 2 compliance journey to safeguard your information assets. Think of it as a comprehensive safety check for your valuable data.</p>
+                        </div>
+                    </div>
+
+                    <div class="risk-steps">
+                        <div class="risk-step">
+                            <div class="step-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="step-content">
+                                <h3>1. Risk Identification</h3>
+                                <p>Identify potential risks to your data and systems</p>
+                                <div class="example-box">
+                                    <h4><i class="fas fa-lightbulb"></i> Example</h4>
+                                    <p>Potential unauthorized access to customer database containing sensitive information</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="risk-step">
+                            <div class="step-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="step-content">
+                                <h3>2. Impact Assessment</h3>
+                                <p>Evaluate the potential severity and consequences of each identified risk</p>
+                                <ul class="assessment-points">
+                                    <li>Assess impact severity</li>
+                                    <li>Determine occurrence likelihood</li>
+                                    <li>Prioritize risks based on analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="risk-step">
+                            <div class="step-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="step-content">
+                                <h3>3. Mitigation Strategy</h3>
+                                <p>Develop comprehensive risk mitigation strategies and security controls</p>
+                                <ul class="assessment-points">
+                                    <li>Create protective measures</li>
+                                    <li>Implement security controls</li>
+                                    <li>Establish monitoring procedures</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="prev-btn" onclick="prevCard(4)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="next-btn" onclick="nextCard(4)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Control Mapping Card -->
+            <div class="card" data-card="5">
+                <h2>Control Mapping and Gap Analysis</h2>
+                <div class="content">
+                    <div class="analysis-intro">
+                        <div class="scope-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="analysis-text">
+                            <h3>Understanding Gap Analysis</h3>
+                            <p>A thorough assessment to align your internal control environment with Trust Services Criteria (TSC).</p>
+                        </div>
+                    </div>
+
+                    <div class="analysis-process">
+                        <div class="process-step">
+                            <div class="step-icon">
+                                <i class="fas fa-map"></i>
+                            </div>
+                            <div class="step-content">
+                                <h3>Control Mapping</h3>
+                                <ul class="analysis-points">
+                                    <li>Map existing controls to TSC requirements</li>
+                                    <li>Document control objectives and procedures</li>
+                                    <li>Identify control ownership and responsibilities</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                            <div class="step-content">
+                                <h3>Gap Identification</h3>
+                                <div class="example-box">
+                                    <h4><i class="fas fa-lightbulb"></i> Example</h4>
+                                    <p>If TSC requires system activity monitoring, assess whether current logging controls meet these requirements</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="prev-btn" onclick="prevCard(5)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="next-btn" onclick="nextCard(5)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Internal Audit Card -->
+            <div class="card" data-card="6">
+                <h2>Conduct Internal Audit</h2>
+                <div class="content">
+                    <div class="audit-intro">
+                        <div class="scope-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="audit-text">
+                            <h3>Internal Audit Overview</h3>
+                            <p>A proactive approach to ensure the safety and protection of your business assets before the formal SOC 2 audit.</p>
+                        </div>
+                    </div>
+
+                    <div class="audit-components">
+                        <div class="audit-section">
+                            <div class="section-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="section-content">
+                                <h3>Security Verification</h3>
+                                <div class="example-box">
+                                    <h4><i class="fas fa-lightbulb"></i> Example</h4>
+                                    <p>Regular checks on customer data protection measures against unauthorized access</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="audit-benefits">
+                            <h3><i class="fas fa-star"></i> Key Benefits</h3>
+                            <ul class="benefit-points">
+                                <li>Early risk identification</li>
+                                <li>Stakeholder confidence</li>
+                                <li>Improved security posture</li>
+                                <li>Better preparation for formal audit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="prev-btn" onclick="prevCard(6)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="next-btn" onclick="nextCard(6)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Final Card -->
+            <div class="card" data-card="7">
+                <h2>Final Section</h2>
+                <div class="content">
+                    <div class="final-summary">
+                        <h3>Congratulations!</h3>
+                        <p>You've completed all the key steps in understanding SOC 2 readiness assessment.</p>
+                        <div class="summary-points">
+                            <h4>Key Takeaways:</h4>
+                            <ul>
+                                <li>Scope identification</li>
+                                <li>Report type selection</li>
+                                <li>Risk assessment completion</li>
+                                <li>Control mapping understanding</li>
+                                <li>Internal audit preparation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="prev-btn" onclick="prevCard(7)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="submit-btn" onclick="submitAssessment()">Submit Assessment</button>
+                </div>
+            </div>
+
+            <!-- Results Card -->
+            <div class="card results-card" style="display: none;">
+                <h2>Assessment Complete!</h2>
+                <div class="results-content">
+                    <div class="completion-status">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Well Done!</span>
+                    </div>
+                    <p id="completion-message">You've successfully completed the SOC 2 readiness assessment journey. You now have a better understanding of what SOC 2 compliance entails.</p>
+                </div>
+                <div class="card-footer">
+                    <button class="home-btn" onclick="window.location.href='index.html'">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentCard = 1;
+        const totalCards = 7;
+
+        function updateProgress(step) {
+            const progress = ((step - 1) / (totalCards - 1)) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+            
+            document.querySelectorAll('.progress-step').forEach((step) => {
+                if (parseInt(step.dataset.step) <= currentCard) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+
+        function showCard(cardNumber) {
+            document.querySelectorAll('.card').forEach(card => {
+                card.style.display = 'none';
+            });
+            document.querySelector(`[data-card="${cardNumber}"]`).style.display = 'block';
+            updateProgress(cardNumber);
+        }
+
+        function nextCard(current) {
+            if (current < totalCards) {
+                currentCard = current + 1;
+                showCard(currentCard);
+            }
+        }
+
+        function prevCard(current) {
+            if (current > 1) {
+                currentCard = current - 1;
+                showCard(currentCard);
+            }
+        }
+
+        function submitAssessment() {
+            document.querySelectorAll('.card').forEach(card => {
+                card.style.display = 'none';
+            });
+            const resultsCard = document.querySelector('.results-card');
+            resultsCard.style.display = 'block';
+        }
+        
+        // Add scroll event listener for header styling
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html> 
+

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMPL Framework - Compliance Management</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f3f4f6;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff10" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            color: white;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+        }
+
+        .badge i {
+            margin-right: 0.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        .page-nav {
+            background: var(--bg-primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .nav-item:hover {
+            color: var(--primary-color);
+            background: var(--bg-secondary);
+        }
+
+        .nav-item.active {
+            color: var(--primary-color);
+            background: var(--bg-secondary);
+        }
+
+        /* Main Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .card {
+            background: var(--bg-primary);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .card-content {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .nav-container {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+
+        /* Additional Premium Styling */
+        .grc-section {
+            background: linear-gradient(to right, var(--bg-secondary), white);
+            padding: 4rem 0;
+            margin: 2rem 0;
+            border-radius: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grc-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M1 1h2v2H1V1zm4 0h2v2H5V1zm4 0h2v2H9V1zm4 0h2v2h-2V1zm4 0h2v2h-2V1zm-16 4h2v2H1V5zm4 0h2v2H5V5zm4 0h2v2H9V5zm4 0h2v2h-2V5zm4 0h2v2h-2V5zm-16 4h2v2H1V9zm4 0h2v2H5V9zm4 0h2v2H9V9zm4 0h2v2h-2V9zm4 0h2v2h-2V9zm-16 4h2v2H1v-2zm4 0h2v2H5v-2zm4 0h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-16 4h2v2H1v-2zm4 0h2v2H5v-2zm4 0h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z" fill="%23000" fill-opacity="0.03"/></svg>') repeat;
+            opacity: 0.5;
+        }
+
+        .case-study {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin: 3rem 0;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .case-study-header {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--bg-secondary);
+        }
+
+        .case-study-detail {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .case-study-detail i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .support-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .support-item {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 1rem;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .support-item:hover {
+            background: white;
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .support-item i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .key-takeaway {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .key-takeaway::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke="%23fff" stroke-width="0.5" fill="none" opacity="0.1"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .key-takeaway h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .key-takeaway p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Enhanced List Styling */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Responsive Enhancements */
+        @media (max-width: 768px) {
+            .case-study-header {
+                grid-template-columns: 1fr;
+            }
+
+            .support-features {
+                grid-template-columns: 1fr;
+            }
+
+            .key-takeaway {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="badge">
+                <i class="fas fa-shield-alt"></i>
+                Security Framework
+            </div>
+            <h1>CMPL Framework</h1>
+            <p class="hero-subtitle">
+                Comprehensive Compliance Management Framework for Modern Organizations
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Compliance Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Organizations</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="page-nav">
+        <div class="nav-container">
+            <a href="#overview" class="nav-item active">Overview</a>
+            <a href="#components" class="nav-item">Components</a>
+            <a href="#implementation" class="nav-item">Implementation</a>
+            <a href="#benefits" class="nav-item">Benefits</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="overview" class="content-section">
+            <h2 class="section-title">What is the CMPL Framework?</h2>
+            <div class="card">
+                <p class="card-content">
+The CMPL Framework is like a "compliance GPS" for organizations. It helps them follow laws, avoid risks, and protect data systematically. Used by 500+ organizations globally, it boasts a 98% compliance rate and offers 24/7 support for troubleshooting.
+                </p>
+            </div>
+        </section>
+
+        <section id="components" class="content-section">
+            <h2 class="section-title">Key Components</h2>
+            <div class="card">
+                <h3 class="card-title">Policy Management</h3>
+                <div class="card-content">
+                    <p><strong>What it does:</strong> Creates, updates, and shares rules (policies) across the organization.</p>
+                    <p><strong>Example:</strong> A bank uses CMPL's centralized dashboard to ensure all branches follow the same anti-money laundering (AML) policies.</p>
+                    <p><strong>Tools:</strong> PolicyHub, Microsoft SharePoint.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Risk Assessment</h3>
+                <div class="card-content">
+                    <p><strong>What it does:</strong> Finds and fixes risks before they cause harm.</p>
+                    <p><strong>Example:</strong> A hospital uses CMPL to identify risks like patient data leaks and sets up encryption to protect it.</p>
+                    <p><strong>Methods:</strong> Surveys, audits, and risk matrices.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Monitoring & Reporting</h3>
+                <div class="card-content">
+                    <p><strong>What it does:</strong> Tracks compliance in real-time and generates reports.</p>
+                    <p><strong>Example:</strong> A retail chain uses CMPL alerts to spot GDPR violations.</p>
+                    <p><strong>Tools:</strong> Tableau dashboards, automated alerts.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="implementation" class="content-section">
+            <h2 class="section-title">Implementation Guide</h2>
+            <div class="card">
+                <h3 class="card-title">Step-by-Step Journey to Compliance</h3>
+                <div class="card-content">
+                    <ol>
+                        <li>
+                            <strong>Initial Assessment & Gap Analysis</strong>
+                            <p>Compare current practices vs. required standards (e.g., GDPR, HIPAA)</p>
+                        </li>
+                        <li>
+                            <strong>Policy Development</strong>
+                            <p>Write clear, easy-to-follow rules</p>
+                        </li>
+                        <li>
+                            <strong>Control Implementation</strong>
+                            <p>Deploy tools/processes to enforce policies</p>
+                        </li>
+                        <li>
+                            <strong>Training & Awareness</strong>
+                            <p>Teach employees why compliance matters</p>
+                        </li>
+                        <li>
+                            <strong>Monitoring & Review</strong>
+                            <p>Use audits and software to check compliance</p>
+                        </li>
+                        <li>
+                            <strong>Continuous Improvement</strong>
+                            <p>Fix gaps and update policies as laws change</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="content-section">
+            <h2 class="section-title">Benefits of CMPL</h2>
+            <div class="card">
+                <h3 class="card-title">98% Compliance Rate</h3>
+                <div class="card-content">
+                    <p><strong>How?</strong> Automated checks reduce human errors.</p>
+                    <p><strong>Example:</strong> A logistics company avoids fines by using CMPL to track driver safety compliance.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Time Efficiency</h3>
+                <div class="card-content">
+                    <p><strong>How?</strong> Automates tasks like report generation.</p>
+                    <p><strong>Example:</strong> A law firm saves 20 hours/month with CMPL's auto-filled compliance templates.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Better Visibility</h3>
+                <div class="card-content">
+                    <p><strong>How?</strong> Dashboards show compliance status in real time.</p>
+                    <p><strong>Example:</strong> A CEO checks a CMPL dashboard to see if all departments meet ISO 27001 standards.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Risk Reduction</h3>
+                <div class="card-content">
+                    <p><strong>How?</strong> Proactively flags risks (e.g., outdated software).</p>
+                    <p><strong>Example:</strong> A tech startup avoids a data breach by patching vulnerabilities flagged by CMPL.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="grc" class="content-section grc-section">
+            <h2 class="section-title">How CMPL Fits into GRC</h2>
+            <div class="card">
+                <div class="card-content">
+                    <ul class="feature-list">
+                        <li>
+                            <strong>Governance:</strong> Ensures leaders set clear rules (e.g., ethical AI use policies)
+                        </li>
+                        <li>
+                            <strong>Risk Management:</strong> Predicts risks like cyberattacks or legal penalties
+                        </li>
+                        <li>
+                            <strong>Compliance:</strong> Automates adherence to laws like GDPR, SOX, or CCPA
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-study" class="content-section">
+            <h2 class="section-title">Real-World Case Study</h2>
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-detail">
+                        <i class="fas fa-building"></i>
+                        <div>
+                            <h4>Company</h4>
+                            <p>Mid-sized healthcare provider</p>
+                        </div>
+                    </div>
+                    <div class="case-study-detail">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <h4>Challenge</h4>
+                            <p>Struggled with HIPAA compliance (patient data leaks)</p>
+                        </div>
+                    </div>
+                </div>
+                <h3>CMPL Solution</h3>
+                <ul class="feature-list">
+                    <li>Used risk assessment to find unencrypted databases</li>
+                    <li>Created a policy mandating encryption for all patient records</li>
+                    <li>Trained staff via CMPL's e-learning modules</li>
+                    <li>Monitored compliance with real-time alerts</li>
+                </ul>
+                <div class="card">
+                    <div class="card-content">
+                        <strong>Result:</strong> Zero data breaches in 12 months; passed a surprise HIPAA audit
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="support" class="content-section">
+            <h2 class="section-title">24/7 Support Explained</h2>
+            <div class="support-features">
+                <div class="support-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Urgent Response Hotline</h3>
+                    <p>Immediate assistance for critical issues like data breach response</p>
+                </div>
+                <div class="support-item">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI-Powered Chatbots</h3>
+                    <p>Instant answers to policy queries and compliance questions</p>
+                </div>
+                <div class="support-item">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Expert Access</h3>
+                    <p>Direct connection to compliance experts for complex issues</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="organizations" class="content-section">
+            <h2 class="section-title">Why 500+ Organizations Choose CMPL</h2>
+            <div class="card">
+                <div class="card-content">
+                    <ul class="feature-list">
+                        <li>
+                            <strong>Flexibility:</strong> Works for industries like healthcare, finance, and tech
+                        </li>
+                        <li>
+                            <strong>Cost-Effective:</strong> Reduces fines and legal fees
+                        </li>
+                        <li>
+                            <strong>Scalable:</strong> Grows with your business (e.g., global expansion)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="key-takeaway">
+            <h2>Key Takeaway</h2>
+            <p>
+                CMPL isn't just a "rulebook" – it's a proactive system that keeps organizations safe, efficient, and audit-ready. 
+                By automating compliance and focusing on real-time risks, it turns regulatory chaos into structured success.
+            </p>
+        </div>
+    </main>
+
+    <script>
+        // Navigation highlighting
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.content-section');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').slice(1) === current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+

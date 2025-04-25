@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governance | GRC Portal</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/governance.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="home.html" class="logo">
+                <i class="fas fa-shield-alt"></i> GRC Portal
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact-us</a></li>
+                    <li class="profile-dropdown">
+                        <a href="profile.html   " class="profile-btn">
+                            <i class="fas fa-user-circle"></i>
+                            Profile
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="profile.html">
+                                <i class="fas fa-user"></i> View Profile
+                            </a>
+                            <a href="#" class="logout-item" id="logoutNavBtn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Understanding Governance in GRC</h1>
+            <p>Governance forms the foundation of effective GRC strategy, establishing the framework for accountability, ethical decision-making, and strategic alignment across the organization.</p>
+        </div>
+    </section>
+
+    <!-- Add Scrollable Navigation for Topics -->
+    <div class="scrollable-nav">
+        <div class="scrollable-nav-title">Jump to GRC Topics</div>
+        <div class="scrollable-nav-container">
+            <a href="#what-is-governance" class="scrollable-nav-item"><i class="fas fa-landmark"></i> What is Governance</a>
+            <a href="#core-components" class="scrollable-nav-item"><i class="fas fa-puzzle-piece"></i> Core Components</a>
+            <a href="#governance-challenges" class="scrollable-nav-item"><i class="fas fa-puzzle-piece"></i>Governance Challenges</a>
+            <a href="#importance" class="scrollable-nav-item"><i class="fas fa-exclamation-circle"></i> Importance</a>
+            <a href="#frameworks" class="scrollable-nav-item"><i class="fas fa-project-diagram"></i> Frameworks</a>
+            <a href="#governance-umbrella" class="scrollable-nav-item"><i class="fas fa-umbrella"></i> GRC Umbrella</a>
+            <a href="#decision-flow" class="scrollable-nav-item"><i class="fas fa-project-diagram"></i> Decision Flow</a>
+            <a href="#operating-model" class="scrollable-nav-item"><i class="fas fa-sitemap"></i> Operating Model</a>
+            <a href="#board-responsibilities" class="scrollable-nav-item"><i class="fas fa-users-cog"></i> Board Responsibilities</a>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="content-section animate-fadeInUp" id="what-is-governance">
+            <h2 class="section-title">What is Governance?</h2>
+            <p>Governance in the context of GRC (Governance, Risk, and Compliance) refers to the system by which organizations are directed and controlled. It encompasses the processes, policies, laws, and institutions that influence how a company is managed, monitored, and held accountable.</p>
+            <p>Effective governance establishes clear roles, responsibilities, and decision-making authorities to ensure that organizational activities are aligned with business objectives while balancing the interests of various stakeholders.</p>
+        </section>
+
+        <section class="content-section animate-fadeInUp delay-1" id="core-components">
+            <h2 class="section-title">Core Components of Governance</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Corporate Structure</h3>
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Defines the organizational hierarchy and reporting relationships that facilitate oversight and accountability.</p>
+                        <ul>
+                            <li>Board of directors composition</li>
+                            <li>Executive leadership team</li>
+                            <li>Committees with specific oversight responsibilities</li>
+                            <li>Clear delegation of authority</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Policies & Procedures</h3>
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Documented guidelines that direct organizational behavior and decision-making.</p>
+                        <ul>
+                            <li>Corporate governance policies</li>
+                            <li>Code of conduct and ethics</li>
+                            <li>Decision-making frameworks</li>
+                            <li>Standard operating procedures</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Oversight Mechanisms</h3>
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Systems and processes that monitor organizational activities and performance.</p>
+                        <ul>
+                            <li>Audit and assurance functions</li>
+                            <li>Performance measurement</li>
+                            <li>Management reporting</li>
+                            <li>Stakeholder engagement</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Risk Management</h3>
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Identifying and mitigating risks to organizational objectives.</p>
+                        <ul>
+                            <li>Enterprise risk assessment</li>
+                            <li>Risk appetite definition</li>
+                            <li>Mitigation strategy development</li>
+                            <li>Continuous risk monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Ethics and Culture</h3>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Promoting integrity, fairness, and stakeholder trust.</p>
+                        <ul>
+                            <li>Values-based leadership</li>
+                            <li>Ethical decision frameworks</li>
+                            <li>Code of conduct development</li>
+                            <li>Ethics training programs</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Transparency and Disclosure</h3>
+                        <i class="fas fa-glasses"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Open communication with stakeholders on company performance and operations.</p>
+                        <ul>
+                            <li>Financial reporting</li>
+                            <li>ESG disclosures</li>
+                            <li>Executive compensation transparency</li>
+                            <li>Material risk reporting</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Stakeholder Engagement</h3>
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Involving shareholders, employees, customers, and communities in decision-making.</p>
+                        <ul>
+                            <li>Shareholder voting and communication</li>
+                            <li>Employee feedback mechanisms</li>
+                            <li>Customer advisory boards</li>
+                            <li>Community impact assessments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fadeInUp delay-1-5" id="governance-challenges">
+            <h2 class="section-title">Common Governance Challenges</h2>
+            <p>Let's understand these corporate governance failures in detail and how organizations can address them effectively:</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Siloed Systems</h3>
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Data and information silos exist in almost every organizational structure—cloud-hosted, on-premise, or hybrid. Silos prevent information from freely flowing within departments, creating accessibility barriers and poor visibility into the risk landscape.</p>
+                        <div class="solution-box">
+                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                            <p>Consolidate cross-functional information into a single system to enable effective collaboration, prevent new silos, and streamline decision-making processes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Regulatory Compliance</h3>
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Organizations face mandatory regulations regardless of domain. For service providers, frameworks like ISO 27001 and GDPR may be necessary to unlock sales deals, while government regulations carry legal consequences for non-compliance.</p>
+                        <div class="solution-box">
+                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                            <p>Implement compliance automation tools that integrate with your infrastructure to continuously monitor controls, identify risks, and collect evidence in real-time.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>AI Governance</h3>
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>As business leaders adopt AI technologies, proper safeguards are essential to prevent misuse and protect customer privacy and trust. AI regulations are rapidly evolving, requiring a solid, risk-based foundation that addresses ethical concerns.</p>
+                        <div class="solution-box">
+                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                            <p>Adopt robust risk management frameworks like NIST AI RMF 1.0 and leverage risk compliance management software to automate risk profiling and control implementation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Security and Privacy</h3>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Organizations must safely process, store, collect, and transmit customer data to prevent unauthorized access and misuse. This includes handling PII (Personally Identifiable Information) and PHI (Protected Health Information) according to increasing regulatory scrutiny.</p>
+                        <div class="solution-box">
+                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                            <p>Implement security and privacy controls using tools that identify gaps, assess risks, and collect evidence of corrective actions to meet requirements like GDPR and HIPAA.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Measuring Governance</h3>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>The true challenge is understanding whether governance practices effectively generate intended outcomes. For example, do training programs actually improve accountability and reduce internal threats?</p>
+                        <div class="solution-box">
+                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                            <p>Use GRC metrics that quantify KPIs, KRIs, and KCIs to track completion rates, risk reduction, and impact on compliance program progress.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Contextualizing Data</h3>
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Large volumes of data create challenges in identifying which information is significant for governance and aligning it with regulatory requirements and business objectives, while ensuring accuracy and timeliness.</p>
+                        <div class="solution-box">
+                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                            <p>Implement GRC tools that contextualize data by integrating information from various systems and mapping it to relevant frameworks, helping identify risks and generate actionable reports.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Information Management</h3>
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Hybrid or multiple cloud architectures distribute information across all infrastructure sources, creating challenges in visibility, security vulnerabilities, and change management without structured systems.</p>
+                        <div class="solution-box">
+                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                            <p>Use a structured framework to organize, control, and monitor data across the organization, ensuring information is handled in accordance with regulatory requirements and internal policies.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Policies and Procedures</h3>
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Organizations struggle with developing policies that align with regulatory requirements, gaining stakeholder buy-in, measuring effectiveness, and managing overlapping policies—especially creating them from scratch and tracking updates.</p>
+                        <div class="solution-box">
+                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                            <p>Simplify and automate policy management using centralized platforms offering pre-built libraries of customizable policies, automated regulation mapping, and one-click acknowledgment.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Productivity and Priority</h3>
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Organizations face challenges in balancing multiple initiatives, allocating resources strategically, and managing continuous changes to workflows and systems without impacting productivity.</p>
+                        <div class="solution-box">
+                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                            <p>Implement GRC frameworks to balance projects based on priority while maintaining productivity by consolidating compliance requirements, organization-wide risks, and governance activities in one place.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Training</h3>
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Employees and stakeholders need to understand their responsibilities around ethics, security, and compliance, but organizations face challenges in developing effective training programs and overcoming resistance to learning.</p>
+                        <div class="solution-box">
+                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                            <p>Use a training system with capabilities to track completion rates, deliver compliance-specific materials, and capture evidence of completion with role-based targeting for relevant employees.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fadeInUp delay-2" id="importance">
+            <h2 class="section-title">The Importance of Governance Today</h2>
+            <p>In today's complex and rapidly evolving business environment, effective governance has become increasingly critical for several reasons:</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Risk Management</h3>
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Strong governance establishes frameworks for identifying, assessing, and managing risks effectively, helping organizations navigate uncertainty and protect value.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Regulatory Complexity</h3>
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>As regulatory requirements proliferate globally, governance provides the structure needed to maintain compliance and avoid costly penalties and reputational damage.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Stakeholder Expectations</h3>
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Investors, customers, employees, and communities increasingly expect organizations to demonstrate responsible business practices and transparency in decision-making.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Digital Transformation</h3>
+                        <i class="fas fa-digital-tachograph"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>New technologies bring new risks and opportunities, requiring governance structures that can adapt to the digital landscape while maintaining oversight and control.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fadeInUp delay-3" id="frameworks">
+            <h2 class="section-title">Governance Frameworks</h2>
+            <p>Organizations typically adopt established governance frameworks to guide their approach. These frameworks provide structured methodologies for implementing governance practices:</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>COSO Framework</h3>
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>The Committee of Sponsoring Organizations (COSO) framework integrates internal control, enterprise risk management, and fraud deterrence.</p>
+                        <p>Key components include control environment, risk assessment, control activities, information and communication, and monitoring activities.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>COBIT</h3>
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Control Objectives for Information and Related Technologies (COBIT) focuses on IT governance and management.</p>
+                        <p>It helps organizations optimize IT-enabled investments, ensure service delivery, and provide metrics to assess when things go wrong.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>ISO 38500</h3>
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>This international standard for corporate governance of IT provides principles for effective, efficient, and acceptable use of IT within organizations.</p>
+                        <p>It emphasizes responsibility, strategy, acquisition, performance, conformance, and human behavior.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fadeInUp delay-4">
+            <h2 class="section-title">Implementing Effective Governance</h2>
+            <p>Creating a robust governance program involves several key steps:</p>
+            
+            <ol style="margin-left: 1.5rem; margin-bottom: 2rem;">
+                <li><strong>Assess Current State:</strong> Evaluate existing governance structures, identifying strengths and gaps against best practices and regulatory requirements.</li>
+                <li><strong>Define Objectives:</strong> Establish clear goals for the governance program that align with organizational strategy and address identified gaps.</li>
+                <li><strong>Design Framework:</strong> Develop a tailored governance framework that defines roles, responsibilities, policies, and procedures.</li>
+                <li><strong>Implement Controls:</strong> Deploy necessary controls and oversight mechanisms to ensure the framework functions as intended.</li>
+                <li><strong>Monitor & Measure:</strong> Establish metrics to evaluate governance effectiveness and make continuous improvements.</li>
+                <li><strong>Build Culture:</strong> Foster a culture of accountability and ethics throughout the organization to support governance objectives.</li>
+            </ol>
+            
+            <p>Remember that governance is not a one-time implementation but an ongoing process that requires regular review and refinement to adapt to changing business environments and emerging risks.</p>
+        </section>
+
+        <section class="content-section animate-fadeInUp delay-5">
+            <h2 class="section-title">Examples of Governance in Action</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Board Review Process</h3>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>What's happening:</strong> The company's Board of Directors checks how well the CEO is doing their job every year and ties pay to sustainability goals.</p>
+                        <p><strong>Why it matters:</strong> Instead of just rewarding the CEO for making short-term profits, they link the CEO's salary/bonuses to long-term goals, like reducing pollution or treating employees fairly.</p>
+                        <p><strong>Governance link:</strong> This ensures leaders focus on sustainable growth, not just quick wins. It holds the CEO accountable to stakeholders (investors, employees, society).</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Whistleblower Program</h3>
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>What's happening:</strong> The company sets up a phone line/online system where employees can anonymously report bad behavior (e.g., fraud, harassment, safety violations).</p>
+                        <p><strong>Why it matters:</strong> Employees often fear punishment if they speak up. A protected hotline gives them a safe way to expose problems.</p>
+                        <p><strong>Governance link:</strong> This shows the company values ethics over secrecy. It prevents small issues from becoming big scandals (like fraud or lawsuits).</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>ESG Reporting</h3>
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>What's happening:</strong> The company releases a public report detailing its impact on the environment, social practices, and governance structures.</p>
+                        <p><strong>Why it matters:</strong> Investors and customers care about ethics and sustainability. A detailed ESG report proves the company isn't hiding bad practices.</p>
+                        <p><strong>Governance link:</strong> Transparency builds trust. If a company shares both successes and failures, stakeholders know it's accountable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fadeInUp delay-6" id="evaluating-governance-quality">
+            <h2 class="section-title">Evaluating Governance Quality</h2>
+            <p>Organizations can be assessed on their governance quality across a spectrum from good to bad. Here's how to recognize different governance qualities:</p>
+            
+            <div class="quality-comparison">
+                <div class="quality-section good-governance">
+                    <h3><i class="fas fa-check-circle"></i> Good Governance</h3>
+                    <ul>
+                        <li>
+                            <strong>Transparent decision-making:</strong> Everyone understands how and why decisions are made. 
+                            <p class="example">Example: A company shares detailed minutes of Board meetings publicly.</p>
+                        </li>
+                        <li>
+                            <strong>Independent, diverse Board:</strong> The Board includes people from different backgrounds who aren't friends/family of the CEO.
+                            <p class="example">Example: Microsoft's Board has experts in tech, cybersecurity, and law who challenge the CEO's ideas.</p>
+                        </li>
+                        <li>
+                            <strong>Ethics embedded in culture:</strong> Employees feel safe doing the right thing, even if it costs money.
+                            <p class="example">Example: A company fires a top salesperson for lying to clients, even if they brought in big profits.</p>
+                        </li>
+                        <li>
+                            <strong>Proactive risk oversight:</strong> The Board anticipates risks and plans ahead.
+                            <p class="example">Example: A bank trains employees to spot fraud before it happens.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="quality-section average-governance">
+                    <h3><i class="fas fa-minus-circle"></i> Average Governance</h3>
+                    <ul>
+                        <li>
+                            <strong>Partial transparency:</strong> The company shares some info but hides controversial details.
+                            <p class="example">Example: A firm admits it missed sustainability goals but doesn't explain why.</p>
+                        </li>
+                        <li>
+                            <strong>Limited Board independence:</strong> The Board has a few independent members, but most are friends of the CEO.
+                            <p class="example">Example: A family-run business lets the CEO's cousin sit on the Board but ignores their advice.</p>
+                        </li>
+                        <li>
+                            <strong>Ethics policies exist but are ignored:</strong> Rules about ethics are written down, but managers turn a blind eye to bad behavior.
+                            <p class="example">Example: A company has an anti-bribery policy but lets salespeople offer "gifts" to clients.</p>
+                        </li>
+                        <li>
+                            <strong>Reactive risk management:</strong> The company fixes problems only after they happen.
+                            <p class="example">Example: A retailer improves cybersecurity only after a data breach.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="quality-section bad-governance">
+                    <h3><i class="fas fa-times-circle"></i> Bad Governance</h3>
+                    <ul>
+                        <li>
+                            <strong>Secretive processes:</strong> Decisions are made behind closed doors, with no accountability.
+                            <p class="example">Example: Enron's executives hid debts in fake companies to inflate profits.</p>
+                        </li>
+                        <li>
+                            <strong>Board dominated by insiders/family:</strong> The Board is full of the CEO's friends or relatives who never question them.
+                            <p class="example">Example: A founder-CEO appoints their spouse and college buddy to the Board.</p>
+                        </li>
+                        <li>
+                            <strong>Frequent scandals/fraud:</strong> The company is constantly in the news for lying, stealing, or harming people.
+                            <p class="example">Example: A pharmaceutical company sells unsafe drugs and bribes regulators to hide it.</p>
+                        </li>
+                        <li>
+                            <strong>No risk governance framework:</strong> The company ignores risks until they blow up.
+                            <p class="example">Example: A construction firm doesn't check if its buildings meet safety codes.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section animate-fadeInUp delay-7">
+            <h2 class="section-title">Real-World Examples</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header good-example">
+                        <h3>Good Governance: Microsoft</h3>
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>What they do:</strong></p>
+                        <ul>
+                            <li>Board members include experts in cybersecurity, AI, and law (not just businesspeople)</li>
+                            <li>They tie executive bonuses to goals like improving cybersecurity</li>
+                        </ul>
+                        <p><strong>Why it's good:</strong> This ensures leaders care about long-term safety (not just profits) and get advice from diverse experts.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header average-example">
+                        <h3>Average Governance: Mid-sized firm</h3>
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>What they do:</strong></p>
+                        <ul>
+                            <li>They have a Board, but members rarely meet or discuss big risks</li>
+                            <li>They follow basic ethics rules but don't enforce them strictly</li>
+                        </ul>
+                        <p><strong>Result:</strong> The company survives but isn't trusted by investors or prepared for crises.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bad-example">
+                        <h3>Bad Governance: Enron (2001)</h3>
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>What happened:</strong></p>
+                        <ul>
+                            <li>Executives lied about profits, hid debts, and pressured auditors to stay quiet</li>
+                            <li>The Board didn't ask questions or check the fraud</li>
+                        </ul>
+                        <p><strong>Result:</strong> The company collapsed, employees lost pensions, and investors lost billions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway">
+                <h3>Key Takeaway</h3>
+                <ul>
+                    <li><strong>Good governance</strong> = Rules are clear, leaders are accountable, and ethics come first</li>
+                    <li><strong>Bad governance</strong> = Secrets, no accountability, and profit over people</li>
+                    <li>Governance is not just policies – it's about how leaders act daily to protect stakeholders</li>
+                </ul>
+                <p>Think of governance like the rules of a game: Good rules = Fair play, everyone knows what's allowed, referees (the Board) enforce them. Bad rules = Cheating is ignored, referees are biased, and the game collapses.</p>
+            </div>
+        </section>
+
+        <!-- New Section: Governance as the GRC Umbrella -->
+        <section class="content-section animate-fadeInUp delay-8" id="governance-umbrella">
+            <h2 class="section-title">Governance as the Umbrella of GRC</h2>
+            <p>Governance serves as the overarching framework that directs both Risk Management and Compliance activities. This hierarchical relationship is fundamental to understanding how GRC functions effectively within organizations.</p>
+            
+            <div class="grc-umbrella-container">
+                <div class="umbrella-visualization">
+                    <div class="umbrella-handle">
+                        <span>Strategic Direction</span>
+                    </div>
+                    <div class="umbrella-canopy governance-canopy">
+                        <h3>Governance</h3>
+                        <p>Sets direction, defines accountability, establishes oversight</p>
+                        <div class="canopy-elements">
+                            <span>Board Oversight</span>
+                            <span>Strategic Objectives</span>
+                            <span>Policy Framework</span>
+                            <span>Organizational Structure</span>
+                            <span>Decision Authority</span>
+                        </div>
+                    </div>
+                    <div class="umbrella-sections">
+                        <div class="umbrella-section risk-section">
+                            <h4>Risk Management</h4>
+                            <p>Identifies and mitigates threats to objectives</p>
+                            <ul class="section-elements">
+                                <li>Risk Identification</li>
+                                <li>Risk Assessment</li>
+                                <li>Risk Treatment</li>
+                                <li>Risk Monitoring</li>
+                            </ul>
+                        </div>
+                        <div class="umbrella-section compliance-section">
+                            <h4>Compliance</h4>
+                            <p>Ensures adherence to rules and requirements</p>
+                            <ul class="section-elements">
+                                <li>Regulatory Tracking</li>
+                                <li>Policy Management</li>
+                                <li>Control Implementation</li>
+                                <li>Compliance Monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="umbrella-explanation">
+                    <h3>How the GRC Hierarchy Works</h3>
+                    <div class="flow-diagram">
+                        <div class="flow-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Governance Sets Direction</h4>
+                                <p>The Board and executive leadership establish objectives, risk appetite, and ethical boundaries.</p>
+                                <div class="example-box">
+                                    <strong>Example:</strong> Board approves a strategic expansion into healthcare markets with explicit risk tolerance levels.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-connector"></div>
+                        <div class="flow-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Risk Management Responds</h4>
+                                <p>Risk teams identify and assess specific risks related to governance-defined objectives.</p>
+                                <div class="example-box">
+                                    <strong>Example:</strong> Risk team conducts healthcare regulatory risk assessment and develops mitigation strategies.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-connector"></div>
+                        <div class="flow-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Compliance Implements Controls</h4>
+                                <p>Compliance functions develop and monitor controls to ensure adherence to requirements.</p>
+                                <div class="example-box">
+                                    <strong>Example:</strong> Compliance implements HIPAA training program and data protection controls based on identified risks.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-connector"></div>
+                        <div class="flow-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Results Report Back to Governance</h4>
+                                <p>Risk and compliance outcomes are reported to governance bodies for oversight and decision-making.</p>
+                                <div class="example-box">
+                                    <strong>Example:</strong> Board committee reviews quarterly compliance metrics and significant risk events to adjust strategy.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- New Section: Decision Flow Explanation -->
+        <section class="content-section animate-fadeInUp delay-9" id="decision-flow">
+            <h2 class="section-title">Governance Decision Flow in Action</h2>
+            <p>Understanding how governance decisions cascade through an organization is essential to grasping the umbrella concept. Below are real-world examples that demonstrate this flow:</p>
+            
+            <div class="decision-flow-container">
+                <div class="case-study">
+                    <div class="case-header">
+                        <div class="case-icon"><i class="fas fa-university"></i></div>
+                        <h3>Case Study: Financial Institution</h3>
+                    </div>
+                    <div class="decision-cascade">
+                        <div class="cascade-level governance-level">
+                            <h4><i class="fas fa-gavel"></i> Governance Decision</h4>
+                            <p>Board approves entry into digital lending with a "conservative" risk appetite and 99.9% compliance requirement for applicable regulations.</p>
+                        </div>
+                        <div class="cascade-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="cascade-level risk-level">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Risk Management Action</h4>
+                            <p>Risk team creates digital fraud detection requirements, establishes lending limits, and develops monitoring dashboards for early warning.</p>
+                        </div>
+                        <div class="cascade-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="cascade-level compliance-level">
+                            <h4><i class="fas fa-clipboard-check"></i> Compliance Implementation</h4>
+                            <p>Compliance builds automated checks into the digital lending platform to prevent lending regulation violations and ensure KYC requirements are met.</p>
+                        </div>
+                        <div class="cascade-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="cascade-level outcome-level">
+                            <h4><i class="fas fa-chart-line"></i> Business Outcome</h4>
+                            <p>Digital lending launches with robust controls, clear risk boundaries, and automated compliance verification—reducing the fraud rate to 0.1%.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-study">
+                    <div class="case-header">
+                        <div class="case-icon"><i class="fas fa-industry"></i></div>
+                        <h3>Case Study: Manufacturing Company</h3>
+                    </div>
+                    <div class="decision-cascade">
+                        <div class="cascade-level governance-level">
+                            <h4><i class="fas fa-gavel"></i> Governance Decision</h4>
+                            <p>Board commits to carbon neutrality by 2030 and establishes ESG committee with direct reporting line to full board.</p>
+                        </div>
+                        <div class="cascade-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="cascade-level risk-level">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Risk Management Action</h4>
+                            <p>Risk team develops climate transition risk register, evaluates financial impact of carbon taxes, and assesses supply chain emissions exposure.</p>
+                        </div>
+                        <div class="cascade-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="cascade-level compliance-level">
+                            <h4><i class="fas fa-clipboard-check"></i> Compliance Implementation</h4>
+                            <p>Compliance establishes emissions tracking system, implements supplier code of conduct with ESG requirements, and develops regulatory reporting framework.</p>
+                        </div>
+                        <div class="cascade-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="cascade-level outcome-level">
+                            <h4><i class="fas fa-chart-line"></i> Business Outcome</h4>
+                            <p>Company reduces emissions by 15% in year one, meets all climate disclosure requirements, and qualifies for sustainable financing at reduced rates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- New Section: Governance Operating Model -->
+        <section class="content-section animate-fadeInUp delay-10" id="operating-model">
+            <h2 class="section-title">Governance Operating Model</h2>
+            <p>A well-designed Governance Operating Model establishes the formal structure through which governance decisions flow throughout the organization. This model defines clear roles, responsibilities, and reporting lines that ensure effective oversight, timely decisions, and proper accountability.</p>
+            
+            <div class="operating-model-container">
+                <div class="governance-structure">
+                    <h3 class="structure-title">GRC Committee Structure</h3>
+                    
+                    <div class="committee-hierarchy">
+                        <div class="hierarchy-level board-level">
+                            <div class="committee-box">
+                                <h4>Board of Directors</h4>
+                                <p>Ultimate authority and accountability</p>
+                            </div>
+                        </div>
+                        
+                        <div class="hierarchy-lines">
+                            <div class="vertical-line"></div>
+                            <div class="horizontal-line"></div>
+                            <div class="horizontal-line"></div>
+                            <div class="horizontal-line"></div>
+                        </div>
+                        
+                        <div class="hierarchy-level board-committees">
+                            <div class="committee-box">
+                                <h4>Audit Committee</h4>
+                                <p>Financial oversight and compliance assurance</p>
+                            </div>
+                            <div class="committee-box">
+                                <h4>Risk Committee</h4>
+                                <p>Enterprise risk governance</p>
+                            </div>
+                            <div class="committee-box">
+                                <h4>Governance Committee</h4>
+                                <p>Board effectiveness and corporate governance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="hierarchy-lines">
+                            <div class="vertical-line"></div>
+                        </div>
+                        
+                        <div class="hierarchy-level executive-level">
+                            <div class="committee-box">
+                                <h4>Executive GRC Committee</h4>
+                                <p>Cross-functional leadership team</p>
+                            </div>
+                        </div>
+                        
+                        <div class="hierarchy-lines">
+                            <div class="vertical-line"></div>
+                            <div class="horizontal-line"></div>
+                            <div class="horizontal-line"></div>
+                            <div class="horizontal-line"></div>
+                        </div>
+                        
+                        <div class="hierarchy-level operational-committees">
+                            <div class="committee-box">
+                                <h4>Compliance Committee</h4>
+                                <p>Regulatory and policy compliance</p>
+                            </div>
+                            <div class="committee-box">
+                                <h4>Operational Risk Committee</h4>
+                                <p>Day-to-day risk monitoring</p>
+                            </div>
+                            <div class="committee-box">
+                                <h4>Technology Governance</h4>
+                                <p>IT systems and data governance</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="model-explanation">
+                        <h3>Key Responsibilities by Level</h3>
+                        
+                        <div class="responsibility-level">
+                            <div class="level-marker board-marker">Board</div>
+                            <ul class="responsibility-list">
+                                <li>Approve governance framework and risk appetite</li>
+                                <li>Review and validate strategic direction</li>
+                                <li>Ensure adequate resources for GRC functions</li>
+                                <li>Monitor overall GRC effectiveness</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="responsibility-level">
+                            <div class="level-marker executive-marker">Executive</div>
+                            <ul class="responsibility-list">
+                                <li>Align GRC activities with strategic objectives</li>
+                                <li>Resolve cross-functional GRC conflicts</li>
+                                <li>Allocate resources based on risk priorities</li>
+                                <li>Ensure escalation of significant issues to Board</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="responsibility-level">
+                            <div class="level-marker operational-marker">Operational</div>
+                            <ul class="responsibility-list">
+                                <li>Implement policies and controls</li>
+                                <li>Monitor compliance and risk indicators</li>
+                                <li>Report issues and metrics to executive level</li>
+                                <li>Manage day-to-day GRC operations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="operating-principles">
+                    <h3>Principles of an Effective Operating Model</h3>
+                    
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-sitemap"></i>
+                            </div>
+                            <h4>Clear Accountability</h4>
+                            <p>Explicitly defined roles and responsibilities without overlaps or gaps</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Appropriate Escalation</h4>
+                            <p>Defined thresholds for when issues must be elevated to higher governance levels</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <h4>Integrated Operations</h4>
+                            <p>Coordinated GRC activities to minimize redundancy and maximize effectiveness</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h4>Information Flow</h4>
+                            <p>Relevant, timely data reaches decision-makers when needed</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h4>Independence & Checks</h4>
+                            <p>Appropriate separation of duties with verification mechanisms</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h4>Continuous Improvement</h4>
+                            <p>Regular review and refinement of the operating model</p>
+                        </div>
+                    </div>
+                    
+                    <div class="real-world-implementation">
+                        <h3>Real-World Implementation Example</h3>
+                        <div class="implementation-case">
+                            <div class="case-details">
+                                <h4>Financial Institution Operating Model</h4>
+                                <p>A large bank implemented a three-tier governance operating model to manage its complex regulatory environment:</p>
+                                
+                                <ul>
+                                    <li><strong>Board Risk Committee</strong> meets quarterly to set risk appetite and review enterprise risk posture</li>
+                                    <li><strong>Executive Risk Council</strong> meets monthly to assess emerging risks and resolve cross-functional issues</li>
+                                    <li><strong>Line of Business Committees</strong> meet weekly to monitor operational metrics and handle day-to-day decisions</li>
+                                </ul>
+                                
+                                <p class="implementation-result">Result: Clear accountability reduced regulatory findings by 60% and improved response time to emerging risks from weeks to days.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: Board Responsibilities -->
+        <section class="content-section animate-fadeInUp delay-11" id="board-responsibilities">
+            <h2 class="section-title">Board of Directors: The Governance Keystone</h2>
+            <p>The Board of Directors serves as the keystone of organizational governance, setting the tone and direction for the entire GRC framework. Understanding the specific governance responsibilities of the Board is crucial to recognizing how governance serves as the umbrella for risk and compliance functions.</p>
+            
+            
+            
+            <div class="board-responsibilities-container">
+                <div class="board-visual">
+                    <div class="board-table">
+                        <div class="table-head">
+                            <div class="head-member chair">
+                                <div class="member-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="member-title">
+                                    <p>Board Chair</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-body">
+                            <div class="body-row">
+                                <div class="body-member">
+                                    <div class="member-icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="member-title">
+                                        <p>Member</p>
+                                    </div>
+                                </div>
+                                <div class="body-member">
+                                    <div class="member-icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="member-title">
+                                        <p>Member</p>
+                                    </div>
+                                </div>
+                                <div class="body-member">
+                                    <div class="member-icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="member-title">
+                                        <p>Member</p>
+                                    </div>
+                                </div>
+                                <div class="body-member">
+                                    <div class="member-icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="member-title">
+                                        <p>Member</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="board-role-container">
+                    <h3>Key Governance Responsibilities of the Board</h3>
+                    
+                    <div class="responsibility-tabs">
+                        <div class="tab-headers">
+                            <div class="tab-header active" data-tab="strategic">
+                                <i class="fas fa-chess"></i>
+                                <span>Strategic Direction</span>
+                            </div>
+                            <div class="tab-header" data-tab="risk-oversight">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>Risk Oversight</span>
+                            </div>
+                            <div class="tab-header" data-tab="compliance">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Compliance Oversight</span>
+                            </div>
+                            <div class="tab-header" data-tab="leadership">
+                                <i class="fas fa-users"></i>
+                                <span>Leadership Oversight</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-contents">
+                            <div class="tab-content active" id="strategic">
+                                <h4>Strategic Direction and Resource Allocation</h4>
+                                <ul class="responsibility-items">
+                                    <li>Approve organizational mission, vision, and values</li>
+                                    <li>Review and approve strategic plan and major initiatives</li>
+                                    <li>Ensure alignment of GRC activities with strategic objectives</li>
+                                    <li>Approve resource allocation to governance, risk, and compliance functions</li>
+                                </ul>
+                                <div class="real-example">
+                                    <h5>Real-World Example:</h5>
+                                    <p>Microsoft's Board regularly reviews the company's long-term strategy including major investments in AI and cloud computing, ensuring that governance processes adapt to support innovation while managing associated risks.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-content" id="risk-oversight">
+                                <h4>Risk Oversight and Appetite Setting</h4>
+                                <ul class="responsibility-items">
+                                    <li>Define and approve the organization's risk appetite</li>
+                                    <li>Oversee enterprise risk management framework</li>
+                                    <li>Review significant and emerging risks</li>
+                                    <li>Challenge management on risk assessments and mitigation strategies</li>
+                                </ul>
+                                <div class="real-example">
+                                    <h5>Real-World Example:</h5>
+                                    <p>JPMorgan Chase's Board sets quantitative risk limits across credit, market, and operational risk categories, then reviews detailed quarterly risk reports to ensure the bank operates within these boundaries.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-content" id="compliance">
+                                <h4>Compliance and Ethics Oversight</h4>
+                                <ul class="responsibility-items">
+                                    <li>Approve code of conduct and key compliance policies</li>
+                                    <li>Ensure adequate compliance program resources</li>
+                                    <li>Review significant compliance issues and resolution plans</li>
+                                    <li>Oversee whistleblower program effectiveness</li>
+                                </ul>
+                                <div class="real-example">
+                                    <h5>Real-World Example:</h5>
+                                    <p>After compliance failures, Volkswagen's Supervisory Board implemented a comprehensive compliance monitoring program and now receives direct reports on compliance matters with designated "compliance champions" in each business unit.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-content" id="leadership">
+                                <h4>Leadership Oversight and Succession</h4>
+                                <ul class="responsibility-items">
+                                    <li>Select, evaluate, and compensate the CEO</li>
+                                    <li>Ensure adequate succession planning for key GRC roles</li>
+                                    <li>Hold management accountable for GRC performance</li>
+                                    <li>Assess board composition and effectiveness for governance oversight</li>
+                                </ul>
+                                <div class="real-example">
+                                    <h5>Real-World Example:</h5>
+                                    <p>Disney's Board conducts annual reviews of succession plans for the CEO and key executives, with specific attention to ensuring continuity in critical risk and compliance leadership roles during transitions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="board-influence">
+                    <h3>How Board Decisions Shape the GRC Umbrella</h3>
+                    
+                    <div class="influence-diagram">
+                        <div class="influence-source">
+                            <h4>Board Actions</h4>
+                            <ul>
+                                <li>Sets risk appetite</li>
+                                <li>Approves governance structure</li>
+                                <li>Allocates resources</li>
+                                <li>Defines reporting requirements</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="influence-arrows">
+                            <div class="arrow arrow1">
+                                <div class="arrow-stem"></div>
+                                <div class="arrow-head"></div>
+                            </div>
+                            <div class="arrow arrow2">
+                                <div class="arrow-stem"></div>
+                                <div class="arrow-head"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="influence-targets">
+                            <div class="influence-target risk-target">
+                                <h5>Risk Management Impact</h5>
+                                <ul>
+                                    <li>Defines acceptable risk levels</li>
+                                    <li>Sets boundaries for risk decisions</li>
+                                    <li>Determines risk management approach</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="influence-target compliance-target">
+                                <h5>Compliance Program Impact</h5>
+                                <ul>
+                                    <li>Prioritizes compliance efforts</li>
+                                    <li>Sets compliance culture expectations</li>
+                                    <li>Determines reporting frequency</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Editorial Team</a></li>
+                    <li><a href="#">Protection</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Join as Advisors</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Our Partners</h3>
+                <ul>
+                    <li><a href="#">Enterprise Security</a></li>
+                    <li><a href="#">Compliance Solutions</a></li>
+                    <li><a href="#">Risk Consulting</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Nr. Visat Three Roads 
+                    Visat – Gandhinagar Highway
+                    Chandkheda, Ahmedabad – 382424, Gujarat
+                    </p>
+                <p>+91 9016740830</p>
+                <p>+91 9016427205</p>
+                <p>+91 7984820468</p>
+                <p><a href="mailto:email@domain.net">mkgvohra37@gmail.com</a></p>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <a href="#" style="color: var(--gray-300);"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="color: var(--gray-300);"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: var(--gray-300);"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>Copyright &copy; <span id="currentYear">2023</span> GRC Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Update current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Handle header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Add event listener for the logout button in the dropdown menu
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoutBtn = document.getElementById('logoutNavBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Clear user data from storage
+                    localStorage.removeItem('userData');
+                    sessionStorage.removeItem('userData');
+                    localStorage.removeItem('userEmail');
+                    sessionStorage.removeItem('userEmail');
+                    localStorage.removeItem('userName');
+                    sessionStorage.removeItem('userName');
+                    // Redirect to login page
+                    window.location.href = 'login.html';
+                });
+            }
+            
+            // Handle tab functionality for Board Responsibilities section
+            const tabHeaders = document.querySelectorAll('.tab-header');
+            if (tabHeaders.length > 0) {
+                tabHeaders.forEach(header => {
+                    header.addEventListener('click', function() {
+                        // Remove active class from all headers and contents
+                        document.querySelectorAll('.tab-header').forEach(h => h.classList.remove('active'));
+                        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                        
+                        // Add active class to clicked header
+                        this.classList.add('active');
+                        
+                        // Get the data-tab attribute to find corresponding content
+                        const tabId = this.getAttribute('data-tab');
+                        const tabContent = document.getElementById(tabId);
+                        if (tabContent) {
+                            tabContent.classList.add('active');
+                        }
+                    });
+                });
+            }
+            
+            // Handle scrollable navigation
+            const navItems = document.querySelectorAll('.scrollable-nav-item');
+            const sections = [];
+            
+            // Collect all sections referenced in the navigation
+            if (navItems.length > 0) {
+                navItems.forEach(item => {
+                    const sectionId = item.getAttribute('href').substring(1);
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        sections.push({
+                            id: sectionId,
+                            element: section,
+                            navItem: item
+                        });
+                    }
+                    
+                    // Add click event to smooth scroll
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetSection = document.getElementById(targetId);
+                        if (targetSection) {
+                            window.scrollTo({
+                                top: targetSection.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Update active state
+                            navItems.forEach(i => i.classList.remove('active'));
+                            this.classList.add('active');
+                        }
+                    });
+                });
+                
+                // Force scrollbar to be visible
+                const navContainer = document.querySelector('.scrollable-nav-container');
+                if (navContainer) {
+                    navContainer.style.overflowX = 'scroll';
+                    navContainer.style.paddingBottom = '20px';
+                }
+            }
+            
+            // Update active navigation item based on scroll position
+            function updateActiveNavItem() {
+                const scrollPosition = window.scrollY + 150; // Add offset for header
+                
+                // Find the section that is currently in view
+                for (let i = sections.length - 1; i >= 0; i--) {
+                    const section = sections[i];
+                    if (section.element.offsetTop <= scrollPosition) {
+                        // Remove active class from all nav items
+                        navItems.forEach(item => item.classList.remove('active'));
+                        // Add active class to the current section's nav item
+                        section.navItem.classList.add('active');
+                        
+                        // Scroll the navigation to show the active item
+                        const navContainer = document.querySelector('.scrollable-nav-container');
+                        if (navContainer) {
+                            const activeItemLeft = section.navItem.offsetLeft;
+                            const containerWidth = navContainer.offsetWidth;
+                            navContainer.scrollLeft = activeItemLeft - (containerWidth / 2) + (section.navItem.offsetWidth / 2);
+                        }
+                        
+                        break;
+                    }
+                }
+            }
+            
+            // Initial call to set active nav item
+            updateActiveNavItem();
+            
+            // Update active nav item on scroll
+            window.addEventListener('scroll', updateActiveNavItem);
+        });
+    </script>
+</body>
+</html> 
+

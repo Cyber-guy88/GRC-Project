@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COBIT Governance Framework Recommendation Tool</title>
+    <link rel="stylesheet" href="css/govern_sug.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Left Panel - Form -->
+        <div class="panel form-panel">
+            <div class="panel-content">
+                <div class="logo-container">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="logo-text">COBIT Framework</div>
+                    </div>
+                    <div class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+
+                <div class="form-header">
+                    <h1>Governance Advisor</h1>
+                    <p class="subtitle">Complete the assessment to receive tailored COBIT recommendations based on your organization's profile.</p>
+                </div>
+
+                <form id="cobitForm" class="assessment-form">
+                    <div class="progress-bar">
+                        <div class="progress-step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-label">Profile</div>
+                        </div>
+                        <div class="progress-connector"></div>
+                        <div class="progress-step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-label">IT</div>
+                        </div>
+                        <div class="progress-connector"></div>
+                        <div class="progress-step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-label">Data</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 1: Company Profile -->
+                    <div class="form-step active" data-step="1">
+                        <div class="step-header">
+                            <h2><span class="step-icon"><i class="fas fa-building"></i></span> Company Profile</h2>
+                            <p>Tell us about your organization's basic information</p>
+                        </div>
+
+                        <div class="form-group floating-label">
+                            <input type="text" id="companyName" name="companyName" required>
+                            <label for="companyName">Company Name</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="group-label">Number of Employees</label>
+                            <div class="option-cards radio-group" role="radiogroup">
+                                <label class="option-card" for="size-small">
+                                    <input type="radio" id="size-small" name="companySize" value="small" required>
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-user-friends"></i></div>
+                                        <div class="card-label">Small</div>
+                                        <div class="card-description">1-49 employees</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="size-medium">
+                                    <input type="radio" id="size-medium" name="companySize" value="medium" required>
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-users"></i></div>
+                                        <div class="card-label">Medium</div>
+                                        <div class="card-description">50-499 employees</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="size-large">
+                                    <input type="radio" id="size-large" name="companySize" value="large" required>
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-city"></i></div>
+                                        <div class="card-label">Large</div>
+                                        <div class="card-description">500+ employees</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="group-label">Industry Type</label>
+                            <div class="select-wrapper">
+                                <select id="industryType" name="industryType" required>
+                                    <option value="">Select Industry</option>
+                                    <option value="finance">Finance (Banks, Investment Firms, Insurance)</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="government">Government & Public Sector</option>
+                                    <option value="it">IT & Software Companies</option>
+                                    <option value="manufacturing">Manufacturing & Supply Chain</option>
+                                </select>
+                                <i class="fas fa-chevron-down select-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-next" data-goto="2">
+                                Continue <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: IT Infrastructure -->
+                    <div class="form-step" data-step="2">
+                        <div class="step-header">
+                            <h2><span class="step-icon"><i class="fas fa-server"></i></span> IT Infrastructure</h2>
+                            <p>Tell us about your organization's IT environment</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="group-label">IT Complexity Level</label>
+                            <div class="option-cards radio-group" role="radiogroup">
+                                <label class="option-card" for="it-low">
+                                    <input type="radio" id="it-low" name="itComplexity" value="low" required>
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-laptop"></i></div>
+                                        <div class="card-label">Low</div>
+                                        <div class="card-description">Basic IT infrastructure with limited complexity</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="it-medium">
+                                    <input type="radio" id="it-medium" name="itComplexity" value="medium" required>
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+                                        <div class="card-label">Medium</div>
+                                        <div class="card-description">Moderate IT infrastructure with some complexity</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="it-high">
+                                    <input type="radio" id="it-high" name="itComplexity" value="high" required>
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-server"></i></div>
+                                        <div class="card-label">High</div>
+                                        <div class="card-description">Complex IT infrastructure with multiple systems</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="group-label">Number of Business Units</label>
+                            <div class="option-cards radio-group" role="radiogroup">
+                                <label class="option-card" for="bu-single">
+                                    <input type="radio" id="bu-single" name="businessUnits" value="single" required>
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-building"></i></div>
+                                        <div class="card-label">Single</div>
+                                        <div class="card-description">1 Business Unit</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="bu-multiple">
+                                    <input type="radio" id="bu-multiple" name="businessUnits" value="multiple" required>
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-sitemap"></i></div>
+                                        <div class="card-label">Multiple</div>
+                                        <div class="card-description">2-5 Business Units</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="bu-many">
+                                    <input type="radio" id="bu-many" name="businessUnits" value="many" required>
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+                                        <div class="card-label">Many</div>
+                                        <div class="card-description">6+ Business Units</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-back" data-goto="1">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button type="button" class="btn-next" data-goto="3">
+                                Continue <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Data & Compliance -->
+                    <div class="form-step" data-step="3">
+                        <div class="step-header">
+                            <h2><span class="step-icon"><i class="fas fa-shield-alt"></i></span> Data & Compliance</h2>
+                            <p>Tell us about the types of data your organization processes</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="group-label">Types of Data Handled</label>
+                            <div class="option-cards checkbox-group">
+                                <label class="option-card" for="data-personal">
+                                    <input type="checkbox" id="data-personal" name="dataTypes" value="personal">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-user-shield"></i></div>
+                                        <div class="card-label">Personal Data</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="data-financial">
+                                    <input type="checkbox" id="data-financial" name="dataTypes" value="financial">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-money-bill-wave"></i></div>
+                                        <div class="card-label">Financial Data</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="data-healthcare">
+                                    <input type="checkbox" id="data-healthcare" name="dataTypes" value="healthcare">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                                        <div class="card-label">Healthcare Data</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="group-label">Regulatory Requirements</label>
+                            <div class="option-cards checkbox-group">
+                                <label class="option-card" for="reg-gdpr">
+                                    <input type="checkbox" id="reg-gdpr" name="regulatoryRequirements" value="gdpr">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-gavel"></i></div>
+                                        <div class="card-label">GDPR Compliance</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="reg-hipaa">
+                                    <input type="checkbox" id="reg-hipaa" name="regulatoryRequirements" value="hipaa">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-hospital"></i></div>
+                                        <div class="card-label">HIPAA Compliance</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="reg-pci">
+                                    <input type="checkbox" id="reg-pci" name="regulatoryRequirements" value="pci">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-credit-card"></i></div>
+                                        <div class="card-label">PCI DSS Compliance</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-back" data-goto="2">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-analytics"></i> Generate Suggestion
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Panel - Preview & Results -->
+        <div class="panel preview-panel">
+            <div class="panel-content">
+                <div class="preview-container">
+                    <div class="preview-header">
+                        <h2>Real-time Preview</h2>
+                        <p>Your recommendation profile will appear here based on your selections.</p>
+                    </div>
+                    
+                    <div class="preview-box">
+                        <div class="company-profile-card" id="previewCard">
+                            <div class="card-header">
+                                <div class="company-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <h3 id="previewCompanyName">Your Organization</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="profile-items">
+                                    <div class="profile-item" id="previewSize">
+                                        <div class="item-icon"><i class="fas fa-users"></i></div>
+                                        <div class="item-content">
+                                            <div class="item-label">Size</div>
+                                            <div class="item-value">Not selected</div>
+                                        </div>
+                                    </div>
+                                    <div class="profile-item" id="previewIndustry">
+                                        <div class="item-icon"><i class="fas fa-industry"></i></div>
+                                        <div class="item-content">
+                                            <div class="item-label">Industry</div>
+                                            <div class="item-value">Not selected</div>
+                                        </div>
+                                    </div>
+                                    <div class="profile-item" id="previewComplexity">
+                                        <div class="item-icon"><i class="fas fa-server"></i></div>
+                                        <div class="item-content">
+                                            <div class="item-label">IT Complexity</div>
+                                            <div class="item-value">Not selected</div>
+                                        </div>
+                                    </div>
+                                    <div class="profile-item" id="previewData">
+                                        <div class="item-icon"><i class="fas fa-database"></i></div>
+                                        <div class="item-content">
+                                            <div class="item-label">Data Types</div>
+                                            <div class="item-value">Not selected</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="compliance-meter">
+                            <div class="meter-header">
+                                <h4>COBIT Process Maturity Assessment</h4>
+                            </div>
+                            <div class="meter-container">
+                                <div class="meter-section">
+                                    <div class="meter-top">
+                                        <div class="meter-label"><i class="fas fa-tasks"></i> Evaluate, Direct and Monitor</div>
+                                        <div class="meter-value">0%</div>
+                                    </div>
+                                    <div class="meter-bar">
+                                        <div class="meter-fill" id="governanceMeter" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="meter-section">
+                                    <div class="meter-top">
+                                        <div class="meter-label"><i class="fas fa-align-left"></i> Align, Plan and Organize</div>
+                                        <div class="meter-value">0%</div>
+                                    </div>
+                                    <div class="meter-bar">
+                                        <div class="meter-fill" id="alignMeter" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="meter-section">
+                                    <div class="meter-top">
+                                        <div class="meter-label"><i class="fas fa-cogs"></i> Build, Acquire and Implement</div>
+                                        <div class="meter-value">0%</div>
+                                    </div>
+                                    <div class="meter-bar">
+                                        <div class="meter-fill" id="buildMeter" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="preview-message">
+                            <p>Complete all form steps to generate COBIT Framework recommendations tailored to your organization's profile.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Modal -->
+    <div id="recommendationModal" class="recommendation-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>COBIT Framework Recommendations</h2>
+                <button class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="company-summary" id="companySummary"></div>
+                
+                <div class="tabs-container">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-section="governance">
+                            <i class="fas fa-tasks"></i>
+                            <span>Governance</span>
+                        </button>
+                        <button class="tab-btn" data-section="align">
+                            <i class="fas fa-align-left"></i>
+                            <span>Align & Plan</span>
+                        </button>
+                        <button class="tab-btn" data-section="build">
+                            <i class="fas fa-cogs"></i>
+                            <span>Build & Implement</span>
+                        </button>
+                        <button class="tab-btn" data-section="monitor">
+                            <i class="fas fa-eye"></i>
+                            <span>Monitor & Evaluate</span>
+                        </button>
+                    </div>
+                    
+                    <div class="tabs-content" id="recommendationContent"></div>
+                </div>
+                
+                <div class="modal-actions">
+                    <button id="downloadReport" class="action-btn download-btn">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Download PDF Report</span>
+                    </button>
+                    <button id="emailReport" class="action-btn email-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Report</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="govern_sug.js"></script>
+</body>
+</html>
+
+
+

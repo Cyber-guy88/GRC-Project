@@ -1,0 +1,2654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>GRC Tools 2025</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0ea5e9;
+            --accent-color: #f97316;
+            --text-color: #334155;
+            --light-text: #64748b;
+            --background-color: #f8fafc;
+            --card-bg: #ffffff;
+            --border-radius: 12px;
+            --card-radius: 16px;
+            --box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --hover-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --section-spacing: 6rem;
+            --gradient: linear-gradient(135deg, var(--secondary-color), #3b82f6);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            padding-top: 3.5rem;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: var(--section-spacing);
+            position: relative;
+            padding: 6rem 0 3rem;
+            background: linear-gradient(rgba(30, 58, 138, 0.05), rgba(30, 58, 138, 0.02));
+            border-radius: 0 0 50% 50% / 15%;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--gradient);
+            opacity: 0.15;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 5px;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        
+        .intro {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.2rem;
+            color: var(--light-text);
+            padding: 0 1rem;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin: 2rem 0 1.5rem;
+            font-size: 2.25rem;
+            font-weight: 700;
+            border-left: 6px solid var(--secondary-color);
+            padding-left: 1.5rem;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-description {
+            margin-bottom: 3rem;
+            font-size: 1.15rem;
+            color: var(--light-text);
+            max-width: 900px;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .tool-card {
+            background: var(--card-bg);
+            border-radius: var(--card-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .tool-card h3 {
+            background: var(--gradient);
+            color: white;
+            padding: 1.25rem 1.5rem;
+            font-size: 1.4rem;
+            margin: 0;
+            letter-spacing: -0.3px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tool-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50% 0 0 0;
+        }
+        
+        .tool-content {
+            padding: 1.75rem;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        .feature-list {
+            margin-bottom: 1.5rem;
+        }
+        
+        .standout-title {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .standout-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        .note {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            margin-top: 1rem;
+            padding-top: 0.5rem;
+            border-top: 1px dashed rgba(0,0,0,0.1);
+            font-style: italic;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
+            margin: var(--section-spacing) 0;
+            opacity: 0.3;
+            position: relative;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            border: 3px solid var(--background-color);
+        }
+        
+        .trends {
+            background: var(--card-bg);
+            border-radius: var(--card-radius);
+            box-shadow: var(--box-shadow);
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .trends::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--gradient);
+        }
+        
+        .trend-item {
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .trend-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .trend-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 5px;
+            height: calc(100% - 10px);
+            background: var(--gradient);
+            opacity: 0.3;
+            border-radius: 5px;
+        }
+        
+        .trend-title {
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.3px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: var(--section-spacing);
+            padding: 3rem 2rem;
+            background: var(--primary-color);
+            color: rgba(255,255,255,0.85);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before, .footer::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .footer::before {
+            top: -100px;
+            left: -50px;
+        }
+        
+        .footer::after {
+            bottom: -100px;
+            right: -50px;
+        }
+
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --section-spacing: 4rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2.25rem;
+            }
+            
+            header {
+                padding: 4rem 0 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .trends {
+                padding: 2rem;
+            }
+            
+            body {
+                padding-top: 3rem;
+            }
+            
+            .nav-container {
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+                padding: 0.5rem;
+                position: fixed;
+                top: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .intro {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .tool-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        /* Additional CSS for new sections */
+        .spotlight-section, .governance-section {
+            margin-bottom: var(--section-spacing);
+            position: relative;
+        }
+        
+        .spotlight-content, .governance-grid {
+            margin-top: 2rem;
+        }
+        
+        .spotlight-intro {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--card-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2.5rem;
+            border-left: 5px solid var(--secondary-color);
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        
+        .feature-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-item {
+            background: var(--card-bg);
+            border-radius: var(--card-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .feature-header {
+            background: var(--gradient);
+            color: white;
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .feature-number {
+            background: rgba(255,255,255,0.2);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        .feature-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .feature-points {
+            padding: 1.5rem;
+            list-style-type: none;
+        }
+        
+        .feature-points li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-points li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .feature-points li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            width: 8px;
+            height: 8px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+        }
+        
+        .conclusion-box {
+            background: linear-gradient(to right, rgba(30, 58, 138, 0.05), rgba(14, 165, 233, 0.05));
+            border-radius: var(--card-radius);
+            padding: 1.75rem;
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 1.2rem;
+            position: relative;
+            border: 1px solid rgba(14, 165, 233, 0.1);
+        }
+        
+        .conclusion-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: var(--card-radius) var(--card-radius) 0 0;
+        }
+        
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .governance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .governance-card {
+            background: var(--card-bg);
+            border-radius: var(--card-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .governance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .card-header {
+            background: var(--gradient);
+            color: white;
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .card-number {
+            background: rgba(255,255,255,0.2);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .governance-points {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .governance-points li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .governance-points li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .governance-points li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            width: 8px;
+            height: 8px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+        }
+        
+        .nested-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid rgba(14, 165, 233, 0.2);
+        }
+        
+        .nested-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .nested-item h4 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .key-takeaway {
+            background: linear-gradient(to right, rgba(249, 115, 22, 0.05), rgba(249, 115, 22, 0.01));
+            border-radius: var(--card-radius);
+            padding: 1.75rem;
+            margin-top: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            position: relative;
+            border: 1px solid rgba(249, 115, 22, 0.1);
+        }
+        
+        .takeaway-icon {
+            background: var(--accent-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: white;
+            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+        }
+        
+        .takeaway-content h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .takeaway-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .cta-box {
+            background: var(--card-bg);
+            border-radius: var(--card-radius);
+            padding: 1.75rem;
+            margin-top: 2.5rem;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            border-top: 5px solid var(--primary-color);
+        }
+        
+        .cta-link {
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-decoration: none;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .cta-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--secondary-color);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .cta-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        /* Know More Button Styling */
+        .know-more-btn {
+            display: inline-block;
+            margin-top: 1.25rem;
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(135deg, var(--secondary-color), #2563eb);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+            width: 100%;
+            text-align: center;
+        }
+        
+        .know-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+            background: linear-gradient(135deg, #2563eb, var(--secondary-color));
+        }
+        
+        .know-more-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+        }
+        
+        @media (max-width: 1024px) {
+            .feature-breakdown {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .spotlight-intro, .conclusion-box, .key-takeaway, .cta-box {
+                padding: 1.5rem;
+            }
+            
+            .governance-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-breakdown {
+                gap: 1.5rem;
+            }
+        }
+        
+        /* Replace sticky table of contents styling with horizontal navigation */
+        .toc-container {
+            position: fixed;
+            top: 30%;
+            right: 20px;
+            z-index: 1000;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1rem;
+            transform: translateX(calc(100% - 50px));
+            transition: transform 0.3s ease;
+            max-width: 300px;
+        }
+        
+        .toc-container:hover,
+        .toc-container.active {
+            transform: translateX(0);
+        }
+        
+        .toc-toggle {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(-100%, -50%);
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px 0 0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .toc-header {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            border-bottom: 2px solid rgba(14, 165, 233, 0.2);
+            padding-bottom: 0.5rem;
+        }
+        
+        .toc-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc-list li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .toc-list li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .toc-list a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+        }
+        
+        .toc-list a:hover {
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .toc-sublist {
+            list-style: none;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .toc-sublist li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* New navigation bar styling - Completely replace all navigation CSS */
+        .nav-container {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding: 0;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 2000;
+            transition: all 0.3s ease;
+            margin: 0;
+            width: 100%;
+        }
+        
+        .nav-wrapper {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 2rem;
+        }
+        
+        .nav-spacer {
+            height: 4rem;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 1.2rem 1.5rem;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+            white-space: nowrap;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-link.active {
+            color: var(--secondary-color);
+            position: relative;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .nav-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            min-width: 220px;
+            padding: 0.75rem 0;
+            z-index: 100;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover .nav-dropdown {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .dropdown-link {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-link:hover {
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--secondary-color);
+            padding-left: 1.75rem;
+        }
+        
+        .dropdown-divider {
+            height: 1px;
+            background: rgba(0,0,0,0.05);
+            margin: 0.5rem 0;
+        }
+        
+        @media (max-width: 992px) {
+            .nav-link {
+                padding: 1rem 1.2rem;
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+                padding: 0.5rem;
+                position: fixed;
+                top: 0;
+            }
+            
+            .nav-list {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+            }
+            
+            .nav-link {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .nav-dropdown {
+                position: fixed;
+                top: auto;
+                left: 0;
+                right: 0;
+                width: 100%;
+                max-width: 100%;
+                border-radius: 0;
+            }
+        }
+        
+        /* Search Bar */
+        .search-container {
+            margin: 2rem auto;
+            max-width: 600px;
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: none;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            padding-left: 3rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 5px 20px rgba(14, 165, 233, 0.15);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+        
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            color: var(--light-text);
+        }
+        
+        .subcategory-title {
+            color: var(--primary-color);
+            margin: 2.5rem 0 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .subcategory-title::before {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+        }
+        
+        .hide-element {
+            display: none;
+        }
+        
+        .header-padding {
+            padding-top: 2rem;
+        }
+        
+        /* Add styles for visual badges, comparison tables, and screenshots */
+        .badge {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+            background: var(--gradient);
+            box-shadow: 0 3px 8px rgba(14, 165, 233, 0.2);
+        }
+        
+        .badge.primary {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+        
+        .badge.success {
+            background: linear-gradient(135deg, #10b981, #047857);
+        }
+        
+        .badge.warning {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+        
+        .badge.info {
+            background: linear-gradient(135deg, #0ea5e9, #0369a1);
+        }
+        
+        .badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            margin-top: -0.5rem;
+        }
+        
+        .demo-link {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(0,0,0,0.1);
+            font-weight: 500;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .demo-link i {
+            margin-right: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .demo-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Comparison table styles */
+        .comparison-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .comparison-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+        
+        .comparison-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--light-text);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 4rem;
+            background: white;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .comparison-table thead th {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+        }
+        
+        .comparison-table thead th:first-child {
+            border-radius: var(--card-radius) 0 0 0;
+        }
+        
+        .comparison-table thead th:last-child {
+            border-radius: 0 var(--card-radius) 0 0;
+        }
+        
+        .comparison-table tbody tr:nth-child(even) {
+            background: rgba(0,0,0,0.02);
+        }
+        
+        .comparison-table tbody td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            vertical-align: top;
+        }
+        
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tbody tr:last-child td:first-child {
+            border-radius: 0 0 0 var(--card-radius);
+        }
+        
+        .comparison-table tbody tr:last-child td:last-child {
+            border-radius: 0 0 var(--card-radius) 0;
+        }
+        
+        .comparison-category {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .screenshot-container {
+            margin-top: 1rem;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(59, 130, 246, 0.1));
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--secondary-color);
+            font-weight: 500;
+            border-radius: var(--border-radius);
+            border: 1px dashed rgba(14, 165, 233, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .comparison-table thead th,
+            .comparison-table tbody td {
+                padding: 1rem;
+            }
+        }
+        
+        /* Comparison Tables Styles */
+        .comparison-section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .comparison-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+            font-size: 2rem;
+        }
+        
+        .comparison-container {
+            margin-bottom: 3rem;
+        }
+        
+        .comparison-container h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .comparison-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            text-align: left;
+            padding: 12px 15px;
+        }
+        
+        .comparison-table tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-table th:first-child,
+        .comparison-table td:first-child {
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .comparison-table-container {
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background-color: #2c3e50;
+            color: white;
+            text-align: left;
+            padding: 15px;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .comparison-title {
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            font-size: 1.4rem;
+        }
+        
+        /* Badge Styles */
+        .badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 12px;
+        }
+        
+        .badge {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-weight: 500;
+            background-color: #f0f0f0;
+            color: #555;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .badge.enterprise {
+            background-color: #e1f5fe;
+            color: #0277bd;
+        }
+        
+        .badge.ai {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .badge.cloud {
+            background-color: #fff8e1;
+            color: #ff8f00;
+        }
+        
+        .badge.compliance {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        
+        .badge.leader {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        
+        /* Comparison Table Styles */
+        .comparison-section {
+            margin: 60px 0;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .comparison-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 28px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        .comparison-table th {
+            background-color: #f5f7fa;
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #e0e0e0;
+            color: #444;
+        }
+        
+        .comparison-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eaeaea;
+            vertical-align: top;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #fbfbfb;
+        }
+        
+        .comparison-table .tool-name {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .comparison-table .check-green {
+            color: #4caf50;
+        }
+        
+        .comparison-table .check-red {
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-wrapper">
+        <nav class="nav-container">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#governance-tools" class="nav-link" id="governance-tools">1. Governance Tools</a>
+                    <div class="nav-dropdown">
+                        <a href="#data-governance" class="dropdown-link">Data Governance</a>
+                        <a href="#policy-management" class="dropdown-link">Policy Management</a>
+                        <a href="#board-governance" class="dropdown-link">Board Governance</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#risk-management" class="nav-link">2. Risk Management</a>
+                    <div class="nav-dropdown">
+                        <a href="#enterprise-risk" class="dropdown-link">Enterprise Risk Management</a>
+                        <a href="#cybersecurity-risk" class="dropdown-link">Cybersecurity Risk</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#audit-tools" class="nav-link">3. Audit Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#compliance-tools" class="nav-link">4. Compliance Tools</a>
+                    <div class="nav-dropdown">
+                        <a href="#regulatory-compliance" class="dropdown-link">Regulatory Compliance</a>
+                        <a href="#ethics-privacy" class="dropdown-link">Ethics & Privacy Compliance</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#grc-platforms" class="nav-link">5. GRC Platforms</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#trends" class="nav-link">Key Trends</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#secureframe" class="nav-link">Secureframe</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="container">
+        <header class="header-padding">
+            <h1>Top GRC Tools in 2025</h1>
+            <p class="intro">A curated list of the best GRC-related tools widely used globally in 2025, categorized by governance, risk management, audit, compliance, and comprehensive GRC platforms. The list is based on industry adoption, features, and relevance to modern regulatory demands.</p>
+        </header>
+        
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search tools, features, or compliance frameworks...">
+        </div>
+        
+        <div class="no-results">
+            <p>No matching tools found. Try a different search term.</p>
+        </div>
+        
+        <section id="governance-tools">
+            <h2 class="section-title">1. Governance Tools</h2>
+            <p class="section-description">Focused on data integrity, policy enforcement, and organizational alignment.</p>
+            
+            <h3 id="data-governance" class="subcategory-title">Data Governance</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>Collibra</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge primary">🏆 Enterprise</span>
+                            <span class="badge info">🔍 Best for Data Lineage</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Data lineage tracking, policy automation, centralized business glossary.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Leader in data cataloging and lineage, used by 500+ enterprises (JPMorgan, Pfizer).</p>
+                        <a href="https://www.collibra.com" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.collibra.com/demo" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> Watch Demo</a>
+                        <div class="screenshot-container">
+                            <div class="screenshot-placeholder">
+                                <i class="fas fa-desktop"></i> Collibra Dashboard Interface
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>IBM Cloud Pak for Data</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge info">🔄 Hybrid Cloud</span>
+                            <span class="badge primary">🚀 Enterprise-grade</span>
+                            <span class="badge warning">🌐 Global</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">End-to-end data governance, AI model monitoring, compliance reporting.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>AI-driven governance for hybrid cloud, adopted by 80% of Fortune 100 companies.</p>
+                        <a href="https://www.ibm.com/cloud/cloud-pak-for-data" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.ibm.com/demos/collection/Cloud-Pak-for-Data/" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> View Demos</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>Alation</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge success">🔍 AI-driven</span>
+                            <span class="badge warning">💬 Collaborative</span>
+                            <span class="badge">🔥 Trending</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">AI-driven data cataloging, automated workflows, collaboration tools.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Integrates metadata management with machine learning for proactive governance.</p>
+                        <a href="https://www.alation.com" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.alation.com/demo/" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> Request Demo</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>Informatica</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge primary">🏢 Enterprise Favorite</span>
+                            <span class="badge info">🔄 Metadata Mgmt</span>
+                            <span class="badge warning">🌐 Global</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Enterprise data catalog, metadata management, data quality management.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Unified data governance with 7,000+ global customers (Unilever, AstraZeneca).</p>
+                        <a href="https://www.informatica.com" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.informatica.com/solutions/data-governance-and-compliance.html" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> Explore Solutions</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>Ataccama</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge success">🔄 Unified Quality</span>
+                            <span class="badge">⚡ Self-service</span>
+                            <span class="badge primary">📊 Mid-Market</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Unified data quality and governance, self-service automation.</p>
+                        <p class="feature-list">Policy creation, version control, distribution automation.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Customizable policy workflows, trusted by Coca-Cola and Roche.</p>
+                        <a href="https://www.ataccama.com" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.ataccama.com/request-demo" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> View Product Tour</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>PowerDMS</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge info">📝 Policy-focused</span>
+                            <span class="badge warning">🏛️ Government</span>
+                            <span class="badge success">🏥 Healthcare</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Policy distribution, e-signatures, compliance tracking.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Specializes in policy compliance for healthcare/government (NASA, Mayo Clinic).</p>
+                        <a href="https://www.powerdms.com" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.powerdms.com/demo" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> Request Demo</a>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 id="policy-management" class="subcategory-title">Policy Management</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>OneTrust</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge primary">🏆 Market Leader</span>
+                            <span class="badge info">🔄 Policy Automation</span>
+                            <span class="badge warning">🌐 Enterprise</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Automated policy management, workflow automation, compliance tracking.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Used by 12,000+ organizations for policy automation (Salesforce, LG).</p>
+                        <a href="https://www.onetrust.com" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.onetrust.com/demo-request" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> Request Demo</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>LogicGate</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge success">🔄 Workflow Management</span>
+                            <span class="badge primary">⚙️ Customizable</span>
+                            <span class="badge warning">🏢 Enterprise</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Policy creation, version control, distribution automation.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Customizable policy workflows, trusted by Coca-Cola and Roche.</p>
+                        <a href="https://www.logicgate.com" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.logicgate.com/demo-request" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> Request Demo</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>PowerDMS</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge info">📝 Policy-focused</span>
+                            <span class="badge warning">🏛️ Government</span>
+                            <span class="badge success">🏥 Healthcare</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Policy distribution, e-signatures, compliance tracking.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Specializes in policy compliance for healthcare/government (NASA, Mayo Clinic).</p>
+                        <a href="https://www.powerdms.com" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.powerdms.com/demo" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> Request Demo</a>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 id="board-governance" class="subcategory-title">Board Governance</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>Diligent</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge primary">🏆 Market Leader</span>
+                            <span class="badge info">🔒 Secure</span>
+                            <span class="badge warning">🏢 Fortune 1000</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Board management, secure collaboration, meeting management.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>#1 board portal software, used by 70% of Fortune 1000 companies.</p>
+                        <a href="https://www.diligent.com" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.diligent.com/request-demo" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> Request Demo</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>Nasdaq Boardvantage</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge primary">🏢 Public Companies</span>
+                            <span class="badge info">📊 Governance</span>
+                            <span class="badge warning">🔒 Enterprise Security</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Board portal, secure document sharing, virtual meetings.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Secure board collaboration tool, trusted by 4,500+ organizations.</p>
+                        <a href="https://www.nasdaq.com/boardvantage" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.nasdaq.com/solutions/boardvantage" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>OnBoard (by Passageways)</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge success">👍 User-Friendly</span>
+                            <span class="badge">💼 Mid-Market</span>
+                            <span class="badge info">🌐 Global Use</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Meeting agenda builder, governance workflows, secure voting.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Intuitive interface for board meetings, used by FedEx and Rolls-Royce.</p>
+                        <a href="https://www.onboardmeetings.com" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.onboardmeetings.com/demo" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> Request Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
+        
+        <section id="risk-management">
+            <h2 class="section-title">2. Risk Management Tools</h2>
+            <p class="section-description">Designed to identify, assess, and mitigate risks across IT and operations.</p>
+            
+            <h3 id="enterprise-risk" class="subcategory-title">Enterprise Risk Management (ERM)</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>LogicManager</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge primary">🔍 Risk Assessment</span>
+                            <span class="badge info">📊 Analytics Driven</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Risk taxonomy frameworks, scenario planning, real-time dashboards.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Structured approach for enterprise risk management (ERM).</p>
+                        <a href="https://www.logicmanager.com" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>ServiceNow IRM</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge success">🔄 Integrated Workflows</span>
+                            <span class="badge warning">🛡️ Threat Intelligence</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Integrated risk workflows, audit automation, threat intelligence.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Unifies IT, operational, and strategic risk management.</p>
+                        <a href="https://www.servicenow.com/products/risk-management.html" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>Archer IRM</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge primary">🏢 Enterprise-scale</span>
+                            <span class="badge info">📏 Risk Quantification</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Risk quantification, incident management, compliance alignment.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Scalable for large enterprises with complex risk landscapes.</p>
+                        <a href="https://www.archerirm.com" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 id="cybersecurity-risk" class="subcategory-title">Cybersecurity Risk</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>Tenable Vulnerability Management</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge warning">🔒 Cyber Security</span>
+                            <span class="badge success">🔄 Continuous Scanning</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Continuous vulnerability scanning, risk prioritization, asset discovery.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Top choice for IT security teams to address cyber risks.</p>
+                        <a href="https://www.tenable.com/products/tenable-vm" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>ProcessUnity</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge info">🤝 Vendor Risk</span>
+                            <span class="badge primary">🔄 Automated Workflows</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Third-party risk assessments, compliance tracking, automated workflows.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Specializes in vendor risk management.</p>
+                        <a href="https://www.processunity.com" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>Qualys</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge success">☁️ Cloud-based</span>
+                            <span class="badge warning">🔍 Vulnerability Scanning</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Cloud-based vulnerability management, continuous monitoring, compliance tracking.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Pioneer in cloud-based security with enterprise-grade scanning capabilities.</p>
+                        <a href="https://www.qualys.com" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
+        
+        <section id="audit-tools">
+            <h2 class="section-title">3. Audit Tools</h2>
+            <p class="section-description">Streamline audit workflows, documentation, and compliance verification.</p>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>AuditBoard</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge primary">🏆 Best for SOX Compliance</span>
+                            <span class="badge info">👥 Team Collaboration</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Audit lifecycle management, SOX compliance, real-time collaboration.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>User-friendly interface with strong reporting capabilities.</p>
+                        <a href="https://www.auditboard.com" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.auditboard.com/demo" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> Request Live Demo</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>MetricStream</h3>
+                    <div class="tool-content">
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Audit workflows, issue tracking, regulatory change management.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Integrates audits with broader GRC strategies.</p>
+                        <a href="https://www.metricstream.com" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>ProcessUnity</h3>
+                    <div class="tool-content">
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Automated audit trails, vendor risk reporting.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Dual functionality for internal and third-party audits.</p>
+                        <p class="note">(also listed under Risk Management)</p>
+                        <a href="https://www.processunity.com" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>Workiva</h3>
+                    <div class="tool-content">
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Audit documentation, collaborative report creation, control testing.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Cloud platform for connected reporting and compliance, trusted by 85% of Fortune 500.</p>
+                        <a href="https://www.workiva.com" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
+        
+        <section id="compliance-tools">
+            <h2 class="section-title">4. Compliance Tools</h2>
+            <p class="section-description">Ensure adherence to regulations like GDPR, HIPAA, and industry standards.</p>
+            
+            <h3 id="regulatory-compliance" class="subcategory-title">Regulatory Compliance</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>SAP Master Data Governance</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge primary">🏛️ Enterprise Grade</span>
+                            <span class="badge info">🔄 Centralized Control</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Centralized data control, regulatory reporting, role-based access.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Ideal for SAP ecosystem users.</p>
+                        <a href="https://www.sap.com/products/master-data-governance.html" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>Holistic AI</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge warning">🧠 AI Ethics</span>
+                            <span class="badge primary">🇪🇺 EU AI Act Ready</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Bias detection, EU AI Act compliance, ethical AI frameworks.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Specializes in AI governance and regulatory alignment.</p>
+                        <a href="https://www.holisticai.com" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>Secureframe</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge success">🚀 Fast Implementation</span>
+                            <span class="badge warning">🤖 AI-Powered</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Automated compliance for SOC 2, ISO 27001, HIPAA, and PCI DSS.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Continuous monitoring with automated evidence collection.</p>
+                        <a href="https://www.secureframe.com" target="_blank" class="know-more-btn">Know More</a>
+                        <a href="https://www.secureframe.com/request-demo" target="_blank" class="demo-link"><i class="fas fa-play-circle"></i> Schedule Demo</a>
+                        <div class="screenshot-container">
+                            <div class="screenshot-placeholder">
+                                <i class="fas fa-desktop"></i> Secureframe Dashboard Preview
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>Vanta</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge success">🔄 Continuous Monitoring</span>
+                            <span class="badge info">🔌 400+ Integrations</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Automated security monitoring, compliance readiness, vendor management.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Streamlines SOC 2, ISO 27001, and HIPAA compliance with 400+ integrations.</p>
+                        <a href="https://www.vanta.com" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 id="ethics-privacy" class="subcategory-title">Ethics & Privacy Compliance</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>OneTrust</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge primary">🔒 Privacy Leader</span>
+                            <span class="badge warning">🍪 Consent Management</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Privacy management, consent tracking, automated compliance mapping.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Leader in privacy and ethics compliance.</p>
+                        <a href="https://www.onetrust.com" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>TrustArc</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge info">🌐 Global Privacy</span>
+                            <span class="badge success">📋 Comprehensive Policies</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Privacy assessment, data inventory, regulatory compliance management.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Specialized in global privacy regulations with comprehensive policy management.</p>
+                        <a href="https://www.trustarc.com" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
+        
+        <section id="grc-platforms">
+            <h2 class="section-title">5. Comprehensive GRC Platforms</h2>
+            <p class="section-description">All-in-one solutions for governance, risk, and compliance.</p>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>ServiceNow IRM</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge primary">🔄 Unified Platform</span>
+                            <span class="badge warning">🛡️ Threat Intelligence</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Integrated risk workflows, audit automation, threat intelligence.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Unifies IT, operational, and strategic risk management.</p>
+                        <a href="https://www.servicenow.com/products/risk-management.html" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>IBM OpenPages</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge info">🏦 Financial Services</span>
+                            <span class="badge success">🤖 AI-Driven Insights</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">Policy management, regulatory compliance, AI-driven insights.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Robust for financial services and highly regulated sectors.</p>
+                        <a href="https://www.ibm.com/products/openpages" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>MetricStream</h3>
+                    <div class="tool-content">
+                        <div class="badges-container">
+                            <span class="badge warning">🏥 Healthcare Ready</span>
+                            <span class="badge primary">⚡ Energy Sector</span>
+                        </div>
+                        <p class="feature-title">Key Features:</p>
+                        <p class="feature-list">GRC workflows, audit management, risk analytics.</p>
+                        <p class="standout-title">Why It Stands Out:</p>
+                        <p>Flexible for industries like healthcare and energy.</p>
+                        <a href="https://www.metricstream.com" target="_blank" class="know-more-btn">Know More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
+        
+        <section id="trends" class="trends">
+            <h2 class="section-title">Key Trends Shaping GRC Tools in 2025</h2>
+            
+            <div class="trend-item">
+                <p class="trend-title">AI Integration</p>
+                <p>Tools like Alation and Holistic AI use machine learning for predictive risk analysis and bias detection.</p>
+            </div>
+            
+            <div class="trend-item">
+                <p class="trend-title">Cloud-Native Solutions</p>
+                <p>Platforms like IBM Cloud Pak and Ataccama prioritize scalability for hybrid environments.</p>
+            </div>
+            
+            <div class="trend-item">
+                <p class="trend-title">Automation</p>
+                <p>Workflow automation in LogicGate and Nintex reduces manual tasks in compliance and audits.</p>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
+        
+        <section id="secureframe" class="spotlight-section">
+            <h2 class="section-title">Secureframe's Category in GRC</h2>
+            <p class="section-description">A comprehensive analysis of Secureframe's position in the GRC ecosystem.</p>
+            
+            <div class="spotlight-content">
+                <div class="spotlight-intro">
+                    <p>Secureframe operates as a <span class="highlight">comprehensive GRC platform</span> that spans multiple categories, including governance, risk management, compliance, and audit tools. Its features and integrations position it as an <span class="highlight">all-in-one solution</span> for organizations managing governance, risk, and compliance.</p>
+                </div>
+                
+                <div class="feature-breakdown">
+                    <div class="feature-item">
+                        <div class="feature-header">
+                            <span class="feature-number">1</span>
+                            <h3>Governance Tools</h3>
+                        </div>
+                        <ul class="feature-points">
+                            <li>Focuses on <span class="highlight">cybersecurity governance</span> (e.g., NIST, CMMC frameworks) and <span class="highlight">data governance</span> (policy creation, access controls).</li>
+                            <li>Provides automated workflows for policy management, employee training, and vendor risk assessments.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-header">
+                            <span class="feature-number">2</span>
+                            <h3>Risk Management</h3>
+                        </div>
+                        <ul class="feature-points">
+                            <li>Offers AI-driven risk assessments, control mapping, and real-time dashboards for tracking risks.</li>
+                            <li>Links risks to controls and frameworks like ISO 27001 and SOC 2.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-header">
+                            <span class="feature-number">3</span>
+                            <h3>Compliance & Audit Tools</h3>
+                        </div>
+                        <ul class="feature-points">
+                            <li>Automates evidence collection, continuous monitoring, and audit readiness for standards like SOC 2, ISO 27001, HIPAA, and PCI DSS.</li>
+                            <li>Streamlines vendor risk management and compliance reporting.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-header">
+                            <span class="feature-number">4</span>
+                            <h3>Comprehensive GRC Platform</h3>
+                        </div>
+                        <ul class="feature-points">
+                            <li>Integrates governance, risk, and compliance into a single platform with AI-powered automation (e.g., Comply AI for remediation, policy drafting, and third-party risk management).</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="conclusion-box">
+                    <p><strong>Conclusion:</strong> Secureframe is best categorized as an <span class="highlight">"overall GRC tool"</span> that unifies governance, risk, compliance, and audit functionalities.</p>
+                    <a href="https://www.secureframe.com" target="_blank" class="know-more-btn" style="max-width: 200px; margin: 1.5rem auto 0;">Explore Secureframe</a>
+                </div>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
+        
+        <section class="governance-section">
+            <h2 class="section-title">Data Governance in GRC & Other Governance Tools</h2>
+            <p class="section-description">Understanding the role of data governance in the broader GRC landscape.</p>
+            
+            <div class="governance-grid">
+                <div class="governance-card">
+                    <div class="card-header">
+                        <span class="card-number">1</span>
+                        <h3>Data Governance in GRC</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul class="governance-points">
+                            <li>Data governance is a <span class="highlight">core component of GRC</span>, focusing on managing data integrity, access, and compliance with regulations like GDPR or HIPAA.</li>
+                            <li>Tools like Secureframe include data governance features such as policy libraries, automated evidence collection, and access tracking.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="governance-card">
+                    <div class="card-header">
+                        <span class="card-number">2</span>
+                        <h3>Other Governance Tools</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="nested-item">
+                            <h4>Cybersecurity Governance Tools:</h4>
+                            <p>Manage frameworks like NIST CSF, ISO 27001, and CMMC (e.g., Secureframe's automated cloud infrastructure scanning).</p>
+                        </div>
+                        <div class="nested-item">
+                            <h4>Policy Management Tools:</h4>
+                            <p>Develop and enforce organizational policies (e.g., Secureframe's AI-generated policy templates).</p>
+                        </div>
+                        <div class="nested-item">
+                            <h4>Board & Operational Governance Tools:</h4>
+                            <p>Oversight mechanisms for strategic alignment (e.g., dashboards for tracking compliance metrics and risk heatmaps).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="governance-card">
+                    <div class="card-header">
+                        <span class="card-number">3</span>
+                        <h3>Specialized Data Governance Tools</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>While Secureframe integrates data governance, standalone tools like <span class="highlight">Collibra</span> (data lineage tracking) and <span class="highlight">IBM Cloud Pak</span> (AI-driven metadata management) are also widely used in GRC.</p>
+                        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                            <a href="https://www.collibra.com" target="_blank" class="know-more-btn" style="flex: 1;">Collibra</a>
+                            <a href="https://www.ibm.com/cloud-pak" target="_blank" class="know-more-btn" style="flex: 1;">IBM Cloud Pak</a>
+                            <a href="https://www.informatica.com" target="_blank" class="know-more-btn" style="flex: 1;">Informatica</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="key-takeaway">
+                <div class="takeaway-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+                <div class="takeaway-content">
+                    <h4>Key Takeaway:</h4>
+                    <p>Data governance is integral to GRC, but organizations often combine specialized tools (e.g., Collibra) with comprehensive platforms like Secureframe for holistic governance.</p>
+                </div>
+            </div>
+            
+            <div class="cta-box">
+                <p>For further details, explore Secureframe's features on their <a href="https://secureframe.com" class="cta-link" target="_blank">website</a> or review their compliance frameworks.</p>
+                <a href="https://www.secureframe.com" target="_blank" class="know-more-btn" style="max-width: 200px; margin: 1.5rem auto 0;">Visit Secureframe</a>
+            </div>
+        </section>
+
+        <!-- Comparison Tables Section -->
+        <section id="comparison-tables" class="comparison-section">
+            <h2 class="comparison-title">Tool Comparison Tables</h2>
+            <p class="comparison-subtitle">Detailed comparisons of similar tools across different categories to help you make informed decisions.</p>
+            
+            <div class="comparison-container">
+                <h3>Governance Tools Comparison</h3>
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Collibra</th>
+                                <th>Informatica</th>
+                                <th>IBM Cloud Pak</th>
+                                <th>Alation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Best Use Case</td>
+                                <td>Enterprise Data Governance</td>
+                                <td>Enterprise Metadata Management</td>
+                                <td>Hybrid Cloud Environments</td>
+                                <td>Data Discovery & Cataloging</td>
+                            </tr>
+                            <tr>
+                                <td>Deployment</td>
+                                <td>Cloud & On-Premise</td>
+                                <td>Cloud & On-Premise</td>
+                                <td>Hybrid Cloud</td>
+                                <td>Cloud & On-Premise</td>
+                            </tr>
+                            <tr>
+                                <td>AI Capabilities</td>
+                                <td>Advanced</td>
+                                <td>Advanced</td>
+                                <td>Very Advanced (Watson)</td>
+                                <td>Advanced</td>
+                            </tr>
+                            <tr>
+                                <td>Data Lineage</td>
+                                <td>✅ Comprehensive</td>
+                                <td>✅ Comprehensive</td>
+                                <td>✅ Advanced</td>
+                                <td>⚠️ Basic</td>
+                            </tr>
+                            <tr>
+                                <td>Pricing</td>
+                                <td>$$$$ (Enterprise)</td>
+                                <td>$$$$ (Enterprise)</td>
+                                <td>$$$$ (Enterprise)</td>
+                                <td>$$$ (Mid-Enterprise)</td>
+                            </tr>
+                            <tr>
+                                <td>Implementation Complexity</td>
+                                <td>High</td>
+                                <td>High</td>
+                                <td>Very High</td>
+                                <td>Medium</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="comparison-container">
+                <h3>Board Management Tools Comparison</h3>
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Diligent</th>
+                                <th>Nasdaq Boardvantage</th>
+                                <th>OnBoard</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Best For</td>
+                                <td>Fortune 1000 Companies</td>
+                                <td>Public Companies</td>
+                                <td>Mid-Market Organizations</td>
+                            </tr>
+                            <tr>
+                                <td>Secure Document Sharing</td>
+                                <td>✅ Military-grade encryption</td>
+                                <td>✅ Enterprise-grade</td>
+                                <td>✅ Standard</td>
+                            </tr>
+                            <tr>
+                                <td>Meeting Management</td>
+                                <td>✅ Comprehensive</td>
+                                <td>✅ Comprehensive</td>
+                                <td>✅ Comprehensive</td>
+                            </tr>
+                            <tr>
+                                <td>Voting Tools</td>
+                                <td>✅ Advanced</td>
+                                <td>✅ Advanced</td>
+                                <td>✅ Standard</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile Experience</td>
+                                <td>✅ Excellent</td>
+                                <td>✅ Very Good</td>
+                                <td>✅ Excellent</td>
+                            </tr>
+                            <tr>
+                                <td>Pricing</td>
+                                <td>$$$$ (Premium)</td>
+                                <td>$$$ (High)</td>
+                                <td>$$ (Moderate)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="comparison-container">
+                <h3>Risk Management Tools Comparison</h3>
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>LogicManager</th>
+                                <th>ServiceNow IRM</th>
+                                <th>Archer IRM</th>
+                                <th>Tenable</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Risk Type Focus</td>
+                                <td>Enterprise Risk</td>
+                                <td>IT & Operational Risk</td>
+                                <td>Enterprise & Regulatory Risk</td>
+                                <td>Cybersecurity Risk</td>
+                            </tr>
+                            <tr>
+                                <td>Risk Quantification</td>
+                                <td>✅ Advanced</td>
+                                <td>✅ Advanced</td>
+                                <td>✅ Very Advanced</td>
+                                <td>⚠️ Limited (Security focus)</td>
+                            </tr>
+                            <tr>
+                                <td>Integration Capabilities</td>
+                                <td>✅ Good</td>
+                                <td>✅ Excellent (ServiceNow ecosystem)</td>
+                                <td>✅ Good</td>
+                                <td>✅ Good (Security tools)</td>
+                            </tr>
+                            <tr>
+                                <td>Automated Workflows</td>
+                                <td>✅ Yes</td>
+                                <td>✅ Yes</td>
+                                <td>✅ Yes</td>
+                                <td>⚠️ Limited</td>
+                            </tr>
+                            <tr>
+                                <td>Real-time Monitoring</td>
+                                <td>⚠️ Limited</td>
+                                <td>✅ Yes</td>
+                                <td>✅ Yes</td>
+                                <td>✅ Yes</td>
+                            </tr>
+                            <tr>
+                                <td>Pricing Model</td>
+                                <td>Per module</td>
+                                <td>Per user + platform</td>
+                                <td>Per module + users</td>
+                                <td>Per asset</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="comparison-container">
+                <h3>Audit Tools Comparison</h3>
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>AuditBoard</th>
+                                <th>MetricStream</th>
+                                <th>Workiva</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Specialization</td>
+                                <td>SOX Compliance</td>
+                                <td>GRC Integration</td>
+                                <td>Financial Reporting & Audit</td>
+                            </tr>
+                            <tr>
+                                <td>User Interface</td>
+                                <td>✅ Intuitive</td>
+                                <td>⚠️ Complex</td>
+                                <td>✅ Intuitive</td>
+                            </tr>
+                            <tr>
+                                <td>Collaboration Features</td>
+                                <td>✅ Excellent</td>
+                                <td>✅ Good</td>
+                                <td>✅ Excellent</td>
+                            </tr>
+                            <tr>
+                                <td>Workflow Automation</td>
+                                <td>✅ Advanced</td>
+                                <td>✅ Advanced</td>
+                                <td>✅ Advanced</td>
+                            </tr>
+                            <tr>
+                                <td>Analytics & Reporting</td>
+                                <td>✅ Comprehensive</td>
+                                <td>✅ Very Comprehensive</td>
+                                <td>✅ Comprehensive (Financial focus)</td>
+                            </tr>
+                            <tr>
+                                <td>Pricing</td>
+                                <td>$$$ (Module-based)</td>
+                                <td>$$$$ (Enterprise)</td>
+                                <td>$$$ (User-based)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="comparison-container">
+                <h3>Compliance Tools Comparison</h3>
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Secureframe</th>
+                                <th>Vanta</th>
+                                <th>OneTrust</th>
+                                <th>TrustArc</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Best For</td>
+                                <td>Security Compliance</td>
+                                <td>Tech Companies</td>
+                                <td>Privacy Compliance</td>
+                                <td>Privacy Management</td>
+                            </tr>
+                            <tr>
+                                <td>Top Frameworks</td>
+                                <td>SOC 2, ISO 27001, HIPAA</td>
+                                <td>SOC 2, ISO 27001</td>
+                                <td>GDPR, CCPA, Privacy</td>
+                                <td>GDPR, CPRA, Privacy</td>
+                            </tr>
+                            <tr>
+                                <td>Evidence Collection</td>
+                                <td>✅ Automated</td>
+                                <td>✅ Automated</td>
+                                <td>⚠️ Semi-automated</td>
+                                <td>⚠️ Semi-automated</td>
+                            </tr>
+                            <tr>
+                                <td>Continuous Monitoring</td>
+                                <td>✅ Yes</td>
+                                <td>✅ Yes</td>
+                                <td>⚠️ Limited</td>
+                                <td>⚠️ Limited</td>
+                            </tr>
+                            <tr>
+                                <td>AI Capabilities</td>
+                                <td>✅ Advanced (Comply AI)</td>
+                                <td>⚠️ Limited</td>
+                                <td>✅ Good</td>
+                                <td>⚠️ Limited</td>
+                            </tr>
+                            <tr>
+                                <td>Pricing</td>
+                                <td>$$$ (Framework-based)</td>
+                                <td>$$$ (Framework-based)</td>
+                                <td>$$$$ (Module-based)</td>
+                                <td>$$$ (Module-based)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="comparison-container">
+                <h3>GRC Platforms Comparison</h3>
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>ServiceNow IRM</th>
+                                <th>IBM OpenPages</th>
+                                <th>MetricStream</th>
+                                <th>LogicGate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Target Market</td>
+                                <td>Enterprise (ServiceNow users)</td>
+                                <td>Large Enterprise</td>
+                                <td>Enterprise</td>
+                                <td>Mid-Market</td>
+                            </tr>
+                            <tr>
+                                <td>Industry Focus</td>
+                                <td>Cross-industry</td>
+                                <td>Financial Services</td>
+                                <td>Highly Regulated Industries</td>
+                                <td>Cross-industry</td>
+                            </tr>
+                            <tr>
+                                <td>Implementation Time</td>
+                                <td>6-12 months</td>
+                                <td>6-18 months</td>
+                                <td>6-12 months</td>
+                                <td>2-6 months</td>
+                            </tr>
+                            <tr>
+                                <td>Customization</td>
+                                <td>✅ Extensive</td>
+                                <td>✅ Extensive</td>
+                                <td>✅ Extensive</td>
+                                <td>✅ Good</td>
+                            </tr>
+                            <tr>
+                                <td>Integration Ecosystem</td>
+                                <td>✅ Excellent (ServiceNow)</td>
+                                <td>✅ Good (IBM ecosystem)</td>
+                                <td>⚠️ Moderate</td>
+                                <td>⚠️ Limited</td>
+                            </tr>
+                            <tr>
+                                <td>Pricing</td>
+                                <td>$$$$ (Enterprise)</td>
+                                <td>$$$$ (Enterprise)</td>
+                                <td>$$$$ (Enterprise)</td>
+                                <td>$$$ (Mid-market)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2025 GRC Tools Review. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Search functionality - Fixed version
+        const searchInput = document.querySelector('.search-input');
+        const toolCards = document.querySelectorAll('.tool-card');
+        const noResults = document.querySelector('.no-results');
+        const sections = document.querySelectorAll('section');
+        const subcategoryTitles = document.querySelectorAll('.subcategory-title');
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            let hasResults = false;
+            
+            if (searchTerm === '') {
+                // Reset visibility
+                toolCards.forEach(card => {
+                    card.style.display = '';
+                });
+                
+                sections.forEach(section => {
+                    section.style.display = '';
+                });
+                
+                subcategoryTitles.forEach(title => {
+                    title.style.display = '';
+                });
+                
+                noResults.style.display = 'none';
+                return;
+            }
+            
+            // Search with more relaxed matching
+            toolCards.forEach(card => {
+                const cardText = card.textContent.toLowerCase();
+                
+                // Match if card contains search term OR if search term is at the beginning of any word
+                const isMatch = cardText.includes(searchTerm) || 
+                                cardText.split(/\s+/).some(word => word.startsWith(searchTerm));
+                
+                if (isMatch) {
+                    card.style.display = '';
+                    hasResults = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Update subcategory titles visibility
+            subcategoryTitles.forEach(title => {
+                const nextElement = title.nextElementSibling;
+                if (nextElement && nextElement.classList.contains('tools-grid')) {
+                    // Use direct style check for visibility
+                    const visibleCards = Array.from(nextElement.querySelectorAll('.tool-card'))
+                        .filter(card => card.style.display !== 'none');
+                    
+                    title.style.display = visibleCards.length > 0 ? '' : 'none';
+                }
+            });
+            
+            // Update section visibility
+            sections.forEach(section => {
+                // Use direct style check for visibility  
+                const visibleCards = Array.from(section.querySelectorAll('.tool-card'))
+                    .filter(card => card.style.display !== 'none');
+                
+                section.style.display = visibleCards.length > 0 ? '' : 'none';
+            });
+            
+            // Show "No results" message if needed
+            noResults.style.display = hasResults ? 'none' : 'block';
+        });
+        
+        // Active navigation link
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pageSections = document.querySelectorAll('section');
+        
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            pageSections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

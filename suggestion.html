@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise GRC Framework Advisor</title>
+    <link rel="stylesheet" href="css/suggestion.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add jsPDF for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Left Panel - Form -->
+        <div class="panel form-panel">
+            <div class="panel-content">
+                <div class="logo-container">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="logo-text"><a href="home.html">GRC Portal</a></div>
+                    </div>
+                    <div class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+
+                <div class="form-header">
+                    <h1>GRC Framework Advisor</h1>
+                    <p class="subtitle">Complete the assessment to receive tailored recommendations based on your organization's profile.</p>
+                </div>
+
+                <form id="grcForm" class="assessment-form">
+                    <div class="progress-bar">
+                        <div class="progress-step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-label">Profile</div>
+                        </div>
+                        <div class="progress-connector"></div>
+                        <div class="progress-step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-label">Finance</div>
+                        </div>
+                        <div class="progress-connector"></div>
+                        <div class="progress-step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-label">Data</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 1: Company Profile -->
+                    <div class="form-step active" data-step="1">
+                        <div class="step-header">
+                            <h2><span class="step-icon"><i class="fas fa-building"></i></span> Company Profile</h2>
+                            <p>Tell us about your organization's basic information</p>
+                        </div>
+
+                        <div class="form-group floating-label">
+                            <input type="text" id="companyName" name="companyName" required>
+                            <label for="companyName">Company Name</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="group-label">Company Size</label>
+                            <div class="option-cards radio-group" role="radiogroup">
+                                <label class="option-card" for="size-small">
+                                    <input type="radio" id="size-small" name="companySize" value="small" required>
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-user-friends"></i></div>
+                                        <div class="card-label">Small</div>
+                                        <div class="card-description">Less than 50 employees</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="size-medium">
+                                    <input type="radio" id="size-medium" name="companySize" value="medium" required>
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-users"></i></div>
+                                        <div class="card-label">Medium</div>
+                                        <div class="card-description">50-500 employees</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="size-large">
+                                    <input type="radio" id="size-large" name="companySize" value="large" required>
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-city"></i></div>
+                                        <div class="card-label">Large</div>
+                                        <div class="card-description">500+ employees</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="group-label">Geographical Presence</label>
+                            <div class="option-cards checkbox-group">
+                                <label class="option-card" for="region-india">
+                                    <input type="checkbox" id="region-india" name="regions" value="india">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                        <div class="card-label">India</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="region-eu">
+                                    <input type="checkbox" id="region-eu" name="regions" value="eu">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-globe-europe"></i></div>
+                                        <div class="card-label">European Union</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="region-usa">
+                                    <input type="checkbox" id="region-usa" name="regions" value="usa">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-flag-usa"></i></div>
+                                        <div class="card-label">United States</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-next" data-goto="2">
+                                Continue <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Finance Sector -->
+                    <div class="form-step" data-step="2">
+                        <div class="step-header">
+                            <h2><span class="step-icon"><i class="fas fa-chart-line"></i></span> Financial Services</h2>
+                            <p>Tell us about your organization's financial services domain</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="group-label">Is your organization a financial services company?</label>
+                            <div class="option-cards radio-group yes-no-group" role="radiogroup">
+                                <label class="option-card" for="financial-yes">
+                                    <input type="radio" id="financial-yes" name="isFinancial" value="yes">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-check-circle"></i></div>
+                                        <div class="card-label">Yes</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="financial-no">
+                                    <input type="radio" id="financial-no" name="isFinancial" value="no">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-times-circle"></i></div>
+                                        <div class="card-label">No</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group financial-options" style="display: none;">
+                            <label class="group-label">Financial Services Type</label>
+                            <div class="option-cards checkbox-group">
+                                <label class="option-card" for="finance-banking">
+                                    <input type="checkbox" id="finance-banking" name="financialServices" value="banking">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-university"></i></div>
+                                        <div class="card-label">Banking Services</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="finance-insurance">
+                                    <input type="checkbox" id="finance-insurance" name="financialServices" value="insurance">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                                        <div class="card-label">Insurance Services</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="finance-investment">
+                                    <input type="checkbox" id="finance-investment" name="financialServices" value="investment">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-chart-area"></i></div>
+                                        <div class="card-label">Investment Services</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="finance-payment">
+                                    <input type="checkbox" id="finance-payment" name="financialServices" value="payment">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-credit-card"></i></div>
+                                        <div class="card-label">Payment Processing</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-back" data-goto="1">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button type="button" class="btn-next" data-goto="3">
+                                Continue <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Data Handling -->
+                    <div class="form-step" data-step="3">
+                        <div class="step-header">
+                            <h2><span class="step-icon"><i class="fas fa-database"></i></span> Data Handling</h2>
+                            <p>Tell us about the types of data your organization processes</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="group-label">Types of Data Handled</label>
+                            <div class="option-cards checkbox-group">
+                                <label class="option-card" for="data-personal">
+                                    <input type="checkbox" id="data-personal" name="dataTypes" value="personal">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-user-shield"></i></div>
+                                        <div class="card-label">Personal Data</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="data-patient">
+                                    <input type="checkbox" id="data-patient" name="dataTypes" value="patient">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                                        <div class="card-label">Patient Health Data</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="data-payment">
+                                    <input type="checkbox" id="data-payment" name="dataTypes" value="payment">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-money-check-alt"></i></div>
+                                        <div class="card-label">Payment Data</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="data-insurance">
+                                    <input type="checkbox" id="data-insurance" name="dataTypes" value="insurance">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-file-contract"></i></div>
+                                        <div class="card-label">Insurance Data</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="group-label">Service Type</label>
+                            <div class="option-cards checkbox-group">
+                                <label class="option-card" for="service-saas">
+                                    <input type="checkbox" id="service-saas" name="serviceType" value="saas">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-cloud"></i></div>
+                                        <div class="card-label">SaaS Services</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="service-consulting">
+                                    <input type="checkbox" id="service-consulting" name="serviceType" value="consulting">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                                        <div class="card-label">IT Consulting</div>
+                                    </div>
+                                </label>
+                                <label class="option-card" for="service-development">
+                                    <input type="checkbox" id="service-development" name="serviceType" value="development">
+                                    <div class="card-content">
+                                        <div class="card-icon"><i class="fas fa-code"></i></div>
+                                        <div class="card-label">Software Development</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-back" data-goto="2">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-analytics"></i> Generate Suggestions
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Panel - Preview & Results -->
+        <div class="panel preview-panel">
+            <div class="panel-content">
+                <div class="preview-container">
+                    <div class="preview-header">
+                        <h2>Real-time Preview</h2>
+                        <p>Your recommendation profile will appear here based on your selections.</p>
+                    </div>
+                    
+                    <div class="preview-box">
+                        <div class="company-profile-card" id="previewCard">
+                            <div class="card-header">
+                                <div class="company-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <h3 id="previewCompanyName">Your Company</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="profile-items">
+                                    <div class="profile-item" id="previewSize">
+                                        <div class="item-icon"><i class="fas fa-users"></i></div>
+                                        <div class="item-content">
+                                            <div class="item-label">Size</div>
+                                            <div class="item-value">Not selected</div>
+                                        </div>
+                                    </div>
+                                    <div class="profile-item" id="previewRegions">
+                                        <div class="item-icon"><i class="fas fa-globe"></i></div>
+                                        <div class="item-content">
+                                            <div class="item-label">Regions</div>
+                                            <div class="item-value">Not selected</div>
+                                        </div>
+                                    </div>
+                                    <div class="profile-item" id="previewFinancial">
+                                        <div class="item-icon"><i class="fas fa-chart-line"></i></div>
+                                        <div class="item-content">
+                                            <div class="item-label">Financial Service</div>
+                                            <div class="item-value">Not selected</div>
+                                        </div>
+                                    </div>
+                                    <div class="profile-item" id="previewData">
+                                        <div class="item-icon"><i class="fas fa-database"></i></div>
+                                        <div class="item-content">
+                                            <div class="item-label">Data Types</div>
+                                            <div class="item-value">Not selected</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="compliance-meter">
+                            <div class="meter-header">
+                                <h4>Potential Compliance Requirements</h4>
+                            </div>
+                            <div class="meter-container">
+                                <div class="meter-section">
+                                    <div class="meter-top">
+                                        <div class="meter-label"><i class="fas fa-gavel"></i> Governance</div>
+                                    </div>
+                                    <div class="meter-bar">
+                                        <div class="meter-fill" id="governanceMeter" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="meter-section">
+                                    <div class="meter-top">
+                                        <div class="meter-label"><i class="fas fa-shield-alt"></i> Risk Management</div>
+                                    </div>
+                                    <div class="meter-bar">
+                                        <div class="meter-fill" id="riskMeter" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="meter-section">
+                                    <div class="meter-top">
+                                        <div class="meter-label"><i class="fas fa-check-circle"></i> Compliance</div>
+                                    </div>
+                                    <div class="meter-bar">
+                                        <div class="meter-fill" id="complianceMeter" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="preview-message">
+                            <p>Complete all form steps to generate framework suggestions tailored to your organization's profile.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Modal -->
+    <div id="recommendationModal" class="recommendation-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>GRC Framework Recommendations</h2>
+                <button class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="company-summary" id="companySummary"></div>
+                
+                <div class="tabs-container">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-section="governance">
+                            <i class="fas fa-gavel"></i>
+                            <span>Governance</span>
+                        </button>
+                        <button class="tab-btn" data-section="risk">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Risk Management</span>
+                        </button>
+                        <button class="tab-btn" data-section="compliance">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Compliance</span>
+                        </button>
+                        <button class="tab-btn" data-section="grc">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Other Suggestions</span>
+                        </button>
+                    </div>
+                    
+                    <div class="tabs-content" id="recommendationContent"></div>
+                </div>
+                
+                <div class="modal-actions">
+                    <button id="downloadReport" class="action-btn download-btn">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Download PDF Report</span>
+                    </button>
+                    <button id="emailReport" class="action-btn email-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Report</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="suggestion.js"></script>
+    
+    <!-- Add PDF generation script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listener for the PDF download button
+            document.getElementById('downloadReport').addEventListener('click', generateAndDownloadPDF);
+            
+            // Function to generate and download PDF
+            function generateAndDownloadPDF() {
+                // Get the company name
+                const companyName = document.getElementById('previewCompanyName').textContent || 'Your Company';
+                
+                // Initialize jsPDF
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                
+                // Set document properties
+                doc.setProperties({
+                    title: 'GRC Framework Recommendations',
+                    subject: 'GRC Assessment',
+                    author: 'GRC Portal',
+                    creator: 'GRC Portal'
+                });
+                
+                // Add header
+                doc.setFontSize(22);
+                doc.setTextColor(15, 76, 129); // Primary blue color
+                doc.text('GRC Framework Recommendations', 105, 20, { align: 'center' });
+                
+                doc.setFontSize(16);
+                doc.setTextColor(45, 62, 80);
+                doc.text(companyName, 105, 30, { align: 'center' });
+                
+                doc.setFontSize(12);
+                doc.setTextColor(70, 70, 70);
+                doc.text(`Generated on: ${new Date().toLocaleString()}`, 105, 38, { align: 'center' });
+                
+                // Add company profile
+                doc.setFontSize(16);
+                doc.setTextColor(15, 76, 129);
+                doc.text('Company Profile', 14, 50);
+                
+                doc.setFontSize(12);
+                doc.setTextColor(70, 70, 70);
+                
+                const companySize = document.querySelector('#previewSize .item-value').textContent;
+                const regions = document.querySelector('#previewRegions .item-value').textContent;
+                const financial = document.querySelector('#previewFinancial .item-value').textContent;
+                const dataTypes = document.querySelector('#previewData .item-value').textContent;
+                
+                doc.text(`Company Size: ${companySize}`, 14, 60);
+                doc.text(`Geographical Presence: ${regions}`, 14, 68);
+                doc.text(`Financial Services: ${financial}`, 14, 76);
+                doc.text(`Data Types: ${dataTypes}`, 14, 84);
+                
+                // Add compliance meters
+                doc.setFontSize(16);
+                doc.setTextColor(15, 76, 129);
+                doc.text('Compliance Requirements', 14, 98);
+                
+                doc.setFontSize(12);
+                doc.setTextColor(70, 70, 70);
+                
+                const governanceMeter = document.getElementById('governanceMeter').style.width;
+                const riskMeter = document.getElementById('riskMeter').style.width;
+                const complianceMeter = document.getElementById('complianceMeter').style.width;
+                
+                doc.text(`Governance: ${governanceMeter}`, 14, 108);
+                doc.text(`Risk Management: ${riskMeter}`, 14, 116);
+                doc.text(`Compliance: ${complianceMeter}`, 14, 124);
+                
+                // Add company summary if available
+                const companySummaryElement = document.getElementById('companySummary');
+                if (companySummaryElement) {
+                    doc.addPage();
+                    doc.setFontSize(16);
+                    doc.setTextColor(15, 76, 129);
+                    doc.text('Company Assessment Summary', 14, 20);
+                    
+                    doc.setFontSize(12);
+                    doc.setTextColor(70, 70, 70);
+                    
+                    // Get the text content and split into lines
+                    const summaryText = companySummaryElement.textContent.trim();
+                    const splitSummary = doc.splitTextToSize(summaryText, 180);
+                    doc.text(splitSummary, 14, 30);
+                }
+                
+                // Always add all recommendation sections, regardless of active tab
+                
+                // 1. Process Governance recommendations
+                doc.addPage();
+                doc.setFontSize(16);
+                doc.setTextColor(15, 76, 129);
+                doc.text('Governance Recommendations', 14, 20);
+                
+                let currentY = 30;
+                const governanceSection = document.querySelector('.recommendation-section[id="governance-section-container"]');
+                if (governanceSection) {
+                    currentY = addSectionToPDF(doc, governanceSection, currentY);
+                } else {
+                    doc.setFontSize(12);
+                    doc.setTextColor(70, 70, 70);
+                    doc.text('No governance recommendations available.', 14, currentY);
+                    currentY += 10;
+                }
+                
+                // 2. Process Risk Management recommendations
+                doc.addPage();
+                doc.setFontSize(16);
+                doc.setTextColor(15, 76, 129);
+                doc.text('Risk Management Recommendations', 14, 20);
+                
+                currentY = 30;
+                const riskSection = document.querySelector('.recommendation-section[id="risk-section-container"]');
+                if (riskSection) {
+                    currentY = addSectionToPDF(doc, riskSection, currentY);
+                } else {
+                    doc.setFontSize(12);
+                    doc.setTextColor(70, 70, 70);
+                    doc.text('No risk management recommendations available.', 14, currentY);
+                    currentY += 10;
+                }
+                
+                // 3. Process Compliance recommendations
+                doc.addPage();
+                doc.setFontSize(16);
+                doc.setTextColor(15, 76, 129);
+                doc.text('Compliance Recommendations', 14, 20);
+                
+                currentY = 30;
+                const complianceSection = document.querySelector('.recommendation-section[id="compliance-section-container"]');
+                if (complianceSection) {
+                    currentY = addSectionToPDF(doc, complianceSection, currentY);
+                } else {
+                    doc.setFontSize(12);
+                    doc.setTextColor(70, 70, 70);
+                    doc.text('No compliance recommendations available.', 14, currentY);
+                    currentY += 10;
+                }
+                
+                // 4. Process GRC Framework recommendations
+                doc.addPage();
+                doc.setFontSize(16);
+                doc.setTextColor(15, 76, 129);
+                doc.text('Other Suggestions', 14, 20);
+                
+                currentY = 30;
+                const grcSection = document.querySelector('.recommendation-section[id="grc-section-container"]');
+                if (grcSection) {
+                    currentY = addSectionToPDF(doc, grcSection, currentY);
+                } else {
+                    doc.setFontSize(12);
+                    doc.setTextColor(70, 70, 70);
+                    doc.text('No other suggestions available.', 14, currentY);
+                    currentY += 10;
+                }
+                
+                // Add footer with page numbers
+                const pageCount = doc.internal.getNumberOfPages();
+                for (let i = 1; i <= pageCount; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(10);
+                    doc.setTextColor(100, 100, 100);
+                    doc.text(`GRC Framework Recommendations - Page ${i} of ${pageCount}`, 105, 285, { align: 'center' });
+                }
+                
+                // Save PDF
+                doc.save(`GRC-Recommendations-${companyName.replace(/\s+/g, '-')}.pdf`);
+            }
+            
+            // Helper function to add a section to the PDF
+            function addSectionToPDF(doc, sectionElement, startY) {
+                let yPosition = startY;
+                
+                // Skip the section header (h3) as we already added it
+                const items = sectionElement.querySelectorAll('li');
+                
+                items.forEach((item, index) => {
+                    // Check if we need a new page
+                    if (yPosition > 250) {
+                        doc.addPage();
+                        yPosition = 20;
+                    }
+                    
+                    // Get the recommendation title (bold text)
+                    const titleElement = item.querySelector('strong');
+                    const title = titleElement ? titleElement.textContent.trim() : '';
+                    
+                    // Get the recommendation reason (paragraph)
+                    const reasonElement = item.querySelector('p');
+                    const reason = reasonElement ? reasonElement.textContent.trim() : '';
+                    
+                    // Add recommendation title
+                    doc.setFontSize(12);
+                    doc.setTextColor(15, 76, 129);
+                    doc.text(`${index + 1}. ${title}`, 14, yPosition);
+                    yPosition += 8;
+                    
+                    // Add recommendation reason if available
+                    if (reason) {
+                        doc.setFontSize(10);
+                        doc.setTextColor(70, 70, 70);
+                        
+                        // Split long text into multiple lines
+                        const splitReason = doc.splitTextToSize(reason, 180);
+                        doc.text(splitReason, 20, yPosition);
+                        
+                        // Update Y position based on text height
+                        yPosition += (splitReason.length * 5) + 8;
+                    } else {
+                        yPosition += 4;
+                    }
+                });
+                
+                return yPosition;
+            }
+        });
+    </script>
+</body>
+</html> 
+
+

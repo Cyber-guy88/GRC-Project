@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIST 800-12 - Information Security</title>
+    <link rel="stylesheet" href="css/nist800-12.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="badge">
+            <span>🔒 Security Standard</span>
+        </div>
+        
+        <h1>NIST 800-12 Framework</h1>
+        <p class="subtitle">An Introduction to Information Security</p>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Chapters</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Core Areas</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Controls</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-links">
+            <a href="#overview" class="active">Overview</a>
+            <a href="#components">Key Components</a>
+            <a href="#use-cases">Use Cases</a>
+            <a href="#benefits">Benefits</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Overview Section -->
+        <section id="overview">
+            <div class="section-title">
+                <i class="info-icon">i</i>
+                <h2>What is NIST 800-12?</h2>
+            </div>
+            <div class="card">
+                <p>The <strong>NIST Special Publication 800-12</strong> serves as a comprehensive introduction to computer security for organizations. It presents the major elements of computer security and explains the importance of security controls in protecting resources.</p>
+                <p>This foundational document provides guidelines for maintaining a secure environment and implementing effective security measures across an organization's IT infrastructure.</p>
+            </div>
+        </section>
+
+        <!-- Detailed Overview Section -->
+        <section id="detailed-overview">
+            <div class="section-title">
+                <i class="info-icon">📋</i>
+                <h2>Detailed Framework Overview</h2>
+            </div>
+            <div class="card">
+                <p>The NIST Special Publication 800-12, titled "An Introduction to Information Security," serves as a foundational guide for organizations to understand and implement basic information security principles. Originally published in 1995 and updated in 2017 (Revision 1), this framework provides a high-level overview of security concepts, controls, and best practices, emphasizing cost-effectiveness and adaptability.</p>
+            </div>
+            
+            <div class="framework-structure">
+                <div class="structure-item">
+                    <h3>1. Purpose and Scope</h3>
+                    <div class="structure-content">
+                        <p><strong>Objective:</strong> To assist organizations in securing computer-based resources (hardware, software, data) by explaining core security concepts, control interrelationships, and cost considerations.</p>
+                        <div class="focus-points">
+                            <h4>Focus Areas:</h4>
+                            <ul>
+                                <li>Discusses the benefits of security controls and their appropriate application</li>
+                                <li>Avoids prescribing detailed implementation steps or audit procedures, instead offering broad guidance</li>
+                                <li>Aligns with federal requirements under laws like the Computer Security Act of 1987, which mandates protection of sensitive systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="structure-item">
+                    <h3>2. Core Components</h3>
+                    <div class="structure-content">
+                        <p>The framework is organized into four sections, addressing management, operational, and technical controls, along with a hypothetical case study:</p>
+                        
+                        <div class="components-details">
+                            <div class="component">
+                                <h4>Management Controls</h4>
+                                <p><strong>Focus:</strong> Governance, policy development, risk management, and security program oversight.</p>
+                                <div class="key-topics">
+                                    <h5>Key Topics:</h5>
+                                    <ul>
+                                        <li><strong>Security Policy:</strong> Establishing organizational security policies and compliance strategies</li>
+                                        <li><strong>Risk Management:</strong> Identifying and prioritizing risks using cost-benefit analysis</li>
+                                        <li><strong>Life Cycle Security:</strong> Integrating security into system development phases (e.g., planning, disposal)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="component">
+                                <h4>Operational Controls</h4>
+                                <p><strong>Focus:</strong> Human-driven processes and procedures.</p>
+                                <div class="key-topics">
+                                    <h5>Key Topics:</h5>
+                                    <ul>
+                                        <li><strong>Incident Handling:</strong> Detecting, reporting, and mitigating security incidents</li>
+                                        <li><strong>Physical Security:</strong> Safeguarding hardware and facilities</li>
+                                        <li><strong>Contingency Planning:</strong> Preparing for disasters and ensuring business continuity</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="component">
+                                <h4>Technical Controls</h4>
+                                <p><strong>Focus:</strong> Automated safeguards implemented by systems.</p>
+                                <div class="key-topics">
+                                    <h5>Key Topics:</h5>
+                                    <ul>
+                                        <li><strong>Access Control:</strong> Authentication, authorization, and encryption (e.g., firewalls, secure gateways)</li>
+                                        <li><strong>Audit Trails:</strong> Monitoring user activities and system events</li>
+                                        <li><strong>Cryptography:</strong> Protecting data integrity and confidentiality</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="component">
+                                <h4>Example Implementation</h4>
+                                <p>Illustrates security controls for a hypothetical system, demonstrating decision-making processes and control interdependencies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="structure-item">
+                    <h3>3. Key Principles</h3>
+                    <div class="structure-content">
+                        <div class="principles-grid">
+                            <div class="principle-card">
+                                <h4>Cost-Effectiveness</h4>
+                                <p>Security measures should balance risk reduction with implementation costs</p>
+                            </div>
+                            
+                            <div class="principle-card">
+                                <h4>CIA Triad</h4>
+                                <div class="triad-components">
+                                    <div class="triad-item">
+                                        <span class="triad-label">Confidentiality</span>
+                                        <p>Preventing unauthorized data disclosure</p>
+                                    </div>
+                                    <div class="triad-item">
+                                        <span class="triad-label">Integrity</span>
+                                        <p>Ensuring data accuracy and system functionality</p>
+                                    </div>
+                                    <div class="triad-item">
+                                        <span class="triad-label">Availability</span>
+                                        <p>Maintaining system accessibility for authorized users</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="principle-card">
+                                <h4>Sensitive Information</h4>
+                                <p>Broadly defined to include data whose compromise could harm national interests, federal programs, or individual privacy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="structure-item">
+                    <h3>4. Intended Audience</h3>
+                    <div class="structure-content">
+                        <div class="audience-info">
+                            <div class="audience-card">
+                                <h4>Primary Users</h4>
+                                <p>Federal employees with security responsibilities for sensitive systems</p>
+                            </div>
+                            <div class="audience-card">
+                                <h4>Private Sector Applicability</h4>
+                                <p>While tailored to federal needs, principles are adaptable to private organizations, given shared security fundamentals</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="structure-item">
+                    <h3>5. Integration with Other Frameworks</h3>
+                    <div class="structure-content">
+                        <ul class="framework-integration">
+                            <li><strong>NIST SP 800-53:</strong> SP 800-12 introduces control families from SP 800-53 (e.g., access control, incident response) to contextualize their role in broader security programs</li>
+                            <li><strong>Risk Management Framework (RMF):</strong> Aligns with RMF steps (e.g., system categorization, control selection) for federal compliance</li>
+                            <li><strong>Legal Foundations:</strong> References laws like FISMA 2014 and OMB Circular A-130, which mandate federal security standards</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="structure-item">
+                    <h3>6. 2017 Revision Updates</h3>
+                    <div class="structure-content">
+                        <ul class="revision-updates">
+                            <li><strong>Modernization:</strong> Updated terminology and examples to reflect evolving technologies (e.g., cloud computing, networked environments)</li>
+                            <li><strong>Control Families:</strong> Expanded discussion of security controls mapped to NIST SP 800-53</li>
+                            <li><strong>Structure:</strong> Reorganized content for clarity, retaining the original focus on principles over prescriptive requirements</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="structure-item">
+                    <h3>7. Challenges and Limitations</h3>
+                    <div class="structure-content">
+                        <div class="challenges-container">
+                            <div class="challenge-item">
+                                <h4>Non-Prescriptive</h4>
+                                <p>Does not enforce penalties or provide step-by-step implementation guidance, requiring organizations to tailor advice to their context</p>
+                            </div>
+                            <div class="challenge-item">
+                                <h4>Complexity</h4>
+                                <p>Managing overlapping controls (e.g., technical vs. operational) demands coordination across teams</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="conclusion-card">
+                <h3>Conclusion</h3>
+                <p>NIST SP 800-12 remains a critical resource for building foundational security awareness, particularly for federal agencies and organizations seeking to align with NIST standards. Its emphasis on cost-effectiveness, adaptability, and integration with frameworks like SP 800-53 makes it a versatile tool for developing robust security programs. For implementation tools and updates, refer to the NIST Computer Security Resource Center.</p>
+            </div>
+        </section>
+
+        <!-- Key Components Section -->
+        <section id="components">
+            <div class="section-title">
+                <i class="info-icon">🔐</i>
+                <h2>Key Components</h2>
+            </div>
+            <div class="components-grid">
+                <div class="component-card">
+                    <h3>Risk Management</h3>
+                    <p>Framework for identifying, assessing, and mitigating security risks to systems and data.</p>
+                </div>
+                <div class="component-card">
+                    <h3>Security Controls</h3>
+                    <p>Comprehensive set of safeguards and countermeasures for protecting information systems.</p>
+                </div>
+                <div class="component-card">
+                    <h3>Security Planning</h3>
+                    <p>Guidelines for developing and maintaining effective security policies and procedures.</p>
+                </div>
+                <div class="component-card">
+                    <h3>Incident Response</h3>
+                    <p>Procedures for detecting, reporting, and responding to security incidents.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section id="use-cases">
+            <div class="section-title">
+                <i class="info-icon">💡</i>
+                <h2>Use Cases</h2>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <h3>Government Agencies</h3>
+                    <p>Implementation of security controls in federal information systems.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Private Organizations</h3>
+                    <p>Adoption of security best practices for protecting sensitive data.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Educational Institutions</h3>
+                    <p>Security framework for protecting academic and research data.</p>
+                </div>
+                <div class="use-case-card">
+                    <h3>Healthcare Providers</h3>
+                    <p>Implementation of security measures for protecting patient information.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits">
+            <div class="section-title">
+                <i class="info-icon">✨</i>
+                <h2>Benefits</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Enhanced Security</h3>
+                    <p>Comprehensive protection of information systems and data assets.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Risk Reduction</h3>
+                    <p>Systematic approach to identifying and mitigating security risks.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Compliance</h3>
+                    <p>Alignment with federal security requirements and industry standards.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Cost Efficiency</h3>
+                    <p>Structured approach to implementing security controls effectively.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+< s c r i p t   s r c = \ 
+ 
+ n a v - s y n c . j s \ > < / s c r i p t > 
+ 
+ < s c r i p t   s r c = \ 
+ 
+ n a v - f i x . j s \ > < / s c r i p t > 
+ 
+ 
+

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC 2 Compliance Framework | Trust Services Criteria</title>
+    <link rel="stylesheet" href="css/soc2.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="hero-section">
+        <div class="hero-content">
+            <span class="badge"><i class="fas fa-shield-alt"></i> Security Standard</span>
+            <h1>SOC 2 Compliance</h1>
+            <p class="hero-subtitle">System and Organization Controls for Service Organizations</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Trust Criteria</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Report Types</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">64+</span>
+                    <span class="stat-label">Control Points</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="page-nav">
+        <div class="nav-container">
+            <a href="#overview" class="nav-item">Overview</a>
+            <a href="#principles" class="nav-item">Principles</a>
+            <a href="#criteria" class="nav-item">Criteria</a>
+            <a href="#report-types" class="nav-item">Report Types</a>
+            <a href="#process" class="nav-item">Process</a>
+            <a href="#benefits" class="nav-item">Benefits</a>
+            <a href="#challenges" class="nav-item">Challenges</a>
+            <a href="#frameworks-comparison" class="nav-item">Frameworks</a>
+            <a href="#practical-tips" class="nav-item">Practical Tips</a>
+            <a href="#key-takeaways" class="nav-item">Key Takeaways</a>
+        </div>
+    </nav>
+
+
+    <main class="main-content">
+        <section id="overview" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h2>What is SOC 2?</h2>
+            </div>
+            <div class="content-card highlight-card">
+                <p>SOC 2 (System and Organization Controls 2) is a framework developed by the American Institute of CPAs (AICPA) that defines criteria for managing customer data based on five "trust service principles" — security, availability, processing integrity, confidentiality, and privacy. It is specifically designed for service providers storing customer data in the cloud.</p>
+                <p>Unlike other compliance frameworks that focus on specific industries or data types, SOC 2 is adaptable and allows organizations to select the criteria most relevant to their business practices and customer promises.</p>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-lock"></i>
+                        <span>Data Security</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-cloud"></i>
+                        <span>Cloud Services</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Third-Party Attestation</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-users"></i>
+                        <span>Customer Trust</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trust-criteria" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Trust Service Criteria</h2>
+            </div>
+            <div class="content-card">
+                <div class="criteria-grid">
+                    <div class="criteria-item">
+                        <div class="item-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Security</h3>
+                        </div>
+                        <p>Protection against unauthorized access, both physical and logical. This covers system protection against unauthorized access, data breaches, theft, and other security vulnerabilities.</p>
+                        <ul class="criteria-features">
+                            <li>Access controls</li>
+                            <li>Firewalls and security monitoring</li>
+                            <li>Vulnerability management</li>
+                            <li>Incident response planning</li>
+                            </ul>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="item-header">
+                            <i class="fas fa-server"></i>
+                            <h3>Availability</h3>
+                        </div>
+                        <p>Systems are available for operation and use as committed or agreed upon. This addresses system uptime, performance, and reliability.</p>
+                        <ul class="criteria-features">
+                            <li>Business continuity planning</li>
+                            <li>Disaster recovery procedures</li>
+                            <li>Performance monitoring</li>
+                            <li>Redundancy measures</li>
+                            </ul>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="item-header">
+                            <i class="fas fa-cogs"></i>
+                            <h3>Processing Integrity</h3>
+                        </div>
+                        <p>System processing is complete, accurate, timely, and authorized. This ensures that data processing operates as intended without errors or delays.</p>
+                        <ul class="criteria-features">
+                            <li>Quality assurance processes</li>
+                            <li>Process monitoring</li>
+                            <li>Error handling procedures</li>
+                            <li>Transaction validation</li>
+                        </ul>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="item-header">
+                            <i class="fas fa-user-secret"></i>
+                            <h3>Confidentiality</h3>
+                        </div>
+                        <p>Information designated as confidential is protected as committed or agreed. This covers sensitive business information, intellectual property, and personal data.</p>
+                        <ul class="criteria-features">
+                            <li>Data classification</li>
+                            <li>Encryption protocols</li>
+                            <li>Data retention policies</li>
+                            <li>Confidentiality agreements</li>
+                            </ul>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="item-header">
+                            <i class="fas fa-user-shield"></i>
+                            <h3>Privacy</h3>
+                        </div>
+                        <p>Personal information is collected, used, retained, disclosed, and disposed of in accordance with the entity's privacy notice. This addresses compliance with privacy laws and regulations.</p>
+                        <ul class="criteria-features">
+                            <li>Privacy notice management</li>
+                            <li>Consent mechanisms</li>
+                            <li>Data subject rights</li>
+                            <li>Personal data handling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="report-types" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h2>SOC 2 Report Types</h2>
+            </div>
+            <div class="content-card">
+                    <div class="report-comparison">
+                        <div class="report-type">
+                            <div class="report-header">
+                            <span class="type-badge">Type I</span>
+                            <h3>Point-in-Time Assessment</h3>
+                            <p class="report-analogy">"A snapshot of your security controls"</p>
+                        </div>
+                        <div class="report-content">
+                            <p>The Type I report assesses the design of security controls at a specific point in time.</p>
+                            <ul class="report-details">
+                                <li><strong>Focus:</strong> Control design suitability</li>
+                                <li><strong>Timeframe:</strong> Single point in time</li>
+                                <li><strong>Verification:</strong> Confirms controls are properly designed</li>
+                                <li><strong>Audit Period:</strong> One day</li>
+                                <li><strong>Complexity:</strong> Less complex, faster to obtain</li>
+                                <li><strong>Ideal for:</strong> First-time SOC 2 compliers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="report-type">
+                        <div class="report-header">
+                            <span class="type-badge">Type II</span>
+                            <h3>Historical Assessment</h3>
+                            <p class="report-analogy">"A movie of your security controls"</p>
+                        </div>
+                        <div class="report-content">
+                            <p>The Type II report assesses both the design and operating effectiveness of controls over a period of time.</p>
+                            <ul class="report-details">
+                                <li><strong>Focus:</strong> Control design and operational effectiveness</li>
+                                <li><strong>Timeframe:</strong> Extended period (3-12 months)</li>
+                                <li><strong>Verification:</strong> Tests whether controls operate effectively</li>
+                                <li><strong>Audit Period:</strong> Minimum 6 months recommended</li>
+                                <li><strong>Complexity:</strong> More complex, higher assurance</li>
+                                <li><strong>Ideal for:</strong> Mature security programs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="compliance-process" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h2>Compliance Process</h2>
+            </div>
+            <div class="content-card">
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Scoping & Planning</h3>
+                            <p>Define the scope of your SOC 2 audit by selecting relevant trust criteria and identifying systems and data within scope.</p>
+                            <ul class="step-details">
+                                <li>Select applicable trust criteria</li>
+                                <li>Identify systems in scope</li>
+                                <li>Define control boundaries</li>
+                                <li>Select an audit firm</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                            <div class="step-content">
+                            <h3>Gap Assessment</h3>
+                            <p>Evaluate your current security controls against SOC 2 requirements to identify gaps and areas for improvement.</p>
+                            <ul class="step-details">
+                                <li>Review existing controls</li>
+                                <li>Identify control gaps</li>
+                                <li>Develop remediation plan</li>
+                                <li>Establish control framework</li>
+                                </ul>
+                                </div>
+                            </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Control Implementation</h3>
+                            <p>Implement and refine controls to address identified gaps and meet SOC 2 requirements.</p>
+                            <ul class="step-details">
+                                <li>Develop new policies and procedures</li>
+                                <li>Implement technical controls</li>
+                                <li>Train personnel</li>
+                                <li>Document control activities</li>
+                            </ul>
+                        </div>
+                            </div>
+                        <div class="process-step">
+                        <div class="step-number">4</div>
+                            <div class="step-content">
+                            <h3>Readiness Assessment</h3>
+                            <p>Conduct a pre-audit review to determine if controls are operating effectively before the formal audit.</p>
+                            <ul class="step-details">
+                                <li>Test control effectiveness</li>
+                                <li>Gather evidence</li>
+                                <li>Address final issues</li>
+                                <li>Prepare for audit</li>
+                                </ul>
+                            </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Formal Audit</h3>
+                            <p>Work with an independent CPA firm to conduct the official SOC 2 audit and assessment.</p>
+                            <ul class="step-details">
+                                <li>Auditor control testing</li>
+                                <li>Evidence collection</li>
+                                <li>Audit interviews</li>
+                                <li>Results evaluation</li>
+                            </ul>
+                        </div>
+                            </div>
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                            <div class="step-content">
+                            <h3>Reporting & Remediation</h3>
+                            <p>Receive the audit report, address any identified issues, and share results with relevant stakeholders.</p>
+                            <ul class="step-details">
+                                <li>Report assessment</li>
+                                <li>Address exceptions</li>
+                                <li>Share with stakeholders</li>
+                                <li>Continuous improvement</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h2>Benefits of SOC 2 Compliance</h2>
+            </div>
+            <div class="content-card">
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Competitive Advantage</h3>
+                        <p>Differentiate your business by demonstrating commitment to security and customer data protection.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-lock"></i>
+                        <h3>Enhanced Security</h3>
+                        <p>Implement comprehensive security controls that protect your organization and customer data.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Risk Reduction</h3>
+                        <p>Identify and mitigate security risks before they lead to data breaches or service disruptions.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-users"></i>
+                        <h3>Customer Trust</h3>
+                        <p>Build stronger customer relationships based on verified security practices and transparency.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-file-contract"></i>
+                        <h3>Streamlined Due Diligence</h3>
+                        <p>Accelerate sales cycles by providing a recognized security attestation to potential clients.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Regulatory Alignment</h3>
+                        <p>Align with multiple regulatory requirements through a single comprehensive framework.</p>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Sections Based on Unstructured Data -->
+        <section id="challenges" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h2>Implementation Challenges</h2>
+                        </div>
+            <div class="content-card">
+                <div class="challenges-grid">
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-hourglass-half"></i>
+                        </div>
+                        <h3>Resource-Intensive</h3>
+                        <p>Type II audits require months of preparation, continuous monitoring, and significant resource allocation.</p>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Dynamic Controls</h3>
+                        <p>Requires continuous monitoring and updates to ensure controls remain effective as technology and threats evolve.</p>
+                            </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Cost Considerations</h3>
+                        <p>Audits can cost $30,000–$100,000+, depending on organization size, complexity, and scope of the assessment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="frameworks-comparison" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h2>SOC 2 vs. Other Frameworks</h2>
+            </div>
+            <div class="content-card">
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Framework</th>
+                                <th>Focus</th>
+                                <th>Key Characteristics</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SOC 1</strong></td>
+                                <td>Financial reporting controls</td>
+                                <td>Focuses specifically on controls relevant to financial reporting (e.g., billing systems)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SOC 3</strong></td>
+                                <td>Public-facing report</td>
+                                <td>A simplified, shareable version of SOC 2 without sensitive technical details</td>
+                            </tr>
+                            <tr>
+                                <td><strong>NIST CSF</strong></td>
+                                <td>Risk management</td>
+                                <td>Broader risk management framework versus SOC 2's service-provider focus</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ISO 27001</strong></td>
+                                <td>Information security</td>
+                                <td>Internationally recognized but more prescriptive compared to SOC 2's flexibility</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="practical-tips" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h2>Practical Tips for Compliance</h2>
+            </div>
+            <div class="content-card">
+                <div class="tips-grid">
+                    <div class="tip-item">
+                        <div class="tip-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Scope Selection</h3>
+                        <p>Align Trust Services Criteria selection with customer expectations and business requirements.</p>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Automate Controls</h3>
+                        <p>Use tools like Vanta or Sprinto to streamline evidence collection and continuous monitoring.</p>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Staff Training</h3>
+                        <p>Ensure all employees understand policies and security practices through regular training, such as phishing simulations.</p>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Annual Renewal</h3>
+                        <p>Remember that SOC 2 reports are valid for approximately 12 months and require regular renewal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="key-takeaways" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h2>Key Takeaways</h2>
+            </div>
+            <div class="content-card">
+                <div class="takeaways-container">
+                    <div class="takeaway-item">
+                        <div class="takeaway-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="takeaway-content">
+                            <h3>Not a Certification</h3>
+                            <p>SOC 2 is an attestation with no formal "pass/fail" designation; it provides a qualified opinion on control effectiveness.</p>
+                        </div>
+                    </div>
+                    <div class="takeaway-item">
+                        <div class="takeaway-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="takeaway-content">
+                            <h3>Market Demand</h3>
+                            <p>Critical for SaaS providers, cloud services, and any organization processing customer data, particularly in enterprise sales cycles.</p>
+                        </div>
+                    </div>
+                    <div class="takeaway-item">
+                        <div class="takeaway-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                </div>
+                        <div class="takeaway-content">
+                            <h3>Flexibility</h3>
+                            <p>Organizations can tailor controls to their unique systems and business requirements while meeting the Trust Services Criteria.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        </section>
+    </main>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active nav item on scroll
+        window.addEventListener('scroll', function() {
+            let sections = document.querySelectorAll('.content-section');
+            let navItems = document.querySelectorAll('.nav-item');
+            
+            sections.forEach((section, i) => {
+                let top = section.offsetTop - 100;
+                let bottom = top + section.offsetHeight;
+                
+                if (window.scrollY >= top && window.scrollY < bottom) {
+                    navItems.forEach(item => item.classList.remove('active'));
+                    navItems[i].classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
+

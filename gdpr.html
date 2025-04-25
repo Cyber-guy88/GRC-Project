@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDPR Compliance Framework</title>
+    <link rel="stylesheet" href="css/gdpr.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge">Privacy Framework</div>
+            <h1>GDPR Compliance</h1>
+            <p class="subtitle">General Data Protection Regulation</p>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Core Principles</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">99</span>
+                    <span class="stat-label">Articles</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">€20M</span>
+                    <span class="stat-label">Max Penalty</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="#overview" class="nav-link active">Overview</a>
+            <a href="#introduction" class="nav-link">Introduction</a>
+            <a href="#terminology" class="nav-link">Terminology</a>
+            <a href="#principles" class="nav-link">Principles</a>
+            <a href="#rights" class="nav-link">Rights</a>
+            <a href="#requirements" class="nav-link">Requirements</a>
+            <a href="#compliance" class="nav-link">Compliance</a>
+            <a href="#pros-cons" class="nav-link">Pros & Cons</a>
+            <a href="#alternatives" class="nav-link">Alternatives</a>
+            <a href="#necessity" class="nav-link">When Necessary</a>
+            <a href="#practical" class="nav-link">Practical Steps</a>
+            <a href="#comparison" class="nav-link">Comparison</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section id="overview" class="content-section">
+            <div class="section-icon">
+                <i class="fas fa-info-circle"></i>
+            </div>
+            <h2>What is GDPR?</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Overview</h3>
+                    <p>The General Data Protection Regulation is the toughest privacy and security law in the world. Though drafted and passed by the European Union, it imposes obligations onto organizations anywhere that target or collect data related to people in the EU.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Purpose</h3>
+                    <p>To protect EU citizens' fundamental right to privacy and control over their personal data while creating a clear framework for businesses to operate within regarding personal data protection.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="introduction" class="content-section">
+            <div class="section-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <h2>Introduction to GDPR</h2>
+            <div class="intro-container">
+                <div class="intro-card">
+                    <h3>Fundamental Regulation</h3>
+                    <p>A data protection law for individuals in the EU & EEA. Enforced since May 25, 2018, replacing the 1995 Data Protection Directive.</p>
+                </div>
+                <div class="intro-card highlight-card">
+                    <h3>Why GDPR Matters?</h3>
+                    <ul class="icon-list">
+                        <li><i class="fas fa-shield-alt"></i> Stronger data protection & individual rights</li>
+                        <li><i class="fas fa-globe"></i> Applies globally to companies handling EU data</li>
+                        <li><i class="fas fa-euro-sign"></i> Heavy fines (up to €20M or 4% of global turnover)</li>
+                        <li><i class="fas fa-handshake"></i> Builds trust & accountability in data handling</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="terminology" class="content-section">
+            <div class="section-icon">
+                <i class="fas fa-book"></i>
+            </div>
+            <h2>Key Terminologies</h2>
+            <div class="term-cards">
+                <div class="term-card">
+                    <div class="term-icon"><i class="fas fa-user"></i></div>
+                    <h3>Data Subject</h3>
+                    <p>The individual whose data is being processed.</p>
+                </div>
+                <div class="term-card">
+                    <div class="term-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Data Controller</h3>
+                    <p>The entity that decides how and why data is processed.</p>
+                </div>
+                <div class="term-card">
+                    <div class="term-icon"><i class="fas fa-server"></i></div>
+                    <h3>Data Processor</h3>
+                    <p>The entity that processes data on behalf of the controller.</p>
+                </div>
+                <div class="term-card">
+                    <div class="term-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Data Protection Officer</h3>
+                    <p>A designated individual responsible for GDPR compliance.</p>
+                </div>
+                <div class="term-card">
+                    <div class="term-icon"><i class="fas fa-cog"></i></div>
+                    <h3>Processing</h3>
+                    <p>Any operation or set of operations performed on personal data.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="principles" class="content-section">
+            <div class="section-icon">
+                <i class="fas fa-balance-scale"></i>
+            </div>
+            <h2>Core Principles</h2>
+            
+            <div class="principles-container">
+                <div class="principles-intro">
+                    <p>GDPR is built on seven foundational principles that guide all aspects of data processing and protection.</p>
+                </div>
+                
+            <div class="feature-list">
+                <div class="feature-item">
+                        <span class="feature-number">01</span>
+                    <h3>Lawfulness & Transparency</h3>
+                    <p>Processing must be lawful, fair, and transparent to the data subject.</p>
+                </div>
+                <div class="feature-item">
+                        <span class="feature-number">02</span>
+                    <h3>Purpose Limitation</h3>
+                    <p>Data must be collected for specified, explicit, and legitimate purposes.</p>
+                </div>
+                <div class="feature-item">
+                        <span class="feature-number">03</span>
+                    <h3>Data Minimization</h3>
+                    <p>Only process data that's necessary for the purpose specified.</p>
+                </div>
+                <div class="feature-item">
+                        <span class="feature-number">04</span>
+                    <h3>Accuracy</h3>
+                    <p>Personal data must be accurate and kept up to date.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-number">05</span>
+                        <h3>Storage Limitation</h3>
+                        <p>Data should be kept only as long as necessary for its purpose.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-number">06</span>
+                        <h3>Integrity & Confidentiality</h3>
+                        <p>Ensure appropriate security, including protection against unauthorized processing.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-number">07</span>
+                        <h3>Accountability</h3>
+                        <p>The controller must be able to demonstrate compliance with all principles.</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+            <div class="lawful-bases mt-6">
+                <h3 class="section-subtitle">Lawful Bases for Processing Data</h3>
+                <div class="lawful-bases-grid">
+                    <div class="basis-card">
+                        <div class="basis-icon"><i class="fas fa-check-circle"></i></div>
+                        <h4>Consent</h4>
+                        <p>Freely given, specific, informed and unambiguous</p>
+                    </div>
+                    <div class="basis-card">
+                        <div class="basis-icon"><i class="fas fa-file-contract"></i></div>
+                        <h4>Contractual Necessity</h4>
+                        <p>Necessity for contract execution</p>
+                    </div>
+                    <div class="basis-card">
+                        <div class="basis-icon"><i class="fas fa-gavel"></i></div>
+                        <h4>Legal Obligation</h4>
+                        <p>Required by law</p>
+                    </div>
+                    <div class="basis-card">
+                        <div class="basis-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h4>Vital Interests</h4>
+                        <p>Protecting individual's life</p>
+                    </div>
+                    <div class="basis-card">
+                        <div class="basis-icon"><i class="fas fa-landmark"></i></div>
+                        <h4>Public Task</h4>
+                        <p>Public interest processing</p>
+                    </div>
+                    <div class="basis-card">
+                        <div class="basis-icon"><i class="fas fa-bullseye"></i></div>
+                        <h4>Legitimate Interests</h4>
+                        <p>Organization's justified interest</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rights" class="content-section">
+            <div class="section-icon">
+                <i class="fas fa-user-shield"></i>
+            </div>
+            <h2>Data Subject Rights</h2>
+            
+            <div class="rights-container">
+                <div class="rights-intro">
+                    <p>GDPR empowers individuals with specific rights over their personal data.</p>
+                </div>
+                
+                <div class="rights-grid">
+                    <div class="right-card">
+                        <div class="right-icon"><i class="fas fa-eye"></i></div>
+                        <h3>Right to Access</h3>
+                        <p>Individuals can request access to their personal data and ask how it's being used.</p>
+                    </div>
+                    <div class="right-card">
+                        <div class="right-icon"><i class="fas fa-edit"></i></div>
+                        <h3>Right to Rectification</h3>
+                        <p>Individuals can request that inaccurate or incomplete data be corrected.</p>
+                    </div>
+                    <div class="right-card">
+                        <div class="right-icon"><i class="fas fa-trash-alt"></i></div>
+                        <h3>Right to Erasure</h3>
+                        <p>Also known as the "right to be forgotten," allows individuals to request data deletion.</p>
+                    </div>
+                    <div class="right-card">
+                        <div class="right-icon"><i class="fas fa-ban"></i></div>
+                        <h3>Right to Restrict Processing</h3>
+                        <p>Individuals can request limitations on how their data is used.</p>
+                    </div>
+                    <div class="right-card">
+                        <div class="right-icon"><i class="fas fa-hand-paper"></i></div>
+                        <h3>Right to Object</h3>
+                        <p>Individuals can object to the processing of their personal data.</p>
+                    </div>
+                    <div class="right-card">
+                        <div class="right-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Rights Related to Automated Decision Making</h3>
+                        <p>Protection against solely automated decisions, including profiling.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="requirements" class="content-section">
+            <div class="section-icon">
+                <i class="fas fa-clipboard-check"></i>
+            </div>
+            <h2>Key Requirements</h2>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h3>Data Protection</h3>
+                    <ul>
+                        <li>Privacy by Design</li>
+                        <li>Data Protection Officer</li>
+                        <li>Security Measures</li>
+                        <li>Breach Notification</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h3>Individual Rights</h3>
+                    <ul>
+                        <li>Right to Access</li>
+                        <li>Right to be Forgotten</li>
+                        <li>Data Portability</li>
+                        <li>Right to Object</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h3>Documentation</h3>
+                    <ul>
+                        <li>Processing Records</li>
+                        <li>Impact Assessments</li>
+                        <li>Consent Records</li>
+                        <li>Security Policies</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="technical-requirements mt-6">
+                <h3 class="section-subtitle">Technical & Security Requirements</h3>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fas fa-lock"></i></div>
+                        <h4>Data Encryption</h4>
+                        <p>Protect data in transit and at rest</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fas fa-mask"></i></div>
+                        <h4>Anonymization & Pseudonymization</h4>
+                        <p>Reduce identification risks</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fas fa-user-lock"></i></div>
+                        <h4>Access Controls</h4>
+                        <p>Implement role-based access</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <h4>Data Breach Notification</h4>
+                        <p>Report breaches within 72 hours</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fas fa-handshake"></i></div>
+                        <h4>Third Party Risk Management</h4>
+                        <p>Ensure vendor compliance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="compliance" class="content-section">
+            <div class="section-icon">
+                <i class="fas fa-tasks"></i>
+            </div>
+            <h2>Compliance Steps</h2>
+            
+            <div class="compliance-intro">
+                <p>A structured approach to achieving and maintaining GDPR compliance.</p>
+            </div>
+            
+            <div class="implementation-steps">
+                <div class="step-card">
+                    <span class="step-number">01</span>
+                    <h3>Identify</h3>
+                    <p>What data is collected? Where is data stored?</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">02</span>
+                    <h3>Assess</h3>
+                    <p>Conduct GDPR gap analysis</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">03</span>
+                    <h3>Implement</h3>
+                    <p>Update privacy policy and security controls</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">04</span>
+                    <h3>Monitor</h3>
+                    <p>Conduct regular audits and breach response mechanisms</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">05</span>
+                    <h3>Document</h3>
+                    <p>Maintain Records of Processing Activities (ROPA)</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">06</span>
+                    <h3>Review</h3>
+                    <p>Regular audits and updates to maintain compliance</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pros & Cons Section -->
+        <section id="pros-cons" class="content-section">
+            <div class="section-icon">
+                <i class="fas fa-balance-scale-right"></i>
+            </div>
+            <h2>Pros & Cons</h2>
+            
+            <div class="pros-cons-intro">
+                <p>While GDPR implementation presents challenges, the benefits often outweigh the costs for organizations committed to data protection.</p>
+            </div>
+            
+            <div class="pros-cons-grid">
+                <div class="pros-card">
+                    <h3>Advantages</h3>
+                    <ul class="pros-list">
+                        <li>
+                            <span class="list-icon"><i class="fas fa-check"></i></span>
+                            <div class="list-content">
+                                <h4>Strengthens Consumer Trust</h4>
+                                <p>Builds transparency and reliability in data handling practices, enhancing brand reputation.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon"><i class="fas fa-check"></i></span>
+                            <div class="list-content">
+                                <h4>Standardizes EU Data Laws</h4>
+                                <p>Creates a unified framework across all EU member states, simplifying multi-national compliance.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon"><i class="fas fa-check"></i></span>
+                            <div class="list-content">
+                                <h4>Reduces Data Misuse Risks</h4>
+                                <p>Enforces stronger data security protocols, minimizing breaches and associated costs.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon"><i class="fas fa-check"></i></span>
+                            <div class="list-content">
+                                <h4>Global Influence</h4>
+                                <p>Has inspired similar regulations worldwide, including CCPA (California) and LGPD (Brazil).</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cons-card">
+                    <h3>Challenges</h3>
+                    <ul class="cons-list">
+                        <li>
+                            <span class="list-icon"><i class="fas fa-exclamation"></i></span>
+                            <div class="list-content">
+                                <h4>High Compliance Costs</h4>
+                                <p>Expenses related to hiring DPOs, conducting audits, and implementing technical measures.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon"><i class="fas fa-exclamation"></i></span>
+                            <div class="list-content">
+                                <h4>Complex for SMEs</h4>
+                                <p>Small businesses often struggle with vague guidelines and limited resources for implementation.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon"><i class="fas fa-exclamation"></i></span>
+                            <div class="list-content">
+                                <h4>Data Transfer Restrictions</h4>
+                                <p>Limits on transferring data outside the EU can complicate international business operations.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon"><i class="fas fa-exclamation"></i></span>
+                            <div class="list-content">
+                                <h4>Potential Severe Penalties</h4>
+                                <p>Fines can be financially devastating, especially for smaller organizations with limited resources.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Alternatives Section -->
+        <section id="alternatives" class="content-section">
+            <div class="section-icon">
+                <i class="fas fa-sitemap"></i>
+            </div>
+            <h2>Alternatives & Complementary Frameworks</h2>
+            
+            <div class="alternatives-intro">
+                <p>While GDPR is a leading privacy framework, other standards can complement or provide alternatives depending on your jurisdiction and requirements.</p>
+            </div>
+            
+            <div class="alternatives-grid">
+                <div class="alternative-card">
+                    <div class="alternative-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>ISO/IEC 27701</h3>
+                    <p>Extends ISO 27001 for privacy management, specifically aligning with GDPR's requirements. Provides a certification path for privacy information management systems.</p>
+                    <div class="badge-container">
+                        <span class="alt-badge">Global Standard</span>
+                        <span class="alt-badge">Certification Available</span>
+                    </div>
+                </div>
+                <div class="alternative-card">
+                    <div class="alternative-icon">
+                        <i class="fas fa-flag-usa"></i>
+                    </div>
+                    <h3>CCPA (California)</h3>
+                    <p>Consumer privacy law applicable to businesses serving California residents. Similar to GDPR but based on opt-out rather than opt-in consent mechanisms.</p>
+                    <div class="badge-container">
+                        <span class="alt-badge">U.S. Based</span>
+                        <span class="alt-badge">Regional</span>
+                    </div>
+                </div>
+                <div class="alternative-card">
+                    <div class="alternative-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>EU Cloud Code of Conduct</h3>
+                    <p>Voluntary framework specifically for cloud service providers to demonstrate GDPR compliance through adherence to agreed standards and practices.</p>
+                    <div class="badge-container">
+                        <span class="alt-badge">Cloud Specific</span>
+                        <span class="alt-badge">EU Focused</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Necessity Section -->
+        <section id="necessity" class="content-section">
+            <div class="section-icon">
+                <i class="fas fa-question-circle"></i>
+            </div>
+            <h2>Is GDPR Necessary?</h2>
+            
+            <div class="necessity-intro">
+                <p>The necessity of GDPR compliance depends on your organization's activities, data processing practices, and the location of your data subjects.</p>
+            </div>
+            
+            <div class="necessity-container">
+                <div class="necessity-column essential">
+                    <h3>Essential If You:</h3>
+                    <ul class="necessity-list">
+                        <li><i class="fas fa-check-circle"></i> Target EU markets or have EU-based customers</li>
+                        <li><i class="fas fa-check-circle"></i> Handle sensitive data like health records or financial information</li>
+                        <li><i class="fas fa-check-circle"></i> Operate in regulated sectors (healthcare, finance, education)</li>
+                        <li><i class="fas fa-check-circle"></i> Process large volumes of personal data as part of your services</li>
+                        <li><i class="fas fa-check-circle"></i> Monitor user behavior or profile individuals within the EU</li>
+                    </ul>
+                </div>
+                <div class="necessity-column optional">
+                    <h3>May Not Apply If:</h3>
+                    <ul class="necessity-list">
+                        <li><i class="fas fa-times-circle"></i> Your business has no EU data interactions</li>
+                        <li><i class="fas fa-times-circle"></i> You operate strictly locally outside the EU</li>
+                        <li><i class="fas fa-times-circle"></i> Data processing is for personal or household activities</li>
+                        <li><i class="fas fa-times-circle"></i> Your activities fall under national security exemptions</li>
+                        <li><i class="fas fa-times-circle"></i> You're a very small organization with minimal data processing</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="necessity-note">
+                <div class="note-icon"><i class="fas fa-lightbulb"></i></div>
+                <p>Even when not legally required, implementing GDPR standards can serve as a competitive advantage and prepare your organization for the global trend toward stronger privacy regulations.</p>
+            </div>
+        </section>
+
+        <!-- Practical Steps Section -->
+        <section id="practical" class="content-section">
+            <div class="section-icon">
+                <i class="fas fa-clipboard-list"></i>
+            </div>
+            <h2>Practical Steps for Compliance</h2>
+            
+            <div class="practical-intro">
+                <p>Achieving GDPR compliance requires a systematic approach that addresses both technical and organizational measures.</p>
+            </div>
+            
+            <div class="practical-steps">
+                <div class="practical-step">
+                    <div class="step-number-alt">1</div>
+                    <div class="step-content">
+                        <h3>Data Audit</h3>
+                        <p>Conduct a comprehensive inventory of all personal data your organization processes. Map data flows to understand where data comes from, where it's stored, and who it's shared with.</p>
+                        <div class="step-tools">
+                            <span class="tool-chip">Data mapping tools</span>
+                            <span class="tool-chip">Inventory templates</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="practical-step">
+                    <div class="step-number-alt">2</div>
+                    <div class="step-content">
+                        <h3>Privacy Policy Updates</h3>
+                        <p>Revise your privacy notices to be clear, accessible, and comprehensive. Include information about data collection purposes, legal bases, retention periods, and data subject rights.</p>
+                        <div class="step-tools">
+                            <span class="tool-chip">Policy generators</span>
+                            <span class="tool-chip">Legal templates</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="practical-step">
+                    <div class="step-number-alt">3</div>
+                    <div class="step-content">
+                        <h3>Technical Safeguards</h3>
+                        <p>Implement appropriate security measures such as encryption, access controls, and regular security assessments to protect personal data from unauthorized access or breaches.</p>
+                        <div class="step-tools">
+                            <span class="tool-chip">Encryption solutions</span>
+                            <span class="tool-chip">Access management</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="practical-step">
+                    <div class="step-number-alt">4</div>
+                    <div class="step-content">
+                        <h3>Staff Training</h3>
+                        <p>Ensure all employees understand GDPR requirements and their role in maintaining compliance, particularly those handling personal data directly or making decisions about data processing.</p>
+                        <div class="step-tools">
+                            <span class="tool-chip">Training modules</span>
+                            <span class="tool-chip">Awareness programs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="practical-step">
+                    <div class="step-number-alt">5</div>
+                    <div class="step-content">
+                        <h3>Response Procedures</h3>
+                        <p>Establish clear procedures for handling data subject requests (access, rectification, deletion) and data breach incidents, including notification protocols and response timelines.</p>
+                        <div class="step-tools">
+                            <span class="tool-chip">Request management systems</span>
+                            <span class="tool-chip">Incident response plans</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="comparison" class="content-section">
+            <div class="section-icon">
+                <i class="fas fa-balance-scale-right"></i>
+            </div>
+            <h2>Regulatory Comparison</h2>
+            
+            <div class="comparison-intro">
+                <p>How GDPR compares to other major privacy regulations around the world.</p>
+            </div>
+            
+            <div class="comparison-table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>GDPR (EU)</th>
+                            <th>CCPA (US)</th>
+                            <th>ISO 27701 (Global)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Scope</td>
+                            <td>EU & EEA data</td>
+                            <td>California residents</td>
+                            <td>Privacy extension of ISO 27001</td>
+                        </tr>
+                        <tr>
+                            <td>Who Applies</td>
+                            <td>Any company handling EU data</td>
+                            <td>Large businesses ($25M+ revenue, 50K+ users)</td>
+                            <td>Organizations with privacy controls</td>
+                        </tr>
+                        <tr>
+                            <td>User Rights</td>
+                            <td>Access, erase, object</td>
+                            <td>Know, delete, opt-out</td>
+                            <td>Privacy risk management</td>
+                        </tr>
+                        <tr>
+                            <td>Consent</td>
+                            <td>Explicit & informed</td>
+                            <td>Opt-out model</td>
+                            <td>Requires consent controls</td>
+                        </tr>
+                        <tr>
+                            <td>Data Transfer</td>
+                            <td>Strict rules</td>
+                            <td>No global limits</td>
+                            <td>Aligns with GDPR</td>
+                        </tr>
+                        <tr>
+                            <td>Fines</td>
+                            <td>Up to €20M / 4% revenue</td>
+                            <td>Up to $7,500 per violation</td>
+                            <td>No fines, improves compliance</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-6">
+                <h3 class="section-subtitle">GDPR vs DPDPA Comparison</h3>
+                <p>How GDPR compares with India's Digital Personal Data Protection Act (DPDPA).</p>
+                
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>GDPR (EU)</th>
+                                <th>DPDPA (India)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Scope</td>
+                                <td>All personal data (digital & analog)</td>
+                                <td>Digital personal data only</td>
+                            </tr>
+                            <tr>
+                                <td>Enforcement Date</td>
+                                <td>May 25, 2018</td>
+                                <td>Enacted August 2023, pending full enforcement</td>
+                            </tr>
+                            <tr>
+                                <td>Age of Consent</td>
+                                <td>13-16 years (varies by EU state)</td>
+                                <td>18 years</td>
+                            </tr>
+                            <tr>
+                                <td>Data Localization</td>
+                                <td>No strict requirement</td>
+                                <td>Mandated for sensitive data</td>
+                            </tr>
+                            <tr>
+                                <td>Penalties</td>
+                                <td>Up to €20M or 4% of global turnover</td>
+                                <td>Up to ₹250 crore (~$30 million) per violation</td>
+                            </tr>
+                            <tr>
+                                <td>Regulatory Body</td>
+                                <td>Data Protection Authorities in each EU country</td>
+                                <td>Data Protection Board of India</td>
+                            </tr>
+                            <tr>
+                                <td>Data Breach Notification</td>
+                                <td>Within 72 hours</td>
+                                <td>Prompt notification required</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="section-subtitle">GDPR vs SOC 2 Comparison</h3>
+                <p>Comparing GDPR with the SOC 2 compliance framework.</p>
+                
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>GDPR (EU)</th>
+                                <th>SOC 2 (AICPA)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Primary Focus</td>
+                                <td>Protecting personal data of EU residents</td>
+                                <td>Service organizations handling customer data</td>
+                            </tr>
+                            <tr>
+                                <td>Type</td>
+                                <td>Legally mandatory regulation</td>
+                                <td>Voluntary attestation standard</td>
+                            </tr>
+                            <tr>
+                                <td>Core Elements</td>
+                                <td>7 principles, 99 articles</td>
+                                <td>5 Trust Services Criteria</td>
+                            </tr>
+                            <tr>
+                                <td>Compliance Verification</td>
+                                <td>Self-assessment, DPAs audits</td>
+                                <td>External audit by AICPA-certified CPA firm</td>
+                            </tr>
+                            <tr>
+                                <td>Reporting</td>
+                                <td>No standardized reporting format</td>
+                                <td>Type I (point-in-time) or Type II (period of time) reports</td>
+                            </tr>
+                            <tr>
+                                <td>Implementation Approach</td>
+                                <td>Prescriptive requirements</td>
+                                <td>Flexible, criteria-based approach</td>
+                            </tr>
+                            <tr>
+                                <td>Geographic Reach</td>
+                                <td>EU/EEA and entities handling EU data</td>
+                                <td>Global, widely recognized in North America</td>
+                            </tr>
+                            <tr>
+                                <td>Penalties</td>
+                                <td>Up to €20M or 4% of global turnover</td>
+                                <td>No direct penalties (market/reputation impact)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="conclusion-card">
+                <h3>Conclusion</h3>
+                <ul class="conclusion-list">
+                    <li>GDPR drives a global shift toward stronger data privacy</li>
+                    <li>Empowers individuals with greater control over their data</li>
+                    <li>Businesses must ensure compliance to avoid heavy fines</li>
+                    <li>Transparency & trust are key to sustainable growth</li>
+                    <li>Data protection is the future - adapt now!</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="gdpr-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>GDPR Framework</span>
+            </div>
+            <p>A comprehensive guide to understanding and implementing GDPR compliance</p>
+            <div class="footer-links">
+                <a href="#overview">Overview</a>
+                <a href="#introduction">Introduction</a>
+                <a href="#principles">Principles</a>
+                <a href="#compliance">Compliance</a>
+            </div>
+            <p class="copyright">© 2023 Enterprise GRC Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation highlight
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.content-section');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+

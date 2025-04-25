@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File for Scoring</title>
+    <link rel="stylesheet" href="css/file_upload.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h2 id="titleText">Upload File for Scoring</h2> <!-- This will be hidden -->
+        <form id="uploadForm">
+            <input type="file" name="fileToUpload" id="fileToUpload" required>
+            <button type="submit" id="uploadBtn">Upload & Generate Score</button>
+        </form>
+
+        <button id="manualBtn" style="background-color: #ffcc00; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; margin-top: 10px;">Do Manually</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("uploadForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent page reload
+            
+            let formData = new FormData(this);
+            
+            fetch("upload.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById("result").innerHTML = 
+                        `<p style="font-size: 20px; font-weight: bold;">
+                            <span style="color: black;">Your Score is :</span> 
+                            <span style="color:#B56511;">${data.score} %</span>
+                        </p>`;
+                    
+                    // Hide file input, upload button, and title
+                    document.getElementById("fileToUpload").style.display = "none";
+                    document.getElementById("uploadBtn").style.display = "none";
+                    document.getElementById("titleText").style.display = "none"; 
+                    
+                    // Hide the "Do Manually" button after score is displayed
+                    document.getElementById("manualBtn").style.display = "none";
+                } else {
+                    document.getElementById("result").innerHTML = `<p style="color: red;">${data.message}</p>`;
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+
+        document.getElementById("manualBtn").addEventListener("click", function () {
+            window.location.href = "manual.html";
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | GRC & Case Studies</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional styles to fix the blog hero height */
+        .blog-hero {
+            padding: 60px 0;
+            min-height: auto;
+        }
+        .blog-hero .hero-content {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="home.html" class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>GRC Hub</span>
+                </a>
+            </div>
+            <div class="nav-right">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search articles...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="view-toggle">
+                    <button class="grid-view active" title="Grid View">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="list-view" title="List View">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-newspaper"></i>
+                Latest Insights
+            </div>
+            <h1>Blog</h1>
+            <p class="hero-subtitle">Expert insights on Governance, Risk, and Compliance</p>
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="grc">GRC</button>
+                <button class="filter-btn" data-category="case-study">Case Studies</button>
+                <button class="filter-btn" data-category="compliance">Compliance</button>
+                <button class="filter-btn" data-category="data-breach">Data Breach</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-header">
+                <div class="header-left">
+                    <h2>Featured Articles</h2>
+                    <p>Discover the latest insights and analysis in GRC</p>
+                </div>
+                <div class="header-right">
+                    <div class="sort-options">
+                        <select id="sortSelect">
+                            <option value="latest">Latest First</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="trending">Trending</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-grid">
+                <!-- GRC Article -->
+                <article class="blog-card" data-category="grc">
+                    <div class="blog-badge">GRC</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-shield-alt blog-card-icon"></i>
+                            Enhancing Business Continuity with GRC: Key Strategies for Success
+                        </h3>
+                        <p class="blog-excerpt">The Role of GRC in Business Continuity Planning (BCP) Governance, Risk, and Compliance (GRC) performs a vital function in ensuring commercial enterprise continuity via imparting a established technique to threat control, regulatory compliance, and company governance...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog1.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Case Study Article -->
+                <article class="blog-card" data-category="case-study data-breach">
+                    <div class="blog-badge">Case Study</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-industry blog-card-icon"></i>
+                            The Colonial Pipeline Attack: Lessons in Critical Infrastructure Security
+                        </h3>
+                        <p class="blog-excerpt">Analysis of the 2021 Colonial Pipeline ransomware attack and key takeaways for protecting critical infrastructure. This sophisticated ransomware attack forced the shutdown of one of America's largest fuel pipelines, leading to widespread fuel shortages...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog2.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Compliance Article -->
+                <article class="blog-card" data-category="grc compliance">
+                    <div class="blog-badge">Compliance</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-clipboard-check blog-card-icon"></i>
+                            GDPR Compliance in 2023: New Challenges and Solutions
+                        </h3>
+                        <p class="blog-excerpt">Navigating the evolving landscape of GDPR compliance and addressing new regulatory challenges in data protection. As organizations continue to navigate the complexities of GDPR compliance, new challenges emerge with evolving technologies...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog3.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Data Breach Article -->
+                <article class="blog-card" data-category="case-study data-breach">
+                    <div class="blog-badge">Data Breach</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-network-wired blog-card-icon"></i>
+                            The SolarWinds Breach: Supply Chain Risk Management
+                        </h3>
+                        <p class="blog-excerpt">Examining the SolarWinds supply chain attack and strategies for mitigating third-party security risks. The SolarWinds supply chain attack represents one of the most sophisticated and far-reaching cyber espionage campaigns ever conducted...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog4.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- GRC Article -->
+                <article class="blog-card" data-category="grc">
+                    <div class="blog-badge">GRC</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-chart-line blog-card-icon"></i>
+                            Quantitative Risk Assessment Methods for Cybersecurity
+                        </h3>
+                        <p class="blog-excerpt">Advanced techniques for quantifying cybersecurity risks and making data-driven security investment decisions. Quantitative risk assessment in cybersecurity involves using data-driven methods to evaluate and measure security risks in numerical terms...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog5.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Case Study Article -->
+                <article class="blog-card" data-category="case-study data-breach">
+                    <div class="blog-badge">Case Study</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-lock blog-card-icon"></i>
+                            Ransomware Response: The Kaseya VSA Attack Analysis
+                        </h3>
+                        <p class="blog-excerpt">A detailed analysis of the Kaseya VSA ransomware attack and effective incident response strategies. This sophisticated attack affected thousands of organizations globally and highlighted the cascading impact of supply chain compromises...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog6.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- GRC Culture Article -->
+                <article class="blog-card" data-category="grc">
+                    <div class="blog-badge">GRC</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-users blog-card-icon"></i>
+                            Cultivating a GRC-Centric Culture: Strategies for Implementation
+                        </h3>
+                        <p class="blog-excerpt">Developing a culture focused on Governance, Risk, and Compliance is about integrating ethical decision-making and risk awareness into the everyday life of the company. Organizations that successfully foster this kind of culture become more trustworthy...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog7.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- New Case Study Article -->
+                <article class="blog-card" data-category="case-study data-breach">
+                    <div class="blog-badge">Case Study</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-id-card blog-card-icon"></i>
+                            The Aadhaar Data Breach: A Wake-Up Call for Digital Identity Security
+                        </h3>
+                        <p class="blog-excerpt">Analysis of the 2018 Aadhaar data breach incident in India, examining the vulnerabilities in digital identity systems and the lessons learned for protecting sensitive personal information...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog15.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- New Case Study Article -->
+                <article class="blog-card" data-category="case-study">
+                    <div class="blog-badge">Case Study</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-building-shield blog-card-icon"></i>
+                            Case Study: Enterprise Security Transformation
+                        </h3>
+                        <p class="blog-excerpt">A comprehensive analysis of how a major enterprise transformed its security posture through strategic GRC implementation and risk management practices...</p>
+                        <div class="blog-footer">
+                            <a href="blog/case_study1.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- New Case Study Article -->
+                <article class="blog-card" data-category="case-study">
+                    <div class="blog-badge">Case Study</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-shield-virus blog-card-icon"></i>
+                            Case Study: Ransomware Defense Strategy
+                        </h3>
+                        <p class="blog-excerpt">Examining how an organization successfully defended against a sophisticated ransomware attack through proactive security measures and incident response planning...</p>
+                        <div class="blog-footer">
+                            <a href="blog/case_study2.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Cybersecurity & GRC Article -->
+                <article class="blog-card" data-category="grc">
+                    <div class="blog-badge">GRC</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-shield-alt blog-card-icon"></i>
+                            Cybersecurity & GRC: A Unified Approach to Risk Management
+                        </h3>
+                        <p class="blog-excerpt">In today's digital age, businesses encounter numerous cybersecurity threats. A Governance, Risk, and Compliance framework is essential because it aligns cybersecurity strategies with business objectives, helping in managing risks...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog8.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- GRC Frameworks Article -->
+                <article class="blog-card" data-category="grc">
+                    <div class="blog-badge">GRC</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-sitemap blog-card-icon"></i>
+                            Comparing GRC Frameworks for Financial Institutions: A Guide
+                        </h3>
+                        <p class="blog-excerpt">This guide compares key GRC frameworks commonly used in the financial sector, highlighting their strengths, limitations, and optimal use cases to help institutions make informed decisions about framework selection...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog9.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Regulatory Compliance Article -->
+                <article class="blog-card" data-category="grc compliance">
+                    <div class="blog-badge">Compliance</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-balance-scale blog-card-icon"></i>
+                            Regulatory Compliance & GRC: Best Practices for Staying Compliant
+                        </h3>
+                        <p class="blog-excerpt">For a company to function legally, ethically, and effectively, it needs to follow industry regulations and best practices. This article explores regulatory compliance, how GRC contributes, and best practices for maintaining compliance...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog10.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Financial Risk Management Article -->
+                <article class="blog-card" data-category="grc">
+                    <div class="blog-badge">GRC</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-chart-bar blog-card-icon"></i>
+                            Financial Risk Management with GRC: Assessment & Mitigation
+                        </h3>
+                        <p class="blog-excerpt">Companies need to identify, evaluate, and reduce financial risks to stay stable and grow. This guide explains financial risk management, its connection to GRC frameworks, and best practices for assessment and mitigation...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog11.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Corporate Governance Article -->
+                <article class="blog-card" data-category="grc">
+                    <div class="blog-badge">GRC</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-landmark blog-card-icon"></i>
+                            Corporate Governance & GRC: Principles for Effective Management
+                        </h3>
+                        <p class="blog-excerpt">Corporate governance alongside GRC plays a crucial role in making businesses transparent, accountable, and sustainable. This guide explains corporate governance principles, their connection to GRC, and effective management practices...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog12.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- GRC Fundamentals Article -->
+                <article class="blog-card" data-category="grc">
+                    <div class="blog-badge">GRC</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-book blog-card-icon"></i>
+                            GRC Fundamentals: Why Governance, Risk & Compliance Matter
+                        </h3>
+                        <p class="blog-excerpt">Governance, Risk, and Compliance (GRC) helps companies achieve their goals, stay within legal boundaries, manage risks, and conduct business ethically. Learn why GRC is essential and how to build a strong GRC strategy...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog13.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Third-Party Risk Management Article -->
+                <article class="blog-card" data-category="grc">
+                    <div class="blog-badge">GRC</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-handshake blog-card-icon"></i>
+                            Third-Party Risk Management: A GRC-Based Approach
+                        </h3>
+                        <p class="blog-excerpt">Companies often work with outside vendors, suppliers, and service providers. Using a GRC approach for Third-Party Risk Management enables effective assessment, monitoring, and reduction of risks associated with external partners...</p>
+                        <div class="blog-footer">
+                            <a href="blog/blog14.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Kudankulam Case Study -->
+                <article class="blog-card" data-category="case-study data-breach">
+                    <div class="blog-badge">Case Study</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-radiation blog-card-icon"></i>
+                            Kurakula Nuclear Power Plant (2019)
+                        </h3>
+                        <p class="blog-excerpt">In 2019, the Kudankulam Nuclear Power Plant in India faced a cybersecurity incident where malware infected the administrative network. This case study explores the incident, response, and key lessons for critical infrastructure security...</p>
+                        <div class="blog-footer">
+                            <a href="blog/case_study1.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- PwC Audit Case Study -->
+                <article class="blog-card" data-category="case-study compliance">
+                    <div class="blog-badge">Case Study</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-file-invoice-dollar blog-card-icon"></i>
+                            PwC fined £2.9m over audit of Sanjeev Gupta's Wyelands Bank
+                        </h3>
+                        <p class="blog-excerpt">An examination of how PwC failed to properly challenge Wyelands Bank's management on loan recoverability, resulting in regulatory fines and highlighting the importance of auditor independence and professional skepticism...</p>
+                        <div class="blog-footer">
+                            <a href="blog/case_study2.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Compliance Failures Case Study Part 1 -->
+                <article class="blog-card" data-category="case-study compliance">
+                    <div class="blog-badge">Case Study</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-exclamation-triangle blog-card-icon"></i>
+                            When Compliance Fails: Eye-Opening Incidents in GRC
+                        </h3>
+                        <p class="blog-excerpt">This case study examines significant compliance failures including Facebook's Cambridge Analytica scandal, Wells Fargo's account fraud, and the Equifax data breach, revealing key patterns and lessons for GRC professionals...</p>
+                        <div class="blog-footer">
+                            <a href="blog/case_study3.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Compliance Failures Case Study Part 2 -->
+                <article class="blog-card" data-category="case-study compliance">
+                    <div class="blog-badge">Case Study</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-exclamation-triangle blog-card-icon"></i>
+                            When Compliance Fails: Eye-Opening Incidents in GRC (Part 2)
+                        </h3>
+                        <p class="blog-excerpt">The second part of our compliance failures series examines the Volkswagen emissions scandal, Boeing 737 MAX crisis, and Goldman Sachs 1MDB scandal, revealing common patterns in governance breakdowns and implementation failures...</p>
+                        <div class="blog-footer">
+                            <a href="blog/case_study4.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Enron Scandal Case Study -->
+                <article class="blog-card" data-category="case-study compliance">
+                    <div class="blog-badge">Case Study</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-building blog-card-icon"></i>
+                            The Enron Scandal: A Historic Failure in Corporate Governance
+                        </h3>
+                        <p class="blog-excerpt">The Enron scandal of 2001 represents one of the most infamous corporate collapses in history. This case study examines how systematic failures in governance, risk management, and compliance led to catastrophic consequences...</p>
+                        <div class="blog-footer">
+                            <a href="blog/case_study5.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Olympus Scandal Case Study -->
+                <article class="blog-card" data-category="case-study compliance">
+                    <div class="blog-badge">Case Study</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">
+                            <i class="fas fa-camera blog-card-icon"></i>
+                            The Olympus Scandal: Corporate Governance Failure in Japan
+                        </h3>
+                        <p class="blog-excerpt">The 2011 Olympus scandal revealed how the company concealed massive investment losses for over a decade. This case examines the fraud mechanisms, governance failures, and important lessons for modern GRC professionals...</p>
+                        <div class="blog-footer">
+                            <a href="blog/case_sudy6.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="pagination">
+                <!-- The pagination links will be dynamically generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter Section
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-wrapper">
+                <div class="newsletter-content">
+                    <h2>Stay Updated</h2>
+                    <p>Subscribe to our newsletter for the latest insights on GRC, cybersecurity, and data breach case studies.</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-subscribe">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section> -->
+
+    <script src="blog.js"></script>
+</body>
+</html>
+
+

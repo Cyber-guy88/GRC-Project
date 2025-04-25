@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Profile Update Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background: #ccc;
+        }
+        .message {
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+        }
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px solid #ebccd1;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Profile Update Test</h1>
+    
+    <form id="testForm">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone">
+        </div>
+        
+        <div class="form-group">
+            <label for="company">Company:</label>
+            <input type="text" id="company" name="company">
+        </div>
+        
+        <div class="form-group">
+            <label for="jobTitle">Job Title:</label>
+            <input type="text" id="jobTitle" name="jobTitle">
+        </div>
+        
+        <button type="submit" id="submitBtn">Update Profile</button>
+    </form>
+    
+    <div id="successMessage" class="message success" style="display: none;"></div>
+    <div id="errorMessage" class="message error" style="display: none;"></div>
+    
+    <h2>Response:</h2>
+    <pre id="responseOutput">No response yet</pre>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Try to get current user email from session/localStorage
+            const email = localStorage.getItem('userEmail') || sessionStorage.getItem('userEmail') || '';
+            const fullName = localStorage.getItem('userName') || sessionStorage.getItem('userName') || '';
+            
+            // Pre-fill form with current user data if available
+            document.getElementById('email').value = email;
+            document.getElementById('fullName').value = fullName;
+            
+            // Handle form submission
+            document.getElementById('testForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Disable submit button during submission
+                const submitBtn = document.getElementById('submitBtn');
+                const successMessage = document.getElementById('successMessage');
+                const errorMessage = document.getElementById('errorMessage');
+                const responseOutput = document.getElementById('responseOutput');
+                
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Updating...';
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+                
+                // Get form data
+                const formData = {
+                    email: document.getElementById('email').value,
+                    fullName: document.getElementById('fullName').value,
+                    phone: document.getElementById('phone').value,
+                    company: document.getElementById('company').value,
+                    jobTitle: document.getElementById('jobTitle').value,
+                    currentEmail: email // Send current email for reference
+                };
+                
+                // Send to server
+                fetch('update_profile.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => {
+                    // Log raw response for debugging
+                    return response.text().then(text => {
+                        console.log('Raw response:', text);
+                        
+                        try {
+                            // Try to parse as JSON
+                            return JSON.parse(text);
+                        } catch (e) {
+                            // If it's not valid JSON, throw error with the raw text
+                            throw new Error('Invalid JSON response: ' + text);
+                        }
+                    });
+                })
+                .then(data => {
+                    // Show in response area
+                    responseOutput.textContent = JSON.stringify(data, null, 2);
+                    
+                    if (data.success) {
+                        // Show success message
+                        successMessage.textContent = data.message || 'Profile updated successfully!';
+                        successMessage.style.display = 'block';
+                        
+                        // Update localStorage/sessionStorage with new values
+                        if (localStorage.getItem('userEmail')) {
+                            localStorage.setItem('userEmail', formData.email);
+                            localStorage.setItem('userName', formData.fullName);
+                        } else if (sessionStorage.getItem('userEmail')) {
+                            sessionStorage.setItem('userEmail', formData.email);
+                            sessionStorage.setItem('userName', formData.fullName);
+                        }
+                    } else {
+                        // Show error message
+                        errorMessage.textContent = data.message || 'Error updating profile.';
+                        errorMessage.style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    
+                    // Show error message
+                    errorMessage.textContent = error.message;
+                    errorMessage.style.display = 'block';
+                    
+                    // Show in response area
+                    responseOutput.textContent = error.toString();
+                })
+                .finally(() => {
+                    // Re-enable submit button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Update Profile';
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMMI - Capability Maturity Model Integration</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/framework.css">
+    <link rel="stylesheet" href="css/cmmi.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="badge">
+                <i class="fas fa-layer-group"></i>
+                Process Improvement Framework
+            </div>
+            <h1>CMMI</h1>
+            <p class="hero-subtitle">Capability Maturity Model Integration - A proven framework for process improvement and organizational excellence</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Maturity Levels</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">22</span>
+                    <span class="stat-label">Process Areas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Organizations</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="page-nav">
+        <div class="nav-container">
+            <a href="#overview" class="nav-item active">Overview</a>
+            <a href="#maturity-levels" class="nav-item">Maturity Levels</a>
+            <a href="#process-areas" class="nav-item">Process Areas</a>
+            <a href="#benefits" class="nav-item">Benefits</a>
+            <a href="#grc" class="nav-item">GRC Integration</a>
+            <a href="#examples" class="nav-item">Real-World Examples</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Overview Section -->
+        <section id="overview" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h2>What is CMMI?</h2>
+            </div>
+            <div class="content-card">
+                <p>CMMI (Capability Maturity Model Integration) is a globally recognized framework that helps organizations improve processes (like software development, services, or product design) to deliver better results. Think of it as a step-by-step guide to becoming more efficient, reliable, and customer-focused.</p>
+            </div>
+        </section>
+
+        <!-- Maturity Levels Section -->
+        <section id="maturity-levels" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h2>5 Maturity Levels Explained</h2>
+            </div>
+            <div class="content-card">
+                <p class="section-intro">Think of these as "stages of growth" for an organization's processes</p>
+            </div>
+            
+            <div class="levels-grid">
+                <div class="level-card" data-level="1">
+                    <div class="level-number">1</div>
+                    <div class="level-content">
+                        <h3>Initial (Chaotic)</h3>
+                        <div class="level-details">
+                            <div class="detail-item">
+                                <h4><i class="fas fa-info-circle"></i> What it means:</h4>
+                                <p>Processes are unpredictable. Teams work in "firefighting mode" (solve problems as they pop up).</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4><i class="fas fa-lightbulb"></i> Example:</h4>
+                                <p>A startup with no documented workflows; success depends on heroic efforts by individuals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="level-card" data-level="2">
+                    <div class="level-number">2</div>
+                    <div class="level-content">
+                        <h3>Managed (Repeatable)</h3>
+                        <div class="level-details">
+                            <div class="detail-item">
+                                <h4><i class="fas fa-info-circle"></i> What it means:</h4>
+                                <p>Processes are planned and tracked for individual projects (but not standardized across the organization).</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4><i class="fas fa-lightbulb"></i> Example:</h4>
+                                <p>A team uses timelines and budgets for one project but doesn't share these practices with other teams.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="level-card" data-level="3">
+                    <div class="level-number">3</div>
+                    <div class="level-content">
+                        <h3>Defined (Standardized)</h3>
+                        <div class="level-details">
+                            <div class="detail-item">
+                                <h4><i class="fas fa-info-circle"></i> What it means:</h4>
+                                <p>Processes are documented and shared across the organization. Everyone follows the same rules.</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4><i class="fas fa-lightbulb"></i> Example:</h4>
+                                <p>A company has a "project playbook" used by all teams to plan, execute, and review work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="level-card" data-level="4">
+                    <div class="level-number">4</div>
+                    <div class="level-content">
+                        <h3>Quantitatively Managed (Measured)</h3>
+                        <div class="level-details">
+                            <div class="detail-item">
+                                <h4><i class="fas fa-info-circle"></i> What it means:</h4>
+                                <p>Processes are measured with data. Teams predict outcomes (like project deadlines) using past performance.</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4><i class="fas fa-lightbulb"></i> Example:</h4>
+                                <p>A company uses metrics like "average coding errors per 1000 lines" to set goals for future projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="level-card" data-level="5">
+                    <div class="level-number">5</div>
+                    <div class="level-content">
+                        <h3>Optimizing (Innovating)</h3>
+                        <div class="level-details">
+                            <div class="detail-item">
+                                <h4><i class="fas fa-info-circle"></i> What it means:</h4>
+                                <p>Focus shifts to continuous improvement. Teams fix root causes of problems and innovate.</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4><i class="fas fa-lightbulb"></i> Example:</h4>
+                                <p>Using AI tools to automate testing, reducing errors by 30% in the next quarter.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Areas Section -->
+        <section id="process-areas" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <h2>Key Process Areas (KPAs)</h2>
+            </div>
+            <div class="content-card">
+                <p class="section-intro">These are the "building blocks" to achieve higher maturity levels</p>
+            </div>
+            
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Requirements Management</h3>
+                    <div class="process-details">
+                        <div class="goal">
+                            <h4>Goal:</h4>
+                            <p>Clearly understand and document what the customer wants.</p>
+                        </div>
+                        <div class="example">
+                            <h4>Example:</h4>
+                            <p>Using tools like Jira to track customer needs and changes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-card">
+                    <div class="process-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Project Planning</h3>
+                    <div class="process-details">
+                        <div class="goal">
+                            <h4>Goal:</h4>
+                            <p>Create realistic timelines, budgets, and resource plans.</p>
+                        </div>
+                        <div class="example">
+                            <h4>Example:</h4>
+                            <p>Using Gantt charts to map out tasks for a 6-month project.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-card">
+                    <div class="process-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Project Monitoring & Control</h3>
+                    <div class="process-details">
+                        <div class="goal">
+                            <h4>Goal:</h4>
+                            <p>Track progress and fix issues early.</p>
+                        </div>
+                        <div class="example">
+                            <h4>Example:</h4>
+                            <p>Weekly check-ins to see if the project is on time/within budget.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-card">
+                    <div class="process-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>Configuration Management</h3>
+                    <div class="process-details">
+                        <div class="goal">
+                            <h4>Goal:</h4>
+                            <p>Organize and control changes to documents, code, or designs.</p>
+                        </div>
+                        <div class="example">
+                            <h4>Example:</h4>
+                            <p>Using GitHub to manage software versions and track updates.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-card">
+                    <div class="process-icon">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h3>Process & Product Quality Assurance</h3>
+                    <div class="process-details">
+                        <div class="goal">
+                            <h4>Goal:</h4>
+                            <p>Check if processes are followed and products meet standards.</p>
+                        </div>
+                        <div class="example">
+                            <h4>Example:</h4>
+                            <p>A QA team audits projects to ensure they follow company guidelines.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-card">
+                    <div class="process-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Measurement & Analysis</h3>
+                    <div class="process-details">
+                        <div class="goal">
+                            <h4>Goal:</h4>
+                            <p>Use data to make decisions.</p>
+                        </div>
+                        <div class="example">
+                            <h4>Example:</h4>
+                            <p>Analyzing bug reports to improve coding practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="secondary-processes">
+                <h3>Other Important Process Areas</h3>
+                <p class="sub-intro">Beyond the core KPAs</p>
+                <div class="secondary-grid">
+                    <div class="secondary-card">
+                        <div class="secondary-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Supplier Agreement Management</h4>
+                        <p>Manage contracts with vendors.</p>
+                    </div>
+                    
+                    <div class="secondary-card">
+                        <div class="secondary-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h4>Risk Management</h4>
+                        <p>Identify and plan for potential problems.</p>
+                    </div>
+                    
+                    <div class="secondary-card">
+                        <div class="secondary-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h4>Decision Analysis</h4>
+                        <p>Use data to make better choices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h2>Benefits of CMMI</h2>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Better Quality Products/Services</h3>
+                    <p>Fewer defects, fewer delays, and happier customers.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Cost Savings</h3>
+                    <p>Less rework (e.g., fixing errors after launch) saves money.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Stronger Teamwork</h3>
+                    <p>Clear processes reduce confusion and blame games.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Competitive Edge</h3>
+                    <p>Many clients (especially governments) require CMMI certification for contracts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRC Integration Section -->
+        <section id="grc" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h2>How CMMI Fits into GRC</h2>
+            </div>
+            <div class="content-card">
+                <p>CMMI provides a structured approach that integrates with Governance, Risk, and Compliance frameworks:</p>
+            </div>
+            
+            <div class="grc-grid">
+                <div class="grc-card">
+                    <div class="grc-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Governance</h3>
+                    <p>CMMI provides a structure for leadership to standardize processes.</p>
+                </div>
+                
+                <div class="grc-card">
+                    <div class="grc-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Risk Management</h3>
+                    <p>Level 4/5 focus on predicting and preventing risks.</p>
+                </div>
+                
+                <div class="grc-card">
+                    <div class="grc-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Compliance</h3>
+                    <p>Helps meet industry standards (e.g., ISO, ITIL).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real-World Examples Section -->
+        <section id="examples" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h2>Real-World Example</h2>
+            </div>
+            
+            <div class="example-card">
+                <div class="example-header">
+                    <div class="example-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Software Company at Level 3</h3>
+                </div>
+                <div class="example-practices">
+                    <div class="practice-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Use templates for project plans.</p>
+                    </div>
+                    <div class="practice-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Train all teams in the same testing methods.</p>
+                    </div>
+                    <div class="practice-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Share success metrics company-wide.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="takeaway-container">
+                <h3>Key Takeaway</h3>
+                <div class="takeaway-content">
+                    <p>CMMI is not a quick fix – it's a journey. Organizations move up levels by standardizing, measuring, and improving processes over time. The higher the level, the more predictable and efficient the business becomes.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>This information is provided for educational purposes about the CMMI framework.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation highlighting
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Smooth scroll to section
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for sections
+        const sections = document.querySelectorAll('.section');
+        const navItems = document.querySelectorAll('.nav-item');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.nav-item').forEach(item => {
+                        item.classList.remove('active');
+                        if (item.getAttribute('href') === `#${id}`) {
+                            item.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
+
+

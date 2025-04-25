@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic PCI DSS Assessment</title>
+    <link rel="stylesheet" href="css/manual_1.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add jsPDF library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <style>
+        /* Add styles for the dashboard button */
+        .dashboard-btn {
+            background-color: #0f4c81;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .dashboard-btn:hover {
+            background-color: #0a3258;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dashboard-btn i {
+            font-size: 16px;
+        }
+
+        /* Debug button styles */
+        .debug-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .debug-btn:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-wrapper">
+        <div class="nav-buttons">
+            <a href="home.html" class="nav-btn home-btn">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="javascript:history.go(-1)" class="nav-btn back-btn">
+                <i class="fas fa-arrow-left"></i> Back
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="assessment-header">
+            <h1>PCI DSS Compliance Assessment</h1>
+            <p class="subtitle">Dynamic Control Assessment & Recommendation System</p>
+        </div>
+
+        <div class="checklist-container">
+            <table id="assessmentTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>PCI DSS Requirement</th>
+                        <th>Status</th>
+                        <th>Implementation Level</th>
+                    </tr>
+                </thead>
+                <tbody id="checklistBody">
+                    <!-- Checklist items will be populated here -->
+                </tbody>
+            </table>
+        </div>
+
+        <button id="analyzeBtn" class="analyze-btn">Analyze Compliance Status</button>
+
+        <div id="assessmentResults" class="assessment-results hidden">
+            <div class="score-section">
+                <div class="score-circle">
+                    <div class="weighted-score">
+                        <span class="score-value">0%</span>
+                    </div>
+                </div>
+                <div class="score-details">
+                    <div class="raw-score-container">
+                        <div class="raw-score-label">Total Score</div>
+                        <div class="raw-score-value">0/32</div>
+                    </div>
+                    <div class="compliance-info">
+                        <div class="compliance-status">
+                            <div class="status-text">
+                                <span class="status-icon">❓</span>
+                                <span>Not Assessed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-counts">
+                        <div class="status-item implemented">
+                            <i class="fas fa-check-circle"></i>
+                            <span>0</span>
+                            <small>Implemented</small>
+                        </div>
+                        <div class="status-item partial">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>0</span>
+                            <small>Partial</small>
+                        </div>
+                        <div class="status-item missing">
+                            <i class="fas fa-times-circle"></i>
+                            <span>0</span>
+                            <small>Missing</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendations-section">
+                <h2>Compliance Recommendations</h2>
+                <div id="recommendationsList" class="recommendations-list">
+                    <!-- Recommendations will be dynamically populated here -->
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="downloadReport" class="download-btn">
+                    <i class="fas fa-download"></i> Download Report (PDF)
+                </button>
+                <button id="shareReport" class="share-btn">
+                    <i class="fas fa-share-alt"></i> Share Report
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Debug button -->
+    
+
+    <!-- Load modular JavaScript files in the correct order -->
+    <script src="js/assessment.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/pdf-generator.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Debug script -->
+    <script>
+        document.getElementById('debugBtn').addEventListener('click', function() {
+            console.log('Debug button clicked');
+            console.log('Assessment instance:', window.assessment);
+            console.log('UI instance:', window.ui);
+            
+            // Check if analyze button exists
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            console.log('Analyze button:', analyzeBtn);
+            
+            // Check if assessment results section exists
+            const resultsSection = document.getElementById('assessmentResults');
+            console.log('Results section:', resultsSection);
+            
+            // Check if checklist is populated
+            const checklistBody = document.getElementById('checklistBody');
+            console.log('Checklist rows:', checklistBody.children.length);
+            
+            // Manually trigger analysis
+            if (window.assessment) {
+                const results = window.assessment.analyzeCompliance();
+                console.log('Manual analysis results:', results);
+                window.displayResults(results);
+            } else {
+                console.error('Assessment instance not found');
+            }
+        });
+    </script>
+</body>
+</html> 
+

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITIL Framework - IT Service Management</title>
+    <link rel="stylesheet" href="css/itil.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="badge">
+            <span>🔄 Service Management</span>
+        </div>
+        
+        <h1>ITIL Framework</h1>
+        <p class="subtitle">Information Technology Infrastructure Library</p>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Core Components</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">34</div>
+                <div class="stat-label">Practice Areas</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Dimensions</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-links">
+            <a href="#overview" class="active">Overview</a>
+            <a href="#importance">Importance</a>
+            <a href="#when-to-use">When to Use</a>
+            <a href="#features">Key Features</a>
+            <a href="#lifecycle">Service Lifecycle</a>
+            <a href="#pros-cons">Pros & Cons</a>
+            <a href="#alternatives">Alternatives</a>
+            <a href="#necessity">Necessity</a>
+            <a href="#resources">Resources</a>
+            <a href="#benefits">Benefits</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Overview Section -->
+        <section id="overview">
+            <div class="section-title">
+                <i class="info-icon">i</i>
+                <h2>What is ITIL?</h2>
+            </div>
+            <div class="card">
+                <p>The <strong>Information Technology Infrastructure Library (ITIL)</strong> is a globally recognized framework for IT Service Management (ITSM). Originally developed by the UK Government in the 1980s, ITIL provides best practices for delivering high-quality IT services that align with business objectives.</p>
+                <p>ITIL helps organizations improve efficiency, reduce risks, and enhance customer satisfaction by implementing structured IT service management processes.</p>
+            </div>
+        </section>
+
+        <!-- Importance Section -->
+        <section id="importance">
+            <div class="section-title">
+                <i class="info-icon">!</i>
+                <h2>Why is ITIL Important?</h2>
+            </div>
+            <div class="importance-grid">
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </div>
+                    <h3>Standardization</h3>
+                    <p>Creates a common language for IT teams, reducing ambiguity and improving communication across departments.</p>
+                </div>
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </div>
+                    <h3>Efficiency</h3>
+                    <p>Streamlines IT processes like incident management and change management, reducing downtime and improving service delivery.</p>
+                </div>
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                    </div>
+                    <h3>Customer Satisfaction</h3>
+                    <p>Ensures IT services meet user expectations through structured service design and delivery processes.</p>
+                </div>
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <h3>Cost Reduction</h3>
+                    <p>Minimizes waste and optimizes resource allocation through systematic process management and continuous improvement.</p>
+                </div>
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    </div>
+                    <h3>Compliance</h3>
+                    <p>Helps organizations meet regulatory requirements (e.g., GDPR, HIPAA) through documented processes and controls.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- When to Use Section -->
+        <section id="when-to-use">
+            <div class="section-title">
+                <i class="info-icon">?</i>
+                <h2>When & Why to Use ITIL</h2>
+            </div>
+            <div class="card">
+                <p>ITIL provides a structured approach to IT service management that can be tailored to specific organizational needs. Here are key scenarios when implementing ITIL can deliver significant value:</p>
+            </div>
+            <div class="table-container">
+                <table class="use-cases-table">
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>How ITIL Helps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Improving IT service quality</td>
+                            <td>Provides structured processes for service design, transition, and operation</td>
+                        </tr>
+                        <tr>
+                            <td>Disorganized or reactive IT processes</td>
+                            <td>Introduces incident, problem, and change management to reduce outages</td>
+                        </tr>
+                        <tr>
+                            <td>Aligning IT with business goals</td>
+                            <td>Creates service strategy that directly supports business objectives</td>
+                        </tr>
+                        <tr>
+                            <td>Scaling IT operations</td>
+                            <td>Offers frameworks that scale effectively for large enterprises or regulated industries</td>
+                        </tr>
+                        <tr>
+                            <td>Preparing for ITSM audits</td>
+                            <td>Provides documentation and processes that satisfy audit requirements</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="why-use-container">
+                <h3>Why Use ITIL?</h3>
+                <div class="why-use-grid">
+                    <div class="why-use-card">
+                        <div class="why-use-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        </div>
+                        <h4>Proven Framework</h4>
+                        <p>Used by 90% of Fortune 500 companies and over 2 million certified professionals worldwide.</p>
+                    </div>
+                    <div class="why-use-card">
+                        <div class="why-use-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+                        </div>
+                        <h4>Holistic Approach</h4>
+                        <p>Covers the entire service lifecycle from strategy through design, transition, operation, and continual improvement.</p>
+                    </div>
+                    <div class="why-use-card">
+                        <div class="why-use-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                        </div>
+                        <h4>Flexibility</h4>
+                        <p>Adaptable to any organization size or industry, allowing teams to implement what works for their specific needs.</p>
+                    </div>
+                    <div class="why-use-card">
+                        <div class="why-use-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                        </div>
+                        <h4>Focus on Value</h4>
+                        <p>Prioritizes delivering value to customers and stakeholders through service-oriented approach.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section id="features">
+            <div class="section-title">
+                <i class="info-icon">★</i>
+                <h2>Key Features</h2>
+            </div>
+            <div class="card">
+                <p>ITIL provides a comprehensive framework for IT service management, with several key components that enable effective service delivery:</p>
+            </div>
+            
+            <div class="features-container">
+                <div class="feature-section">
+                    <h3>Service Value System (ITIL 4)</h3>
+                    <div class="value-chain">
+                        <div class="chain-item">
+                            <div class="chain-icon">1</div>
+                            <h4>Plan</h4>
+                        </div>
+                        <div class="chain-item">
+                            <div class="chain-icon">2</div>
+                            <h4>Improve</h4>
+                        </div>
+                        <div class="chain-item">
+                            <div class="chain-icon">3</div>
+                            <h4>Engage</h4>
+                        </div>
+                        <div class="chain-item">
+                            <div class="chain-icon">4</div>
+                            <h4>Design & Transition</h4>
+                        </div>
+                        <div class="chain-item">
+                            <div class="chain-icon">5</div>
+                            <h4>Obtain/Build</h4>
+                        </div>
+                        <div class="chain-item">
+                            <div class="chain-icon">6</div>
+                            <h4>Deliver & Support</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-section">
+                    <h3>Core Practices</h3>
+                    <div class="practices-grid">
+                        <div class="practice-card">
+                            <div class="practice-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            </div>
+                            <h4>Incident Management</h4>
+                            <p>Minimizes service disruption by quickly restoring operations after incidents.</p>
+                        </div>
+                        <div class="practice-card">
+                            <div class="practice-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            </div>
+                            <h4>Problem Management</h4>
+                            <p>Identifies root causes of incidents to prevent recurrence.</p>
+                        </div>
+                        <div class="practice-card">
+                            <div class="practice-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                            </div>
+                            <h4>Change Enablement</h4>
+                            <p>Controls changes to minimize disruption while enabling improvements.</p>
+                        </div>
+                        <div class="practice-card">
+                            <div class="practice-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                            </div>
+                            <h4>Service Desk</h4>
+                            <p>Primary point of contact for users needing assistance with IT services.</p>
+                        </div>
+                        <div class="practice-card">
+                            <div class="practice-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg>
+                            </div>
+                            <h4>Continual Service Improvement</h4>
+                            <p>Constantly evaluates and enhances service quality, efficiency, and effectiveness.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-section">
+                    <h3>Guiding Principles</h3>
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <h4>Focus on Value</h4>
+                            <p>Every activity should contribute directly to business outcomes.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Start Where You Are</h4>
+                            <p>Leverage existing services, processes, and capabilities.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Collaborate and Promote Visibility</h4>
+                            <p>Work together transparently across teams and stakeholders.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pros & Cons Section -->
+        <section id="pros-cons">
+            <div class="section-title">
+                <i class="info-icon">⚖️</i>
+                <h2>Pros & Cons</h2>
+            </div>
+            <div class="pros-cons-container">
+                <div class="pros-cons-column pros">
+                    <h3>Advantages</h3>
+                    <ul class="pros-list">
+                        <li>
+                            <span class="pros-icon">✓</span>
+                            <div class="pros-content">
+                                <h4>Improves IT-business alignment</h4>
+                                <p>Ensures IT services directly support business objectives and strategic goals.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="pros-icon">✓</span>
+                            <div class="pros-content">
+                                <h4>Reduces downtime and service disruptions</h4>
+                                <p>Structured incident and problem management processes minimize outages.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="pros-icon">✓</span>
+                            <div class="pros-content">
+                                <h4>Enhances customer trust</h4>
+                                <p>Reliable service delivery builds confidence in IT capabilities.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="pros-icon">✓</span>
+                            <div class="pros-content">
+                                <h4>Scalable for any organization</h4>
+                                <p>Adaptable framework that works for businesses of all sizes.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pros-cons-column cons">
+                    <h3>Challenges</h3>
+                    <ul class="cons-list">
+                        <li>
+                            <span class="cons-icon">!</span>
+                            <div class="cons-content">
+                                <h4>Steep learning curve for beginners</h4>
+                                <p>Comprehensive framework requires significant training and understanding.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cons-icon">!</span>
+                            <div class="cons-content">
+                                <h4>Implementation can be time/resource-intensive</h4>
+                                <p>Requires dedicated time, budget, and commitment from leadership.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cons-icon">!</span>
+                            <div class="cons-content">
+                                <h4>Requires cultural change in organizations</h4>
+                                <p>May face resistance from teams accustomed to different ways of working.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cons-icon">!</span>
+                            <div class="cons-content">
+                                <h4>Over-reliance on documentation may slow agility</h4>
+                                <p>Can become bureaucratic if not balanced with operational flexibility.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alternatives Section -->
+        <section id="alternatives">
+            <div class="section-title">
+                <i class="info-icon">↔️</i>
+                <h2>Popular Alternatives</h2>
+            </div>
+            <div class="alternatives-grid">
+                <div class="alternative-card">
+                    <div class="alternative-logo">COBIT</div>
+                    <h3>COBIT</h3>
+                    <p><strong>Focus:</strong> Governance and risk management</p>
+                    <p><strong>Best for:</strong> Organizations needing strong IT governance and compliance frameworks</p>
+                    <p><strong>Difference:</strong> More governance-focused than ITIL's service-oriented approach</p>
+                </div>
+                <div class="alternative-card">
+                    <div class="alternative-logo">ISO</div>
+                    <h3>ISO/IEC 20000</h3>
+                    <p><strong>Focus:</strong> International standard for ITSM</p>
+                    <p><strong>Best for:</strong> Organizations seeking formal certification</p>
+                    <p><strong>Difference:</strong> Certification-based standard often used alongside ITIL</p>
+                </div>
+                <div class="alternative-card">
+                    <div class="alternative-logo">DevOps</div>
+                    <h3>DevOps</h3>
+                    <p><strong>Focus:</strong> Collaboration between IT and development teams</p>
+                    <p><strong>Best for:</strong> Organizations with rapid development cycles</p>
+                    <p><strong>Difference:</strong> Emphasizes automation and continuous delivery</p>
+                </div>
+                <div class="alternative-card">
+                    <div class="alternative-logo">Agile</div>
+                    <h3>Agile/Scrum</h3>
+                    <p><strong>Focus:</strong> Iterative project management</p>
+                    <p><strong>Best for:</strong> Software development teams</p>
+                    <p><strong>Difference:</strong> Project-focused rather than service-focused</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Necessity Section -->
+        <section id="necessity">
+            <div class="section-title">
+                <i class="info-icon">❓</i>
+                <h2>Is ITIL Necessary?</h2>
+            </div>
+            <div class="necessity-container">
+                <div class="necessity-column yes">
+                    <h3>Yes, if:</h3>
+                    <ul class="necessity-list">
+                        <li>Your IT team struggles with unplanned work or inefficient processes</li>
+                        <li>You operate in a regulated industry requiring audit trails</li>
+                        <li>Customer satisfaction with IT services is low</li>
+                        <li>Service availability and reliability are critical to your business</li>
+                        <li>Your organization needs better alignment between IT and business goals</li>
+                    </ul>
+                </div>
+                <div class="necessity-column no">
+                    <h3>Not essential, if:</h3>
+                    <ul class="necessity-list">
+                        <li>Your organization is small with simple IT needs</li>
+                        <li>You already use lightweight frameworks (e.g., DevOps, Kanban) that meet your goals</li>
+                        <li>Your IT services are extremely stable with minimal changes</li>
+                        <li>You need more agility than structure in your IT operations</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card recommendation">
+                <h3>Recommendation</h3>
+                <p>Many organizations benefit from adopting ITIL selectively, implementing the practices that address their specific pain points rather than deploying the full framework at once. A hybrid approach, combining ITIL with agile or DevOps methodologies, is increasingly common for balancing structure with flexibility.</p>
+            </div>
+        </section>
+
+        <!-- Learning Resources Section -->
+        <section id="resources">
+            <div class="section-title">
+                <i class="info-icon">📚</i>
+                <h2>Learning Resources</h2>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    </div>
+                    <h3>Certifications</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <strong>ITIL 4 Foundation:</strong> Entry-level certification (cost: ~$500)
+                        </li>
+                        <li>
+                            <strong>ITIL 4 Managing Professional (MP):</strong> Advanced certification for practitioners
+                        </li>
+                        <li>
+                            <strong>ITIL 4 Strategic Leader (SL):</strong> For those focused on business strategy
+                        </li>
+                        <li>
+                            <strong>ITIL Master:</strong> Highest-level certification for experienced professionals
+                        </li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    </div>
+                    <h3>Books</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <strong>"ITIL 4 Essentials"</strong> by Claire Agutter
+                        </li>
+                        <li>
+                            <strong>Official ITIL 4 Foundation</strong> Axelos guide
+                        </li>
+                        <li>
+                            <strong>"ITIL 4 Foundation Exam Study Guide"</strong> by Liz Gallacher
+                        </li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    </div>
+                    <h3>Online Courses</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <strong>Axelos-accredited training</strong> (e.g., Simplilearn, Udemy)
+                        </li>
+                        <li>
+                            <strong>LinkedIn Learning</strong> ITIL 4 Foundation courses
+                        </li>
+                        <li>
+                            <strong>Coursera</strong> IT Service Management programs
+                        </li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    </div>
+                    <h3>Communities</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <strong>itSMF</strong> (IT Service Management Forum)
+                        </li>
+                        <li>
+                            <strong>HDI</strong> (Help Desk Institute)
+                        </li>
+                        <li>
+                            <strong>Reddit r/ITIL</strong> community
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Lifecycle Section -->
+        <section id="lifecycle">
+            <div class="section-title">
+                <i class="info-icon">🔄</i>
+                <h2>Service Lifecycle</h2>
+            </div>
+            <div class="lifecycle-grid">
+                <div class="lifecycle-card">
+                    <h3>Service Strategy</h3>
+                    <p>Defines IT service offerings and aligns them with business needs.</p>
+                </div>
+                <div class="lifecycle-card">
+                    <h3>Service Design</h3>
+                    <p>Focuses on creating scalable and cost-effective IT services.</p>
+                </div>
+                <div class="lifecycle-card">
+                    <h3>Service Transition</h3>
+                    <p>Manages changes to IT systems, including change and release management.</p>
+                </div>
+                <div class="lifecycle-card">
+                    <h3>Service Operation</h3>
+                    <p>Ensures stable and reliable IT service delivery.</p>
+                </div>
+                <div class="lifecycle-card">
+                    <h3>Continual Improvement</h3>
+                    <p>Uses feedback and metrics to enhance IT services.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits">
+            <div class="section-title">
+                <i class="info-icon">✨</i>
+                <h2>Benefits</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Business-IT Alignment</h3>
+                    <p>Ensures IT services support business goals for better collaboration and productivity.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Customer-Centric Approach</h3>
+                    <p>Enhances service quality, leading to better user experiences and satisfaction.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Risk Management</h3>
+                    <p>Helps organizations adapt to changes with minimal disruption.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Cost Efficiency</h3>
+                    <p>Optimizes resource utilization while maintaining high service quality.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Summary Section -->
+    <section id="summary" class="container">
+        <div class="section-title">
+            <i class="info-icon">📋</i>
+            <h2>Summary</h2>
+        </div>
+        <div class="card summary-card">
+            <p>ITIL is the gold standard for ITSM, ideal for organizations prioritizing structured, customer-centric IT service delivery. While implementation requires effort, its benefits in efficiency, compliance, and alignment with business goals make it indispensable for large or regulated enterprises.</p>
+            <p>For startups or teams focused on rapid innovation, combining ITIL with Agile/DevOps practices is a popular hybrid approach. The key to successful ITIL implementation is starting with clear objectives, focusing on specific pain points, and gradually expanding adoption as value is demonstrated.</p>
+        </div>
+        <div class="implementation-tip">
+            <div class="tip-icon">💡</div>
+            <div class="tip-content">
+                <h3>Implementation Tip</h3>
+                <p>Begin with high-value, high-visibility processes like Incident Management or Service Desk, demonstrate early wins, then expand to additional practices as organizational maturity increases.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+

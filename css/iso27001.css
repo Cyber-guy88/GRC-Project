@@ -1,0 +1,886 @@
+/* ISO 27001 Framework Styles */
+:root {
+    /* Core colors */
+    --primary: #2C7A7B;
+    --primary-dark: #285E61;
+    --primary-light: #4FD1C5;
+    --accent: #38B2AC;
+    --accent-dark: #319795;
+    
+    /* UI colors */
+    --text-primary: #2D3748;
+    --text-secondary: #4A5568;
+    --text-light: #718096;
+    --background: #F7FAFC;
+    --card-bg: #FFFFFF;
+    
+    /* Status colors */
+    --success: #48BB78;
+    --warning: #ED8936;
+    --error: #E53E3E;
+    
+    /* Effects */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background);
+}
+
+/* Hero section */
+.hero {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    animation: patternShift 30s linear infinite;
+}
+
+@keyframes patternShift {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+}
+
+/* Statistics */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Navigation */
+.nav-container {
+    background: var(--card-bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* Main content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.content-section {
+    margin-bottom: 6rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primary-dark);
+    line-height: 1.2;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.info-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.feature-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.requirement-card {
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.requirement-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+.requirement-card ul {
+    margin-left: 1.5rem;
+}
+
+.requirement-card li {
+    margin-bottom: 0.5rem;
+}
+
+.requirement-card li::before {
+    content: "✓";
+    color: var(--primary);
+    display: inline-block;
+    width: 1rem;
+    margin-left: -1rem;
+}
+
+.implementation-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.step-card {
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    padding-top: 3rem;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.step-number {
+    position: absolute;
+    top: -1rem;
+    left: 1.5rem;
+    background-color: var(--primary);
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.step-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+/* New CSS for added components */
+
+/* Importance Section */
+.importance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.importance-card {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 3px solid var(--primary);
+}
+
+.importance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.importance-icon {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background: rgba(44, 122, 123, 0.1);
+    border-radius: 0.75rem;
+    color: var(--primary);
+}
+
+.importance-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* When to Use Section */
+.table-container {
+    margin: 2rem 0;
+    overflow-x: auto;
+    box-shadow: var(--shadow-sm);
+    border-radius: 0.5rem;
+}
+
+.use-cases-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.use-cases-table th,
+.challenges-table th {
+    background: var(--primary);
+    color: white;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+}
+
+.use-cases-table td,
+.challenges-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.use-cases-table tr:last-child td,
+.challenges-table tr:last-child td {
+    border-bottom: none;
+}
+
+.use-cases-table tr:nth-child(even),
+.challenges-table tr:nth-child(even) {
+    background: #f7fafc;
+}
+
+.use-cases-table tr:hover,
+.challenges-table tr:hover {
+    background: rgba(44, 122, 123, 0.05);
+}
+
+.necessity-section {
+    margin-top: 3rem;
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border-left: 3px solid var(--primary);
+}
+
+.necessity-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.necessity-section p {
+    margin-bottom: 1rem;
+}
+
+.necessity-section ul {
+    margin-left: 1.5rem;
+    list-style: none;
+}
+
+.necessity-section li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.necessity-section li::before {
+    content: "•";
+    color: var(--primary);
+    display: inline-block;
+    width: 1rem;
+    margin-left: -1rem;
+    font-weight: 700;
+}
+
+/* Component Subtitle */
+.component-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin: 2.5rem 0 1.5rem;
+}
+
+.component-description {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+/* Controls Grid */
+.controls-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.control-category {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.control-category:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.category-icon {
+    width: 3rem;
+    height: 3rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-weight: 700;
+}
+
+.control-category h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+/* Certification Process */
+.certification-steps {
+    margin: 2rem 0;
+}
+
+.certification-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-step:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.certification-icon {
+    width: 3rem;
+    height: 3rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.certification-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+}
+
+.certification-content p {
+    color: var(--text-secondary);
+}
+
+.cost-section {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border-left: 3px solid var(--primary);
+    margin-top: 2rem;
+}
+
+.cost-section h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+/* Challenges Section */
+.challenges-table-container {
+    margin: 2rem 0;
+    overflow-x: auto;
+    box-shadow: var(--shadow-sm);
+    border-radius: 0.5rem;
+}
+
+.challenges-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.benefit-card {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.benefit-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    background: rgba(44, 122, 123, 0.1);
+    border-radius: 50%;
+    color: var(--primary);
+}
+
+.benefit-icon svg {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+/* Industry Use Cases */
+.industry-use-cases {
+    margin-top: 4rem;
+}
+
+.industry-use-cases h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.use-case-card {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.use-case-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.use-case-icon {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background: rgba(44, 122, 123, 0.1);
+    border-radius: 0.75rem;
+    color: var(--primary);
+}
+
+.use-case-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Integration Section */
+.integration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.integration-card {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 3px solid var(--primary);
+    text-align: center;
+}
+
+.integration-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.integration-icon {
+    width: 3rem;
+    height: 3rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Final Insight Section */
+.insight-card {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border-left: 3px solid var(--primary);
+    margin-top: 2rem;
+    position: relative;
+}
+
+.insight-card p {
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.insight-card::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 4rem;
+    color: rgba(44, 122, 123, 0.1);
+    line-height: 1;
+}
+
+/* Animation */
+.importance-card,
+.control-category,
+.certification-step,
+.benefit-card,
+.use-case-card,
+.integration-card {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.importance-card:nth-child(1),
+.control-category:nth-child(1),
+.certification-step:nth-child(1),
+.benefit-card:nth-child(1),
+.use-case-card:nth-child(1),
+.integration-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.importance-card:nth-child(2),
+.control-category:nth-child(2),
+.certification-step:nth-child(2),
+.benefit-card:nth-child(2),
+.use-case-card:nth-child(2),
+.integration-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.importance-card:nth-child(3),
+.control-category:nth-child(3),
+.certification-step:nth-child(3),
+.benefit-card:nth-child(3),
+.use-case-card:nth-child(3),
+.integration-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.importance-card:nth-child(4),
+.control-category:nth-child(4),
+.benefit-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-content {
+        padding: 0.5rem 1rem;
+    }
+    
+    .main-content {
+        padding: 2rem 1rem;
+    }
+    
+    .content-section {
+        margin-bottom: 4rem;
+    }
+    
+    .info-grid,
+    .importance-grid,
+    .controls-grid,
+    .benefits-grid,
+    .use-cases-grid,
+    .integration-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-list,
+    .requirements-grid,
+    .implementation-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-section h2 {
+        font-size: 2rem;
+    }
+    
+    .component-subtitle {
+        font-size: 1.35rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .content-section h2 {
+        font-size: 1.75rem;
+    }
+    
+    .info-card,
+    .importance-card,
+    .feature-item,
+    .requirement-card,
+    .step-card,
+    .control-category,
+    .certification-step,
+    .necessity-section,
+    .cost-section,
+    .benefit-card,
+    .use-case-card,
+    .integration-card,
+    .insight-card {
+        padding: 1.5rem;
+    }
+    
+    .certification-icon,
+    .category-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+} 

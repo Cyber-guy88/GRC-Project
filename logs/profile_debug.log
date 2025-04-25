@@ -1,0 +1,392 @@
+2025-04-04 12:16:29 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:16:29 - Raw input: {"fullName":"webdev","email":"webdev@gmail.com","phone":"451236987","company":"GTU","jobTitle":"Employee","currentEmail":"web@gmail.com"}
+2025-04-04 12:16:29 - Current Email: web@gmail.com
+2025-04-04 12:16:29 - New Email: webdev@gmail.com
+2025-04-04 12:16:29 - Full Name: webdev
+2025-04-04 12:16:29 - Email Changed: Yes
+2025-04-04 12:16:29 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:16:29 - Transaction started
+2025-04-04 12:16:29 - New email is available for use
+2025-04-04 12:16:29 - User found by email: Yes
+2025-04-04 12:16:29 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-04 12:16:29 - User ID: 22
+2025-04-04 12:16:29 - Database error during update: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:29 - Transaction rolled back
+2025-04-04 12:16:29 - Error: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:29 - Trace: #0 C:\xampp\htdocs\try2\update_profile.php(159): PDO->prepare('UPDATE users SE...')
+#1 {main}
+2025-04-04 12:16:29 - Returning response: {"success":false,"message":"Error: SQLSTATE[HY000]: General error: 1 no such column: phone","debug":{"error":"SQLSTATE[HY000]: General error: 1 no such column: phone","trace":"#0 C:\\xampp\\htdocs\\try2\\update_profile.php(159): PDO->prepare('UPDATE users SE...')\n#1 {main}"}}
+2025-04-04 12:16:29 - REQUEST COMPLETED
+
+2025-04-04 12:16:41 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:16:41 - Raw input: {"fullName":"webdev","email":"webdev@gmail.com","phone":"","company":"","jobTitle":"","currentEmail":"web@gmail.com"}
+2025-04-04 12:16:41 - Current Email: web@gmail.com
+2025-04-04 12:16:41 - New Email: webdev@gmail.com
+2025-04-04 12:16:41 - Full Name: webdev
+2025-04-04 12:16:41 - Email Changed: Yes
+2025-04-04 12:16:41 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:16:41 - Transaction started
+2025-04-04 12:16:41 - New email is available for use
+2025-04-04 12:16:41 - User found by email: Yes
+2025-04-04 12:16:41 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-04 12:16:41 - User ID: 22
+2025-04-04 12:16:41 - Database error during update: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:41 - Transaction rolled back
+2025-04-04 12:16:41 - Error: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:41 - Trace: #0 C:\xampp\htdocs\try2\update_profile.php(159): PDO->prepare('UPDATE users SE...')
+#1 {main}
+2025-04-04 12:16:41 - Returning response: {"success":false,"message":"Error: SQLSTATE[HY000]: General error: 1 no such column: phone","debug":{"error":"SQLSTATE[HY000]: General error: 1 no such column: phone","trace":"#0 C:\\xampp\\htdocs\\try2\\update_profile.php(159): PDO->prepare('UPDATE users SE...')\n#1 {main}"}}
+2025-04-04 12:16:41 - REQUEST COMPLETED
+
+2025-04-04 12:16:41 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:16:41 - Raw input: {"fullName":"webdev","email":"webdev@gmail.com","phone":"","company":"","jobTitle":"","currentEmail":"web@gmail.com"}
+2025-04-04 12:16:41 - Current Email: web@gmail.com
+2025-04-04 12:16:41 - New Email: webdev@gmail.com
+2025-04-04 12:16:41 - Full Name: webdev
+2025-04-04 12:16:41 - Email Changed: Yes
+2025-04-04 12:16:41 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:16:41 - Transaction started
+2025-04-04 12:16:41 - New email is available for use
+2025-04-04 12:16:41 - User found by email: Yes
+2025-04-04 12:16:41 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-04 12:16:41 - User ID: 22
+2025-04-04 12:16:41 - Database error during update: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:41 - Transaction rolled back
+2025-04-04 12:16:41 - Error: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:41 - Trace: #0 C:\xampp\htdocs\try2\update_profile.php(159): PDO->prepare('UPDATE users SE...')
+#1 {main}
+2025-04-04 12:16:41 - Returning response: {"success":false,"message":"Error: SQLSTATE[HY000]: General error: 1 no such column: phone","debug":{"error":"SQLSTATE[HY000]: General error: 1 no such column: phone","trace":"#0 C:\\xampp\\htdocs\\try2\\update_profile.php(159): PDO->prepare('UPDATE users SE...')\n#1 {main}"}}
+2025-04-04 12:16:41 - REQUEST COMPLETED
+
+2025-04-04 12:16:41 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:16:41 - Raw input: {"fullName":"webdev","email":"webdev@gmail.com","phone":"","company":"","jobTitle":"","currentEmail":"web@gmail.com"}
+2025-04-04 12:16:41 - Current Email: web@gmail.com
+2025-04-04 12:16:41 - New Email: webdev@gmail.com
+2025-04-04 12:16:41 - Full Name: webdev
+2025-04-04 12:16:41 - Email Changed: Yes
+2025-04-04 12:16:41 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:16:41 - Transaction started
+2025-04-04 12:16:41 - New email is available for use
+2025-04-04 12:16:41 - User found by email: Yes
+2025-04-04 12:16:41 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-04 12:16:41 - User ID: 22
+2025-04-04 12:16:41 - Database error during update: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:41 - Transaction rolled back
+2025-04-04 12:16:41 - Error: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:41 - Trace: #0 C:\xampp\htdocs\try2\update_profile.php(159): PDO->prepare('UPDATE users SE...')
+#1 {main}
+2025-04-04 12:16:41 - Returning response: {"success":false,"message":"Error: SQLSTATE[HY000]: General error: 1 no such column: phone","debug":{"error":"SQLSTATE[HY000]: General error: 1 no such column: phone","trace":"#0 C:\\xampp\\htdocs\\try2\\update_profile.php(159): PDO->prepare('UPDATE users SE...')\n#1 {main}"}}
+2025-04-04 12:16:41 - REQUEST COMPLETED
+
+2025-04-04 12:16:42 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:16:42 - Raw input: {"fullName":"webdev","email":"webdev@gmail.com","phone":"","company":"","jobTitle":"","currentEmail":"web@gmail.com"}
+2025-04-04 12:16:42 - Current Email: web@gmail.com
+2025-04-04 12:16:42 - New Email: webdev@gmail.com
+2025-04-04 12:16:42 - Full Name: webdev
+2025-04-04 12:16:42 - Email Changed: Yes
+2025-04-04 12:16:42 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:16:42 - Transaction started
+2025-04-04 12:16:42 - New email is available for use
+2025-04-04 12:16:42 - User found by email: Yes
+2025-04-04 12:16:42 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-04 12:16:42 - User ID: 22
+2025-04-04 12:16:42 - Database error during update: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:42 - Transaction rolled back
+2025-04-04 12:16:42 - Error: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:42 - Trace: #0 C:\xampp\htdocs\try2\update_profile.php(159): PDO->prepare('UPDATE users SE...')
+#1 {main}
+2025-04-04 12:16:42 - Returning response: {"success":false,"message":"Error: SQLSTATE[HY000]: General error: 1 no such column: phone","debug":{"error":"SQLSTATE[HY000]: General error: 1 no such column: phone","trace":"#0 C:\\xampp\\htdocs\\try2\\update_profile.php(159): PDO->prepare('UPDATE users SE...')\n#1 {main}"}}
+2025-04-04 12:16:42 - REQUEST COMPLETED
+
+2025-04-04 12:16:42 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:16:42 - Raw input: {"fullName":"webdev","email":"webdev@gmail.com","phone":"","company":"","jobTitle":"","currentEmail":"web@gmail.com"}
+2025-04-04 12:16:42 - Current Email: web@gmail.com
+2025-04-04 12:16:42 - New Email: webdev@gmail.com
+2025-04-04 12:16:42 - Full Name: webdev
+2025-04-04 12:16:42 - Email Changed: Yes
+2025-04-04 12:16:42 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:16:42 - Transaction started
+2025-04-04 12:16:42 - New email is available for use
+2025-04-04 12:16:42 - User found by email: Yes
+2025-04-04 12:16:42 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-04 12:16:42 - User ID: 22
+2025-04-04 12:16:42 - Database error during update: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:42 - Transaction rolled back
+2025-04-04 12:16:42 - Error: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:42 - Trace: #0 C:\xampp\htdocs\try2\update_profile.php(159): PDO->prepare('UPDATE users SE...')
+#1 {main}
+2025-04-04 12:16:42 - Returning response: {"success":false,"message":"Error: SQLSTATE[HY000]: General error: 1 no such column: phone","debug":{"error":"SQLSTATE[HY000]: General error: 1 no such column: phone","trace":"#0 C:\\xampp\\htdocs\\try2\\update_profile.php(159): PDO->prepare('UPDATE users SE...')\n#1 {main}"}}
+2025-04-04 12:16:42 - REQUEST COMPLETED
+
+2025-04-04 12:16:42 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:16:42 - Raw input: {"fullName":"webdev","email":"webdev@gmail.com","phone":"","company":"","jobTitle":"","currentEmail":"web@gmail.com"}
+2025-04-04 12:16:42 - Current Email: web@gmail.com
+2025-04-04 12:16:42 - New Email: webdev@gmail.com
+2025-04-04 12:16:42 - Full Name: webdev
+2025-04-04 12:16:42 - Email Changed: Yes
+2025-04-04 12:16:42 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:16:42 - Transaction started
+2025-04-04 12:16:42 - New email is available for use
+2025-04-04 12:16:42 - User found by email: Yes
+2025-04-04 12:16:42 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-04 12:16:42 - User ID: 22
+2025-04-04 12:16:42 - Database error during update: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:42 - Transaction rolled back
+2025-04-04 12:16:42 - Error: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:42 - Trace: #0 C:\xampp\htdocs\try2\update_profile.php(159): PDO->prepare('UPDATE users SE...')
+#1 {main}
+2025-04-04 12:16:42 - Returning response: {"success":false,"message":"Error: SQLSTATE[HY000]: General error: 1 no such column: phone","debug":{"error":"SQLSTATE[HY000]: General error: 1 no such column: phone","trace":"#0 C:\\xampp\\htdocs\\try2\\update_profile.php(159): PDO->prepare('UPDATE users SE...')\n#1 {main}"}}
+2025-04-04 12:16:42 - REQUEST COMPLETED
+
+2025-04-04 12:16:42 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:16:42 - Raw input: {"fullName":"webdev","email":"webdev@gmail.com","phone":"","company":"","jobTitle":"","currentEmail":"web@gmail.com"}
+2025-04-04 12:16:42 - Current Email: web@gmail.com
+2025-04-04 12:16:42 - New Email: webdev@gmail.com
+2025-04-04 12:16:42 - Full Name: webdev
+2025-04-04 12:16:42 - Email Changed: Yes
+2025-04-04 12:16:42 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:16:42 - Transaction started
+2025-04-04 12:16:42 - New email is available for use
+2025-04-04 12:16:42 - User found by email: Yes
+2025-04-04 12:16:42 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-04 12:16:42 - User ID: 22
+2025-04-04 12:16:42 - Database error during update: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:42 - Transaction rolled back
+2025-04-04 12:16:42 - Error: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:42 - Trace: #0 C:\xampp\htdocs\try2\update_profile.php(159): PDO->prepare('UPDATE users SE...')
+#1 {main}
+2025-04-04 12:16:42 - Returning response: {"success":false,"message":"Error: SQLSTATE[HY000]: General error: 1 no such column: phone","debug":{"error":"SQLSTATE[HY000]: General error: 1 no such column: phone","trace":"#0 C:\\xampp\\htdocs\\try2\\update_profile.php(159): PDO->prepare('UPDATE users SE...')\n#1 {main}"}}
+2025-04-04 12:16:42 - REQUEST COMPLETED
+
+2025-04-04 12:24:44 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:24:44 - Raw input: {"fullName":"webuser","email":"web@gmail.com","phone":"5214789632","company":"GTU","jobTitle":"Employee","currentEmail":"web@gmail.com"}
+2025-04-04 12:24:44 - Current Email: web@gmail.com
+2025-04-04 12:24:44 - New Email: web@gmail.com
+2025-04-04 12:24:44 - Full Name: webuser
+2025-04-04 12:24:44 - Email Changed: No
+2025-04-04 12:24:44 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:24:44 - Transaction started
+2025-04-04 12:24:44 - User found by email: Yes
+2025-04-04 12:24:44 - Existing columns: id, username, email, password, created_at, phone, company, job_title
+2025-04-04 12:24:44 - Including phone field in update
+2025-04-04 12:24:44 - Including company field in update
+2025-04-04 12:24:44 - Including job_title field in update
+2025-04-04 12:24:44 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-04 12:24:44 - User ID: 22
+2025-04-04 12:24:44 - Update result: success
+2025-04-04 12:24:44 - Rows affected: 1
+2025-04-04 12:24:44 - Transaction committed successfully
+2025-04-04 12:24:44 - Profile update successful!
+2025-04-04 12:24:44 - Returning response: {"success":true,"message":"Profile updated successfully.","debug":[],"user":{"id":"22","username":"webuser","email":"web@gmail.com","phone":"5214789632","company":"GTU","jobTitle":"Employee"}}
+2025-04-04 12:24:44 - REQUEST COMPLETED
+
+2025-04-04 12:24:58 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:24:58 - Raw input: {"fullName":"webuser","email":"webusr@gmail.com","phone":"5214789632","company":"GTU","jobTitle":"Employee","currentEmail":"web@gmail.com"}
+2025-04-04 12:24:58 - Current Email: web@gmail.com
+2025-04-04 12:24:58 - New Email: webusr@gmail.com
+2025-04-04 12:24:58 - Full Name: webuser
+2025-04-04 12:24:58 - Email Changed: Yes
+2025-04-04 12:24:58 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:24:58 - Transaction started
+2025-04-04 12:24:58 - New email is available for use
+2025-04-04 12:24:58 - User found by email: Yes
+2025-04-04 12:24:58 - Existing columns: id, username, email, password, created_at, phone, company, job_title
+2025-04-04 12:24:58 - Including phone field in update
+2025-04-04 12:24:58 - Including company field in update
+2025-04-04 12:24:58 - Including job_title field in update
+2025-04-04 12:24:58 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-04 12:24:58 - User ID: 22
+2025-04-04 12:24:58 - Update result: success
+2025-04-04 12:24:58 - Rows affected: 1
+2025-04-04 12:24:58 - Transaction committed successfully
+2025-04-04 12:24:58 - Profile update successful!
+2025-04-04 12:24:58 - Returning response: {"success":true,"message":"Profile updated successfully.","debug":[],"user":{"id":"22","username":"webuser","email":"webusr@gmail.com","phone":"5214789632","company":"GTU","jobTitle":"Employee"}}
+2025-04-04 12:24:58 - REQUEST COMPLETED
+
+2025-04-04 12:25:16 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:25:16 - Raw input: {"fullName":"webuser","email":"webname@gmail.com","phone":"5214789632","company":"GTU","jobTitle":"Employee","currentEmail":"web@gmail.com"}
+2025-04-04 12:25:16 - Current Email: web@gmail.com
+2025-04-04 12:25:16 - New Email: webname@gmail.com
+2025-04-04 12:25:16 - Full Name: webuser
+2025-04-04 12:25:16 - Email Changed: Yes
+2025-04-04 12:25:16 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:25:16 - Transaction started
+2025-04-04 12:25:16 - New email is available for use
+2025-04-04 12:25:16 - User found by email: No
+2025-04-04 12:25:16 - Existing columns: id, username, email, password, created_at, phone, company, job_title
+2025-04-04 12:25:16 - Including phone field in update
+2025-04-04 12:25:16 - Including company field in update
+2025-04-04 12:25:16 - Including job_title field in update
+2025-04-04 12:25:16 - Creating new user: INSERT INTO users (username, email, password, phone, company, job_title) VALUES (?, ?, ?, ?, ?, ?)
+2025-04-04 12:25:16 - Insert result: success
+2025-04-04 12:25:16 - New user created with ID: 23
+2025-04-04 12:25:16 - Transaction committed successfully
+2025-04-04 12:25:16 - Profile update successful!
+2025-04-04 12:25:16 - Returning response: {"success":true,"message":"Profile updated successfully.","debug":[],"user":{"id":"23","username":"webuser","email":"webname@gmail.com","phone":"5214789632","company":"GTU","jobTitle":"Employee"}}
+2025-04-04 12:25:16 - REQUEST COMPLETED
+
+2025-04-04 12:25:24 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:25:24 - Raw input: {"fullName":"webuser","email":"web@gmail.com","phone":"5214789632","company":"GTU","jobTitle":"Employee","currentEmail":"web@gmail.com"}
+2025-04-04 12:25:24 - Current Email: web@gmail.com
+2025-04-04 12:25:24 - New Email: web@gmail.com
+2025-04-04 12:25:24 - Full Name: webuser
+2025-04-04 12:25:24 - Email Changed: No
+2025-04-04 12:25:24 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:25:24 - Transaction started
+2025-04-04 12:25:24 - User found by email: No
+2025-04-04 12:25:24 - Existing columns: id, username, email, password, created_at, phone, company, job_title
+2025-04-04 12:25:24 - Including phone field in update
+2025-04-04 12:25:24 - Including company field in update
+2025-04-04 12:25:24 - Including job_title field in update
+2025-04-04 12:25:24 - Creating new user: INSERT INTO users (username, email, password, phone, company, job_title) VALUES (?, ?, ?, ?, ?, ?)
+2025-04-04 12:25:24 - Insert result: success
+2025-04-04 12:25:24 - New user created with ID: 24
+2025-04-04 12:25:24 - Transaction committed successfully
+2025-04-04 12:25:24 - Profile update successful!
+2025-04-04 12:25:24 - Returning response: {"success":true,"message":"Profile updated successfully.","debug":[],"user":{"id":"24","username":"webuser","email":"web@gmail.com","phone":"5214789632","company":"GTU","jobTitle":"Employee"}}
+2025-04-04 12:25:24 - REQUEST COMPLETED
+
+2025-04-04 12:31:04 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:31:04 - Raw input: {"fullName":"webuser","email":"webusr@gmail.com","phone":"5214789632","company":"GTU","jobTitle":"Employee","currentEmail":"web@gmail.com"}
+2025-04-04 12:31:04 - Current Email: web@gmail.com
+2025-04-04 12:31:04 - New Email: webusr@gmail.com
+2025-04-04 12:31:04 - Full Name: webuser
+2025-04-04 12:31:04 - Email Changed: Yes
+2025-04-04 12:31:04 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:31:04 - Transaction started
+2025-04-04 12:31:04 - Cannot update: email already exists for another user
+2025-04-04 12:31:04 - Transaction rolled back
+2025-04-04 12:31:04 - Error: Cannot update profile: another user with this email already exists.
+2025-04-04 12:31:04 - Trace: #0 {main}
+2025-04-04 12:31:04 - Returning response: {"success":false,"message":"Error: Cannot update profile: another user with this email already exists.","debug":{"error":"Cannot update profile: another user with this email already exists.","trace":"#0 {main}"}}
+2025-04-04 12:31:04 - REQUEST COMPLETED
+
+2025-04-04 12:31:11 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 12:31:11 - Raw input: {"fullName":"webuser","email":"webusr1@gmail.com","phone":"5214789632","company":"GTU","jobTitle":"Employee","currentEmail":"web@gmail.com"}
+2025-04-04 12:31:11 - Current Email: web@gmail.com
+2025-04-04 12:31:11 - New Email: webusr1@gmail.com
+2025-04-04 12:31:11 - Full Name: webuser
+2025-04-04 12:31:11 - Email Changed: Yes
+2025-04-04 12:31:11 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 12:31:11 - Transaction started
+2025-04-04 12:31:11 - New email is available for use
+2025-04-04 12:31:11 - User found by email: Yes
+2025-04-04 12:31:11 - Existing columns: id, username, email, password, created_at, phone, company, job_title
+2025-04-04 12:31:11 - Including phone field in update
+2025-04-04 12:31:11 - Including company field in update
+2025-04-04 12:31:11 - Including job_title field in update
+2025-04-04 12:31:11 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-04 12:31:11 - User ID: 24
+2025-04-04 12:31:11 - Update result: success
+2025-04-04 12:31:11 - Rows affected: 1
+2025-04-04 12:31:11 - Transaction committed successfully
+2025-04-04 12:31:11 - Profile update successful!
+2025-04-04 12:31:11 - Returning response: {"success":true,"message":"Profile updated successfully.","debug":[],"user":{"id":"24","username":"webuser","email":"webusr1@gmail.com","phone":"5214789632","company":"GTU","jobTitle":"Employee"}}
+2025-04-04 12:31:11 - REQUEST COMPLETED
+
+2025-04-04 15:53:49 - PROFILE UPDATE REQUEST STARTED
+2025-04-04 15:53:49 - Raw input: {"fullName":"testuser","email":"testuser@gmail.com","phone":"1245783695","company":"GTU-Set","jobTitle":"intern","currentEmail":"test@gmail.com"}
+2025-04-04 15:53:49 - Current Email: test@gmail.com
+2025-04-04 15:53:49 - New Email: testuser@gmail.com
+2025-04-04 15:53:49 - Full Name: testuser
+2025-04-04 15:53:49 - Email Changed: Yes
+2025-04-04 15:53:49 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-04 15:53:49 - Transaction started
+2025-04-04 15:53:49 - New email is available for use
+2025-04-04 15:53:49 - User found by email: Yes
+2025-04-04 15:53:49 - Existing columns: id, username, email, password, created_at, phone, company, job_title
+2025-04-04 15:53:49 - Including phone field in update
+2025-04-04 15:53:49 - Including company field in update
+2025-04-04 15:53:49 - Including job_title field in update
+2025-04-04 15:53:49 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-04 15:53:49 - User ID: 25
+2025-04-04 15:53:49 - Update result: success
+2025-04-04 15:53:49 - Rows affected: 1
+2025-04-04 15:53:49 - Transaction committed successfully
+2025-04-04 15:53:49 - Profile update successful!
+2025-04-04 15:53:49 - Returning response: {"success":true,"message":"Profile updated successfully.","debug":[],"user":{"id":"25","username":"testuser","email":"testuser@gmail.com","phone":"1245783695","company":"GTU-Set","jobTitle":"intern"}}
+2025-04-04 15:53:49 - REQUEST COMPLETED
+
+2025-04-05 05:15:38 - PROFILE UPDATE REQUEST STARTED
+2025-04-05 05:15:38 - Raw input: {"fullName":"testcheck","email":"checker001@gmail.com","phone":"4578123659","company":"AWS","jobTitle":"Manager","currentEmail":"checker@gmail.com"}
+2025-04-05 05:15:38 - Current Email: checker@gmail.com
+2025-04-05 05:15:38 - New Email: checker001@gmail.com
+2025-04-05 05:15:38 - Full Name: testcheck
+2025-04-05 05:15:38 - Email Changed: Yes
+2025-04-05 05:15:38 - Connecting to database: C:\xampp\htdocs\try2/database.sqlite
+2025-04-05 05:15:38 - Transaction started
+2025-04-05 05:15:38 - New email is available for use
+2025-04-05 05:15:38 - User found by email: Yes
+2025-04-05 05:15:38 - Existing columns: id, username, email, password, created_at, phone, company, job_title
+2025-04-05 05:15:38 - Including phone field in update
+2025-04-05 05:15:38 - Including company field in update
+2025-04-05 05:15:38 - Including job_title field in update
+2025-04-05 05:15:38 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-05 05:15:38 - User ID: 26
+2025-04-05 05:15:38 - Update result: success
+2025-04-05 05:15:38 - Rows affected: 1
+2025-04-05 05:15:38 - Transaction committed successfully
+2025-04-05 05:15:38 - Profile update successful!
+2025-04-05 05:15:38 - Returning response: {"success":true,"message":"Profile updated successfully.","debug":[],"user":{"id":"26","username":"testcheck","email":"checker001@gmail.com","phone":"4578123659","company":"AWS","jobTitle":"Manager"}}
+2025-04-05 05:15:38 - REQUEST COMPLETED
+
+2025-04-09 18:05:30 - PROFILE UPDATE REQUEST STARTED
+2025-04-09 18:05:30 - Raw input: {"fullName":"Just Usr","email":"justmk009@gmail.com","phone":"125647893512","company":"frt","jobTitle":"dre","currentEmail":"justmk009@gmail.com"}
+2025-04-09 18:05:30 - Current Email: justmk009@gmail.com
+2025-04-09 18:05:30 - New Email: justmk009@gmail.com
+2025-04-09 18:05:30 - Full Name: Just Usr
+2025-04-09 18:05:30 - Email Changed: No
+2025-04-09 18:05:30 - Connecting to database: C:\xampp\htdocs\GRC/database.sqlite
+2025-04-09 18:05:30 - Transaction started
+2025-04-09 18:05:30 - User found by email: Yes
+2025-04-09 18:05:30 - Existing columns: id, username, email, password, created_at, phone, company, job_title
+2025-04-09 18:05:30 - Including phone field in update
+2025-04-09 18:05:30 - Including company field in update
+2025-04-09 18:05:30 - Including job_title field in update
+2025-04-09 18:05:30 - Executing update: UPDATE users SET username = ?, email = ?, phone = ?, company = ?, job_title = ? WHERE id = ?
+2025-04-09 18:05:30 - User ID: 6
+2025-04-09 18:05:30 - Update result: success
+2025-04-09 18:05:30 - Rows affected: 1
+2025-04-09 18:05:30 - Transaction committed successfully
+2025-04-09 18:05:30 - Profile update successful!
+2025-04-09 18:05:30 - Returning response: {"success":true,"message":"Profile updated successfully.","debug":[],"user":{"id":"6","username":"Just Usr","email":"justmk009@gmail.com","phone":"125647893512","company":"frt","jobTitle":"dre"}}
+2025-04-09 18:05:30 - REQUEST COMPLETED
+
+2025-04-16 08:16:39 - PROFILE UPDATE REQUEST STARTED
+2025-04-16 08:16:39 - Raw input: {"fullName":"Good user","email":"justmk009@gmail.com","phone":"9016740830","company":"gtu","jobTitle":"intern","currentEmail":"justmk009@gmail.com"}
+2025-04-16 08:16:39 - Current Email: justmk009@gmail.com
+2025-04-16 08:16:39 - New Email: justmk009@gmail.com
+2025-04-16 08:16:39 - Full Name: Good user
+2025-04-16 08:16:39 - Email Changed: No
+2025-04-16 08:16:39 - Connecting to database: C:\xampp\htdocs\GRC/database.sqlite
+2025-04-16 08:16:39 - Transaction started
+2025-04-16 08:16:39 - User found by email: Yes
+2025-04-16 08:16:39 - Existing columns: id, username, email, password, created_at, google_id, picture_url
+2025-04-16 08:16:39 - Executing update: UPDATE users SET username = ?, email = ? WHERE id = ?
+2025-04-16 08:16:39 - User ID: 4
+2025-04-16 08:16:39 - Update result: success
+2025-04-16 08:16:39 - Rows affected: 1
+2025-04-16 08:16:39 - Transaction committed successfully
+2025-04-16 08:16:39 - Profile update successful!
+2025-04-16 08:16:39 - Returning response: {"success":true,"message":"Profile updated successfully.","debug":[],"user":{"id":"4","username":"Good user","email":"justmk009@gmail.com","phone":"9016740830","company":"gtu","jobTitle":"intern"}}
+2025-04-16 08:16:39 - REQUEST COMPLETED
+
+2025-04-20 15:23:35 - PROFILE UPDATE REQUEST STARTED
+2025-04-20 15:23:35 - Raw input: {"fullName":"JustMk","email":"justmk009@gmail.com","phone":"4521963571","company":"GTU","jobTitle":"intern","currentEmail":"justmk009@gmail.com"}
+2025-04-20 15:23:35 - Current Email: justmk009@gmail.com
+2025-04-20 15:23:35 - New Email: justmk009@gmail.com
+2025-04-20 15:23:35 - Full Name: JustMk
+2025-04-20 15:23:35 - Email Changed: No
+2025-04-20 15:23:35 - Connecting to database: C:\xampp\htdocs\GRC/database.sqlite
+2025-04-20 15:23:35 - Transaction started
+2025-04-20 15:23:35 - User found by email: Yes
+2025-04-20 15:23:35 - Existing columns: id, username, email, password, created_at, google_id, picture_url
+2025-04-20 15:23:35 - Executing update: UPDATE users SET username = ?, email = ? WHERE id = ?
+2025-04-20 15:23:35 - User ID: 4
+2025-04-20 15:23:35 - Update result: success
+2025-04-20 15:23:35 - Rows affected: 1
+2025-04-20 15:23:35 - Transaction committed successfully
+2025-04-20 15:23:35 - Profile update successful!
+2025-04-20 15:23:35 - Returning response: {"success":true,"message":"Profile updated successfully.","debug":[],"user":{"id":"4","username":"JustMk","email":"justmk009@gmail.com","phone":"4521963571","company":"GTU","jobTitle":"intern"}}
+2025-04-20 15:23:35 - REQUEST COMPLETED
+

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIST Cybersecurity Framework Assessment</title>
+    <link rel="stylesheet" href="css/NIST_score.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Enterprise-level assessment tool for NIST Cybersecurity Framework compliance">
+    <!-- Add jsPDF library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="nav-wrapper">
+        <div class="nav-buttons">
+            <a href="home.html" class="nav-btn home-btn">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="javascript:history.go(-1)" class="nav-btn back-btn">
+                <i class="fas fa-arrow-left"></i> Back
+            </a>
+            <button id="debugSaveBtn" class="nav-btn" style="display:none;">
+                <i class="fas fa-bug"></i> Debug Save
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="assessment-header">
+            <h1>NIST Cybersecurity Framework Assessment</h1>
+            <p class="subtitle">Enterprise Assessment & Remediation Recommendation System</p>
+        </div>
+
+        <div class="framework-info">
+            <div class="info-card">
+                <div class="info-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>About NIST Cybersecurity Framework</h3>
+                </div>
+                <p>The NIST Cybersecurity Framework provides a policy framework of computer security guidance for private sector organizations to assess and improve their ability to prevent, detect, and respond to cyber attacks.</p>
+            </div>
+        </div>
+
+        <div class="assessment-progress">
+            <div class="progress-wrapper">
+                <div class="progress-label">
+                    <span>Assessment Progress</span>
+                    <span id="progressPercentage">0%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="progressBar" class="progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-container">
+            <div class="tabs">
+                <button class="tab-btn active" data-category="identify">
+                    <i class="fas fa-search"></i> Identify
+                </button>
+                <button class="tab-btn" data-category="protect">
+                    <i class="fas fa-shield-alt"></i> Protect
+                </button>
+                <button class="tab-btn" data-category="detect">
+                    <i class="fas fa-radar"></i> Detect
+                </button>
+                <button class="tab-btn" data-category="respond">
+                    <i class="fas fa-bolt"></i> Respond
+                </button>
+                <button class="tab-btn" data-category="recover">
+                    <i class="fas fa-sync-alt"></i> Recover
+                </button>
+            </div>
+
+            <div class="tab-content" id="identify">
+                <h2>1. Identify <span class="category-score" id="identifyScore">0%</span></h2>
+                <p class="category-description">Asset management, business environment, governance, risk assessment, and risk management strategy</p>
+                
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Requirement</th>
+                            <th>Status</th>
+                            <th>Implementation Level</th>
+                        </tr>
+                    </thead>
+                    <tbody id="identifyChecklist">
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+                
+                <div class="next-btn-container">
+                    <button class="next-btn" data-next="protect">
+                        Next: Protect <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="protect" style="display: none;">
+                <h2>2. Protect <span class="category-score" id="protectScore">0%</span></h2>
+                <p class="category-description">Access control, awareness training, data security, maintenance, and protective technology</p>
+                
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Requirement</th>
+                            <th>Status</th>
+                            <th>Implementation Level</th>
+                        </tr>
+                    </thead>
+                    <tbody id="protectChecklist">
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+                
+                <div class="next-btn-container">
+                    <button class="next-btn" data-next="detect">
+                        Next: Detect <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="detect" style="display: none;">
+                <h2>3. Detect <span class="category-score" id="detectScore">0%</span></h2>
+                <p class="category-description">Anomalies and events, continuous security monitoring, and detection processes</p>
+                
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Requirement</th>
+                            <th>Status</th>
+                            <th>Implementation Level</th>
+                        </tr>
+                    </thead>
+                    <tbody id="detectChecklist">
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+                
+                <div class="next-btn-container">
+                    <button class="next-btn" data-next="respond">
+                        Next: Respond <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="respond" style="display: none;">
+                <h2>4. Respond <span class="category-score" id="respondScore">0%</span></h2>
+                <p class="category-description">Response planning, communications, analysis, mitigation, and improvements</p>
+                
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Requirement</th>
+                            <th>Status</th>
+                            <th>Implementation Level</th>
+                        </tr>
+                    </thead>
+                    <tbody id="respondChecklist">
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+                
+                <div class="next-btn-container">
+                    <button class="next-btn" data-next="recover">
+                        Next: Recover <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="recover" style="display: none;">
+                <h2>5. Recover <span class="category-score" id="recoverScore">0%</span></h2>
+                <p class="category-description">Recovery planning, improvements, and communications</p>
+                
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Requirement</th>
+                            <th>Status</th>
+                            <th>Implementation Level</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recoverChecklist">
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+                
+                <div class="next-btn-container">
+                    <button id="finalAnalyzeBtn" class="next-btn">
+                        View Results <i class="fas fa-chart-pie"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <button id="analyzeBtn" class="analyze-btn">Analyze Compliance Status</button>
+
+        <div id="assessmentResults" class="assessment-results hidden">
+            <div class="results-header">
+                <h2>Assessment Results</h2>
+                <p class="timestamp">Generated on <span id="generationDate"></span></p>
+            </div>
+
+            <div class="score-section">
+                <div class="overall-score-card">
+                    <div class="score-circle" id="scoreCircle">
+                        <svg width="150" height="150" viewBox="0 0 150 150">
+                            <circle cx="75" cy="75" r="65" fill="none" stroke="#e6e6e6" stroke-width="10"/>
+                            <circle id="scoreCircleFill" cx="75" cy="75" r="65" fill="none" stroke="#3498db" stroke-width="10" stroke-dasharray="0 408" stroke-dashoffset="0" transform="rotate(-90 75 75)"/>
+                        </svg>
+                        <div class="score-text">
+                            <span id="complianceScore">0%</span>
+                            <span class="score-label">Overall</span>
+                        </div>
+                    </div>
+                    <div class="maturity-level">
+                        <span>Maturity Level:</span>
+                        <span id="maturityLevelText">Initial</span>
+                    </div>
+                </div>
+
+                <div class="category-score-cards">
+                    <div class="category-card identify">
+                        <div class="category-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Identify</h3>
+                            <div class="category-progress">
+                                <div class="mini-progress" id="identifyProgressBar"></div>
+                            </div>
+                            <span class="category-percentage" id="identifyScoreResult">0%</span>
+                        </div>
+                    </div>
+                    <div class="category-card protect">
+                        <div class="category-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Protect</h3>
+                            <div class="category-progress">
+                                <div class="mini-progress" id="protectProgressBar"></div>
+                            </div>
+                            <span class="category-percentage" id="protectScoreResult">0%</span>
+                        </div>
+                    </div>
+                    <div class="category-card detect">
+                        <div class="category-icon">
+                            <i class="fas fa-radar"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Detect</h3>
+                            <div class="category-progress">
+                                <div class="mini-progress" id="detectProgressBar"></div>
+                            </div>
+                            <span class="category-percentage" id="detectScoreResult">0%</span>
+                        </div>
+                    </div>
+                    <div class="category-card respond">
+                        <div class="category-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Respond</h3>
+                            <div class="category-progress">
+                                <div class="mini-progress" id="respondProgressBar"></div>
+                            </div>
+                            <span class="category-percentage" id="respondScoreResult">0%</span>
+                        </div>
+                    </div>
+                    <div class="category-card recover">
+                        <div class="category-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Recover</h3>
+                            <div class="category-progress">
+                                <div class="mini-progress" id="recoverProgressBar"></div>
+                            </div>
+                            <span class="category-percentage" id="recoverScoreResult">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-counts">
+                    <div class="status-item implemented">
+                        <i class="fas fa-check-circle"></i>
+                        <span id="implementedCount">0</span> Implemented
+                    </div>
+                    <div class="status-item partial">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span id="partialCount">0</span> Partial
+                    </div>
+                    <div class="status-item missing">
+                        <i class="fas fa-times-circle"></i>
+                        <span id="missingCount">0</span> Missing
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendations-section">
+                <h2>Compliance Recommendations</h2>
+                <div class="recommendations-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="critical">Critical</button>
+                    <button class="filter-btn" data-filter="high">High Priority</button>
+                    <button class="filter-btn" data-filter="medium">Medium Priority</button>
+                </div>
+                <div id="recommendationsList" class="recommendations-list">
+                    <!-- Recommendations will be dynamically populated here -->
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="downloadPdf" class="action-btn download-btn">
+                    <i class="fas fa-file-pdf"></i> Download PDF Report
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>NIST Framework Assessment</h3>
+                <p>© 2023 Enterprise Security Solutions</p>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://www.nist.gov/cyberframework" target="_blank">NIST Cybersecurity Framework</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope"></i> support@enterprisesecurity.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="NIST_score.js"></script>
+    <script>
+        // Function to save assessment results
+        function saveAssessmentResults(results) {
+            // Get current user info (or use a default)
+            const currentUser = getCurrentUser();
+            
+            // Create assessment data object
+            const assessmentData = {
+                framework: 'NIST CSF',
+                date: new Date().toISOString(),
+                score: Math.round(results.overall.score),
+                status: getMaturityLevel(results.overall.score),
+                details: {
+                    implemented: results.overall.implemented,
+                    partial: results.overall.partial,
+                    missing: results.overall.missing,
+                    tierScores: results.categories,
+                    recommendations: results.recommendations
+                }
+            };
+            
+            // Get existing assessments or create empty array
+            let userAssessments = JSON.parse(localStorage.getItem('userAssessments') || '{}');
+            
+            // Add assessment to user's assessments
+            if (!userAssessments[currentUser]) {
+                userAssessments[currentUser] = [];
+            }
+            
+            userAssessments[currentUser].push(assessmentData);
+            
+            // Save back to localStorage
+            localStorage.setItem('userAssessments', JSON.stringify(userAssessments));
+            
+            // Also set the current user to ensure the dashboard can find it
+            localStorage.setItem('currentUser', currentUser);
+            
+            // Show confirmation
+            const assessmentResults = document.getElementById('assessmentResults');
+            const savedNotice = document.createElement('div');
+            savedNotice.className = 'saved-notice';
+            savedNotice.innerHTML = '<i class="fas fa-check"></i> Assessment saved to dashboard';
+            savedNotice.style.backgroundColor = '#e8f5e9';
+            savedNotice.style.color = '#2e7d32';
+            savedNotice.style.padding = '10px';
+            savedNotice.style.borderRadius = '4px';
+            savedNotice.style.marginTop = '20px';
+            savedNotice.style.textAlign = 'center';
+            assessmentResults.appendChild(savedNotice);
+            
+            // Remove notice after 3 seconds
+            setTimeout(() => {
+                savedNotice.remove();
+            }, 3000);
+        }
+        
+        // Helper function to get current user
+        function getCurrentUser() {
+            // Try to get current user from localStorage (set during login)
+            const user = localStorage.getItem('currentUser') || sessionStorage.getItem('userEmail');
+            
+            // If no user is logged in, try to use alternative methods
+            if (!user) {
+                // Try to get from localStorage user data
+                const userData = JSON.parse(localStorage.getItem('userData') || '{}');
+                if (userData.email) {
+                    return userData.email;
+                }
+                
+                // Try username instead of email if available
+                const userName = localStorage.getItem('userName') || sessionStorage.getItem('userName');
+                if (userName) {
+                    return userName;
+                }
+            }
+            
+            return user || 'default_user'; // Return user or default if not found
+        }
+
+        // Initialize the page
+        window.onload = initializeChecklist;
+
+        // Add debug functionality to enable the hidden debug button
+        document.addEventListener('keydown', function(e) {
+            // Press D+E+B+U+G keys in sequence to show debug button
+            if (e.key === 'd' && e.ctrlKey && e.altKey) {
+                document.getElementById('debugSaveBtn').style.display = 'inline-block';
+                console.log('Debug mode activated');
+            }
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIST 800-53 - Security Controls</title>
+    <link rel="stylesheet" href="css/nist800-53.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="badge">
+            <span>🔒 Security Standard</span>
+        </div>
+        
+        <h1>NIST 800-53 Framework</h1>
+        <p class="subtitle">Security and Privacy Controls for Information Systems and Organizations</p>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">20</div>
+                <div class="stat-label">Control Families</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Controls</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Impact Levels</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-links">
+            <a href="#overview" class="active">Overview</a>
+            <a href="#controls">Control Families</a>
+            <a href="#implementation">Implementation</a>
+            <a href="#benefits">Benefits</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Overview Section -->
+        <section id="overview">
+            <div class="section-title">
+                <i class="info-icon">i</i>
+                <h2>What is NIST 800-53?</h2>
+            </div>
+            <div class="card">
+                <p>The <strong>NIST Special Publication 800-53</strong> provides a comprehensive framework of security and privacy controls for information systems and organizations. It represents the most extensive and widely adopted security control catalog available.</p>
+                <p>This framework helps organizations protect their operations, assets, and individuals from a diverse set of threats and risks in the modern digital landscape.</p>
+            </div>
+        </section>
+
+        <!-- Detailed Overview Section -->
+        <section id="detailed-overview">
+            <div class="section-title">
+                <i class="info-icon">📋</i>
+                <h2>Detailed Framework Overview</h2>
+            </div>
+            <div class="card">
+                <p>The NIST Special Publication 800-53 is a foundational cybersecurity framework developed by the National Institute of Standards and Technology (NIST) to provide a comprehensive catalog of security and privacy controls for federal information systems and organizations. It serves as a cornerstone for managing cybersecurity risks, ensuring compliance, and fostering resilience against evolving threats.</p>
+            </div>
+            
+            <div class="framework-structure">
+                <div class="structure-item">
+                    <h3>1. Origin and Purpose</h3>
+                    <div class="structure-content">
+                        <p><strong>Origin:</strong> Mandated by the Federal Information Security Management Act (FISMA) of 2002, NIST 800-53 was initially designed to help federal agencies secure their information systems. Over time, it has been adopted globally by private-sector organizations due to its robustness and flexibility.</p>
+                        
+                        <div class="purpose-points">
+                            <h4>Purpose:</h4>
+                            <ul>
+                                <li>Protect sensitive data (e.g., Controlled Unclassified Information) through technical, administrative, and physical safeguards</li>
+                                <li>Standardize risk management practices and align with regulations like HIPAA, PCI DSS, and GDPR</li>
+                                <li>Integrate privacy and security controls into a unified framework</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="structure-item">
+                    <h3>2. Key Components</h3>
+                    <div class="structure-content">
+                        <div class="key-components">
+                            <div class="component">
+                                <h4>a. Control Families</h4>
+                                <p>NIST 800-53 organizes over 1,300 controls into 20 families, each addressing specific cybersecurity or privacy domains. Examples include:</p>
+                                <ul class="control-examples">
+                                    <li><strong>Access Control (AC):</strong> Manages user permissions and least-privilege access</li>
+                                    <li><strong>Incident Response (IR):</strong> Defines processes for detecting and mitigating security breaches</li>
+                                    <li><strong>Supply Chain Risk Management (SR):</strong> Addresses risks from third-party vendors (added in Revision 5)</li>
+                                    <li><strong>Privacy Controls (PT):</strong> Ensures transparency in handling personally identifiable information (PII)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="component">
+                                <h4>b. Control Baselines</h4>
+                                <p>Organizations tailor controls based on three impact levels:</p>
+                                <div class="impact-levels">
+                                    <div class="impact-level">
+                                        <span class="impact-badge low">Low</span>
+                                        <p>For systems with minimal breach impact (e.g., public websites)</p>
+                                    </div>
+                                    <div class="impact-level">
+                                        <span class="impact-badge moderate">Moderate</span>
+                                        <p>For systems handling sensitive operational data</p>
+                                    </div>
+                                    <div class="impact-level">
+                                        <span class="impact-badge high">High</span>
+                                        <p>For mission-critical systems (e.g., national security infrastructure)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="component">
+                                <h4>c. Risk Management Framework (RMF)</h4>
+                                <p>Integrated into NIST 800-53, the RMF provides a six-step lifecycle for continuous risk management:</p>
+                                <div class="rmf-steps">
+                                    <ol class="process-steps">
+                                        <li>Categorize systems based on sensitivity</li>
+                                        <li>Select controls from the catalog</li>
+                                        <li>Implement and document controls</li>
+                                        <li>Assess effectiveness through audits</li>
+                                        <li>Authorize system operations</li>
+                                        <li>Monitor controls and update as needed</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="structure-item">
+                    <h3>3. Updates in Revision 5 (2020)</h3>
+                    <div class="structure-content">
+                        <p>The latest revision introduced significant enhancements:</p>
+                        <div class="updates-grid">
+                            <div class="update-card">
+                                <h4>Integrated Privacy Controls</h4>
+                                <p>Merged privacy and security controls into a single catalog for holistic protection</p>
+                            </div>
+                            <div class="update-card">
+                                <h4>Outcome-Based Language</h4>
+                                <p>Focuses on results rather than prescriptive steps, allowing flexibility in implementation</p>
+                            </div>
+                            <div class="update-card">
+                                <h4>Supply Chain Risk Management</h4>
+                                <p>New controls to mitigate third-party risks</p>
+                            </div>
+                            <div class="update-card">
+                                <h4>Cyber Resiliency</h4>
+                                <p>Emphasis on secure system design and rapid recovery from disruptions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="structure-item">
+                    <h3>4. Compliance and Implementation</h3>
+                    <div class="structure-content">
+                        <div class="compliance-section">
+                            <div class="compliance-part">
+                                <h4>Who Must Comply?</h4>
+                                <ul class="compliance-list">
+                                    <li><strong>Mandatory:</strong> U.S. federal agencies, contractors, and third-party vendors handling federal data (e.g., defense, healthcare)</li>
+                                    <li><strong>Voluntary Adoption:</strong> Private-sector organizations seeking robust security practices</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="compliance-part">
+                                <h4>Best Practices for Implementation</h4>
+                                <ul class="best-practices">
+                                    <li><strong>Conduct a Security Gap Analysis:</strong> Identify gaps between current practices and NIST requirements</li>
+                                    <li><strong>Prioritize Controls:</strong> Focus on high-impact areas like access management and encryption</li>
+                                    <li><strong>Automate Compliance:</strong> Use tools for policy enforcement and real-time monitoring</li>
+                                    <li><strong>Train Employees:</strong> Develop security awareness programs to reduce human error</li>
+                                    <li><strong>Continuous Monitoring:</strong> Regularly audit controls and update them for emerging threats</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="structure-item">
+                    <h3>5. Benefits vs. Challenges</h3>
+                    <div class="structure-content">
+                        <div class="benefits-challenges-table">
+                            <div class="table-header">
+                                <div class="header-cell">Benefits</div>
+                                <div class="header-cell">Challenges</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell benefit-cell">
+                                    <p><strong>Comprehensive Risk Management:</strong> Covers technical, operational, and privacy risks</p>
+                                </div>
+                                <div class="table-cell challenge-cell">
+                                    <p><strong>Complexity:</strong> Over 1,300 controls can overwhelm smaller organizations</p>
+                                </div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell benefit-cell">
+                                    <p><strong>Regulatory Alignment:</strong> Maps to HIPAA, PCI DSS, and ISO 27001</p>
+                                </div>
+                                <div class="table-cell challenge-cell">
+                                    <p><strong>High Costs:</strong> Implementation requires investment in tools and expertise</p>
+                                </div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell benefit-cell">
+                                    <p><strong>Flexibility:</strong> Tailorable to organizational size and risk profile</p>
+                                </div>
+                                <div class="table-cell challenge-cell">
+                                    <p><strong>Ongoing Maintenance:</strong> Requires continuous updates to address new threats</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="structure-item">
+                    <h3>6. Comparison with Other Frameworks</h3>
+                    <div class="structure-content">
+                        <div class="framework-comparison">
+                            <div class="comparison-item">
+                                <h4>NIST CSF</h4>
+                                <p>High-level risk management vs. NIST 800-53's detailed controls</p>
+                            </div>
+                            <div class="comparison-item">
+                                <h4>ISO 27001</h4>
+                                <p>Focuses on information security management systems, while NIST 800-53 includes privacy and federal compliance</p>
+                            </div>
+                            <div class="comparison-item">
+                                <h4>FedRAMP</h4>
+                                <p>Uses NIST 800-53 as a baseline for cloud service providers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="structure-item">
+                    <h3>7. Impact and Adoption</h3>
+                    <div class="structure-content">
+                        <p>NIST 800-53 is often termed the "Rosetta Stone of Security Frameworks" due to its influence on standards like CMMC, HIPAA, and SOC2. For example:</p>
+                        <div class="adoption-examples">
+                            <div class="adoption-item">
+                                <h4>Healthcare</h4>
+                                <p>HIPAA's audit requirements align with NIST's Audit and Accountability (AU) family</p>
+                            </div>
+                            <div class="adoption-item">
+                                <h4>Finance</h4>
+                                <p>PCI DSS's data encryption rules map to NIST's System and Communications Protection (SC) controls</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="conclusion-card">
+                <h3>Conclusion</h3>
+                <p>NIST 800-53 remains a gold standard for cybersecurity, offering unparalleled depth and adaptability. While implementation can be resource-intensive, its structured approach to risk management and compliance makes it indispensable for organizations handling sensitive data. For tools and resources, refer to NIST's SP 800-53B for control baselines or platforms like Cynomi for automated compliance.</p>
+            </div>
+        </section>
+
+        <!-- Control Families Section -->
+        <section id="controls">
+            <div class="section-title">
+                <i class="info-icon">🛡️</i>
+                <h2>Control Families</h2>
+            </div>
+            <div class="components-grid">
+                <div class="component-card">
+                    <h3>Access Control</h3>
+                    <p>Policies and procedures for ensuring proper system access and authorization.</p>
+                </div>
+                <div class="component-card">
+                    <h3>Audit & Accountability</h3>
+                    <p>Mechanisms for tracking and monitoring system activities.</p>
+                </div>
+                <div class="component-card">
+                    <h3>Configuration Management</h3>
+                    <p>Controls for maintaining secure system configurations.</p>
+                </div>
+                <div class="component-card">
+                    <h3>Incident Response</h3>
+                    <p>Procedures for detecting and responding to security incidents.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Section -->
+        <section id="implementation">
+            <div class="section-title">
+                <i class="info-icon">⚙️</i>
+                <h2>Implementation Approach</h2>
+            </div>
+            <div class="components-grid">
+                <div class="component-card">
+                    <h3>Risk Assessment</h3>
+                    <p>Evaluate system security categorization and impact levels.</p>
+                </div>
+                <div class="component-card">
+                    <h3>Control Selection</h3>
+                    <p>Choose appropriate controls based on risk assessment.</p>
+                </div>
+                <div class="component-card">
+                    <h3>Control Implementation</h3>
+                    <p>Deploy and configure selected security controls.</p>
+                </div>
+                <div class="component-card">
+                    <h3>Continuous Monitoring</h3>
+                    <p>Regular assessment and updates of security controls.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits">
+            <div class="section-title">
+                <i class="info-icon">✨</i>
+                <h2>Benefits</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Comprehensive Security</h3>
+                    <p>Complete coverage of security and privacy controls.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Flexibility</h3>
+                    <p>Adaptable controls for different organizational needs.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Risk Management</h3>
+                    <p>Structured approach to managing security risks.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Compliance</h3>
+                    <p>Alignment with federal and industry requirements.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Function to update active nav link based on scroll position
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+        
+        // Listen for scroll events to update active nav link
+        window.addEventListener('scroll', updateActiveNavLink);
+        
+        // Add click event to smooth scroll to sections
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+                
+                // Update active class manually
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+< s c r i p t   s r c = \ 
+ 
+ n a v - s y n c . j s \ > < / s c r i p t > 
+ 
+ < s c r i p t   s r c = \ 
+ 
+ n a v - f i x . j s \ > < / s c r i p t > 
+ 
+ 
+

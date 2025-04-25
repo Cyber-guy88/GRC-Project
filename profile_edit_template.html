@@ -1,0 +1,48 @@
+<!-- Edit Mode -->
+<div id="editMode" style="display: none;">
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-semibold">Edit Profile</h2>
+    </div>
+    
+    <div class="success-message" id="successMessage">
+        <i class="fas fa-check-circle mr-2"></i> Profile updated successfully!
+    </div>
+    
+    <form id="editProfileForm">
+        <div class="edit-form-row">
+            <div class="info-label">Full Name <span class="required-field">*</span></div>
+            <input type="text" class="edit-form-input" id="editFullName" required>
+            <div class="form-error" id="fullNameError"></div>
+        </div>
+        
+        <div class="edit-form-row">
+            <div class="info-label">Email Address <span class="required-field">*</span></div>
+            <input type="email" class="edit-form-input" id="editEmail" required>
+            <div class="form-error" id="emailError"></div>
+        </div>
+        
+        <div class="edit-form-row">
+            <div class="info-label">Phone Number</div>
+            <input type="tel" class="edit-form-input" id="editPhone">
+        </div>
+        
+        <div class="edit-form-row">
+            <div class="info-label">Company</div>
+            <input type="text" class="edit-form-input" id="editCompany">
+        </div>
+        
+        <div class="edit-form-row">
+            <div class="info-label">Job Title</div>
+            <input type="text" class="edit-form-input" id="editJobTitle">
+        </div>
+        
+        <div class="flex gap-3">
+            <button type="submit" class="save-profile-btn">
+                <i class="fas fa-save"></i> Save Changes
+            </button>
+            <button type="button" class="cancel-edit-btn" id="cancelEditBtn">
+                <i class="fas fa-times"></i> Cancel
+            </button>
+        </div>
+    </form>
+</div> 

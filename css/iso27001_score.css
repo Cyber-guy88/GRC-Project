@@ -1,0 +1,459 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e9ecef;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+h1 {
+    color: #1a237e;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.score-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.score {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1a237e;
+    background-color: #f8f9fa;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+.btn {
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #283593;
+    transform: translateY(-1px);
+}
+
+.checklist-container {
+    margin-top: 100px;
+    position: relative;
+}
+
+.checklist-section {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.checklist-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.nav-btn {
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn:hover {
+    background-color: #283593;
+    transform: translateY(-1px);
+}
+
+.nav-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+h2 {
+    color: #1a237e;
+    font-size: 22px;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e9ecef;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    z-index: 10;
+    padding: 10px 0;
+    margin-top: -25px;
+    margin-left: -25px;
+    margin-right: -25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.subsection {
+    margin-bottom: 25px;
+    position: relative;
+    padding-top: 60px;
+    background: #ffffff;
+}
+
+h3 {
+    color: #283593;
+    font-size: 19px;
+    margin-bottom: 18px;
+    font-weight: 500;
+    position: sticky;
+    top: 60px;
+    background: #ffffff;
+    z-index: 9;
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+    margin-top: -60px;
+    padding-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.checklist-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.checklist-item:hover {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+h4 {
+    color: #1a237e;
+    font-size: 17px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.question {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.question:hover {
+    background-color: #f1f3f5;
+}
+
+.question label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #2c3e50;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #1a237e;
+}
+
+/* Progress indicator */
+.progress-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #e9ecef;
+    z-index: 101;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #1a237e;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+/* Section navigation */
+.section-nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.section-nav ul {
+    list-style: none;
+}
+
+.section-nav li {
+    margin-bottom: 10px;
+}
+
+.section-nav a {
+    color: #1a237e;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.section-nav a:hover,
+.section-nav a.active {
+    background-color: #f8f9fa;
+    color: #283593;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 50px auto;
+    padding: 35px;
+    width: 85%;
+    max-width: 800px;
+    border-radius: 12px;
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    color: #1a237e;
+    font-size: 24px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
+    position: relative;
+    top: 0;
+    background: #ffffff;
+    z-index: 10;
+    padding: 0 0 15px 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #1a237e;
+}
+
+.report-section {
+    margin-bottom: 35px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.report-section h3 {
+    color: #1a237e;
+    margin-bottom: 18px;
+    font-size: 20px;
+    position: relative;
+    top: 0;
+    background: #f8f9fa;
+    z-index: 9;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #e9ecef;
+    margin-top: 0;
+}
+
+.report-section h4 {
+    color: #283593;
+    margin-bottom: 12px;
+    font-size: 18px;
+    position: relative;
+    top: 0;
+    background: #f8f9fa;
+    z-index: 8;
+    padding: 0;
+    border-bottom: none;
+    margin-top: 0;
+    box-shadow: none;
+}
+
+.report-section ul {
+    list-style-type: none;
+    padding-left: 25px;
+    margin-top: 15px;
+}
+
+.report-section li {
+    margin-bottom: 12px;
+    position: relative;
+    color: #2c3e50;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.report-section li:before {
+    content: "•";
+    color: #1a237e;
+    font-weight: bold;
+    position: absolute;
+    left: -25px;
+}
+
+#downloadReport {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .score-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .score {
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+        padding: 25px;
+    }
+
+    .checklist-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-nav {
+        display: none;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 17px;
+    }
+
+    h4 {
+        font-size: 15px;
+    }
+} 

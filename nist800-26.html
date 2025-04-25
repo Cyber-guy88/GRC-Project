@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIST 800-26 - Security Self-Assessment</title>
+    <link rel="stylesheet" href="css/nist800-26.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>Security Standard</span>
+        </div>
+        
+        <h1>NIST 800-26 Framework</h1>
+        <p class="subtitle">Security Self-Assessment Guide for Information Technology Systems</p>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">17</div>
+                <div class="stat-label">Control Areas</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Assessment Levels</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Control Items</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-links">
+            <a href="#overview" class="active">Overview</a>
+            <a href="#detailed-overview">Detailed Overview</a>
+            <a href="#purpose-scope">Purpose & Scope</a>
+            <a href="#framework">Framework</a>
+            <a href="#implementation">Implementation</a>
+            <a href="#legacy">Evolution & Legacy</a>
+            <a href="#assessment">Assessment Areas</a>
+            <a href="#methodology">Methodology</a>
+            <a href="#benefits">Benefits</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Overview Section -->
+        <section id="overview">
+            <div class="section-title">
+                <div class="info-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h2>What is NIST 800-26?</h2>
+            </div>
+            <div class="card">
+                <p>The <strong>NIST Special Publication 800-26</strong> provides a methodology for evaluating the security controls in federal information systems. It offers a comprehensive self-assessment framework to help organizations measure their security posture.</p>
+                <p>This guide enables organizations to evaluate their security controls and identify areas for improvement through a structured assessment process.</p>
+            </div>
+        </section>
+
+        <!-- Detailed Overview Section -->
+        <section id="detailed-overview">
+            <div class="section-title">
+                <div class="info-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h2>Detailed Overview</h2>
+            </div>
+            <div class="card">
+                <p>The <strong>NIST Special Publication 800-26</strong>, titled "Security Self-Assessment Guide for Information Technology Systems", is a foundational framework designed to help organizations evaluate and improve their information security programs through structured self-assessment. Published in 2001, it focuses on aligning with existing federal requirements and fostering a standardized approach to measuring security controls.</p>
+            </div>
+        </section>
+
+        <!-- Purpose and Scope Section -->
+        <section id="purpose-scope">
+            <div class="section-title">
+                <div class="info-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h2>Purpose & Scope</h2>
+            </div>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h3><i class="fas fa-bullseye"></i>Objective</h3>
+                    <p>To enable federal agencies and other organizations to assess the effectiveness of their information security programs using a standardized questionnaire. This self-assessment identifies gaps, prioritizes improvements, and ensures compliance with long-standing statutory and policy requirements (e.g., FISMA, OMB Circular A-130).</p>
+                </div>
+                <div class="area-card">
+                    <h3><i class="fas fa-list-check"></i>Key Features</h3>
+                    <p><strong>No New Requirements:</strong> The guide consolidates existing security controls from statutes and policies rather than introducing new mandates.</p>
+                    <p><strong>Five Security Levels:</strong> Establishes criteria for measuring security status across five maturity levels (e.g., ad hoc, repeatable, optimized).</p>
+                    <p><strong>Focus on Automation:</strong> Designed for integration with tools like the Automated Security Self-Evaluation Tool (ASSET) to streamline assessments.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Framework Components Section -->
+        <section id="framework">
+            <div class="section-title">
+                <div class="info-icon">
+                    <i class="fas fa-cubes"></i>
+                </div>
+                <h2>Framework Components</h2>
+            </div>
+            <div class="card">
+                <p>The framework organizes security controls into 17 key areas, derived from federal guidelines, to standardize evaluations. For each area, the guide provides control objectives, specific techniques, and assessment metrics.</p>
+            </div>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h3><i class="fas fa-user-lock"></i>Identification & Authentication</h3>
+                    <p>Ensuring only authorized users access systems.</p>
+                </div>
+                <div class="area-card">
+                    <h3><i class="fas fa-folder-tree"></i>Contingency Planning</h3>
+                    <p>Preparing for disasters and maintaining business continuity.</p>
+                </div>
+                <div class="area-card">
+                    <h3><i class="fas fa-shield-virus"></i>Incident Response</h3>
+                    <p>Detecting, reporting, and mitigating security breaches.</p>
+                </div>
+                <div class="area-card">
+                    <h3><i class="fas fa-key"></i>Access Control</h3>
+                    <p>Restricting permissions based on roles and least privilege.</p>
+                </div>
+                <div class="area-card">
+                    <h3><i class="fas fa-chart-line"></i>Risk Management</h3>
+                    <p>Prioritizing threats and allocating resources effectively.</p>
+                </div>
+            </div>
+            <div class="specification-grid">
+                <div class="specification-card">
+                    <h3>Control Objectives</h3>
+                    <p>High-level goals (e.g., "Ensure system availability during disruptions").</p>
+                </div>
+                <div class="specification-card">
+                    <h3>Techniques</h3>
+                    <p>Specific measures to achieve objectives (e.g., "Implement redundant data storage").</p>
+                </div>
+                <div class="specification-card">
+                    <h3>Assessment Metrics</h3>
+                    <p>Criteria to determine compliance levels (e.g., frequency of backups, audit log completeness).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Workflow Section -->
+        <section id="implementation">
+            <div class="section-title">
+                <div class="info-icon">
+                    <i class="fas fa-diagram-project"></i>
+                </div>
+                <h2>Implementation Workflow</h2>
+            </div>
+            <div class="workflow-container">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>System Categorization</h3>
+                        <p>Classify systems based on sensitivity (e.g., public, confidential).</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Questionnaire Completion</h3>
+                        <p>Use the standardized form to evaluate controls against the 17 areas.</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Gap Analysis</h3>
+                        <p>Compare current practices with desired maturity levels.</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Action Plan</h3>
+                        <p>Prioritize improvements (e.g., updating access policies, enhancing monitoring).</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Continuous Monitoring</h3>
+                        <p>Reassess periodically to maintain compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legacy and Evolution Section -->
+        <section id="legacy">
+            <div class="section-title">
+                <div class="info-icon">
+                    <i class="fas fa-history"></i>
+                </div>
+                <h2>Legacy & Evolution</h2>
+            </div>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h3><i class="fas fa-arrows-up-to-line"></i>Superseded by SP 800-53</h3>
+                    <p>In 2005, NIST SP 800-53 integrated SP 800-26's controls into a more comprehensive catalog, adding privacy and technical safeguards. SP 800-26's self-assessment approach influenced SP 800-53's control baselines (low, moderate, high).</p>
+                </div>
+                <div class="area-card">
+                    <h3><i class="fas fa-gears"></i>ASSET Tool</h3>
+                    <p>The framework's structure enabled automation, leading to tools like ASSET, which agencies and private companies adopted for streamlined compliance.</p>
+                </div>
+                <div class="area-card">
+                    <h3><i class="fas fa-file-circle-xmark"></i>Retirement of Revision 1</h3>
+                    <p>A 2007 draft update (SP 800-26 Rev. 1) aimed to modernize reporting but was discontinued, leaving the original 2001 version as the primary reference.</p>
+                </div>
+            </div>
+            
+            <!-- Benefits and Challenges Table -->
+            <div class="section-subtitle">
+                <h3>Benefits and Challenges</h3>
+            </div>
+            <div class="comparison-table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Benefits</th>
+                            <th>Challenges</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p><strong>Standardization:</strong> Aligns federal agencies under consistent criteria.</p>
+                            </td>
+                            <td>
+                                <p><strong>Outdated Controls:</strong> Lacks coverage for modern threats like cloud security or AI.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><strong>Cost-Effective:</strong> Reduces reliance on external audits through self-assessment.</p>
+                            </td>
+                            <td>
+                                <p><strong>Complexity:</strong> Managing 17 control areas can overwhelm smaller organizations.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><strong>Regulatory Alignment:</strong> Maps to FISMA and other federal mandates.</p>
+                            </td>
+                            <td>
+                                <p><strong>Voluntary Adoption:</strong> No enforcement mechanisms for compliance.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="card conclusion-card">
+                <h3>Conclusion</h3>
+                <p>While NIST SP 800-26 has been largely replaced by SP 800-53, its emphasis on self-assessment, standardized controls, and alignment with federal requirements laid the groundwork for modern cybersecurity frameworks. Organizations can still reference its principles for foundational risk management, particularly when integrating legacy systems or training staff on security basics. For updated guidance, refer to NIST SP 800-53 or the Cybersecurity Framework (CSF) 2.0.</p>
+            </div>
+        </section>
+
+        <!-- Assessment Areas Section -->
+        <section id="assessment">
+            <div class="section-title">
+                <div class="info-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h2>Assessment Areas</h2>
+            </div>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h3><i class="fas fa-user-shield"></i>Management Controls</h3>
+                    <p>Risk assessment, security planning, and system authorization processes.</p>
+                </div>
+                <div class="area-card">
+                    <h3><i class="fas fa-cogs"></i>Operational Controls</h3>
+                    <p>Personnel security, physical protection, and contingency planning.</p>
+                </div>
+                <div class="area-card">
+                    <h3><i class="fas fa-lock"></i>Technical Controls</h3>
+                    <p>Authentication, access control, and audit mechanisms.</p>
+                </div>
+                <div class="area-card">
+                    <h3><i class="fas fa-file-alt"></i>Documentation</h3>
+                    <p>Policies, procedures, and system security documentation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section id="methodology">
+            <div class="section-title">
+                <div class="info-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h2>Assessment Methodology</h2>
+            </div>
+            <div class="methodology-grid">
+                <div class="methodology-card">
+                    <h3><i class="fas fa-clipboard-check"></i>Level 1 Assessment</h3>
+                    <p>Policy and procedures review to ensure documented security controls.</p>
+                </div>
+                <div class="methodology-card">
+                    <h3><i class="fas fa-tools"></i>Level 2 Assessment</h3>
+                    <p>Implementation review to verify security measures are in place.</p>
+                </div>
+                <div class="methodology-card">
+                    <h3><i class="fas fa-vial"></i>Level 3 Assessment</h3>
+                    <p>Testing and validation of security control effectiveness.</p>
+                </div>
+                <div class="methodology-card">
+                    <h3><i class="fas fa-sync"></i>Continuous Monitoring</h3>
+                    <p>Ongoing assessment and improvement of security controls.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits">
+            <div class="section-title">
+                <div class="info-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h2>Benefits</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3><i class="fas fa-sitemap"></i>Structured Evaluation</h3>
+                    <p>Systematic approach to assessing security controls and measures.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3><i class="fas fa-search"></i>Gap Analysis</h3>
+                    <p>Identification of security weaknesses and improvement areas.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3><i class="fas fa-check-circle"></i>Compliance Support</h3>
+                    <p>Alignment with federal security requirements and standards.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3><i class="fas fa-shield-alt"></i>Risk Management</h3>
+                    <p>Enhanced ability to identify and mitigate security risks.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
+

@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCTAVE Risk Assessment | Enterprise GRC Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Comprehensive guide to OCTAVE Risk Assessment methodology for enterprise risk management.">
+    <style>
+        :root {
+            /* Color Palette */
+            --primary: #0b3954;
+            --primary-light: #1c5d7d;
+            --secondary: #087e8b;
+            --accent: #ff5a5f;
+            --accent-light: #ff8a8f;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --white: #ffffff;
+            --black: #000000;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+            --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            
+            /* Spacing */
+            --spacing-1: 0.25rem;
+            --spacing-2: 0.5rem;
+            --spacing-3: 0.75rem;
+            --spacing-4: 1rem;
+            --spacing-5: 1.25rem;
+            --spacing-6: 1.5rem;
+            --spacing-8: 2rem;
+            --spacing-10: 2.5rem;
+            --spacing-12: 3rem;
+            --spacing-16: 4rem;
+            --spacing-20: 5rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+            
+            /* Border Radius */
+            --rounded-sm: 0.125rem;
+            --rounded: 0.25rem;
+            --rounded-md: 0.375rem;
+            --rounded-lg: 0.5rem;
+            --rounded-xl: 0.75rem;
+            --rounded-2xl: 1rem;
+            --rounded-3xl: 1.5rem;
+            --rounded-full: 9999px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--gray-800);
+            background-color: var(--gray-50);
+            line-height: 1.6;
+        }
+        
+        /* Header & Navigation */
+        .header {
+            background-color: var(--primary);
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+        
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .main-nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .main-nav a {
+            color: var(--gray-100);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .main-nav a:hover {
+            color: var(--white);
+        }
+        
+        .main-nav a.active {
+            color: var(--white);
+        }
+        
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--white);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--gray-700);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: var(--spacing-16) var(--spacing-8);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-4);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--white);
+            opacity: 0.9;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-8);
+        }
+        
+        /* Main Content */
+        .main {
+            padding: var(--spacing-12) 0;
+        }
+        
+        /* Scrollable Navigation */
+        .scrollable-nav {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            padding: var(--spacing-6) 0;
+            position: sticky;
+            top: 0;
+            z-index: 90;
+        }
+        
+        .scrollable-nav-container {
+            display: flex;
+            overflow-x: auto;
+            gap: var(--spacing-4);
+            padding-bottom: var(--spacing-2);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: var(--spacing-8);
+            padding-right: var(--spacing-8);
+        }
+        
+        .scrollable-nav-item {
+            white-space: nowrap;
+            padding: var(--spacing-2) var(--spacing-4);
+            background-color: var(--gray-100);
+            border-radius: var(--rounded-full);
+            color: var(--gray-700);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+        
+        .scrollable-nav-item:hover,
+        .scrollable-nav-item.active {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .scrollable-nav-item i {
+            font-size: 0.875rem;
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: var(--spacing-16);
+            background-color: var(--white);
+            border-radius: var(--rounded-lg);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .section-header {
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: var(--spacing-6) var(--spacing-8);
+            border-top-left-radius: var(--rounded-lg);
+            border-top-right-radius: var(--rounded-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            z-index: 1;
+        }
+        
+        .section-header h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-header i {
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-content {
+            padding: var(--spacing-8);
+        }
+        
+        /* Typography & Content Styling */
+        h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: var(--spacing-6);
+            font-weight: 700;
+            position: relative;
+            padding-bottom: var(--spacing-4);
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary), var(--primary-light));
+            border-radius: var(--rounded-full);
+        }
+        
+        h3 {
+            color: var(--primary-light);
+            font-size: 1.5rem;
+            margin: var(--spacing-8) 0 var(--spacing-4) 0;
+            font-weight: 600;
+        }
+        
+        h4 {
+            color: var(--secondary);
+            font-size: 1.25rem;
+            margin: var(--spacing-6) 0 var(--spacing-4) 0;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+        
+        h4 i {
+            color: var(--secondary);
+        }
+        
+        p {
+            margin-bottom: var(--spacing-4);
+            color: var(--gray-700);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        ul, ol {
+            margin: var(--spacing-4) 0;
+            padding-left: var(--spacing-8);
+        }
+        
+        li {
+            margin-bottom: var(--spacing-2);
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+        
+        strong, b {
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+        
+        em, i:not(.fas):not(.far):not(.fab) {
+            color: var(--gray-800);
+        }
+        
+        /* Card Styles */
+        .card {
+            background-color: var(--white);
+            border-radius: var(--rounded-lg);
+            box-shadow: var(--shadow);
+            padding: var(--spacing-6);
+            margin-bottom: var(--spacing-6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .card-header {
+            margin-bottom: var(--spacing-4);
+            padding-bottom: var(--spacing-4);
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4);
+        }
+        
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--rounded-full);
+            background-color: var(--primary-light);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .card-title {
+            margin: 0;
+            font-size: 1.35rem;
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+        
+        .card-content {
+            color: var(--gray-700);
+        }
+        
+        /* Feature List */
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-6);
+            margin: var(--spacing-8) 0;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-4);
+            background-color: var(--gray-50);
+            padding: var(--spacing-6);
+            border-radius: var(--rounded-lg);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .feature i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            background-color: rgba(8, 126, 139, 0.1);
+            padding: var(--spacing-4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 3rem;
+            height: 3rem;
+        }
+        
+        .feature h3 {
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: var(--spacing-2);
+            color: var(--gray-900);
+        }
+        
+        .feature p {
+            margin-bottom: 0;
+            color: var(--gray-600);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-4);
+            padding-bottom: var(--spacing-4);
+            border-bottom: 1px dashed var(--gray-200);
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: var(--rounded-full);
+            background-color: var(--secondary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-4);
+            font-size: 0.9rem;
+        }
+        
+        .feature-content {
+            flex: 1;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: var(--spacing-1);
+            color: var(--gray-900);
+        }
+        
+        /* Info Box */
+        .info-box {
+            background-color: var(--gray-50);
+            border-radius: var(--rounded-md);
+            padding: var(--spacing-6);
+            margin: var(--spacing-6) 0;
+            border-left: 4px solid var(--primary);
+            position: relative;
+        }
+        
+        .info-box.warning {
+            border-left-color: var(--warning);
+            background-color: rgba(245, 158, 11, 0.1);
+        }
+        
+        .info-box h3 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: var(--spacing-4);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+        
+        .info-box.warning h3 {
+            color: var(--warning);
+        }
+        
+        .info-box h3 i {
+            color: var(--primary);
+        }
+        
+        .info-box.warning h3 i {
+            color: var(--warning);
+        }
+        
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Callout Box */
+        .callout-box {
+            background-color: rgba(245, 158, 11, 0.1);
+            border-radius: var(--rounded-md);
+            padding: var(--spacing-6);
+            margin: var(--spacing-6) 0;
+            border-left: 4px solid var(--warning);
+            position: relative;
+        }
+        
+        .callout-box h3 {
+            color: var(--warning);
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: var(--spacing-4);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+        
+        .callout-box h3 i {
+            color: var(--warning);
+        }
+        
+        .callout-box p {
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .callout-box ul {
+            margin-bottom: 0;
+        }
+
+        .callout {
+            background-color: rgba(8, 126, 139, 0.1);
+            border-radius: var(--rounded-md);
+            padding: var(--spacing-6);
+            margin: var(--spacing-6) 0;
+            border-left: 4px solid var(--secondary);
+            position: relative;
+        }
+        
+        .callout-title {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: var(--spacing-2);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+        
+        .callout-title i {
+            color: var(--secondary);
+        }
+        
+        .callout p {
+            margin-bottom: 0;
+        }
+        
+        /* Yes/No Styling */
+        .yes-no-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-6);
+            margin: var(--spacing-6) 0;
+        }
+        
+        .yes-box, .no-box {
+            flex: 1;
+            min-width: 250px;
+            padding: var(--spacing-6);
+            border-radius: var(--rounded-md);
+            box-shadow: var(--shadow);
+        }
+        
+        .yes-box {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--success);
+        }
+        
+        .no-box {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--danger);
+        }
+        
+        .yes-title, .no-title {
+            font-weight: 600;
+            margin-bottom: var(--spacing-4);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+        
+        .yes-title {
+            color: var(--success);
+        }
+        
+        .no-title {
+            color: var(--danger);
+        }
+        
+        .yes-title i, .no-title i {
+            font-size: 1.2rem;
+        }
+        
+        /* Decision Checklist */
+        .decision-checklist {
+            list-style: none;
+            padding: 0;
+            margin: var(--spacing-6) 0;
+        }
+        
+        .checklist-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: var(--spacing-4);
+            min-height: 30px;
+        }
+        
+        .checklist-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: var(--rounded-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+        
+        .check-yes {
+            background-color: var(--success);
+        }
+        
+        .check-no {
+            background-color: var(--danger);
+        }
+        
+        .check-neutral {
+            background-color: var(--gray-400);
+        }
+        
+        .checklist-title {
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: var(--spacing-1);
+        }
+        
+        /* Process Steps */
+        .process-steps {
+            position: relative;
+            margin: var(--spacing-8) 0;
+            padding-left: 50px;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--gray-200);
+        }
+        
+        .step {
+            position: relative;
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .step:last-child {
+            margin-bottom: 0;
+        }
+        
+        .step::before {
+            content: '';
+            position: absolute;
+            left: -50px;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .step:nth-child(1)::before {
+            content: '1';
+        }
+        
+        .step:nth-child(2)::before {
+            content: '2';
+        }
+        
+        .step:nth-child(3)::before {
+            content: '3';
+        }
+        
+        .step:nth-child(4)::before {
+            content: '4';
+        }
+        
+        .step:nth-child(5)::before {
+            content: '5';
+        }
+        
+        .step h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        /* Blockquote */
+        blockquote {
+            border-left: 4px solid var(--secondary);
+            padding: var(--spacing-4) var(--spacing-6);
+            margin: var(--spacing-6) 0;
+            background-color: var(--gray-50);
+            border-radius: 0 var(--rounded-md) var(--rounded-md) 0;
+            font-style: italic;
+            color: var(--gray-700);
+        }
+        
+        blockquote p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        blockquote cite {
+            display: block;
+            margin-top: var(--spacing-2);
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            font-style: normal;
+        }
+        
+        /* Summary Box */
+        .summary-box {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: var(--white);
+            border-radius: var(--rounded-lg);
+            padding: var(--spacing-8);
+            margin: var(--spacing-10) 0;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .summary-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            z-index: 1;
+        }
+        
+        .summary-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-4);
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+        
+        .summary-content {
+            position: relative;
+            z-index: 2;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .summary-content p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Tag styles */
+        .tag {
+            display: inline-block;
+            padding: var(--spacing-1) var(--spacing-3);
+            border-radius: var(--rounded-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: var(--spacing-2);
+            margin-bottom: var(--spacing-2);
+        }
+        
+        .tag-primary {
+            background-color: rgba(11, 57, 84, 0.1);
+            color: var(--primary);
+        }
+        
+        .tag-secondary {
+            background-color: rgba(8, 126, 139, 0.1);
+            color: var(--secondary);
+        }
+        
+        .tag-success {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+        
+        .tag-warning {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
+        }
+        
+        .tag-danger {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+        }
+        
+        /* Tab Interface Styles */
+        .framework-tabs {
+            display: flex;
+            gap: 4px;
+            background-color: var(--gray-100);
+            padding: 0.75rem;
+            border-radius: var(--rounded-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--spacing-8);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .framework-tab {
+            padding: var(--spacing-4) var(--spacing-6);
+            border-radius: var(--rounded-md);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            outline: none;
+            flex: 1;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-2);
+        }
+        
+        .framework-tab:hover {
+            background-color: var(--gray-200);
+            color: var(--gray-900);
+            transform: translateY(-2px);
+        }
+        
+        .framework-tab.active {
+            background-color: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+        }
+        
+        .framework-content {
+            display: none;
+        }
+        
+        .framework-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* RRA Specific Styles */
+        .rra-section {
+            margin-bottom: var(--spacing-16);
+            background-color: var(--white);
+            border-radius: var(--rounded-lg);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .rra-section:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .rra-header {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: var(--spacing-6) var(--spacing-8);
+            border-top-left-radius: var(--rounded-lg);
+            border-top-right-radius: var(--rounded-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .rra-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            z-index: 1;
+        }
+        
+        .rra-header h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .rra-header i {
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .rra-content {
+            padding: var(--spacing-8);
+        }
+        
+        .rra-phase {
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .rra-phase-title {
+            color: var(--secondary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-4);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            border-bottom: 2px solid var(--gray-200);
+            padding-bottom: var(--spacing-2);
+        }
+        
+        .rra-step {
+            margin-bottom: var(--spacing-4);
+            padding-left: 32px;
+            position: relative;
+        }
+        
+        .rra-step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--secondary);
+            border-radius: var(--rounded-full);
+        }
+        
+        .rra-step-title {
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: var(--spacing-2);
+        }
+        
+        .rra-verdict {
+            background: linear-gradient(135deg, var(--secondary), var(--primary-light));
+            color: var(--white);
+            border-radius: var(--rounded-lg);
+            padding: var(--spacing-6);
+            margin-top: var(--spacing-8);
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+        
+        .rra-verdict::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            z-index: 1;
+        }
+        
+        .rra-verdict p {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 0;
+            color: var(--white);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .rra-github-link {
+            display: inline-block;
+            margin-top: var(--spacing-4);
+            color: var(--secondary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .rra-github-link:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <img src="../img/grc-logo-white.png" alt="GRC HQ Logo">
+            </a>
+            <nav class="main-nav">
+                <a href="../index.html">Home</a>
+                <a href="../governance.html">Governance</a>
+                <a href="../risk.html" class="active">Risk</a>
+                <a href="../compliance.html">Compliance</a>
+                <a href="../tools.html">Tools</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Risk Assessment Methodologies</h1>
+            <p>Enterprise-grade frameworks for identifying, analyzing, and mitigating risks.</p>
+        </div>
+    </div>
+
+    <nav class="scrollable-nav">
+        <div class="container">
+            <div class="framework-tabs">
+                <button class="framework-tab active" data-tab="rra">
+                    <i class="fas fa-bolt"></i> Rapid Risk Assessment
+                </button>
+                <button class="framework-tab" data-tab="octave">
+                    <i class="fas fa-shield-alt"></i> OCTAVE
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- RRA Content -->
+            <div id="rra-content" class="framework-content active">
+                <section class="rra-section">
+                    <div class="rra-header">
+                        <i class="fas fa-bolt"></i>
+                        <h2>What is Rapid Risk Assessment (RRA)?</h2>
+                    </div>
+                    <div class="rra-content">
+                        <p>Rapid Risk Assessment (RRA) is a lightweight, agile methodology developed by Mozilla for quickly assessing security risks of services, systems, and data. It's designed to be completed in under an hour, making it ideal for fast-moving organizations that need to make quick security decisions without sacrificing thoroughness.</p>
+                        
+                        <div class="feature-list">
+                            <div class="feature">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <div>
+                                    <h3>Speed-Focused</h3>
+                                    <p>Complete initial assessments in 30-60 minutes</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <h3>Collaborative</h3>
+                                    <p>Brings together stakeholders and security experts</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bullseye"></i>
+                                <div>
+                                    <h3>Targeted</h3>
+                                    <p>Focuses on crucial data types and highest impact risks</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="rra-section">
+                    <div class="rra-header">
+                        <i class="fas fa-key"></i>
+                        <h2>Key Characteristics of RRA</h2>
+                    </div>
+                    <div class="rra-content">
+                        <p>RRA stands out from other methodologies due to its pragmatic approach and focus on speed without compromising effectiveness.</p>
+                        
+                        <div class="info-box">
+                            <h3><i class="fas fa-clipboard-check"></i> Core Principles</h3>
+                            <ul class="premium-list">
+                                <li><strong>Lightweight Process:</strong> Minimal documentation and bureaucracy</li>
+                                <li><strong>Conversational Approach:</strong> Focused discussions rather than lengthy forms</li>
+                                <li><strong>Practical Outcomes:</strong> Actionable security recommendations</li>
+                                <li><strong>Adaptable:</strong> Works for both new and existing services/systems</li>
+                                <li><strong>Resource Efficient:</strong> Optimal use of security team's time</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="rra-section">
+                    <div class="rra-header">
+                        <i class="fas fa-tasks"></i>
+                        <h2>The RRA Process</h2>
+                    </div>
+                    <div class="rra-content">
+                        <p>The RRA follows a structured yet flexible process that can be completed quickly while still capturing essential risk information.</p>
+                        
+                        <div class="rra-phase">
+                            <div class="rra-phase-title">
+                                <i class="fas fa-clipboard"></i> Phase 1: Preparation
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Identify participants</div>
+                                <p>Include system owner, technical lead, security team representative, and relevant stakeholders.</p>
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Schedule a 30-60 minute meeting</div>
+                                <p>Keep the timeframe limited to maintain focus and efficiency.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="rra-phase">
+                            <div class="rra-phase-title">
+                                <i class="fas fa-search"></i> Phase 2: Discovery
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Overview of the system</div>
+                                <p>Brief description of what the system/service does and its purpose.</p>
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Data mapping</div>
+                                <p>Identify what types of data are processed and stored (PII, authentication credentials, business data, etc.).</p>
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Access control</div>
+                                <p>Document who has access to the system and data.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="rra-phase">
+                            <div class="rra-phase-title">
+                                <i class="fas fa-chart-bar"></i> Phase 3: Impact Assessment
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Confidentiality impact</div>
+                                <p>What would happen if data was leaked? Rate as Low/Medium/High.</p>
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Integrity impact</div>
+                                <p>What would happen if data was tampered with? Rate as Low/Medium/High.</p>
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Availability impact</div>
+                                <p>What would happen if the system went down? Rate as Low/Medium/High.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="rra-phase">
+                            <div class="rra-phase-title">
+                                <i class="fas fa-shield-alt"></i> Phase 4: Controls & Recommendations
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Identify existing controls</div>
+                                <p>Document security measures already in place.</p>
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Recommend additional controls</div>
+                                <p>Suggest practical security improvements based on the identified risks.</p>
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Document findings</div>
+                                <p>Create a simple report summarizing the risk levels and recommendations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="rra-section">
+                    <div class="rra-header">
+                        <i class="fas fa-plus-circle"></i>
+                        <h2>Benefits of RRA</h2>
+                    </div>
+                    <div class="rra-content">
+                        <div class="card-grid">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-stopwatch"></i>
+                                    <h3>Time Efficiency</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p>Complete assessments in under an hour, allowing security teams to evaluate more systems with limited resources.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-rocket"></i>
+                                    <h3>Agile Compatible</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p>Fits seamlessly into agile development processes without slowing down product delivery.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-hands-helping"></i>
+                                    <h3>Stakeholder Buy-in</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p>The collaborative and lightweight approach increases participation and acceptance from non-security teams.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-check-double"></i>
+                                    <h3>Prioritization</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p>Helps focus security resources on the highest-risk systems and most impactful controls.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="rra-section">
+                    <div class="rra-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h2>Limitations of RRA</h2>
+                    </div>
+                    <div class="rra-content">
+                        <div class="info-box warning">
+                            <h3><i class="fas fa-exclamation-circle"></i> Potential Drawbacks</h3>
+                            <ul class="premium-list">
+                                <li><strong>Depth:</strong> May not uncover complex vulnerabilities that require deeper analysis</li>
+                                <li><strong>Compliance:</strong> May not satisfy formal compliance requirements that need comprehensive documentation</li>
+                                <li><strong>Subjectivity:</strong> Relies heavily on participants' knowledge and judgment</li>
+                                <li><strong>Complex Systems:</strong> Less effective for extremely complex systems with many integrations</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="callout-box">
+                            <h3>When Not to Use RRA</h3>
+                            <p>RRA may not be suitable for:</p>
+                            <ul>
+                                <li>Systems handling extremely sensitive data requiring in-depth analysis</li>
+                                <li>Regulatory environments requiring comprehensive documentation</li>
+                                <li>Complex enterprise systems with numerous dependencies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="rra-section">
+                    <div class="rra-header">
+                        <i class="fas fa-question-circle"></i>
+                        <h2>Should Your Enterprise Use RRA?</h2>
+                    </div>
+                    <div class="rra-content">
+                        <div class="yes-no-container">
+                            <div class="yes-box">
+                                <h3>Consider RRA When:</h3>
+                                <ul>
+                                    <li>You need quick security decisions</li>
+                                    <li>Security resources are limited</li>
+                                    <li>Development follows agile methodologies</li>
+                                    <li>You have many systems to assess</li>
+                                    <li>You're looking for a starting point before deeper analysis</li>
+                                </ul>
+                            </div>
+                            <div class="no-box">
+                                <h3>Consider Alternatives When:</h3>
+                                <ul>
+                                    <li>Regulatory compliance is primary concern</li>
+                                    <li>You need comprehensive threat modeling</li>
+                                    <li>Dealing with critical infrastructure</li>
+                                    <li>You have sufficient resources for in-depth assessment</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="rra-verdict">
+                            <p>RRA is most effective as a first-line assessment tool, especially in fast-moving organizations with resource constraints. For many enterprises, it works best as part of a tiered approach: use RRA for initial assessment of all systems, then apply more comprehensive methodologies (like OCTAVE) only to the most critical systems or those identified as high-risk by the RRA process.</p>
+                        </div>
+                        
+                        <p class="text-center mt-6">
+                            <a href="https://github.com/mozilla/rapid_risk_assessment" class="rra-github-link" target="_blank">
+                                <i class="fab fa-github"></i> View Mozilla's RRA Resources on GitHub
+                            </a>
+                        </p>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- OCTAVE Content -->
+            <div id="octave-content" class="framework-content">
+                <section class="rra-section">
+                    <div class="rra-header" style="background-color: var(--primary-light);">
+                        <i class="fas fa-shield-alt"></i>
+                        <h2>What is OCTAVE?</h2>
+                    </div>
+                    <div class="rra-content">
+                        <p>The Operationally Critical Threat, Asset, and Vulnerability Evaluation (OCTAVE) is a comprehensive, strategic risk assessment methodology developed by Carnegie Mellon University's Software Engineering Institute. OCTAVE helps organizations identify, prioritize, and manage information security risks through a systematic, organization-wide approach.</p>
+                        
+                        <div class="feature-list">
+                            <div class="feature">
+                                <i class="fas fa-building"></i>
+                                <div>
+                                    <h3>Organization-Focused</h3>
+                                    <p>Examines risks in the context of organizational objectives</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-sitemap"></i>
+                                <div>
+                                    <h3>Structured Approach</h3>
+                                    <p>Follows a methodical, systematic risk assessment process</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-users-cog"></i>
+                                <div>
+                                    <h3>Self-Directed</h3>
+                                    <p>Designed to be implemented by internal cross-functional teams</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="rra-section">
+                    <div class="rra-header" style="background-color: var(--primary-light);">
+                        <i class="fas fa-layer-group"></i>
+                        <h2>OCTAVE Variants</h2>
+                    </div>
+                    <div class="rra-content">
+                        <p>The OCTAVE methodology has evolved over time, resulting in several variants tailored to different organizational contexts and needs:</p>
+                        
+                        <div class="card-grid">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-landmark"></i>
+                                    <h3>OCTAVE (Original)</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p>Designed for large organizations (300+ employees) with a mature security structure. Extensive and comprehensive in scope.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-store"></i>
+                                    <h3>OCTAVE-S</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p>Streamlined for smaller organizations (less than 100 employees) with limited IT and security resources. More compact and less resource-intensive.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-sync-alt"></i>
+                                    <h3>OCTAVE Allegro</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p>Focused on information assets and streamlined for efficiency. More manageable approach with less organizational complexity.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-rocket"></i>
+                                    <h3>OCTAVE FORTE</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p>The newest variant (For Enterprise) that integrates with NIST Cybersecurity Framework and aligns with enterprise risk management.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="rra-section">
+                    <div class="rra-header" style="background-color: var(--primary-light);">
+                        <i class="fas fa-tasks"></i>
+                        <h2>The OCTAVE Process</h2>
+                    </div>
+                    <div class="rra-content">
+                        <p>We'll focus on OCTAVE Allegro, which is the most widely adopted variant for modern enterprises. The process consists of eight steps divided into four phases:</p>
+                        
+                        <div class="rra-phase">
+                            <div class="rra-phase-title">
+                                <i class="fas fa-flag"></i> Phase 1: Establish Drivers
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Step 1: Establish Risk Measurement Criteria</div>
+                                <p>Define the dimensions of impact (reputation, financial, productivity, safety, etc.) and their priorities for the organization.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="rra-phase">
+                            <div class="rra-phase-title">
+                                <i class="fas fa-database"></i> Phase 2: Profile Assets
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Step 2: Develop Information Asset Profile</div>
+                                <p>Identify and document the organization's critical information assets.</p>
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Step 3: Identify Information Asset Containers</div>
+                                <p>Identify where information assets are stored, transported, and processed.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="rra-phase">
+                            <div class="rra-phase-title">
+                                <i class="fas fa-bomb"></i> Phase 3: Identify Threats
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Step 4: Identify Areas of Concern</div>
+                                <p>Brainstorm potential risk scenarios that could impact information assets.</p>
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Step 5: Identify Threat Scenarios</div>
+                                <p>Expand areas of concern into detailed threat scenarios.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="rra-phase">
+                            <div class="rra-phase-title">
+                                <i class="fas fa-clipboard-check"></i> Phase 4: Identify and Mitigate Risks
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Step 6: Identify Risks</div>
+                                <p>Determine the impact of threat scenarios based on risk measurement criteria.</p>
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Step 7: Analyze Risks</div>
+                                <p>Calculate relative risk scores and prioritize risks.</p>
+                            </div>
+                            <div class="rra-step">
+                                <div class="rra-step-title">Step 8: Select Mitigation Approach</div>
+                                <p>Develop risk mitigation strategies for the highest priority risks.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="rra-section">
+                    <div class="rra-header" style="background-color: var(--primary-light);">
+                        <i class="fas fa-plus-circle"></i>
+                        <h2>Benefits of OCTAVE</h2>
+                    </div>
+                    <div class="rra-content">
+                        <div class="card-grid">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-sitemap"></i>
+                                    <h3>Comprehensive</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p>Provides a holistic view of organizational information security risks, considering both technical and non-technical aspects.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-users-cog"></i>
+                                    <h3>Cross-Functional</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p>Incorporates perspectives from different organizational levels and departments, fostering a security culture across the organization.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-file-alt"></i>
+                                    <h3>Documentation</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p>Provides extensive documentation templates and worksheets, helping organizations maintain detailed security records for compliance purposes.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <h3>Knowledge Transfer</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p>Builds internal competency for security risk assessment that can be applied repeatedly as systems and threats evolve.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="rra-section">
+                    <div class="rra-header" style="background-color: var(--primary-light);">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h2>Challenges of OCTAVE</h2>
+                    </div>
+                    <div class="rra-content">
+                        <div class="info-box warning">
+                            <h3><i class="fas fa-exclamation-circle"></i> Potential Drawbacks</h3>
+                            <ul class="premium-list">
+                                <li><strong>Resource Intensive:</strong> Requires significant time commitment, especially for the original OCTAVE method</li>
+                                <li><strong>Learning Curve:</strong> Complex methodology that may require training or external expertise to implement properly</li>
+                                <li><strong>Organizational Commitment:</strong> Requires strong support from leadership and active participation across departments</li>
+                                <li><strong>Static Assessment:</strong> Provides a point-in-time assessment that needs regular updating</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="rra-section">
+                    <div class="rra-header" style="background-color: var(--primary-light);">
+                        <i class="fas fa-question-circle"></i>
+                        <h2>Should Your Enterprise Use OCTAVE?</h2>
+                    </div>
+                    <div class="rra-content">
+                        <div class="yes-no-container">
+                            <div class="yes-box">
+                                <h3>Consider OCTAVE When:</h3>
+                                <ul>
+                                    <li>You need a comprehensive, systematic approach to risk</li>
+                                    <li>You have complex information assets to protect</li>
+                                    <li>Regulatory compliance is a primary concern</li>
+                                    <li>You can allocate adequate time and resources</li>
+                                    <li>You need to develop in-house security risk expertise</li>
+                                </ul>
+                            </div>
+                            <div class="no-box">
+                                <h3>Consider Alternatives When:</h3>
+                                <ul>
+                                    <li>You need quick risk assessments</li>
+                                    <li>Resources are severely constrained</li>
+                                    <li>You have a very small security team</li>
+                                    <li>Your organization lacks structured processes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="rra-verdict">
+                            <p>OCTAVE is best suited for organizations that need a structured, thorough approach to information security risk management and can commit the necessary resources. For enterprises with regulatory requirements or handling sensitive data, the comprehensive nature of OCTAVE provides significant value. The various OCTAVE variants allow organizations to select the approach that best matches their size and complexity.</p>
+                        </div>
+                        
+                        <p class="text-center mt-6">
+                            <a href="https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8419" class="rra-github-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i> Access OCTAVE Allegro Guide from SEI
+                            </a>
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Page Navigation -->
+    <div class="container">
+        <a href="rsk2.html" class="btn" style="margin: 2rem 0;"><i class="fas fa-arrow-left"></i> Back to Risk Management Tools</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Enterprise GRC</h3>
+                <p>Providing comprehensive risk management solutions for businesses of all sizes.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@enterprisegrc.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Enterprise GRC Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Go to top button -->
+    <a href="#" class="go-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <style>
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: var(--spacing-4);
+            }
+            
+            .hero {
+                padding: var(--spacing-12) var(--spacing-4);
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 var(--spacing-4);
+            }
+            
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .yes-no-container {
+                flex-direction: column;
+            }
+            
+            .feature-item {
+                flex-direction: column;
+            }
+            
+            .feature-icon {
+                margin-bottom: var(--spacing-2);
+                margin-right: 0;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: var(--white);
+                box-shadow: var(--shadow);
+                padding: var(--spacing-4);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: var(--spacing-2) 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .scrollable-nav-container {
+                padding-left: var(--spacing-4);
+                padding-right: var(--spacing-4);
+            }
+            
+            .section-header {
+                padding: var(--spacing-4);
+            }
+            
+            .section-content {
+                padding: var(--spacing-4);
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+            }
+            
+            h4 {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Additional Styles */
+        .lead-text {
+            font-size: 1.15rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-6);
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-6);
+            margin: var(--spacing-6) 0;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            padding: var(--spacing-3) var(--spacing-6);
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: var(--rounded-md);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            background-color: var(--gray-900);
+            color: var(--gray-300);
+            padding-top: var(--spacing-12);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-8);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-8);
+        }
+        
+        .footer-section h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--spacing-2);
+        }
+        
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: var(--spacing-6) 0;
+            margin-top: var(--spacing-12);
+            border-top: 1px solid var(--gray-800);
+        }
+        
+        .go-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: var(--rounded-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .go-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .go-to-top:hover {
+            background-color: var(--primary-light);
+        }
+    </style>
+
+    <!-- JavaScript for interactions -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+        
+        // Go to top visibility
+        const goToTop = document.querySelector('.go-to-top');
+        
+        if (goToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    goToTop.classList.add('show');
+                } else {
+                    goToTop.classList.remove('show');
+                }
+            });
+        }
+        
+        // Scrollable navigation active state
+        const navItems = document.querySelectorAll('.scrollable-nav-item');
+        const sections = document.querySelectorAll('.section');
+        
+        function setActiveNavItem() {
+            let current = '';
+            
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navItems.forEach((item) => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', setActiveNavItem);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Initialize active nav item on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            setActiveNavItem();
+            
+            // If URL has hash, scroll to that section
+            if (window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: target.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+        });
+
+        // Framework tabs functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.framework-tab');
+            const contents = document.querySelectorAll('.framework-content');
+            let activeTab = 'rra'; // Default active tab
+            
+            // Function to switch tabs
+            function switchTab(tabId) {
+                // Hide all content sections
+                contents.forEach(content => {
+                    content.classList.remove('active');
+                    content.style.display = 'none';
+                });
+                
+                // Remove active class from all tabs
+                tabs.forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Activate the selected tab
+                const selectedTab = document.querySelector(`.framework-tab[data-tab="${tabId}"]`);
+                if (selectedTab) {
+                    selectedTab.classList.add('active');
+                }
+                
+                // Show the selected content
+                const selectedContent = document.getElementById(`${tabId}-content`);
+                if (selectedContent) {
+                    selectedContent.classList.add('active');
+                    selectedContent.style.display = 'block';
+                    
+                    // Reset scroll position when switching tabs
+                    window.scrollTo({
+                        top: document.querySelector('.scrollable-nav').offsetTop,
+                        behavior: 'auto'
+                    });
+                }
+                
+                // Update active tab
+                activeTab = tabId;
+            }
+            
+            // Add click event listeners to tabs
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    switchTab(tabId);
+                });
+            });
+            
+            // Initialize the default tab
+            switchTab(activeTab);
+        });
+    </script>
+</body>
+</html>

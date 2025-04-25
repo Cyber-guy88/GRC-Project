@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile | GRC Portal</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f4c81',
+                        secondary: '#334155',
+                        success: '#059669',
+                        warning: '#ca8a04',
+                        danger: '#dc2626',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #0f4c81;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .profile-info {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 1.5rem;
+        }
+        
+        .info-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .info-value {
+            font-size: 1.125rem;
+            color: #1f2937;
+        }
+        
+        .edit-profile-btn {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #0f4c81;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .edit-profile-btn:hover {
+            background-color: #0d3f6a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .save-profile-btn {
+            background-color: #10b981;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .save-profile-btn:hover {
+            background-color: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .cancel-edit-btn {
+            background-color: #6b7280;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .cancel-edit-btn:hover {
+            background-color: #4b5563;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        /* Edit mode styles */
+        .edit-form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .edit-form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .edit-form-row {
+            margin-bottom: 1.5rem;
+        }
+
+        .success-message {
+            background-color: #059669;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 12px 0;
+            display: none;
+            font-weight: 500;
+        }
+
+        .error-message {
+            background-color: #dc2626;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 12px 0;
+            display: none;
+            font-weight: 500;
+        }
+
+        .form-error {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        /* Loading state styling */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(15, 76, 129, 0.2);
+            border-radius: 50%;
+            border-top-color: #0f4c81;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .profile-error {
+            color: #dc2626;
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(220, 38, 38, 0.1);
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 2rem;
+        }
+
+        .logout-btn {
+            background-color: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logout-btn i {
+            margin-right: 8px;
+        }
+
+        .logout-btn:hover {
+            background-color: #dc2626;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 100;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .dropdown-content a i {
+            margin-right: 10px;
+            width: 16px;
+            text-align: center;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f5f9;
+        }
+        
+        .profile-dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .profile-dropdown .profile-btn {
+            cursor: pointer;
+        }
+        
+        .logout-item {
+            color: #ef4444 !important;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .logout-item:hover {
+            background-color: #fef2f2 !important;
+        }
+        
+        /* Adjust header container */
+        .header-container {
+            padding: 0 2rem;
+            justify-content: space-between;
+        }
+        
+        /* Remove extra margin/padding from nav items */
+        nav ul {
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="home.html" class="logo">
+                <i class="fas fa-shield-alt"></i> GRC Portal
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact-us</a></li>
+                    <li class="profile-dropdown">
+                        <a href="#" class="profile-btn">
+                        <i class="fas fa-user-circle"></i>
+                            Profile
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="profile.html">
+                                <i class="fas fa-user"></i> View Profile
+                            </a>
+                            <a href="#" class="logout-item" id="logoutNavBtn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="bg-gradient-to-b from-[#1a2741] to-[#0f4c81] py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-white mb-4">Your Profile</h1>
+                <p class="text-gray-200 max-w-2xl mx-auto">Manage your account information and preferences.</p>
+            </div>
+            
+            <div class="profile-container" id="profileContainer">
+                <div class="loading" id="loadingIndicator">
+                    <div class="loading-spinner"></div>
+                </div>
+                
+                <div id="profileContent" style="display: none;">
+                    <div class="profile-header">
+                        <div class="profile-avatar" id="profileAvatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold" id="profileName">User Name</h1>
+                            <p class="text-gray-500" id="profileEmail">user@example.com</p>
+                        </div>
+                    </div>
+                    
+                    <!-- View Mode -->
+                    <div id="viewMode">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-xl font-semibold">Profile Information</h2>
+                            <button class="edit-profile-btn" id="editProfileBtn">
+                                <i class="fas fa-edit"></i> Edit Profile
+                            </button>
+                        </div>
+                        
+                        <div class="profile-info">
+                            <div class="info-item">
+                                <div class="info-label">Full Name</div>
+                                <div class="info-value" id="fullNameValue">Loading...</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-label">Email Address</div>
+                                <div class="info-value" id="emailValue">Loading...</div>
+                        </div>
+                        
+                        <div class="info-item">
+                                <div class="info-label">Phone Number</div>
+                                <div class="info-value" id="phoneValue">Not provided</div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-label">Company</div>
+                                <div class="info-value" id="companyValue">Not provided</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-label">Job Title</div>
+                                <div class="info-value" id="jobTitleValue">Not provided</div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-actions">
+                            <button class="logout-btn" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Edit Mode -->
+                    <div id="editMode" class="profile-content" style="display: none;">
+                        <h2 class="text-2xl font-bold mb-4">Edit Your Profile</h2>
+                        
+                        <div id="successMessage" class="success-message">
+                            <i class="fas fa-check-circle mr-2"></i> Profile updated successfully!
+                        </div>
+                        
+                        <div id="errorMessage" class="error-message">
+                            <i class="fas fa-exclamation-circle mr-2"></i> An error occurred. Please try again.
+                        </div>
+                        
+                        <form id="editProfileForm">
+                            <div class="mb-4">
+                                <label for="editFullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                <input type="text" id="editFullName" class="edit-form-input">
+                                <div id="fullNameError" class="form-error"></div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="editEmail" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" id="editEmail" class="edit-form-input">
+                                <div id="emailError" class="form-error"></div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="editPhone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel" id="editPhone" class="edit-form-input">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="editCompany" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                                <input type="text" id="editCompany" class="edit-form-input">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="editJobTitle" class="block text-sm font-medium text-gray-700 mb-1">Job Title</label>
+                                <input type="text" id="editJobTitle" class="edit-form-input">
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <button type="submit" class="save-profile-btn">
+                                    <i class="fas fa-save mr-2"></i> Save Changes
+                                </button>
+                                <button type="button" id="cancelEditBtn" class="cancel-edit-btn">
+                                    <i class="fas fa-times mr-2"></i> Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div id="profileError" class="profile-error" style="display: none;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Unable to load profile information. Please try again later.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="footer-separator">
+
+    <footer class="bg-[#0a3258] text-gray-300 py-10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-5">
+            <!-- Company Section -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Career</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Editorial Team</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Protection</a></li>
+                </ul>
+            </div>
+            
+            <!-- More Section -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">More</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Terms & Condition</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Privacy</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Advertise</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Join as Advisors</a></li>
+                </ul>
+            </div>
+            
+            <!-- Our Partner Section -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Our Partners</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Enterprise Security</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Compliance Solutions</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Risk Consulting</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Section -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                <p class="mb-2">351 Willow Street Franklin, MA 02038</p>
+                <p class="mb-2">701-573-7582</p>
+                <p><a href="mailto:email@domain.net" class="hover:text-blue-400 transition-colors">email@domain.net</a></p>
+                <div class="flex space-x-3 mt-4">
+                    <a href="#" class="text-gray-300 hover:text-blue-400 transition-colors text-xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-blue-400 transition-colors text-xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-blue-400 transition-colors text-xl"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright Section -->
+        <div class="border-t border-gray-700 mt-8 pt-4 text-center">
+            <p>Copyright &copy; <span id="currentYear">2023</span> GRC Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="profile_debug.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const profileContent = document.getElementById('profileContent');
+            const profileError = document.getElementById('profileError');
+            
+            const viewMode = document.getElementById('viewMode');
+            const editMode = document.getElementById('editMode');
+            const editProfileBtn = document.getElementById('editProfileBtn');
+            const cancelEditBtn = document.getElementById('cancelEditBtn');
+            const editProfileForm = document.getElementById('editProfileForm');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Profile view elements
+            const profileName = document.getElementById('profileName');
+            const profileEmail = document.getElementById('profileEmail');
+            const profileAvatar = document.getElementById('profileAvatar');
+            const fullNameValue = document.getElementById('fullNameValue');
+            const emailValue = document.getElementById('emailValue');
+            const phoneValue = document.getElementById('phoneValue');
+            const companyValue = document.getElementById('companyValue');
+            const jobTitleValue = document.getElementById('jobTitleValue');
+            
+            // Edit form elements
+            const editFullName = document.getElementById('editFullName');
+            const editEmail = document.getElementById('editEmail');
+            const editPhone = document.getElementById('editPhone');
+            const editCompany = document.getElementById('editCompany');
+            const editJobTitle = document.getElementById('editJobTitle');
+            
+            // Check if user is logged in
+            let userEmail = sessionStorage.getItem('userEmail') || localStorage.getItem('userEmail');
+            
+            if (!userEmail) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Load user data
+            loadUserProfile();
+            
+            // Event listeners
+            editProfileBtn.addEventListener('click', showEditMode);
+            cancelEditBtn.addEventListener('click', cancelEdit);
+            editProfileForm.addEventListener('submit', saveProfileChanges);
+            document.getElementById('logoutBtn').addEventListener('click', logout);
+            document.getElementById('logoutNavBtn').addEventListener('click', logout);
+            
+            // Also reload profile when page is refreshed
+            window.addEventListener('pageshow', function(event) {
+                // This ensures the profile is reloaded even when coming back from browser history
+                loadUserProfile();
+            });
+            
+            function loadUserProfile() {
+                // Show loading indicator
+                loadingIndicator.style.display = 'flex';
+                profileContent.style.display = 'none';
+                profileError.style.display = 'none';
+                
+                try {
+                    // Always get the latest userEmail
+                    const currentUserEmail = sessionStorage.getItem('userEmail') || localStorage.getItem('userEmail');
+                    
+                    // If userEmail has changed, update the variable
+                    if (currentUserEmail !== userEmail) {
+                        userEmail = currentUserEmail;
+                    }
+                    
+                    // Try to get user data from different sources
+                    let userData = null;
+                    
+                    // First check if there's dedicated userData
+                    const storedUserData = localStorage.getItem('userData') || sessionStorage.getItem('userData');
+                    if (storedUserData) {
+                        userData = JSON.parse(storedUserData);
+                    } else {
+                        // If not, check in the users collection
+                        const storedUsers = JSON.parse(localStorage.getItem('grcUsers') || '[]');
+                        const user = storedUsers.find(u => u.email === userEmail);
+                        
+                        if (user) {
+                            userData = user;
+                        }
+                    }
+                    
+                    if (userData) {
+                        // User data found, update profile
+                        updateProfileDisplay(userData);
+                        
+                        // Hide loading, show content
+                        loadingIndicator.style.display = 'none';
+                        profileContent.style.display = 'block';
+                    } else {
+                        // Create basic user data if not found
+                        const userName = sessionStorage.getItem('userName') || localStorage.getItem('userName') || userEmail.split('@')[0];
+                        
+                        const basicUserData = {
+                            fullName: userName,
+                            email: userEmail,
+                            phone: '',
+                            company: '',
+                            jobTitle: ''
+                        };
+                        
+                        // Save and display this basic profile
+                        updateProfileDisplay(basicUserData);
+                        saveUserData(basicUserData);
+                        
+                        // Hide loading, show content
+                        loadingIndicator.style.display = 'none';
+                        profileContent.style.display = 'block';
+                    }
+                    
+                    // Also check database for current user data
+                    fetch('fix_profile_update.php?email=' + encodeURIComponent(userEmail))
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success && data.user) {
+                                // If we found a user in the database, ensure it's synced with local storage
+                                const dbUserData = {
+                                    fullName: data.user.username,
+                                    email: data.user.email,
+                                    phone: userData ? userData.phone : '',
+                                    company: userData ? userData.company : '',
+                                    jobTitle: userData ? userData.jobTitle : ''
+                                };
+                                
+                                // Only update if there's a difference
+                                if (!userData || userData.email !== dbUserData.email || userData.fullName !== dbUserData.fullName) {
+                                    updateProfileDisplay(dbUserData);
+                                    saveUserData(dbUserData, userData ? userData.email !== dbUserData.email : false);
+                                }
+                            }
+                        })
+                        .catch(err => console.error('Error checking database user:', err));
+                    
+                } catch (error) {
+                    console.error('Error loading profile:', error);
+                    loadingIndicator.style.display = 'none';
+                    profileError.style.display = 'block';
+                }
+            }
+            
+            function updateProfileDisplay(userData) {
+                // Update navbar and profile header
+                profileName.textContent = userData.fullName || 'User';
+                profileEmail.textContent = userData.email || userEmail;
+                
+                // Set avatar initial
+                const initial = userData.fullName ? userData.fullName.charAt(0).toUpperCase() : 'U';
+                profileAvatar.innerHTML = initial;
+                
+                // Update profile fields
+                fullNameValue.textContent = userData.fullName || 'Not provided';
+                emailValue.textContent = userData.email || userEmail;
+                phoneValue.textContent = userData.phone || 'Not provided';
+                companyValue.textContent = userData.company || 'Not provided';
+                jobTitleValue.textContent = userData.jobTitle || 'Not provided';
+                
+                // Also pre-fill the edit form
+                editFullName.value = userData.fullName || '';
+                editEmail.value = userData.email || userEmail;
+                editPhone.value = userData.phone || '';
+                editCompany.value = userData.company || '';
+                editJobTitle.value = userData.jobTitle || '';
+            }
+            
+            function showEditMode() {
+                viewMode.style.display = 'none';
+                editMode.style.display = 'block';
+                successMessage.style.display = 'none';
+            }
+            
+            function cancelEdit() {
+                viewMode.style.display = 'block';
+                editMode.style.display = 'none';
+                
+                // Reset form validation errors
+                document.getElementById('fullNameError').textContent = '';
+                document.getElementById('emailError').textContent = '';
+            }
+            
+            function saveProfileChanges(event) {
+                event.preventDefault();
+                
+                // Validate form
+                let isValid = true;
+                
+                if (!editFullName.value.trim()) {
+                    document.getElementById('fullNameError').textContent = 'Full name is required';
+                    isValid = false;
+                } else {
+                    document.getElementById('fullNameError').textContent = '';
+                }
+                
+                if (!editEmail.value.trim()) {
+                    document.getElementById('emailError').textContent = 'Email address is required';
+                    isValid = false;
+                } else if (!isValidEmail(editEmail.value.trim())) {
+                    document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                    isValid = false;
+                } else {
+                    document.getElementById('emailError').textContent = '';
+                }
+                
+                if (!isValid) {
+                    return;
+                }
+                
+                // Reset messages
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+                
+                // Get current user info
+                const userName = localStorage.getItem('userName') || sessionStorage.getItem('userName') || 'User';
+                // Use currentUserEmail instead of redefining userEmail as a constant
+                const currentUserEmail = localStorage.getItem('userEmail') || sessionStorage.getItem('userEmail') || '';
+                
+                // Sync with global userEmail if needed
+                if (currentUserEmail && currentUserEmail !== userEmail) {
+                    console.log('Updating global userEmail from:', userEmail, 'to:', currentUserEmail);
+                    userEmail = currentUserEmail;
+                }
+                
+                // Create updated user data
+                const updatedUserData = {
+                    fullName: editFullName.value.trim(),
+                    email: editEmail.value.trim(),
+                    phone: editPhone.value.trim(),
+                    company: editCompany.value.trim(),
+                    jobTitle: editJobTitle.value.trim(),
+                    currentEmail: userEmail // Add the current email for reference
+                };
+                
+                // Check if email was changed
+                const emailChanged = updatedUserData.email !== userEmail;
+                
+                console.log('Current user email:', userEmail);
+                console.log('New user email:', updatedUserData.email);
+                console.log('Email changed:', emailChanged);
+                
+                // Show loading state
+                successMessage.style.display = 'block';
+                successMessage.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Saving changes...';
+                
+                // Disable save button to prevent multiple submissions
+                const saveButton = document.getElementById('saveProfileBtn');
+                if (saveButton) {
+                    saveButton.disabled = true;
+                    saveButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+                }
+                
+                // Use fetch API for better error handling
+                fetch('update_profile.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(updatedUserData)
+                })
+                .then(response => {
+                    console.log('Server status:', response.status);
+                    
+                    // Check if response is ok (status in the range 200-299)
+                    if (!response.ok) {
+                        throw new Error(`Server returned status ${response.status}`);
+                    }
+                    
+                    // Try to parse JSON response
+                    return response.text().then(text => {
+                        console.log('Raw response:', text);
+                        try {
+                            return JSON.parse(text);
+                        } catch (e) {
+                            console.error('JSON parse error:', e);
+                            throw new Error('Error parsing server response: ' + text);
+                        }
+                    });
+                })
+                .then(data => {
+                    console.log('Server response:', data);
+                    
+                    if (data.success) {
+                        // Update was successful - update local storage and UI
+                        updateLocalStorage(updatedUserData, emailChanged);
+                        
+                        // Update display
+                        updateProfileDisplay(updatedUserData);
+                        
+                        // Show success message
+                        successMessage.style.display = 'block';
+                        successMessage.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Profile updated successfully!';
+                        
+                        // Return to view mode after a delay
+                setTimeout(() => {
+                            if (emailChanged) {
+                                // Force reload if email changed
+                                window.location.reload();
+                            } else {
+                                // Just switch to view mode
+                                viewMode.style.display = 'block';
+                                editMode.style.display = 'none';
+                                refreshHeaderDisplay();
+                            }
+                        }, 2000);
+                    } else {
+                        // Server reported an error
+                        console.error('Profile update failed:', data.message);
+                        errorMessage.style.display = 'block';
+                        errorMessage.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i> ' + (data.message || 'An error occurred updating your profile.');
+                        successMessage.style.display = 'none';
+                    }
+                    
+                    // Re-enable save button
+                    if (saveButton) {
+                        saveButton.disabled = false;
+                        saveButton.innerHTML = 'Save Changes';
+                    }
+                })
+                .catch(error => {
+                    console.error('Profile update error:', error);
+                    
+                    // Show error message
+                    errorMessage.style.display = 'block';
+                    errorMessage.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i> ' + error.message;
+                    successMessage.style.display = 'none';
+                    
+                    // Re-enable save button
+                    if (saveButton) {
+                        saveButton.disabled = false;
+                        saveButton.innerHTML = 'Save Changes';
+                    }
+                });
+            }
+            
+            // Helper function to update localStorage/sessionStorage
+            function updateLocalStorage(userData, emailChanged) {
+                const oldEmail = userEmail;
+                
+                // Update userEmail variable if email changed
+                if (emailChanged) {
+                    userEmail = userData.email;
+                }
+                
+                // Update in localStorage or sessionStorage
+                if (localStorage.getItem('userEmail')) {
+                    localStorage.setItem('userName', userData.fullName);
+                    if (emailChanged) {
+                        localStorage.setItem('userEmail', userData.email);
+                    }
+                    localStorage.setItem('userData', JSON.stringify(userData));
+                } else {
+                    sessionStorage.setItem('userName', userData.fullName);
+                    if (emailChanged) {
+                        sessionStorage.setItem('userEmail', userData.email);
+                    }
+                    sessionStorage.setItem('userData', JSON.stringify(userData));
+                }
+                
+                // Update in grcUsers collection
+                const storedUsers = JSON.parse(localStorage.getItem('grcUsers') || '[]');
+                const userIndex = storedUsers.findIndex(u => u.email === oldEmail);
+                
+                if (userIndex !== -1) {
+                    // Update the existing user record (don't create a new one)
+                    if (emailChanged) {
+                        // Only change the email field
+                        storedUsers[userIndex].email = userData.email;
+                        storedUsers[userIndex].fullName = userData.fullName;
+                        storedUsers[userIndex].phone = userData.phone;
+                        storedUsers[userIndex].company = userData.company;
+                        storedUsers[userIndex].jobTitle = userData.jobTitle;
+                    } else {
+                        // Update other fields but keep the same email
+                        storedUsers[userIndex] = {
+                            ...storedUsers[userIndex],
+                            ...userData
+                        };
+                    }
+                } else {
+                    // Add new user only if not found
+                    storedUsers.push(userData);
+                }
+                
+                // Save back to localStorage
+                localStorage.setItem('grcUsers', JSON.stringify(storedUsers));
+                
+                // Also update other collections if email changed
+                if (emailChanged) {
+                    updateUserInOtherCollections(oldEmail, userData.email, userData);
+                }
+            }
+            
+            // Function to refresh header display
+            function refreshHeaderDisplay() {
+                // Get current user info
+                const userName = localStorage.getItem('userName') || sessionStorage.getItem('userName') || 'User';
+                // Use currentUserEmail variable instead of redefining userEmail as a constant
+                const currentUserEmail = localStorage.getItem('userEmail') || sessionStorage.getItem('userEmail') || '';
+                
+                // Sync with global userEmail if needed
+                if (currentUserEmail && currentUserEmail !== userEmail) {
+                    console.log('Updating global userEmail from:', userEmail, 'to:', currentUserEmail);
+                    userEmail = currentUserEmail;
+                }
+                
+                // Update the profile dropdown name if it exists
+                const profileBtn = document.querySelector('.profile-btn');
+                if (profileBtn) {
+                    // Update the text content by keeping the icon and adding the text
+                    const icon = profileBtn.querySelector('i');
+                    if (icon) {
+                        profileBtn.innerHTML = '';
+                        profileBtn.appendChild(icon);
+                        profileBtn.appendChild(document.createTextNode(' ' + userName));
+                    } else {
+                        profileBtn.textContent = userName;
+                    }
+                }
+                
+                // Update username in navbar if it exists
+                const userNameDisplay = document.querySelector('.user-name');
+                if (userNameDisplay) {
+                    userNameDisplay.textContent = userName;
+                }
+                
+                // Update user email in dropdown if it exists
+                const userEmailDisplay = document.querySelector('.user-email');
+                if (userEmailDisplay) {
+                    userEmailDisplay.textContent = currentUserEmail;
+                }
+                
+                // Update any profile image with initial if it exists
+                const profileImage = document.querySelector('.profile-image');
+                if (profileImage) {
+                    // Get first letter of user name for avatar
+                    const initial = userName.charAt(0).toUpperCase();
+                    profileImage.textContent = initial;
+                }
+                
+                // If we're on the profile page, make sure the profile view is updated
+                updateProfileDisplay({
+                    fullName: userName,
+                    email: currentUserEmail,
+                    phone: localStorage.getItem('userPhone') || sessionStorage.getItem('userPhone') || '',
+                    company: localStorage.getItem('userCompany') || sessionStorage.getItem('userCompany') || '',
+                    jobTitle: localStorage.getItem('userJobTitle') || sessionStorage.getItem('userJobTitle') || ''
+                });
+                
+                console.log('Header display refreshed with user:', userName);
+            }
+            
+            function saveUserData(userData, emailChanged) {
+                // Save to userData in storage
+                if (localStorage.getItem('userEmail')) {
+                    localStorage.setItem('userData', JSON.stringify(userData));
+                } else {
+                    sessionStorage.setItem('userData', JSON.stringify(userData));
+                }
+                
+                // Also update in grcUsers if it exists
+                const storedUsers = JSON.parse(localStorage.getItem('grcUsers') || '[]');
+                const oldEmail = emailChanged ? userEmail : userData.email;
+                const userIndex = storedUsers.findIndex(u => u.email === oldEmail);
+                
+                if (userIndex !== -1) {
+                    if (emailChanged) {
+                        // If email changed, delete old record and add new one
+                        storedUsers.splice(userIndex, 1);
+                        storedUsers.push(userData);
+                    } else {
+                        // Update existing user
+                        storedUsers[userIndex] = { 
+                            ...storedUsers[userIndex],
+                            ...userData
+                        };
+                    }
+                } else {
+                    // Add new user
+                    storedUsers.push(userData);
+                }
+                
+                // Save back to localStorage
+                localStorage.setItem('grcUsers', JSON.stringify(storedUsers));
+                
+                // Also make sure this user exists in other collections if needed
+                if (emailChanged) {
+                    updateUserInOtherCollections(oldEmail, userData.email, userData);
+                }
+            }
+            
+            // Function to update user references in other collections when email changes
+            function updateUserInOtherCollections(oldEmail, newEmail, userData) {
+                // Collections that might reference the user's email
+                const collections = [
+                    'grcAssessments',
+                    'grcTasks',
+                    'grcRisks',
+                    'grcIncidents',
+                    'grcFrameworks',
+                    'grcPolicies',
+                    'grcComments'
+                ];
+                
+                collections.forEach(collection => {
+                    const items = JSON.parse(localStorage.getItem(collection) || '[]');
+                    let updated = false;
+                    
+                    // Different collections have different structures
+                    items.forEach(item => {
+                        // Update owner/creator/assignee fields
+                        if (item.owner === oldEmail) {
+                            item.owner = newEmail;
+                            updated = true;
+                        }
+                        
+                        if (item.createdBy === oldEmail) {
+                            item.createdBy = newEmail;
+                            updated = true;
+                        }
+                        
+                        if (item.assignedTo === oldEmail) {
+                            item.assignedTo = newEmail;
+                            updated = true;
+                        }
+                        
+                        if (item.lastModifiedBy === oldEmail) {
+                            item.lastModifiedBy = newEmail;
+                            updated = true;
+                        }
+                        
+                        // Update name if stored
+                        if (item.ownerName && userData.fullName) {
+                            if (item.owner === newEmail) {
+                                item.ownerName = userData.fullName;
+                                updated = true;
+                            }
+                        }
+                        
+                        // Update assigneeName if stored
+                        if (item.assigneeName && userData.fullName) {
+                            if (item.assignedTo === newEmail) {
+                                item.assigneeName = userData.fullName;
+                                updated = true;
+                            }
+                        }
+                        
+                        // Handle comments array if present
+                        if (Array.isArray(item.comments)) {
+                            item.comments.forEach(comment => {
+                                if (comment.email === oldEmail) {
+                                    comment.email = newEmail;
+                                    if (userData.fullName) {
+                                        comment.author = userData.fullName;
+                                    }
+                                    updated = true;
+                                }
+                            });
+                        }
+                        
+                        // Handle participants array if present
+                        if (Array.isArray(item.participants)) {
+                            item.participants.forEach(participant => {
+                                if (typeof participant === 'string' && participant === oldEmail) {
+                                    participant = newEmail;
+                                    updated = true;
+                                } else if (typeof participant === 'object' && participant.email === oldEmail) {
+                                    participant.email = newEmail;
+                                    if (userData.fullName) {
+                                        participant.name = userData.fullName;
+                                    }
+                                    updated = true;
+                                }
+                            });
+                        }
+                    });
+                    
+                    // Save back to localStorage if updated
+                    if (updated) {
+                        localStorage.setItem(collection, JSON.stringify(items));
+                    }
+                });
+                
+                // Also update any UI elements currently displayed
+                refreshHeaderDisplay();
+                
+                console.log(`User reference updated from ${oldEmail} to ${newEmail} across all collections`);
+            }
+            
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+            
+            function logout() {
+                // Clear all user data from storage
+                sessionStorage.removeItem('userEmail');
+                sessionStorage.removeItem('userName');
+                sessionStorage.removeItem('userData');
+                localStorage.removeItem('userEmail');
+                localStorage.removeItem('userName');
+                localStorage.removeItem('userData');
+                
+                // Redirect to login page
+                window.location.href = 'login.html';
+            }
+        });
+        
+        // Handle header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html> 
+

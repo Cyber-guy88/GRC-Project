@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO 31000 - Risk Management Framework</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/iso31000.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <span class="badge">ISO 31000:2018</span>
+            <h1>Risk Management Framework</h1>
+            <p class="subtitle">International standard for enterprise risk management principles and guidelines</p>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Core Principles</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Framework Components</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">180+</span>
+                    <span class="stat-label">Countries Adopting</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="#overview" class="nav-link active">Overview</a>
+            <a href="#principles" class="nav-link">Principles</a>
+            <a href="#framework" class="nav-link">Framework</a>
+            <a href="#process" class="nav-link">Process</a>
+            <a href="#benefits" class="nav-link">Benefits</a>
+        </div>
+    </nav>
+
+
+
+    <main class="main-content">
+        <section id="overview" class="content-section">
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M19.4 15C19.2669 15.3016 19.2272 15.6362 19.286 15.9606C19.3448 16.285 19.4995 16.5843 19.73 16.82L19.79 16.88C19.976 17.0657 20.1235 17.2863 20.2241 17.5291C20.3248 17.7719 20.3766 18.0322 20.3766 18.295C20.3766 18.5578 20.3248 18.8181 20.2241 19.0609C20.1235 19.3037 19.976 19.5243 19.79 19.71C19.6043 19.896 19.3837 20.0435 19.1409 20.1441C18.8981 20.2448 18.6378 20.2966 18.375 20.2966C18.1122 20.2966 17.8519 20.2448 17.6091 20.1441C17.3663 20.0435 17.1457 19.896 16.96 19.71L16.9 19.65C16.6643 19.4195 16.365 19.2648 16.0406 19.206C15.7162 19.1472 15.3816 19.1869 15.08 19.32C14.7842 19.4468 14.532 19.6572 14.3543 19.9255C14.1766 20.1938 14.0813 20.5082 14.08 20.83V21C14.08 21.5304 13.8693 22.0391 13.4942 22.4142C13.1191 22.7893 12.6104 23 12.08 23C11.5496 23 11.0409 22.7893 10.6658 22.4142C10.2907 22.0391 10.08 21.5304 10.08 21V20.91C10.0723 20.579 9.96512 20.258 9.77251 19.9887C9.5799 19.7194 9.31074 19.5143 9 19.4C8.69838 19.2669 8.36381 19.2272 8.03941 19.286C7.71502 19.3448 7.41568 19.4995 7.18 19.73L7.12 19.79C6.93425 19.976 6.71368 20.1235 6.47088 20.2241C6.22808 20.3248 5.96783 20.3766 5.705 20.3766C5.44217 20.3766 5.18192 20.3248 4.93912 20.2241C4.69632 20.1235 4.47575 19.976 4.29 19.79C4.10405 19.6043 3.95653 19.3837 3.85588 19.1409C3.75523 18.8981 3.70343 18.6378 3.70343 18.375C3.70343 18.1122 3.75523 17.8519 3.85588 17.6091C3.95653 17.3663 4.10405 17.1457 4.29 16.96L4.35 16.9C4.58054 16.6643 4.73519 16.365 4.794 16.0406C4.85282 15.7162 4.81312 15.3816 4.68 15.08C4.55324 14.7842 4.34276 14.532 4.07447 14.3543C3.80618 14.1766 3.49179 14.0813 3.17 14.08H3C2.46957 14.08 1.96086 13.8693 1.58579 13.4942C1.21071 13.1191 1 12.6104 1 12.08C1 11.5496 1.21071 11.0409 1.58579 10.6658C1.96086 10.2907 2.46957 10.08 3 10.08H3.09C3.42099 10.0723 3.742 9.96512 4.0113 9.77251C4.28059 9.5799 4.48572 9.31074 4.6 9C4.73312 8.69838 4.77282 8.36381 4.714 8.03941C4.65519 7.71502 4.50054 7.41568 4.27 7.18L4.21 7.12C4.02405 6.93425 3.87653 6.71368 3.77588 6.47088C3.67523 6.22808 3.62343 5.96783 3.62343 5.705C3.62343 5.44217 3.67523 5.18192 3.77588 4.93912C3.87653 4.69632 4.02405 4.47575 4.21 4.29C4.39575 4.10405 4.61632 3.95653 4.85912 3.85588C5.10192 3.75523 5.36217 3.70343 5.625 3.70343C5.88783 3.70343 6.14808 3.75523 6.39088 3.85588C6.63368 3.95653 6.85425 4.10405 7.04 4.29L7.1 4.35C7.33568 4.58054 7.63502 4.73519 7.95941 4.794C8.28381 4.85282 8.61838 4.81312 8.92 4.68H9C9.29577 4.55324 9.54802 4.34276 9.72569 4.07447C9.90337 3.80618 9.99872 3.49179 10 3.17V3C10 2.46957 10.2107 1.96086 10.5858 1.58579C10.9609 1.21071 11.4696 1 12 1C12.5304 1 13.0391 1.21071 13.4142 1.58579C13.7893 1.96086 14 2.46957 14 3V3.09C14.0013 3.41179 14.0966 3.72618 14.2743 3.99447C14.452 4.26276 14.7042 4.47324 15 4.6C15.3016 4.73312 15.6362 4.77282 15.9606 4.714C16.285 4.65519 16.5843 4.50054 16.82 4.27L16.88 4.21C17.0657 4.02405 17.2863 3.87653 17.5291 3.77588C17.7719 3.67523 18.0322 3.62343 18.295 3.62343C18.5578 3.62343 18.8181 3.67523 19.0609 3.77588C19.3037 3.87653 19.5243 4.02405 19.71 4.21C19.896 4.39575 20.0435 4.61632 20.1441 4.85912C20.2448 5.10192 20.2966 5.36217 20.2966 5.625C20.2966 5.88783 20.2448 6.14808 20.1441 6.39088C20.0435 6.63368 19.896 6.85425 19.71 7.04L19.65 7.1C19.4195 7.33568 19.2648 7.63502 19.206 7.95941C19.1472 8.28381 19.1869 8.61838 19.32 8.92V9C19.4468 9.29577 19.6572 9.54802 19.9255 9.72569C20.1938 9.90337 20.5082 9.99872 20.83 10H21C21.5304 10 22.0391 10.2107 22.4142 10.5858C22.7893 10.9609 23 11.4696 23 12C23 12.5304 22.7893 13.0391 22.4142 13.4142C22.0391 13.7893 21.5304 14 21 14H20.91C20.5882 14.0013 20.2738 14.0966 20.0055 14.2743C19.7372 14.452 19.5268 14.7042 19.4 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2>What is ISO 31000?</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Global Standard</h3>
+                    <p>ISO 31000 provides guidelines and principles for enterprise risk management that can be applied to any organization regardless of size, activity or sector.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Flexible Framework</h3>
+                    <p>The framework is designed to be adaptable, allowing organizations to customize their risk management approach based on their specific context and needs.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Integrated Approach</h3>
+                    <p>Promotes the integration of risk management into all organizational activities, from strategic planning to operational processes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="principles" class="content-section">
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2>Core Principles</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>Value Creation</h3>
+                    <p>Risk management contributes to demonstrable achievement of objectives and improvement of performance.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Integration</h3>
+                    <p>Risk management is an integral part of all organizational activities.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Structured Approach</h3>
+                    <p>A systematic, structured and timely approach to risk management.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Customization</h3>
+                    <p>The framework and process are customized to the organization's context.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="importance" class="content-section">
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 15v2m0 4h.01M8.99 3h6.02l4.94 11-4.96 7H8.99l-4.94-7 5-11z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2>Why ISO 31000 Matters</h2>
+            <div class="importance-grid">
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3>Proactive Risk Identification</h3>
+                    <p>Shifts organizations from reactive to anticipatory risk management, allowing them to identify threats before they materialize.</p>
+                </div>
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>Strategic Alignment</h3>
+                    <p>Links risk management directly to organizational objectives and strategic planning, ensuring resources are allocated effectively.</p>
+                </div>
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 9h16M4 15h16M10 3v18M14 3v18"></path>
+                        </svg>
+                    </div>
+                    <h3>Consistent Framework</h3>
+                    <p>Provides a structured, systematic approach that can be consistently applied across all organizational levels, departments, and projects.</p>
+                </div>
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <h3>Business Continuity</h3>
+                    <p>Enhances organizational resilience by preparing for disruptions and creating response mechanisms that minimize impact on operations.</p>
+                </div>
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>Better Decision-Making</h3>
+                    <p>Enables informed decision-making through a systematic evaluation of risks and opportunities at all levels of the organization.</p>
+                </div>
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                            <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                        </svg>
+                    </div>
+                    <h3>Stakeholder Confidence</h3>
+                    <p>Builds trust with customers, investors, regulators, and other stakeholders by demonstrating a mature approach to managing risks.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="framework" class="content-section">
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2>Framework Components</h2>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h3>Leadership & Commitment</h3>
+                    <ul>
+                        <li>Top management commitment</li>
+                        <li>Organizational alignment</li>
+                        <li>Resource allocation</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h3>Integration</h3>
+                    <ul>
+                        <li>Organizational structure</li>
+                        <li>Strategic planning</li>
+                        <li>Operational processes</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h3>Design</h3>
+                    <ul>
+                        <li>Understanding context</li>
+                        <li>Articulating commitment</li>
+                        <li>Assigning roles</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="content-section">
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2>Risk Management Process</h2>
+            <div class="implementation-steps">
+                <div class="step-card">
+                    <span class="step-number">1</span>
+                    <h3>Scope & Context</h3>
+                    <p>Define the scope and understand internal and external context.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">2</span>
+                    <h3>Risk Assessment</h3>
+                    <p>Identify, analyze and evaluate risks within the defined scope.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">3</span>
+                    <h3>Risk Treatment</h3>
+                    <p>Select and implement risk treatment options.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">4</span>
+                    <h3>Monitoring</h3>
+                    <p>Continuous monitoring and review of the risk management process.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="content-section">
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2>Benefits of ISO 31000</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Improved Governance</h3>
+                    <p>Strengthens organizational governance and decision-making processes through systematic risk management.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Enhanced Performance</h3>
+                    <p>Improves operational efficiency and effectiveness by identifying and managing risks proactively.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Stakeholder Confidence</h3>
+                    <p>Builds stakeholder trust by demonstrating a commitment to effective risk management.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Resilience</h3>
+                    <p>Increases organizational resilience by better preparing for and responding to risks and opportunities.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="when-to-use" class="content-section">
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2>When to Apply ISO 31000</h2>
+            <div class="use-case-container">
+                <table class="use-case-table">
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Application of ISO 31000</th>
+                            <th>Benefits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Strategic Planning</td>
+                            <td>Identify and assess risks to strategic objectives, evaluate alternatives, and develop contingency plans.</td>
+                            <td>More robust strategies, better resource allocation, increased likelihood of achieving objectives.</td>
+                        </tr>
+                        <tr>
+                            <td>Project Management</td>
+                            <td>Identify project risks, develop mitigation strategies, and monitor risks throughout the project lifecycle.</td>
+                            <td>Improved project delivery, reduced cost overruns, better schedule adherence.</td>
+                        </tr>
+                        <tr>
+                            <td>Supply Chain Management</td>
+                            <td>Assess supplier risks, develop alternative sourcing strategies, and implement supply chain resilience measures.</td>
+                            <td>Reduced supply disruptions, better supplier performance, enhanced business continuity.</td>
+                        </tr>
+                        <tr>
+                            <td>Market Expansion</td>
+                            <td>Evaluate risks in new markets, develop entry strategies, and plan for market-specific challenges.</td>
+                            <td>More successful market entries, faster adaptation to local conditions, reduced potential for losses.</td>
+                        </tr>
+                        <tr>
+                            <td>Mergers & Acquisitions</td>
+                            <td>Assess integration risks, cultural challenges, and operational compatibility issues.</td>
+                            <td>Smoother integrations, more accurate valuations, better post-merger performance.</td>
+                        </tr>
+                        <tr>
+                            <td>Regulatory Compliance</td>
+                            <td>Identify compliance risks, develop monitoring programs, and establish compliance controls.</td>
+                            <td>Reduced regulatory penalties, better regulatory relationships, enhanced reputation.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="challenges" class="content-section">
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2>Implementation Challenges</h2>
+            <div class="challenges-container">
+                <table class="challenges-table">
+                    <thead>
+                        <tr>
+                            <th>Challenge</th>
+                            <th>Description</th>
+                            <th>Mitigation Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Organizational Resistance</td>
+                            <td>Employees may see risk management as additional bureaucracy or obstacle to efficiency.</td>
+                            <td>
+                                <ul class="challenge-solutions">
+                                    <li>Position risk management as enabling better decision-making</li>
+                                    <li>Demonstrate early wins and value creation</li>
+                                    <li>Integrate into existing processes rather than creating parallel ones</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Lack of Leadership Support</td>
+                            <td>Without visible leadership commitment, risk management initiatives often fail.</td>
+                            <td>
+                                <ul class="challenge-solutions">
+                                    <li>Educate leadership on business benefits and ROI</li>
+                                    <li>Tie risk management to strategic objectives</li>
+                                    <li>Regularly report risk insights to leadership</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Risk Assessment Complexity</td>
+                            <td>Organizations struggle with consistent identification and evaluation of risks.</td>
+                            <td>
+                                <ul class="challenge-solutions">
+                                    <li>Start with simpler assessment techniques</li>
+                                    <li>Build a common risk taxonomy</li>
+                                    <li>Provide templates and training on risk assessment</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Resource Constraints</td>
+                            <td>Limited budget, time, and expertise for implementing comprehensive risk management.</td>
+                            <td>
+                                <ul class="challenge-solutions">
+                                    <li>Implement in phases, focusing on highest-value areas first</li>
+                                    <li>Leverage existing roles and responsibilities</li>
+                                    <li>Consider external expertise for specific aspects</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sustaining Momentum</td>
+                            <td>Initial enthusiasm wanes, returning to old habits without seeing long-term benefits.</td>
+                            <td>
+                                <ul class="challenge-solutions">
+                                    <li>Establish regular review cycles and metrics</li>
+                                    <li>Celebrate and communicate success stories</li>
+                                    <li>Continuously improve the process based on feedback</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="implementation" class="content-section">
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2>Implementation Roadmap</h2>
+            <div class="implementation-roadmap">
+                <div class="roadmap-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Establish Context & Gain Commitment</h3>
+                        <div class="step-details">
+                            <ul class="implementation-list">
+                                <li>Understand organizational objectives and external/internal environment</li>
+                                <li>Secure leadership endorsement and resource commitment</li>
+                                <li>Identify key stakeholders and their expectations</li>
+                                <li>Define the scope of the risk management implementation</li>
+                            </ul>
+                            <div class="step-tip">
+                                <strong>Pro Tip:</strong> Create a compelling business case that links risk management to strategic objectives to gain executive support.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Design Framework & Policy</h3>
+                        <div class="step-details">
+                            <ul class="implementation-list">
+                                <li>Develop a risk management policy that articulates commitment and approach</li>
+                                <li>Define roles, responsibilities, and accountability structures</li>
+                                <li>Establish risk criteria and risk appetite statements</li>
+                                <li>Select risk assessment methods and tools appropriate for the organization</li>
+                            </ul>
+                            <div class="step-tip">
+                                <strong>Pro Tip:</strong> Customize the framework to align with existing management systems and organizational culture for better integration.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Implement Risk Process</h3>
+                        <div class="step-details">
+                            <ul class="implementation-list">
+                                <li>Conduct initial risk identification workshops with key stakeholders</li>
+                                <li>Analyze and evaluate identified risks using defined criteria</li>
+                                <li>Develop risk treatment plans with clear owners and timelines</li>
+                                <li>Establish risk registers and reporting mechanisms</li>
+                            </ul>
+                            <div class="step-tip">
+                                <strong>Pro Tip:</strong> Start with a pilot implementation in one business area to refine the approach before rolling out organization-wide.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Monitor & Review</h3>
+                        <div class="step-details">
+                            <ul class="implementation-list">
+                                <li>Establish key risk indicators (KRIs) to monitor risk levels</li>
+                                <li>Implement regular risk review cycles and reporting</li>
+                                <li>Test effectiveness of risk controls</li>
+                                <li>Review changes to internal/external context that may affect risk profile</li>
+                            </ul>
+                            <div class="step-tip">
+                                <strong>Pro Tip:</strong> Use dashboards and visualization tools to make risk information accessible and actionable for decision-makers.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Continuous Improvement</h3>
+                        <div class="step-details">
+                            <ul class="implementation-list">
+                                <li>Gather feedback from stakeholders on process effectiveness</li>
+                                <li>Measure maturity against benchmarks or maturity models</li>
+                                <li>Identify improvement opportunities and update framework</li>
+                                <li>Provide ongoing training and awareness to maintain capability</li>
+                            </ul>
+                            <div class="step-tip">
+                                <strong>Pro Tip:</strong> Document lessons learned from risk events to create a knowledge base that improves future risk management practices.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="comparison" class="content-section">
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 3h5v5M9 21H4v-5M21 16v5h-5M3 9V4h5M21 9l-9 9M3 16l9-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2>Framework Comparison</h2>
+            <div class="framework-comparison">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>ISO 31000</th>
+                            <th>COSO ERM</th>
+                            <th>NIST RMF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Primary Focus</td>
+                            <td>General risk management applicable to any organization</td>
+                            <td>Enterprise risk management with emphasis on governance and strategy</td>
+                            <td>IT and cybersecurity risk management for federal systems</td>
+                        </tr>
+                        <tr>
+                            <td>Structure</td>
+                            <td>Principles, framework, and process components</td>
+                            <td>Five components and 20 principles across governance, strategy, and objectives</td>
+                            <td>Six-step process focused on security categorization and controls</td>
+                        </tr>
+                        <tr>
+                            <td>Certification</td>
+                            <td>Not certifiable; guidance only</td>
+                            <td>Not certifiable; guidance only</td>
+                            <td>Required for federal systems; Assessment & Authorization process</td>
+                        </tr>
+                        <tr>
+                            <td>Approach</td>
+                            <td>Principle-based and flexible</td>
+                            <td>More prescriptive and structured</td>
+                            <td>Highly structured with specific control requirements</td>
+                        </tr>
+                        <tr>
+                            <td>Integration with Strategy</td>
+                            <td>Emphasizes alignment with organizational objectives</td>
+                            <td>Deeply integrates risk with strategy-setting and performance</td>
+                            <td>Focuses primarily on security controls rather than strategy</td>
+                        </tr>
+                        <tr>
+                            <td>Best Suited For</td>
+                            <td>Organizations seeking flexible risk management guidance across all operations</td>
+                            <td>Organizations prioritizing board oversight and strategic risk management</td>
+                            <td>Government agencies and contractors with federal compliance requirements</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="framework-selection">
+                    <h3>Choosing the Right Framework</h3>
+                    <p>When selecting between risk management frameworks, consider:</p>
+                    <ul class="selection-criteria">
+                        <li><strong>Organizational Needs:</strong> ISO 31000 provides the most flexible approach that can be adapted to any organization.</li>
+                        <li><strong>Industry Requirements:</strong> Some industries have specific frameworks that align with regulatory expectations.</li>
+                        <li><strong>Existing Systems:</strong> Consider frameworks that can integrate well with your current management systems.</li>
+                        <li><strong>Maturity Level:</strong> More prescriptive frameworks like COSO may be better for organizations with less risk management experience.</li>
+                    </ul>
+                    <p class="framework-note">Many organizations adopt a hybrid approach, using ISO 31000 principles while incorporating elements from other frameworks to meet specific needs.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Navigation highlight
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
+

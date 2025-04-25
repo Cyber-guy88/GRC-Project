@@ -1,0 +1,1018 @@
+2025-04-04 11:22:42 - Updating profile for: meghank@gmail.com
+2025-04-04 11:22:42 - New email: meghank@gmail.com
+2025-04-04 11:22:42 - Table structure: Array
+(
+    [0] => Array
+        (
+            [cid] => 0
+            [name] => id
+            [type] => INTEGER
+            [notnull] => 0
+            [dflt_value] => 
+            [pk] => 1
+        )
+
+    [1] => Array
+        (
+            [cid] => 1
+            [name] => username
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [2] => Array
+        (
+            [cid] => 2
+            [name] => email
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [3] => Array
+        (
+            [cid] => 3
+            [name] => password
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [4] => Array
+        (
+            [cid] => 4
+            [name] => created_at
+            [type] => DATETIME
+            [notnull] => 0
+            [dflt_value] => CURRENT_TIMESTAMP
+            [pk] => 0
+        )
+
+)
+
+2025-04-04 11:22:42 - No matching column found for: phone
+2025-04-04 11:22:42 - No matching column found for: company
+2025-04-04 11:22:42 - No matching column found for: jobTitle
+2025-04-04 11:22:42 - SQL: UPDATE users SET username = :fullName, email = :email WHERE email = :currentEmail
+2025-04-04 11:22:42 - Params: Array
+(
+    [:currentEmail] => meghank@gmail.com
+    [:fullName] => meghank vora
+    [:email] => meghank@gmail.com
+)
+
+2025-04-04 11:22:47 - Updating profile for: meghank@gmail.com
+2025-04-04 11:22:47 - New email: meghank@gmail.com
+2025-04-04 11:22:47 - Table structure: Array
+(
+    [0] => Array
+        (
+            [cid] => 0
+            [name] => id
+            [type] => INTEGER
+            [notnull] => 0
+            [dflt_value] => 
+            [pk] => 1
+        )
+
+    [1] => Array
+        (
+            [cid] => 1
+            [name] => username
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [2] => Array
+        (
+            [cid] => 2
+            [name] => email
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [3] => Array
+        (
+            [cid] => 3
+            [name] => password
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [4] => Array
+        (
+            [cid] => 4
+            [name] => created_at
+            [type] => DATETIME
+            [notnull] => 0
+            [dflt_value] => CURRENT_TIMESTAMP
+            [pk] => 0
+        )
+
+)
+
+2025-04-04 11:22:47 - No matching column found for: phone
+2025-04-04 11:22:47 - No matching column found for: company
+2025-04-04 11:22:47 - No matching column found for: jobTitle
+2025-04-04 11:22:47 - SQL: UPDATE users SET username = :fullName, email = :email WHERE email = :currentEmail
+2025-04-04 11:22:47 - Params: Array
+(
+    [:currentEmail] => meghank@gmail.com
+    [:fullName] => meghank vora
+    [:email] => meghank@gmail.com
+)
+
+2025-04-04 11:22:48 - Updating profile for: meghank@gmail.com
+2025-04-04 11:22:48 - New email: meghank@gmail.com
+2025-04-04 11:22:48 - Table structure: Array
+(
+    [0] => Array
+        (
+            [cid] => 0
+            [name] => id
+            [type] => INTEGER
+            [notnull] => 0
+            [dflt_value] => 
+            [pk] => 1
+        )
+
+    [1] => Array
+        (
+            [cid] => 1
+            [name] => username
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [2] => Array
+        (
+            [cid] => 2
+            [name] => email
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [3] => Array
+        (
+            [cid] => 3
+            [name] => password
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [4] => Array
+        (
+            [cid] => 4
+            [name] => created_at
+            [type] => DATETIME
+            [notnull] => 0
+            [dflt_value] => CURRENT_TIMESTAMP
+            [pk] => 0
+        )
+
+)
+
+2025-04-04 11:22:48 - No matching column found for: phone
+2025-04-04 11:22:48 - No matching column found for: company
+2025-04-04 11:22:48 - No matching column found for: jobTitle
+2025-04-04 11:22:48 - SQL: UPDATE users SET username = :fullName, email = :email WHERE email = :currentEmail
+2025-04-04 11:22:48 - Params: Array
+(
+    [:currentEmail] => meghank@gmail.com
+    [:fullName] => meghank vora
+    [:email] => meghank@gmail.com
+)
+
+2025-04-04 11:22:48 - Updating profile for: meghank@gmail.com
+2025-04-04 11:22:48 - New email: meghank@gmail.com
+2025-04-04 11:22:48 - Table structure: Array
+(
+    [0] => Array
+        (
+            [cid] => 0
+            [name] => id
+            [type] => INTEGER
+            [notnull] => 0
+            [dflt_value] => 
+            [pk] => 1
+        )
+
+    [1] => Array
+        (
+            [cid] => 1
+            [name] => username
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [2] => Array
+        (
+            [cid] => 2
+            [name] => email
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [3] => Array
+        (
+            [cid] => 3
+            [name] => password
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [4] => Array
+        (
+            [cid] => 4
+            [name] => created_at
+            [type] => DATETIME
+            [notnull] => 0
+            [dflt_value] => CURRENT_TIMESTAMP
+            [pk] => 0
+        )
+
+)
+
+2025-04-04 11:22:48 - No matching column found for: phone
+2025-04-04 11:22:48 - No matching column found for: company
+2025-04-04 11:22:48 - No matching column found for: jobTitle
+2025-04-04 11:22:48 - SQL: UPDATE users SET username = :fullName, email = :email WHERE email = :currentEmail
+2025-04-04 11:22:48 - Params: Array
+(
+    [:currentEmail] => meghank@gmail.com
+    [:fullName] => meghank vora
+    [:email] => meghank@gmail.com
+)
+
+2025-04-04 11:22:57 - Updating profile for: meghank@gmail.com
+2025-04-04 11:22:57 - New email: meghank@gmail.com
+2025-04-04 11:22:57 - Table structure: Array
+(
+    [0] => Array
+        (
+            [cid] => 0
+            [name] => id
+            [type] => INTEGER
+            [notnull] => 0
+            [dflt_value] => 
+            [pk] => 1
+        )
+
+    [1] => Array
+        (
+            [cid] => 1
+            [name] => username
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [2] => Array
+        (
+            [cid] => 2
+            [name] => email
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [3] => Array
+        (
+            [cid] => 3
+            [name] => password
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [4] => Array
+        (
+            [cid] => 4
+            [name] => created_at
+            [type] => DATETIME
+            [notnull] => 0
+            [dflt_value] => CURRENT_TIMESTAMP
+            [pk] => 0
+        )
+
+)
+
+2025-04-04 11:22:57 - No matching column found for: phone
+2025-04-04 11:22:57 - No matching column found for: company
+2025-04-04 11:22:57 - No matching column found for: jobTitle
+2025-04-04 11:22:57 - SQL: UPDATE users SET username = :fullName, email = :email WHERE email = :currentEmail
+2025-04-04 11:22:57 - Params: Array
+(
+    [:currentEmail] => meghank@gmail.com
+    [:fullName] => meghank vora
+    [:email] => meghank@gmail.com
+)
+
+2025-04-04 11:22:58 - Updating profile for: meghank@gmail.com
+2025-04-04 11:22:58 - New email: meghank@gmail.com
+2025-04-04 11:22:58 - Table structure: Array
+(
+    [0] => Array
+        (
+            [cid] => 0
+            [name] => id
+            [type] => INTEGER
+            [notnull] => 0
+            [dflt_value] => 
+            [pk] => 1
+        )
+
+    [1] => Array
+        (
+            [cid] => 1
+            [name] => username
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [2] => Array
+        (
+            [cid] => 2
+            [name] => email
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [3] => Array
+        (
+            [cid] => 3
+            [name] => password
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [4] => Array
+        (
+            [cid] => 4
+            [name] => created_at
+            [type] => DATETIME
+            [notnull] => 0
+            [dflt_value] => CURRENT_TIMESTAMP
+            [pk] => 0
+        )
+
+)
+
+2025-04-04 11:22:58 - No matching column found for: phone
+2025-04-04 11:22:58 - No matching column found for: company
+2025-04-04 11:22:58 - No matching column found for: jobTitle
+2025-04-04 11:22:58 - SQL: UPDATE users SET username = :fullName, email = :email WHERE email = :currentEmail
+2025-04-04 11:22:58 - Params: Array
+(
+    [:currentEmail] => meghank@gmail.com
+    [:fullName] => meghank vora
+    [:email] => meghank@gmail.com
+)
+
+2025-04-04 11:22:58 - Updating profile for: meghank@gmail.com
+2025-04-04 11:22:58 - New email: meghank@gmail.com
+2025-04-04 11:22:58 - Table structure: Array
+(
+    [0] => Array
+        (
+            [cid] => 0
+            [name] => id
+            [type] => INTEGER
+            [notnull] => 0
+            [dflt_value] => 
+            [pk] => 1
+        )
+
+    [1] => Array
+        (
+            [cid] => 1
+            [name] => username
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [2] => Array
+        (
+            [cid] => 2
+            [name] => email
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [3] => Array
+        (
+            [cid] => 3
+            [name] => password
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [4] => Array
+        (
+            [cid] => 4
+            [name] => created_at
+            [type] => DATETIME
+            [notnull] => 0
+            [dflt_value] => CURRENT_TIMESTAMP
+            [pk] => 0
+        )
+
+)
+
+2025-04-04 11:22:58 - No matching column found for: phone
+2025-04-04 11:22:58 - No matching column found for: company
+2025-04-04 11:22:58 - No matching column found for: jobTitle
+2025-04-04 11:22:58 - SQL: UPDATE users SET username = :fullName, email = :email WHERE email = :currentEmail
+2025-04-04 11:22:58 - Params: Array
+(
+    [:currentEmail] => meghank@gmail.com
+    [:fullName] => meghank vora
+    [:email] => meghank@gmail.com
+)
+
+2025-04-04 11:22:58 - Updating profile for: meghank@gmail.com
+2025-04-04 11:22:58 - New email: meghank@gmail.com
+2025-04-04 11:22:58 - Table structure: Array
+(
+    [0] => Array
+        (
+            [cid] => 0
+            [name] => id
+            [type] => INTEGER
+            [notnull] => 0
+            [dflt_value] => 
+            [pk] => 1
+        )
+
+    [1] => Array
+        (
+            [cid] => 1
+            [name] => username
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [2] => Array
+        (
+            [cid] => 2
+            [name] => email
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [3] => Array
+        (
+            [cid] => 3
+            [name] => password
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [4] => Array
+        (
+            [cid] => 4
+            [name] => created_at
+            [type] => DATETIME
+            [notnull] => 0
+            [dflt_value] => CURRENT_TIMESTAMP
+            [pk] => 0
+        )
+
+)
+
+2025-04-04 11:22:58 - No matching column found for: phone
+2025-04-04 11:22:58 - No matching column found for: company
+2025-04-04 11:22:58 - No matching column found for: jobTitle
+2025-04-04 11:22:58 - SQL: UPDATE users SET username = :fullName, email = :email WHERE email = :currentEmail
+2025-04-04 11:22:58 - Params: Array
+(
+    [:currentEmail] => meghank@gmail.com
+    [:fullName] => meghank vora
+    [:email] => meghank@gmail.com
+)
+
+2025-04-04 11:22:58 - Updating profile for: meghank@gmail.com
+2025-04-04 11:22:58 - New email: meghank@gmail.com
+2025-04-04 11:22:58 - Table structure: Array
+(
+    [0] => Array
+        (
+            [cid] => 0
+            [name] => id
+            [type] => INTEGER
+            [notnull] => 0
+            [dflt_value] => 
+            [pk] => 1
+        )
+
+    [1] => Array
+        (
+            [cid] => 1
+            [name] => username
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [2] => Array
+        (
+            [cid] => 2
+            [name] => email
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [3] => Array
+        (
+            [cid] => 3
+            [name] => password
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [4] => Array
+        (
+            [cid] => 4
+            [name] => created_at
+            [type] => DATETIME
+            [notnull] => 0
+            [dflt_value] => CURRENT_TIMESTAMP
+            [pk] => 0
+        )
+
+)
+
+2025-04-04 11:22:58 - No matching column found for: phone
+2025-04-04 11:22:58 - No matching column found for: company
+2025-04-04 11:22:58 - No matching column found for: jobTitle
+2025-04-04 11:22:58 - SQL: UPDATE users SET username = :fullName, email = :email WHERE email = :currentEmail
+2025-04-04 11:22:58 - Params: Array
+(
+    [:currentEmail] => meghank@gmail.com
+    [:fullName] => meghank vora
+    [:email] => meghank@gmail.com
+)
+
+2025-04-04 11:23:14 - Updating profile for: meghank@gmail.com
+2025-04-04 11:23:14 - New email: meghank@gmail.com
+2025-04-04 11:23:14 - Table structure: Array
+(
+    [0] => Array
+        (
+            [cid] => 0
+            [name] => id
+            [type] => INTEGER
+            [notnull] => 0
+            [dflt_value] => 
+            [pk] => 1
+        )
+
+    [1] => Array
+        (
+            [cid] => 1
+            [name] => username
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [2] => Array
+        (
+            [cid] => 2
+            [name] => email
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [3] => Array
+        (
+            [cid] => 3
+            [name] => password
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [4] => Array
+        (
+            [cid] => 4
+            [name] => created_at
+            [type] => DATETIME
+            [notnull] => 0
+            [dflt_value] => CURRENT_TIMESTAMP
+            [pk] => 0
+        )
+
+)
+
+2025-04-04 11:23:14 - No matching column found for: phone
+2025-04-04 11:23:14 - No matching column found for: company
+2025-04-04 11:23:14 - No matching column found for: jobTitle
+2025-04-04 11:23:14 - SQL: UPDATE users SET username = :fullName, email = :email WHERE email = :currentEmail
+2025-04-04 11:23:14 - Params: Array
+(
+    [:currentEmail] => meghank@gmail.com
+    [:fullName] => meghank vora
+    [:email] => meghank@gmail.com
+)
+
+2025-04-04 11:23:24 - Updating profile for: meghank@gmail.com
+2025-04-04 11:23:24 - New email: meghankVora@gmail.com
+2025-04-04 11:23:25 - Table structure: Array
+(
+    [0] => Array
+        (
+            [cid] => 0
+            [name] => id
+            [type] => INTEGER
+            [notnull] => 0
+            [dflt_value] => 
+            [pk] => 1
+        )
+
+    [1] => Array
+        (
+            [cid] => 1
+            [name] => username
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [2] => Array
+        (
+            [cid] => 2
+            [name] => email
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [3] => Array
+        (
+            [cid] => 3
+            [name] => password
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [4] => Array
+        (
+            [cid] => 4
+            [name] => created_at
+            [type] => DATETIME
+            [notnull] => 0
+            [dflt_value] => CURRENT_TIMESTAMP
+            [pk] => 0
+        )
+
+)
+
+2025-04-04 11:23:25 - No matching column found for: phone
+2025-04-04 11:23:25 - No matching column found for: company
+2025-04-04 11:23:25 - No matching column found for: jobTitle
+2025-04-04 11:23:25 - SQL: UPDATE users SET username = :fullName, email = :email WHERE email = :currentEmail
+2025-04-04 11:23:25 - Params: Array
+(
+    [:currentEmail] => meghank@gmail.com
+    [:fullName] => meghank
+    [:email] => meghankVora@gmail.com
+)
+
+2025-04-04 11:23:51 - Updating profile for: meghank@gmail.com
+2025-04-04 11:23:51 - New email: meghankVora@gmail.com
+2025-04-04 11:23:51 - Table structure: Array
+(
+    [0] => Array
+        (
+            [cid] => 0
+            [name] => id
+            [type] => INTEGER
+            [notnull] => 0
+            [dflt_value] => 
+            [pk] => 1
+        )
+
+    [1] => Array
+        (
+            [cid] => 1
+            [name] => username
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [2] => Array
+        (
+            [cid] => 2
+            [name] => email
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [3] => Array
+        (
+            [cid] => 3
+            [name] => password
+            [type] => TEXT
+            [notnull] => 1
+            [dflt_value] => 
+            [pk] => 0
+        )
+
+    [4] => Array
+        (
+            [cid] => 4
+            [name] => created_at
+            [type] => DATETIME
+            [notnull] => 0
+            [dflt_value] => CURRENT_TIMESTAMP
+            [pk] => 0
+        )
+
+)
+
+2025-04-04 11:23:51 - No matching column found for: phone
+2025-04-04 11:23:51 - No matching column found for: company
+2025-04-04 11:23:51 - No matching column found for: jobTitle
+2025-04-04 11:23:51 - SQL: UPDATE users SET username = :fullName, email = :email WHERE email = :currentEmail
+2025-04-04 11:23:51 - Params: Array
+(
+    [:currentEmail] => meghank@gmail.com
+    [:fullName] => meghank vora
+    [:email] => meghankVora@gmail.com
+)
+
+2025-04-04 11:23:51 - Error: Failed to update user profile. User not found by email.
+2025-04-04 11:28:41 - Updating profile for: meghankVora@gmail.com
+2025-04-04 11:28:41 - New email: meghankvora11@gmail.com
+2025-04-04 11:28:49 - Updating profile for: meghankVora@gmail.com
+2025-04-04 11:28:49 - New email: meghankvora11@gmail.com
+2025-04-04 11:28:49 - Error: SQLSTATE[23000]: Integrity constraint violation: 19 UNIQUE constraint failed: users.email
+2025-04-04 11:43:51 - Updating profile for: meghankvora11@gmail.com
+2025-04-04 11:43:51 - New email: meghankvora009@gmail.com
+2025-04-04 11:43:54 - Updating profile for: meghankvora11@gmail.com
+2025-04-04 11:43:54 - New email: meghankvora009@gmail.com
+2025-04-04 11:43:54 - Error: SQLSTATE[23000]: Integrity constraint violation: 19 UNIQUE constraint failed: users.email
+2025-04-04 11:44:49 - Updating profile for: meghankvora11@gmail.com
+2025-04-04 11:44:49 - New email: meghankvora11@gmail.com
+2025-04-04 11:54:13 - Updating profile for: desk@gmail.com
+2025-04-04 11:54:13 - New email: deskusr@gmail.com
+2025-04-04 11:55:09 - Updating profile for: desk@gmail.com
+2025-04-04 11:55:09 - New email: deskuser@gmail.com
+2025-04-04 12:09:48 - Fix profile request for: web@gmail.com
+2025-04-04 12:09:48 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:09:48 - Fix profile request for: web@gmail.com
+2025-04-04 12:09:48 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:10:11 - Profile Update Request - 
+2025-04-04 12:10:11 - Current Email: web@gmail.com
+2025-04-04 12:10:11 - New Email: webdev@gmail.com
+2025-04-04 12:10:11 - Full Name: webdev
+2025-04-04 12:10:11 - Error: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:10:11 - Trace: #0 C:\xampp\htdocs\try2\update_profile.php(131): PDO->prepare('UPDATE users SE...')
+#1 {main}
+2025-04-04 12:10:14 - Profile Update Request - 
+2025-04-04 12:10:14 - Current Email: web@gmail.com
+2025-04-04 12:10:14 - New Email: webdev@gmail.com
+2025-04-04 12:10:14 - Full Name: webdev
+2025-04-04 12:10:14 - Error: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:10:14 - Trace: #0 C:\xampp\htdocs\try2\update_profile.php(131): PDO->prepare('UPDATE users SE...')
+#1 {main}
+2025-04-04 12:10:38 - Fix profile request for: web@gmail.com
+2025-04-04 12:10:38 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:10:38 - Fix profile request for: web@gmail.com
+2025-04-04 12:10:38 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:10:50 - Profile Update Request - 
+2025-04-04 12:10:50 - Current Email: web@gmail.com
+2025-04-04 12:10:50 - New Email: web@gmail.com
+2025-04-04 12:10:50 - Full Name: web
+2025-04-04 12:10:50 - Error: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:10:50 - Trace: #0 C:\xampp\htdocs\try2\update_profile.php(131): PDO->prepare('UPDATE users SE...')
+#1 {main}
+2025-04-04 12:16:10 - Fix profile request for: web@gmail.com
+2025-04-04 12:16:10 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:10 - Fix profile request for: web@gmail.com
+2025-04-04 12:16:10 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:11 - Fix profile request for: web@gmail.com
+2025-04-04 12:16:11 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:11 - Fix profile request for: web@gmail.com
+2025-04-04 12:16:11 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:11 - Fix profile request for: web@gmail.com
+2025-04-04 12:16:11 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:11 - Fix profile request for: web@gmail.com
+2025-04-04 12:16:11 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:12 - Fix profile request for: web@gmail.com
+2025-04-04 12:16:12 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:12 - Fix profile request for: web@gmail.com
+2025-04-04 12:16:12 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:12 - Fix profile request for: web@gmail.com
+2025-04-04 12:16:12 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:12 - Fix profile request for: web@gmail.com
+2025-04-04 12:16:12 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:12 - Fix profile request for: web@gmail.com
+2025-04-04 12:16:12 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:16:12 - Fix profile request for: web@gmail.com
+2025-04-04 12:16:12 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-04 12:24:27 - Fix profile request for: web@gmail.com
+2025-04-04 12:24:27 - User found in database: web
+2025-04-04 12:24:27 - Fix profile request for: web@gmail.com
+2025-04-04 12:24:27 - User found in database: web
+2025-04-04 12:24:28 - Fix profile request for: web@gmail.com
+2025-04-04 12:24:28 - User found in database: web
+2025-04-04 12:24:28 - Fix profile request for: web@gmail.com
+2025-04-04 12:24:28 - User found in database: web
+2025-04-04 12:24:49 - Fix profile request for: web@gmail.com
+2025-04-04 12:24:49 - User found in database: webuser
+2025-04-04 12:24:49 - Fix profile request for: web@gmail.com
+2025-04-04 12:24:49 - User found in database: webuser
+2025-04-04 12:25:29 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:29 - User found in database: webuser
+2025-04-04 12:25:29 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:29 - User found in database: webuser
+2025-04-04 12:25:32 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:32 - User found in database: webuser
+2025-04-04 12:25:32 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:32 - User found in database: webuser
+2025-04-04 12:25:32 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:32 - User found in database: webuser
+2025-04-04 12:25:32 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:32 - User found in database: webuser
+2025-04-04 12:25:32 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:32 - User found in database: webuser
+2025-04-04 12:25:32 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:32 - User found in database: webuser
+2025-04-04 12:25:33 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:33 - User found in database: webuser
+2025-04-04 12:25:33 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:33 - User found in database: webuser
+2025-04-04 12:25:33 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:33 - User found in database: webuser
+2025-04-04 12:25:33 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:33 - User found in database: webuser
+2025-04-04 12:25:33 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:33 - User found in database: webuser
+2025-04-04 12:25:33 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:33 - User found in database: webuser
+2025-04-04 12:25:33 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:33 - User found in database: webuser
+2025-04-04 12:25:33 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:33 - User found in database: webuser
+2025-04-04 12:25:33 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:33 - User found in database: webuser
+2025-04-04 12:25:33 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:33 - User found in database: webuser
+2025-04-04 12:25:34 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:34 - User found in database: webuser
+2025-04-04 12:25:34 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:34 - User found in database: webuser
+2025-04-04 12:25:34 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:34 - User found in database: webuser
+2025-04-04 12:25:34 - Fix profile request for: web@gmail.com
+2025-04-04 12:25:34 - User found in database: webuser
+2025-04-04 12:30:37 - Fix profile request for: web@gmail.com
+2025-04-04 12:30:37 - User found in database: webuser
+2025-04-04 12:30:37 - Fix profile request for: web@gmail.com
+2025-04-04 12:30:37 - User found in database: webuser
+2025-04-04 12:30:37 - Fix profile request for: web@gmail.com
+2025-04-04 12:30:37 - User found in database: webuser
+2025-04-04 12:30:37 - Fix profile request for: web@gmail.com
+2025-04-04 12:30:37 - User found in database: webuser
+2025-04-04 12:30:37 - Fix profile request for: web@gmail.com
+2025-04-04 12:30:37 - User found in database: webuser
+2025-04-04 12:30:37 - Fix profile request for: web@gmail.com
+2025-04-04 12:30:37 - User found in database: webuser
+2025-04-04 12:30:37 - Fix profile request for: web@gmail.com
+2025-04-04 12:30:37 - User found in database: webuser
+2025-04-04 12:30:37 - Fix profile request for: web@gmail.com
+2025-04-04 12:30:37 - User found in database: webuser
+2025-04-04 12:30:38 - Fix profile request for: web@gmail.com
+2025-04-04 12:30:38 - User found in database: webuser
+2025-04-04 12:30:38 - Fix profile request for: web@gmail.com
+2025-04-04 12:30:38 - User found in database: webuser
+2025-04-04 15:52:59 - Fix profile request for: test@gmail.com
+2025-04-04 15:52:59 - User found in database: test
+2025-04-04 15:52:59 - Fix profile request for: test@gmail.com
+2025-04-04 15:52:59 - User found in database: test
+2025-04-04 15:53:54 - Fix profile request for: testuser@gmail.com
+2025-04-04 15:53:54 - User found in database: testuser
+2025-04-04 15:53:54 - Fix profile request for: testuser@gmail.com
+2025-04-04 15:53:54 - User found in database: testuser
+2025-04-04 15:53:56 - Fix profile request for: testuser@gmail.com
+2025-04-04 15:53:56 - User found in database: testuser
+2025-04-04 15:53:56 - Fix profile request for: testuser@gmail.com
+2025-04-04 15:53:56 - User found in database: testuser
+2025-04-05 05:15:10 - Fix profile request for: checker@gmail.com
+2025-04-05 05:15:10 - User found in database: checker
+2025-04-05 05:15:10 - Fix profile request for: checker@gmail.com
+2025-04-05 05:15:10 - User found in database: checker
+2025-04-05 05:15:40 - Fix profile request for: checker001@gmail.com
+2025-04-05 05:15:40 - User found in database: testcheck
+2025-04-05 05:15:40 - Fix profile request for: checker001@gmail.com
+2025-04-05 05:15:40 - User found in database: testcheck
+2025-04-09 18:04:41 - Fix profile request for: justmk009@gmail.com
+2025-04-09 18:04:41 - User found in database: user5
+2025-04-09 18:04:41 - Fix profile request for: justmk009@gmail.com
+2025-04-09 18:04:41 - User found in database: user5
+2025-04-09 18:05:32 - Fix profile request for: justmk009@gmail.com
+2025-04-09 18:05:32 - User found in database: Just Usr
+2025-04-09 18:05:32 - Fix profile request for: justmk009@gmail.com
+2025-04-09 18:05:32 - User found in database: Just Usr
+2025-04-09 18:05:34 - Fix profile request for: justmk009@gmail.com
+2025-04-09 18:05:34 - User found in database: Just Usr
+2025-04-09 18:05:34 - Fix profile request for: justmk009@gmail.com
+2025-04-09 18:05:34 - User found in database: Just Usr
+2025-04-11 07:44:33 - Fix profile request for: anshprajapati2532004@gmail.com
+2025-04-11 07:44:33 - User not found in database for email: anshprajapati2532004@gmail.com
+2025-04-11 07:44:33 - Fix profile request for: anshprajapati2532004@gmail.com
+2025-04-11 07:44:33 - User not found in database for email: anshprajapati2532004@gmail.com
+2025-04-15 10:50:35 - Fix profile request for: justmk009@gmail.com
+2025-04-15 10:50:35 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-15 10:50:35 - Fix profile request for: justmk009@gmail.com
+2025-04-15 10:50:35 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-16 08:16:22 - Fix profile request for: justmk009@gmail.com
+2025-04-16 08:16:22 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-16 08:16:22 - Fix profile request for: justmk009@gmail.com
+2025-04-16 08:16:22 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-16 08:16:44 - Fix profile request for: justmk009@gmail.com
+2025-04-16 08:16:44 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-16 08:16:44 - Fix profile request for: justmk009@gmail.com
+2025-04-16 08:16:44 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-16 08:16:48 - Fix profile request for: justmk009@gmail.com
+2025-04-16 08:16:48 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-16 08:16:48 - Fix profile request for: justmk009@gmail.com
+2025-04-16 08:16:48 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-16 08:20:05 - Fix profile request for: justmk009@gmail.com
+2025-04-16 08:20:05 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-16 08:20:05 - Fix profile request for: justmk009@gmail.com
+2025-04-16 08:20:05 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-20 15:23:06 - Fix profile request for: justmk009@gmail.com
+2025-04-20 15:23:06 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-20 15:23:06 - Fix profile request for: justmk009@gmail.com
+2025-04-20 15:23:06 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-20 15:24:41 - Fix profile request for: justmk009@gmail.com
+2025-04-20 15:24:41 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-20 15:24:41 - Fix profile request for: justmk009@gmail.com
+2025-04-20 15:24:41 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-24 12:03:52 - Fix profile request for: justmk009@gmail.com
+2025-04-24 12:03:52 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone
+2025-04-24 12:03:52 - Fix profile request for: justmk009@gmail.com
+2025-04-24 12:03:52 - Error in fix_profile: SQLSTATE[HY000]: General error: 1 no such column: phone

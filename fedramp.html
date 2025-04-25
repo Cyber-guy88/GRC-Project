@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FedRAMP Compliance - Federal Risk and Authorization Management Program</title>
+    <link rel="stylesheet" href="css/fedramp.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* FedRAMP Premium Enterprise Theme - Inline Version */
+        :root {
+            /* Brand Colors - Modern Navy & Teal Palette */
+            --primary: #0a2342;          /* Deep Navy - Primary Brand Color */
+            --primary-dark: #061938;
+            --primary-light: #1d3557;
+            --accent: #2a9d8f;           /* Teal - Secondary/Accent Color */
+            --accent-light: #83c5be;
+            --accent-bright: #56d1b9;
+            
+            /* Expanded Color Palette */
+            --tertiary: #3a506b;         /* Slate Blue - Tertiary Color */
+            --quaternary: #e84a5f;       /* Coral - Quaternary Color */
+            --quinary: #ffcb77;          /* Amber - Quinary Color */
+            
+            /* UI Colors */
+            --success: #06d6a0;          /* Modern Green */
+            --warning: #ffd166;          /* Modern Amber */
+            --danger: #ef476f;           /* Modern Red */
+            --info: #118ab2;             /* Modern Blue */
+            
+            /* Text Colors */
+            --text-primary: #1d3557;     /* Deep Blue for Main Text */
+            --text-secondary: #457b9d;   /* Medium Blue for Secondary Text */
+            --text-light: #6e7c8c;       /* Light Blue Gray for Subtle Text */
+            --text-white: #ffffff;
+            --text-dark: #0a2342;
+            
+            /* Background Colors */
+            --bg-primary: #f8f9fd;       /* Off-White with Blue Tint */
+            --bg-secondary: #eef2f7;
+            --bg-card: #ffffff;
+            --bg-dark: #1d3557;
+            --bg-darker: #0a2342;
+            --bg-light-accent: rgba(42, 157, 143, 0.08);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            --gradient-hero: linear-gradient(135deg, #0a2342 0%, #1d3557 85%, #2a9d8f 150%);
+            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            --gradient-card: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(231,241,251,0.5) 100%);
+            --gradient-hover: linear-gradient(135deg, rgba(42, 157, 143, 0.05) 0%, rgba(42, 157, 143, 0.1) 100%);
+            
+            /* Effects */
+            --shadow-sm: 0 2px 4px rgba(10, 35, 66, 0.08);
+            --shadow-md: 0 4px 16px rgba(10, 35, 66, 0.1);
+            --shadow-lg: 0 12px 24px -6px rgba(10, 35, 66, 0.12);
+            --shadow-xl: 0 24px 48px -12px rgba(10, 35, 66, 0.18);
+            --shadow-inner: inset 0 2px 4px rgba(10, 35, 66, 0.05);
+            --shadow-accent: 0 6px 20px -6px rgba(42, 157, 143, 0.25);
+            --shadow-primary: 0 6px 20px -6px rgba(10, 35, 66, 0.25);
+            
+            /* Typography */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            
+            /* Sizes and Spacing */
+            --container-max-width: 1280px;
+            --section-spacing: 6rem;
+            --header-height: 80px;
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1.25rem;
+            --radius-xl: 2rem;
+            --radius-full: 9999px;
+            
+            /* Animation */
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset & Base Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        h1 {
+            font-size: 3.75rem;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: 2rem;
+            letter-spacing: -0.015em;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        h5 {
+            font-size: 1.25rem;
+            letter-spacing: -0.005em;
+        }
+
+        h6 {
+            font-size: 1rem;
+            letter-spacing: 0;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.0625rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+
+        a:hover {
+            color: var(--accent-bright);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-hero);
+            color: var(--text-white);
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='white' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.2;
+            z-index: 1;
+            animation: patternMove 60s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 1000px; }
+        }
+
+        .hero-content {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-white);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge i {
+            margin-right: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e8ff 100%);
+            -webkit-background-clip: text;
+            background-clip : text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 31, 63, 0.3);
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Statistics */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: clamp(1.5rem, 4vw, 3rem);
+            margin-top: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            min-width: 180px;
+            max-width: 300px;
+            flex: 1;
+            transition: all var(--transition-normal);
+        }
+
+        .stat:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.18);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .stat-value {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+            display: block;
+            position: relative;
+        }
+
+        .stat-value::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 3px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 0.5rem;
+            display: block;
+            letter-spacing: 0.02em;
+        }
+
+        /* Navigation */
+        .page-nav {
+            background-color: var(--bg-card);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            transform: translateY(0);
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+        }
+
+        .page-nav.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+            position: relative;
+        }
+
+        .nav-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        .nav-item {
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            padding: 1.5rem 1.2rem;
+            white-space: nowrap;
+            position: relative;
+            transition: color var(--transition-normal);
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .nav-item:hover {
+            color: var(--primary);
+        }
+
+        .nav-item.active {
+            color: var(--accent);
+        }
+
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 60%;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 3px 3px 0 0;
+        }
+
+        /* Section styles */
+        .section {
+            margin-bottom: var(--section-spacing);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            animation: fadeUp 0.8s forwards;
+            animation-delay: calc(var(--animation-order, 0) * 0.1s);
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Purpose Cards */
+        .purpose-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .purpose-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .purpose-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(42, 157, 143, 0.1);
+        }
+
+        .purpose-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-normal);
+        }
+
+        .purpose-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .purpose-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--bg-light-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-size: 1.75rem;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+        }
+
+        .purpose-card:hover .purpose-icon {
+            background: var(--accent);
+            color: white;
+            box-shadow: var(--shadow-accent);
+            transform: scale(1.05);
+        }
+
+        .purpose-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            transition: color var(--transition-normal);
+        }
+
+        .purpose-card:hover h3 {
+            color: var(--accent);
+        }
+        
+        /* Main content styles */
+        .main-content {
+            padding: var(--section-spacing) 0;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+        }
+        
+        /* Fix for missing shield-alt icon */
+        .fa-shield-alt::before {
+            content: "\f3ed";
+        }
+        
+        /* Fix for missing sync-alt icon */
+        .fa-sync-alt::before {
+            content: "\f2f1";
+        }
+
+        /* Content Card */
+        .content-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(42, 157, 143, 0.1);
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-card);
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .content-card:hover::before {
+            opacity: 1;
+        }
+
+        .content-card > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Stakeholders Grid */
+        .stakeholders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .stakeholder-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stakeholder-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(42, 157, 143, 0.1);
+        }
+
+        .stakeholder-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent);
+            transition: height var(--transition-slow);
+        }
+
+        .stakeholder-card:hover::after {
+            height: 100%;
+        }
+
+        .stakeholder-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stakeholder-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--bg-light-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stakeholder-card:hover .stakeholder-icon {
+            background: var(--accent);
+            color: white;
+            box-shadow: var(--shadow-accent);
+            transform: scale(1.05);
+        }
+
+        .stakeholder-card h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin-bottom: 0;
+            color: var(--text-dark);
+            transition: color var(--transition-normal);
+        }
+
+        .stakeholder-card:hover h3 {
+            color: var(--accent);
+        }
+        
+        /* Impact Levels */
+        .impact-levels {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .impact-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(42, 157, 143, 0.1);
+        }
+
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform var(--transition-normal);
+        }
+
+        .impact-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .impact-badge {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+        }
+
+        .impact-card:hover .impact-badge {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .impact-low {
+            background: linear-gradient(135deg, var(--success) 0%, #09b285 100%);
+        }
+
+        .impact-moderate {
+            background: linear-gradient(135deg, var(--warning) 0%, #ff9a00 100%);
+        }
+
+        .impact-high {
+            background: linear-gradient(135deg, var(--danger) 0%, #d10045 100%);
+        }
+
+        .suitable-for {
+            background: var(--bg-light-accent);
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            margin-top: 1.5rem;
+        }
+
+        .suitable-for h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .suitable-for ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .suitable-for li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .suitable-for li:last-child {
+            margin-bottom: 0;
+        }
+
+        .suitable-for li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* Process Timeline */
+        .process-timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 3rem;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 24px;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -3rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+            z-index: 1;
+            box-shadow: var(--shadow-primary);
+            transition: all var(--transition-normal);
+        }
+
+        .timeline-item:hover .timeline-marker {
+            background: var(--gradient-accent);
+            transform: scale(1.1);
+            box-shadow: var(--shadow-accent);
+        }
+
+        .timeline-content {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin-left: 1rem;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(42, 157, 143, 0.1);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .path-features {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .path-features li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .path-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        /* Fix visibility of sections */
+        .section {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <div class="badge">
+                <i class="fas fa-shield-alt"></i>
+                Security Standard
+            </div>
+            <h1 class="hero-title">FedRAMP Compliance</h1>
+            <p class="hero-subtitle">Federal Risk and Authorization Management Program</p>
+            
+            <div class="stats-container">
+                <div class="stat">
+                    <span class="stat-value">325+</span>
+                    <span class="stat-label">Security Controls</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">3</span>
+                    <span class="stat-label">Impact Levels</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">200+</span>
+                    <span class="stat-label">Authorized Services</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="page-nav">
+        <div class="nav-container">
+            <a href="#overview" class="nav-item active">Overview</a>
+            <a href="#stakeholders" class="nav-item">Stakeholders</a>
+            <a href="#impact-levels" class="nav-item">Impact Levels</a>
+            <a href="#authorization" class="nav-item">Authorization</a>
+            <a href="#process" class="nav-item">Process</a>
+            <a href="#monitoring" class="nav-item">Monitoring</a>
+            <a href="#documents" class="nav-item">Documents</a>
+            <a href="#benefits" class="nav-item">Benefits</a>
+            <a href="#challenges" class="nav-item">Challenges</a>
+            <a href="#updates" class="nav-item">Updates</a>
+            <a href="#integration" class="nav-item">Integration</a>
+            <a href="#marketplace" class="nav-item">Marketplace</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section id="overview" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h2>What is FedRAMP?</h2>
+            </div>
+            <div class="content-card">
+                <p>The Federal Risk and Authorization Management Program (FedRAMP) is a U.S. government-wide initiative designed to standardize security assessment, authorization, and continuous monitoring for cloud services.</p>
+                
+                <div class="purpose-container">
+                    <div class="purpose-card">
+                        <div class="purpose-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Efficiency & Consistency</h3>
+                        <p>Eliminates redundant security assessments by providing a "do once, use many times" framework.</p>
+                    </div>
+                    
+                    <div class="purpose-card">
+                        <div class="purpose-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security Assurance</h3>
+                        <p>Ensures cloud services meet federal security requirements based on NIST SP 800-53 controls.</p>
+                    </div>
+                    
+                    <div class="purpose-card">
+                        <div class="purpose-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Adoption</h3>
+                        <p>Accelerates federal agency use of modern cloud technologies while maintaining robust cybersecurity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stakeholders" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h2>Key Stakeholders</h2>
+            </div>
+            <div class="stakeholders-grid">
+                <div class="stakeholder-card">
+                    <div class="stakeholder-header">
+                        <div class="stakeholder-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3>Federal Agencies</h3>
+                    </div>
+                    <p>Must use FedRAMP-authorized services for cloud adoption.</p>
+                </div>
+                
+                <div class="stakeholder-card">
+                    <div class="stakeholder-header">
+                        <div class="stakeholder-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Cloud Service Providers (CSPs)</h3>
+                    </div>
+                    <p>Seek authorization to serve federal clients.</p>
+                </div>
+                
+                <div class="stakeholder-card">
+                    <div class="stakeholder-header">
+                        <div class="stakeholder-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>Third-Party Assessment Organizations (3PAOs)</h3>
+                    </div>
+                    <p>Independently validate CSP compliance.</p>
+                </div>
+                
+                <div class="stakeholder-card">
+                    <div class="stakeholder-header">
+                        <div class="stakeholder-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Joint Authorization Board (JAB)</h3>
+                    </div>
+                    <p>Comprises CIOs from DOD, DHS, and GSA; grants provisional authorizations (P-ATOs) for high-impact systems.</p>
+                </div>
+                
+                <div class="stakeholder-card">
+                    <div class="stakeholder-header">
+                        <div class="stakeholder-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>FedRAMP Program Management Office (PMO)</h3>
+                    </div>
+                    <p>Oversees program execution and maintains the FedRAMP Marketplace.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact-levels" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h2>Security Impact Levels</h2>
+            </div>
+            <div class="impact-levels">
+                <div class="impact-card">
+                    <div class="impact-badge impact-low">
+                        L
+                    </div>
+                    <h3>Low Impact</h3>
+                    <p class="impact-description">Data breaches would have limited adverse effects.</p>
+                    <div class="suitable-for">
+                        <h4>Suitable for:</h4>
+                        <ul>
+                            <li>Public-facing websites</li>
+                            <li>Collaboration tools</li>
+                            <li>Non-sensitive applications</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-badge impact-moderate">
+                        M
+                    </div>
+                    <h3>Moderate Impact</h3>
+                    <p class="impact-description">Serious adverse effects (e.g., privacy breaches).</p>
+                    <div class="suitable-for">
+                        <h4>Suitable for:</h4>
+                        <ul>
+                            <li>Healthcare data (non-PHI)</li>
+                            <li>Financial information</li>
+                            <li>Most federal systems</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-badge impact-high">
+                        H
+                    </div>
+                    <h3>High Impact</h3>
+                    <p class="impact-description">Severe/catastrophic effects (e.g., national security risks).</p>
+                    <div class="suitable-for">
+                        <h4>Suitable for:</h4>
+                        <ul>
+                            <li>Law enforcement data</li>
+                            <li>National security systems</li>
+                            <li>Critical infrastructure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="authorization" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Authorization Paths</h2>
+            </div>
+            <div class="content-card">
+                <div class="authorization-paths">
+                    <div class="path-card">
+                        <div class="path-header">
+                            <div class="path-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3>Agency Authorization</h3>
+                        </div>
+                        <p class="path-description">A single federal agency sponsors and grants an Authority to Operate (ATO).</p>
+                    </div>
+                    
+                    <div class="path-card">
+                        <div class="path-header">
+                            <div class="path-icon">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <h3>JAB Authorization</h3>
+                        </div>
+                        <p class="path-description">The JAB grants a provisional ATO (P-ATO), allowing any agency to leverage the authorization.</p>
+                    </div>
+                    
+                    <div class="path-card">
+                        <div class="path-header">
+                            <div class="path-icon">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <h3>FedRAMP Tailored</h3>
+                        </div>
+                        <p class="path-description">For low-risk SaaS systems (e.g., collaboration tools), streamlining requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h2>Authorization Process</h2>
+            </div>
+            <div class="content-card">
+                <div class="process-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3>Preparation</h3>
+                            <p>CSP selects impact level and authorization path.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3>Documentation</h3>
+                            <p>Develops a System Security Plan (SSP) and conducts a readiness assessment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3>Security Assessment</h3>
+                            <ul class="path-features">
+                                <li>3PAO evaluates controls and produces a Security Assessment Report (SAR).</li>
+                                <li>Penetration testing and vulnerability scans are performed.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3>Remediation</h3>
+                            <p>Address gaps via a Plan of Action & Milestones (POA&M).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">5</div>
+                        <div class="timeline-content">
+                            <h3>Review & Authorization</h3>
+                            <ul class="path-features">
+                                <li>Agency or JAB reviews the package and grants ATO/P-ATO.</li>
+                                <li>FedRAMP PMO lists the service in the FedRAMP Marketplace.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="monitoring" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <h2>Continuous Monitoring</h2>
+            </div>
+            <div class="content-card">
+                <h3 class="section-subtitle">Ongoing Compliance: CSPs must:</h3>
+                <div class="monitoring-container">
+                    <div class="monitoring-card">
+                        <div class="monitoring-header">
+                            <div class="monitoring-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Real-time Monitoring</h3>
+                        </div>
+                        <p>Implement continuous monitoring for all security controls and maintain vigilance against emerging threats.</p>
+                    </div>
+                    
+                    <div class="monitoring-card">
+                        <div class="monitoring-header">
+                            <div class="monitoring-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>Regular Reporting</h3>
+                        </div>
+                        <p>Submit monthly vulnerability scans and perform annual security assessments to validate continued compliance.</p>
+                    </div>
+                    
+                    <div class="monitoring-card">
+                        <div class="monitoring-header">
+                            <div class="monitoring-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3>Incident Response</h3>
+                        </div>
+                        <p>Update POA&Ms and report security incidents within 1 hour of detection to ensure rapid response and remediation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="documents" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h2>Key Documents</h2>
+            </div>
+            <div class="documents-grid">
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>System Security Plan (SSP)</h3>
+                    <p>Details security controls implementation and system architecture.</p>
+                </div>
+                
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Security Assessment Report (SAR)</h3>
+                    <p>Contains 3PAO's evaluation results and security findings.</p>
+                </div>
+                
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h3>POA&M</h3>
+                    <p>Tracks remediation of vulnerabilities and implementation timelines.</p>
+                </div>
+                
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Continuous Monitoring Report</h3>
+                    <p>Provides annual compliance updates and ongoing security posture.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h2>Benefits of FedRAMP</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>For Agencies</h3>
+                    <p>Streamlined procurement, reduced costs, and assured security compliance across federal cloud services.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>For CSPs</h3>
+                    <p>Access to the federal market ($7B+ in cloud spending) and competitive advantage in the government sector.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <h2>Challenges</h2>
+            </div>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Cost & Time</h3>
+                    <p>Authorization can take 6–12 months and cost $500K–$5M+ depending on system complexity.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Complexity</h3>
+                    <p>Extensive documentation and ongoing compliance efforts requiring specialized expertise.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-people-carry"></i>
+                    </div>
+                    <h3>Resource Intensity</h3>
+                    <p>Requires dedicated staff and collaborative engagement with 3PAOs throughout the process.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="updates" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h2>Recent Updates</h2>
+            </div>
+            <div class="updates-container">
+                <div class="update-card">
+                    <div class="update-header">
+                        <h3>FedRAMP Accelerated</h3>
+                        <span class="update-date">2022</span>
+                    </div>
+                    <p>Aims to halve authorization timelines via automation and reusable components for faster deployment.</p>
+                </div>
+                
+                <div class="update-card">
+                    <div class="update-header">
+                        <h3>Open Source Tools</h3>
+                        <span class="update-date">2023</span>
+                    </div>
+                    <p>FedRAMP offers templates and a Control Tailoring Workbook to simplify compliance and standardize documentation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="integration" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-link"></i>
+                </div>
+                <h2>Integration with Other Frameworks</h2>
+            </div>
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>FISMA</h3>
+                    <p class="integration-description">FedRAMP fulfills FISMA requirements for cloud systems, creating a standardized approach to security assessment.</p>
+                    <ul class="comparison-points">
+                        <li>Satisfies FISMA compliance requirements</li>
+                        <li>Streamlines documentation process</li>
+                        <li>Provides reusable security packages</li>
+                    </ul>
+                </div>
+                
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>NIST CSF</h3>
+                    <p class="integration-description">Aligns with cybersecurity best practices established in the NIST Cybersecurity Framework.</p>
+                    <ul class="comparison-points">
+                        <li>Maps to all five CSF functions</li>
+                        <li>Emphasizes risk management approach</li>
+                        <li>Supports continuous improvement</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="marketplace" class="section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-store"></i>
+                </div>
+                <h2>Marketplace</h2>
+            </div>
+            <div class="marketplace-container">
+                <div class="status-card">
+                    <div class="status-icon status-inprocess">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <h3>In Process</h3>
+                    <p class="status-description">CSPs actively working toward authorization with agency sponsorship.</p>
+                    <div class="provider-count">50+</div>
+                    <div class="provider-label">Cloud Service Providers</div>
+                </div>
+                
+                <div class="status-card">
+                    <div class="status-icon status-ready">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>FedRAMP Ready</h3>
+                    <p class="status-description">Successfully completed readiness assessment by a 3PAO.</p>
+                    <div class="provider-count">30+</div>
+                    <div class="provider-label">Cloud Service Providers</div>
+                </div>
+                
+                <div class="status-card">
+                    <div class="status-icon status-pending">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Authorized</h3>
+                    <p class="status-description">Fully authorized services available for agency use.</p>
+                    <div class="provider-count">200+</div>
+                    <div class="provider-label">Cloud Service Providers</div>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <p>FedRAMP is critical for securing federal cloud adoption, balancing rigorous security with operational efficiency. CSPs targeting government contracts must navigate its requirements carefully, leveraging 3PAOs and FedRAMP resources to succeed.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-nav">
+                <a href="#overview" class="footer-link">Overview</a>
+                <a href="#stakeholders" class="footer-link">Stakeholders</a>
+                <a href="#impact-levels" class="footer-link">Impact Levels</a>
+                <a href="#marketplace" class="footer-link">Marketplace</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2023 FedRAMP Information Resource
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation highlighting
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.section');
+
+        // Add animation order to sections
+        sections.forEach((section, index) => {
+            section.style.setProperty('--animation-order', index + 1);
+        });
+
+        // Intersection Observer for sections
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Activate the corresponding nav item
+                    const id = entry.target.getAttribute('id');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                        if (item.getAttribute('href').slice(1) === id) {
+                    item.classList.add('active');
+                }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Page nav scrolling effect
+        let lastScrollTop = 0;
+        const pageNav = document.querySelector('.page-nav');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Add shadow on scroll
+            if (scrollTop > 10) {
+                pageNav.classList.add('scrolled');
+            } else {
+                pageNav.classList.remove('scrolled');
+            }
+            
+            // Hide on scroll down, show on scroll up
+            if (scrollTop > lastScrollTop && scrollTop > 200) {
+                pageNav.classList.add('hidden');
+            } else {
+                pageNav.classList.remove('hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+        
+        // Smooth scrolling for nav items
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = item.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                navItems.forEach(nav => nav.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        // Add hover effects to all cards
+        const allCards = document.querySelectorAll('.purpose-card, .stakeholder-card, .impact-card, .path-card, .monitoring-card, .document-card, .benefit-card, .challenge-card, .update-card, .integration-card, .status-card');
+        
+        allCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px)';
+                card.style.boxShadow = 'var(--shadow-lg)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.boxShadow = '';
+            });
+        });
+    </script>
+</body>
+</html>
+
+

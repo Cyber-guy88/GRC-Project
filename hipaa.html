@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIPAA Compliance Checklist</title>
+    <link rel="stylesheet" href="css/hipaa.css">
+    <link rel="stylesheet" href="css/hipaa-loading.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="nav-wrapper">
+        <div class="nav-buttons">
+            <a href="home.html" class="nav-btn home-btn">Home</a>
+            <a href="javascript:history.go(-1)" class="nav-btn back-btn">Back</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>HIPAA Compliance Checklist</h1>
+            <p class="subtitle">Evaluate your organization's HIPAA compliance status</p>
+        </header>
+
+        <div class="checklist-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Implementation Specification</th>
+                        <th>Standard Type</th>
+                        <th>Question</th>
+                        <th>Response</th>
+                    </tr>
+                </thead>
+                <tbody id="checklistBody">
+                    <!-- Risk Analysis Section -->
+                    <tr class="section-header">
+                        <td colspan="4">Risk Analysis</td>
+                    </tr>
+                    <tr>
+                        <td>Risk Analysis</td>
+                        <td>Required</td>
+                        <td>Has the organization ever conducted a security analysis of its network using a network scanning program?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 1, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 1, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Risk Management</td>
+                        <td>Required</td>
+                        <td>Has the organization evaluated its computer system(s) to verify that appropriate security measures are in place?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 2, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 2, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Risk Management</td>
+                        <td></td>
+                        <td>If either answer above is "No", has the organization identified and selected security features to implement?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 3, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 3, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Risk Management</td>
+                        <td></td>
+                        <td>Does the organization have any custom programming on the system that was not created by the original vendor?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 4, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 4, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Risk Management</td>
+                        <td>Best Practice</td>
+                        <td>Does the organization have sanction policies to deal with workforce members who do not comply with security policies and procedures?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 5, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 5, 'No')">No</button>
+                        </td>
+                    </tr>
+
+                    <!-- Information Systems Activity Review Section -->
+                    <tr class="section-header">
+                        <td colspan="4">Information Systems Activity Review</td>
+                    </tr>
+                    <tr>
+                        <td>Information Systems Activity Review</td>
+                        <td>Best Practice</td>
+                        <td>Does the organization have a written security policy describing the organization's plans, procedures, and sanctions with respect to all security components of its ePHI-related computer systems?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 6, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 6, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Information Systems Activity Review</td>
+                        <td></td>
+                        <td>Has the organization tested its computer system to determine that the appropriate security features are working correctly and are adequate for the organization's computer system?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 7, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 7, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Information Systems Activity Review</td>
+                        <td></td>
+                        <td>Does the organization guard data integrity using access controls (who is permitted to log in), audit control (managers can see who logged in), authorization control (robust passwords periodically changed), and data authentication (passwords not shared or written down)?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 8, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 8, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Information Systems Activity Review</td>
+                        <td></td>
+                        <td>Is there a regular audit of the organization's computer system records?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 9, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 9, 'No')">No</button>
+                        </td>
+                    </tr>
+
+                    <!-- Workforce Security Section -->
+                    <tr class="section-header">
+                        <td colspan="4">Workforce Security</td>
+                    </tr>
+                    <tr>
+                        <td>Workforce Training</td>
+                        <td>Addressable</td>
+                        <td>Is security training provided to all members of the practice workforce?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 10, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 10, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Workforce Supervision</td>
+                        <td>Addressable</td>
+                        <td>Is an individual or a team responsible for problems and issues with hardware and software, access to and maintenance of servers, software training, and technical problems with the organization's workstations?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 11, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 11, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Workforce Supervision</td>
+                        <td></td>
+                        <td>Is an individual assigned responsibility to supervise control of access to PHI?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 12, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 12, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Workforce Supervision</td>
+                        <td></td>
+                        <td>Are temporary passwords assigned to contract and/or temporary workers who have access to PHI?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 13, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 13, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Appropriate Workforce Clearance</td>
+                        <td>Addressable</td>
+                        <td>Are security levels assigned to workers based on job responsibilities to ensure only necessary access?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 14, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 14, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Termination Procedures</td>
+                        <td>Addressable</td>
+                        <td>Are there clear policies and procedures in place to effectively and promptly terminate access to workforce members who leave the organization? For example, are passwords terminated, keys and keycards returned immediately upon termination of employment?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 15, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 15, 'No')">No</button>
+                        </td>
+                    </tr>
+
+                    <!-- Information Access Management Section -->
+                    <tr class="section-header">
+                        <td colspan="4">Information Access Management</td>
+                    </tr>
+                    <tr>
+                        <td>Access Authorization</td>
+                        <td>Addressable</td>
+                        <td>Does the organization have a written procedure on how employees and other authorized users access the systems?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 16, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 16, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Authorization</td>
+                        <td></td>
+                        <td>Are any of the following techniques used to confirm identity and authorize access?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 17, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 17, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Authorization</td>
+                        <td></td>
+                        <td>Passwords?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 18, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 18, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Authorization</td>
+                        <td></td>
+                        <td>Biometrics?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 19, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 19, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Authorization</td>
+                        <td></td>
+                        <td>PINs?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 20, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 20, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Authorization</td>
+                        <td></td>
+                        <td>Telephone callback for remote access?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 21, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 21, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Establishment or Modification</td>
+                        <td>Addressable</td>
+                        <td>Does the organization limit the individuals authorized to access, test and change these access controls?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 22, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 22, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Establishment or Modification</td>
+                        <td></td>
+                        <td>Does the organization have a designated employee or vendor who installs new or upgraded software to the systems and/or workstations?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 23, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 23, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Establishment or Modification</td>
+                        <td></td>
+                        <td>Is the work network used for file sharing internally with the facility?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 24, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 24, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Establishment or Modification</td>
+                        <td></td>
+                        <td>Is the work network used for file sharing externally with other healthcare entities?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 25, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 25, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Establishment or Modification</td>
+                        <td></td>
+                        <td>Are access logins and passwords issued to outside contractors?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 26, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 26, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Establishment or Modification</td>
+                        <td></td>
+                        <td>Does the organization allow remote access to the system by employees from non-work locations using Citrix, PC Anywhere or direct access?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 27, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 27, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Establishment or Modification</td>
+                        <td></td>
+                        <td>If the answer to any of the previous four questions is Yes, does your organization have written procedures establishing rules for accessing the protected electronic information?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 28, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 28, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Establishment or Modification</td>
+                        <td></td>
+                        <td>Does the organization have a process to increase or decrease the level of access of each authorized individual to protected electronic information?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 29, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 29, 'No')">No</button>
+                        </td>
+                    </tr>
+
+                    <!-- Security Awareness and Training Section -->
+                    <tr class="section-header">
+                        <td colspan="4">Security Awareness and Training</td>
+                    </tr>
+                    <tr>
+                        <td>Security Reminders</td>
+                        <td>Addressable</td>
+                        <td>Does your organization supply the workforce with periodic updates and information reminders on security issues?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 30, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 30, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Protection from Malicious Software</td>
+                        <td>Addressable</td>
+                        <td>Does the organization have software installed on the system to detect and eliminate malware?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 31, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 31, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Protection from Malicious Software</td>
+                        <td></td>
+                        <td>If Yes, are their written procedures on the use of anti-malware programs?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 32, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 32, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Protection from Malicious Software</td>
+                        <td></td>
+                        <td>Is anti-malware software updated on a regular, periodic basis?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 33, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 33, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Protection from Malicious Software</td>
+                        <td></td>
+                        <td>Are written policies on management of information and software downloads to the system?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 34, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 34, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Protection from Malicious Software</td>
+                        <td></td>
+                        <td>Are there written procedures on the downloading of information from other media such as DVDs, or CDs?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 35, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 35, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Log In Monitoring and Password Management</td>
+                        <td>Addressable</td>
+                        <td>Is the Internet accessible from the organization's system computers?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 36, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 36, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Log In Monitoring and Password Management</td>
+                        <td></td>
+                        <td>If Yes, are their Internet firewalls installed in these devices?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 37, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 37, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Log In Monitoring and Password Management</td>
+                        <td></td>
+                        <td>Does the organization's systems have tracking methods to determine which employees have accessed the software?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 38, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 38, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Log In Monitoring and Password Management</td>
+                        <td></td>
+                        <td>Does the organization monitor who is accessing the system remotely?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 39, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 39, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Log In Monitoring and Password Management</td>
+                        <td></td>
+                        <td>Does the system provide generation of written access logs?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 40, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 40, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Log In Monitoring and Password Management</td>
+                        <td></td>
+                        <td>Are passwords required to access the network?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 41, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 41, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Log In Monitoring and Password Management</td>
+                        <td></td>
+                        <td>Are passwords required to access electronic personal health information (EPHI)?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 42, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 42, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Log In Monitoring and Password Management</td>
+                        <td></td>
+                        <td>Are there emergency procedures to access EPHI?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 43, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 43, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Log In Monitoring and Password Management</td>
+                        <td></td>
+                        <td>Are there any situations where login names and passwords are shared among employees? (Temp. workers, contractors, etc.)</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 44, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 44, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Log In Monitoring and Password Management</td>
+                        <td></td>
+                        <td>Is there a mechanism to password protect documents transmitted to other entities?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 45, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 45, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Log In Monitoring and Password Management</td>
+                        <td></td>
+                        <td>Is the organization capable of disabling passwords and other security features in the event a laptop or device is stolen or lost?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 46, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 46, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Log In Monitoring and Password Management</td>
+                        <td></td>
+                        <td>Are there procedures and enforcement measures in place to regularly change passwords?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 47, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 47, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Log In Monitoring and Password Management</td>
+                        <td></td>
+                        <td>Are network user logs regularly checked against authorized user lists?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 48, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 48, 'No')">No</button>
+                        </td>
+                    </tr>
+
+                    <!-- Security Incident Procedures Section -->
+                    <tr class="section-header">
+                        <td colspan="4">Security Incident Procedures</td>
+                    </tr>
+                    <tr>
+                        <td>Response and Reporting</td>
+                        <td>Required</td>
+                        <td>Does the organization document security incidents?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 49, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 49, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Response and Reporting</td>
+                        <td></td>
+                        <td>Do such incidents result in planning for prevention of future incidents?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 50, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 50, 'No')">No</button>
+                        </td>
+                    </tr>
+
+                    <!-- Contingency Planning Section -->
+                    <tr class="section-header">
+                        <td colspan="4">Contingency Planning</td>
+                    </tr>
+                    <tr>
+                        <td>Data Backup Plan</td>
+                        <td>Required</td>
+                        <td>Are there written policies and procedures on backing up data on the network?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 51, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 51, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Data Backup Plan</td>
+                        <td></td>
+                        <td>Are all servers routinely backed up?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 52, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 52, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Data Backup Plan</td>
+                        <td></td>
+                        <td>Is there a designated employee or vendor who conducts the backup?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 53, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 53, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Data Backup Plan</td>
+                        <td></td>
+                        <td>Does the organization keep a log of backups?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 54, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 54, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Data Backup Plan</td>
+                        <td></td>
+                        <td>Are backup copies stored offsite?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 55, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 55, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Disaster Recovery Plan</td>
+                        <td>Required</td>
+                        <td>Is there a designated employee or vendor who conducts the recovery re-install?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 56, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 56, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Emergency Mode Operation</td>
+                        <td>Required</td>
+                        <td>Does the organization maintain a written disaster recovery plan to respond to computer system emergencies or failures?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 57, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 57, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Testing and Revision of Contingency Plans</td>
+                        <td>Addressable</td>
+                        <td>Does the organization and/or the vendor routinely review and test the entire contingency plan to ensure accurate data preservation?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 58, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 58, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Applications and Data Criticality Analysis</td>
+                        <td>Addressable</td>
+                        <td>Do the servers have an emergency power supply?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 59, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 59, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Applications and Data Criticality Analysis</td>
+                        <td></td>
+                        <td>Does the organization have a plan to provide access to ePHI while in emergency mode?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 60, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 60, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Applications and Data Criticality Analysis</td>
+                        <td></td>
+                        <td>Has the organizations performed an analysis to determine which systems are considered critical to running the organization?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 61, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 61, 'No')">No</button>
+                        </td>
+                    </tr>
+
+                    <!-- Evaluation Section -->
+                    <tr class="section-header">
+                        <td colspan="4">Evaluation</td>
+                    </tr>
+                    <tr>
+                        <td>Periodic technical and non-technical evaluations of security</td>
+                        <td>Required</td>
+                        <td>Does the organization perform regular audits of security?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 62, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 62, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Periodic technical and non-technical evaluations of security</td>
+                        <td></td>
+                        <td>Are all security policies and procedures periodically reviewed?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 63, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 63, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Periodic technical and non-technical evaluations of security</td>
+                        <td></td>
+                        <td>Is this Security Checklist periodically reviewed and updated?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 64, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 64, 'No')">No</button>
+                        </td>
+                    </tr>
+
+                    <!-- Business Associate Agreements Section -->
+                    <tr class="section-header">
+                        <td colspan="4">Business Associate Agreements</td>
+                    </tr>
+                    <tr>
+                        <td>Written Contracts</td>
+                        <td>Required</td>
+                        <td>Does the organization have up-to-date BAAs in place with any entity that has access to electronic ePHI?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 65, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 65, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Written Contracts</td>
+                        <td></td>
+                        <td>Has the organization confirmed with computer hardware vendors that upgrades and replacements do not harm the security of protected data?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 66, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 66, 'No')">No</button>
+                        </td>
+                    </tr>
+
+                    <!-- Facility Access Controls Section -->
+                    <tr class="section-header">
+                        <td colspan="4">Facility Access Controls</td>
+                    </tr>
+                    <tr>
+                        <td>Contingency Operations</td>
+                        <td>Addressable</td>
+                        <td>Is there a written contingency plan in place to respond to absence of computer capability due to theft or natural disaster?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 67, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 67, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Contingency Operations</td>
+                        <td></td>
+                        <td>Is the organization's main computer server on site?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 68, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 68, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Contingency Operations</td>
+                        <td></td>
+                        <td>If the organization has remote locations, are there remote servers at these locations?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 69, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 69, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Facility Security Plan</td>
+                        <td>Addressable</td>
+                        <td>Is the organization housed in a facility shared with other occupants?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 70, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 70, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Facility Security Plan</td>
+                        <td></td>
+                        <td>Does the organization (or the landlord) have a plan for protection of unauthorized physical access?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 71, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 71, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Control and Validation</td>
+                        <td>Addressable</td>
+                        <td>Is there a Security Guard onsite?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 72, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 72, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Access Control and Validation</td>
+                        <td></td>
+                        <td>Are there visitor sign-in procedures in effect for shared space?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 73, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 73, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Maintenance Records</td>
+                        <td>Addressable</td>
+                        <td>Does the organization keep a log of physical repairs in the facility that may affect physical access (key replacements, lock repairs, alarm repairs, etc.)</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 74, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 74, 'No')">No</button>
+                        </td>
+                    </tr>
+
+                    <!-- Workstation Use and Security Section -->
+                    <tr class="section-header">
+                        <td colspan="4">Workstation Use and Security</td>
+                    </tr>
+                    <tr>
+                        <td>Use and Security</td>
+                        <td>Required</td>
+                        <td>Does the workforce share computer workstations among themselves or with temporary employees?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 75, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 75, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Use and Security</td>
+                        <td></td>
+                        <td>Do workforce members remove software from the facility (flash drives, portable devices, etc.)?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 76, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 76, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Use and Security</td>
+                        <td></td>
+                        <td>Are portable devices (laptops, tablets, handhelds) available for shared use?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 77, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 77, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Use and Security</td>
+                        <td></td>
+                        <td>Are workstations locked and secure when not in use?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 78, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 78, 'No')">No</button>
+                        </td>
+                    </tr>
+
+                    <!-- Device and Media Controls Section -->
+                    <tr class="section-header">
+                        <td colspan="4">Device and Media Controls</td>
+                    </tr>
+                    <tr>
+                        <td>Disposal</td>
+                        <td>Required</td>
+                        <td>Does the organization have written policies and procedures for destruction of ePHI?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 79, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 79, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Disposal</td>
+                        <td></td>
+                        <td>Is there a formal system of tracking and logging receipt, transmission, storage and destruction of ePHI data no longer needed?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 80, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 80, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Disposal</td>
+                        <td></td>
+                        <td>Does the organization have processes to ensure that ePHI is not destroyed by unauthorized individuals?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 81, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 81, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Media Re-use</td>
+                        <td>Required</td>
+                        <td>Are there written policies and procedures for bringing in new and/or used hardware or software?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 82, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 82, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Media Re-use</td>
+                        <td></td>
+                        <td>Are there written policies and procedures for connecting new hardware or installing new software to network computers?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 83, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 83, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Media Re-use</td>
+                        <td></td>
+                        <td>Does the organization re-use disks, tapes, CDs, hard drives, etc.?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 84, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 84, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Accountability</td>
+                        <td>Addressable</td>
+                        <td>Does the organization maintain logs of maintenance operations on system hardware or software?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 85, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 85, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Accountability</td>
+                        <td></td>
+                        <td>Does the organization maintain a written inventory of its workstations?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 86, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 86, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Accountability</td>
+                        <td></td>
+                        <td>Are employees allowed to bring computer devices from home to connect to the network?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 87, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 87, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Accountability</td>
+                        <td></td>
+                        <td>Are employees allowed to dial in remotely from personal computers to connect to the network?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 88, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 88, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Accountability</td>
+                        <td></td>
+                        <td>Are there written policies and procedures governing employees using personal equipment or access from home?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 89, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 89, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Data Backup and Storage</td>
+                        <td>Addressable</td>
+                        <td>Are routine backups performed on the data retained on workstations, laptops, etc.?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 90, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 90, 'No')">No</button>
+                        </td>
+                    </tr>
+
+                    <!-- Access Controls Section -->
+                    <tr class="section-header">
+                        <td colspan="4">Access Controls</td>
+                    </tr>
+                    <tr>
+                        <td>Unique User ID</td>
+                        <td>Required</td>
+                        <td>Does each workforce member have a unique user identifier?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 91, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 91, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Unique User ID</td>
+                        <td></td>
+                        <td>Does the organization have written policies and procedures to minimize the amount of access each user has based on HIPAA guidelines?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 92, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 92, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Emergency Access Procedure</td>
+                        <td>Required</td>
+                        <td>Is the organization able to access ePHI in an emergency using a master login and password?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 93, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 93, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Automatic Logoff Procedure</td>
+                        <td>Addressable</td>
+                        <td>Does the organization's computer system have an automated process to logoff a user after a specified time of inactivity?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 94, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 94, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Automatic Logoff Procedure</td>
+                        <td></td>
+                        <td>Are workstations equipped with password protected screensavers or other information shielding technology?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 95, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 95, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Encryption & Decryption Technology</td>
+                        <td>Addressable</td>
+                        <td>Does the organization transmit ePHI over a communications network?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 96, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 96, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Encryption & Decryption Technology</td>
+                        <td></td>
+                        <td>Does the organization use technology to encrypt outbound messages and decrypt inbound messages?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 97, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 97, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Encryption & Decryption Technology</td>
+                        <td></td>
+                        <td>Does the organization test the process to ensure that messages sent match messages received?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 98, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 98, 'No')">No</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Encryption</td>
+                        <td>Addressable</td>
+                        <td>Does the organization have Fax capabilities directly from their computers?</td>
+                        <td class="btn-container">
+                            <button class="btn" onclick="selectButton(this, 113, 'Yes')">Yes</button>
+                            <button class="btn" onclick="selectButton(this, 113, 'No')">No</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-actions">
+            <button id="submitBtn" class="btn-primary">Submit Assessment</button>
+            <button id="resetBtn" class="btn-secondary">Reset Form</button>
+        </div>
+
+        <div id="scoreDisplay" class="score-display"></div>
+    </div>
+
+    <div id="recommendationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>HIPAA Compliance Assessment Results</h2>
+            <div id="modalContent">
+                <!-- Content will be dynamically inserted by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="hipaa.js"></script>
+</body>
+</html> 
+

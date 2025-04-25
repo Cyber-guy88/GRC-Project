@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>What is Compliance? | GRC Portal</title>
+    <link rel="stylesheet" href="css/new-compliance.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="header-container">
+            <a href="home.html" class="logo">
+                <i class="fas fa-shield-alt"></i> GRC Portal
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact-us</a></li>
+                    <li class="profile-dropdown">
+                        <a href="#" class="profile-btn">
+                            <span class="profile-text">Profile</span>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="profile.html">
+                                <i class="fas fa-user"></i> View Profile
+                            </a>
+                            <a href="#" class="logout-item" id="logoutNavBtn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fas fa-clipboard-check"></i> Compliance</div>
+            <h1>Understanding Compliance</h1>
+            <p class="hero-subtitle">The foundation of responsible and ethical business operations</p>
+        </div>
+    </section>
+
+    <!-- Section Navigation -->
+    <div class="section-nav-container">
+        <div class="container">
+            <nav class="section-nav" aria-label="Page sections">
+                <ul class="section-nav-list">
+                    <li><a href="#introduction" class="section-nav-link">What is Compliance</a></li>
+                    <li><a href="#examples" class="section-nav-link">Examples</a></li>
+                    <li><a href="#audits" class="section-nav-link">Audits Connection</a></li>
+                    <li><a href="#importance" class="section-nav-link">Why It Matters</a></li>
+                    <li><a href="#building" class="section-nav-link">Building Compliance</a></li>
+                    <li><a href="#real-world" class="section-nav-link">Real-World Cases</a></li>
+                    <li><a href="#grc-integration" class="section-nav-link">GRC Integration</a></li>
+                    <li><a href="#program-structure" class="section-nav-link">Program Structure</a></li>
+                    <li><a href="#regulatory" class="section-nav-link">Regulatory Landscape</a></li>
+                    <li><a href="#takeaway" class="section-nav-link">Final Takeaway</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="content-section animate-slide-in" id="introduction">
+                <div class="section-header">
+                    <div class="icon-circle">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h2>What is Compliance?</h2>
+                </div>
+                
+                <div class="content-card">
+                    <p class="lead-text">Compliance is the practice of following rules set by someone else. Imagine you're driving a car:</p>
+                    
+                    <ul class="custom-list">
+                        <li>
+                            <span class="list-content"><strong>Laws</strong> are like traffic rules (e.g., speed limits).</span>
+                        </li>
+                        <li>
+                            <span class="list-content"><strong>Industry standards</strong> are like "best practices" (e.g., wearing a seatbelt even if it's not mandatory).</span>
+                        </li>
+                        <li>
+                            <span class="list-content"><strong>Internal policies</strong> are like your personal rules (e.g., "I'll never text while driving").</span>
+                        </li>
+                    </ul>
+                    
+                    <p class="lead-text">For businesses, compliance means:</p>
+                    
+                    <ul class="custom-list">
+                        <li>
+                            <span class="list-content">Doing what governments, regulators, or industries demand (e.g., protecting customer data under GDPR).</span>
+                        </li>
+                        <li>
+                            <span class="list-content">Sticking to their own promises (e.g., a company claiming to be eco-friendly must actually recycle waste).</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="alert-box warning">
+                        <div class="alert-icon">
+                            <i class="fas fa-exclamation"></i>
+                        </div>
+                        <div class="alert-content">
+                            <h4>Warning</h4>
+                            <p>If you ignore compliance, it's like driving without a license: you might get away for a while, but eventually, you'll face fines, crashes, or lose trust.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Examples Section -->
+            <section class="content-section animate-slide-in delay-100" id="examples">
+                <div class="section-header">
+                    <div class="icon-circle">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h2>Compliance Examples</h2>
+                </div>
+                
+                <div class="content-card">
+                    <p class="lead-text">Let's break it down with relatable stories:</p>
+                    
+                    <div class="example-cards">
+                        <div class="example-card success">
+                            <div class="card-header">
+                                <div class="badge success">Good</div>
+                                <h3>The Responsible Bank</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4>What they do:</h4>
+                                <ul>
+                                    <li>Train employees every 3 months on spotting fraud.</li>
+                                    <li>Use AI tools to monitor transactions 24/7.</li>
+                                    <li>Immediately report suspicious activity to regulators.</li>
+                                </ul>
+                                
+                                <h4>Result:</h4>
+                                <ul>
+                                    <li>Regulators praise them.</li>
+                                    <li>Customers trust them with their money.</li>
+                                    <li>No fines or scandals.</li>
+                                </ul>
+                                
+                                <div class="card-insight">
+                                    <strong>Why it works:</strong> They treat compliance like brushing teeth – daily, non-negotiable, and proactive.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="example-card danger">
+                            <div class="card-header">
+                                <div class="badge danger">Bad</div>
+                                <h3>The Careless Factory</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4>What they do:</h4>
+                                <ul>
+                                    <li>No safety gear for workers (ignoring OSHA rules).</li>
+                                    <li>Dump toxic waste into rivers (violating environmental laws).</li>
+                                    <li>Lie in reports to hide violations.</li>
+                                </ul>
+                                
+                                <h4>Result:</h4>
+                                <ul>
+                                    <li>Workers get sick, environment is harmed.</li>
+                                    <li>Government shuts them down.</li>
+                                    <li>Millions in fines + CEO jailed.</li>
+                                </ul>
+                                
+                                <div class="card-insight">
+                                    <strong>Why it fails:</strong> They see compliance as a "waste of time" until it's too late.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="example-card warning">
+                            <div class="card-header">
+                                <div class="badge warning">Medium</div>
+                                <h3>The Lazy Retailer</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4>What they do:</h4>
+                                <ul>
+                                    <li>Have a cybersecurity policy on paper.</li>
+                                    <li>Never update software or train staff.</li>
+                                    <li>React only after hackers steal data.</li>
+                                </ul>
+                                
+                                <h4>Result:</h4>
+                                <ul>
+                                    <li>Small fines (because they "tried").</li>
+                                    <li>Customers leave quietly.</li>
+                                    <li>Brand becomes "that company that got hacked."</li>
+                                </ul>
+                                
+                                <div class="card-insight">
+                                    <strong>The problem:</strong> They do the bare minimum – compliance is a checkbox, not a culture.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Compliance and Audits Section -->
+            <section class="content-section animate-slide-in delay-200" id="audits">
+                <div class="section-header">
+                    <div class="icon-circle">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h2>How Compliance and Audits Are Connected</h2>
+                </div>
+                
+                <div class="content-card">
+                    <p class="lead-text">Think of compliance as daily habits and audits as annual health check-ups:</p>
+                    
+                    <div class="comparison-container">
+                        <div class="comparison-item">
+                            <div class="comparison-header">
+                                <div class="icon-box">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <h3>Compliance</h3>
+                            </div>
+                            <p>What you do every day to stay healthy (e.g., eating veggies, exercising).</p>
+                            <div class="example-box">
+                                <h4>Example:</h4>
+                                <p>A hospital encrypts patient records daily (to comply with HIPAA).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-item">
+                            <div class="comparison-header">
+                                <div class="icon-box">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <h3>Audit</h3>
+                            </div>
+                            <p>A doctor (auditor) checks if you're actually healthy (compliant).</p>
+                            <div class="example-box">
+                                <h4>Example:</h4>
+                                <p>An auditor reviews the hospital's records, tests their systems, and interviews staff.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="subsection-title">What happens in an audit:</h3>
+                    
+                    <div class="audit-scenarios">
+                        <div class="scenario">
+                            <div class="scenario-icon success">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="scenario-content">
+                                <h4>If compliance is strong</h4>
+                                <p>Auditor says: "Good job! Keep it up."</p>
+                            </div>
+                        </div>
+                        
+                        <div class="scenario">
+                            <div class="scenario-icon warning">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="scenario-content">
+                                <h4>If compliance is weak</h4>
+                                <p>Auditor finds "gaps" (e.g., "Your fire exits are blocked" or "Tax records are missing").</p>
+                            </div>
+                        </div>
+                        
+                        <div class="scenario">
+                            <div class="scenario-icon danger">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                            <div class="scenario-content">
+                                <h4>If compliance is fake</h4>
+                                <p>Auditor fails you → Regulators step in (fines, shutdowns).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-difference">
+                        <h3>Key difference:</h3>
+                        <div class="difference-items">
+                            <div class="difference-item">
+                                <div class="tag">Compliance</div>
+                                <p>Actions (doing the work).</p>
+                            </div>
+                            <div class="difference-item">
+                                <div class="tag">Audit</div>
+                                <p>Verification (checking the work).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Compliance Matters Section -->
+            <section class="content-section animate-slide-in delay-300" id="importance">
+                <div class="section-header">
+                    <div class="icon-circle">
+                        <i class="fas fa-exclamation"></i>
+                    </div>
+                    <h2>Why Compliance Matters (Beyond Avoiding Fines)</h2>
+                </div>
+                
+                <div class="content-card">
+                    <div class="importance-grid">
+                        <div class="importance-item">
+                            <div class="item-header">
+                                <i class="fas fa-life-ring"></i>
+                                <h3>Survival</h3>
+                            </div>
+                            <p>Non-compliance can bankrupt companies.</p>
+                            <div class="example-box">
+                                <strong>Example:</strong> Volkswagen's Dieselgate (faked emissions tests) cost them $30+ billion in fines and repairs.
+                            </div>
+                        </div>
+                        
+                        <div class="importance-item">
+                            <div class="item-header">
+                                <i class="fas fa-handshake"></i>
+                                <h3>Trust</h3>
+                            </div>
+                            <p>People buy from companies they trust.</p>
+                            <div class="example-box">
+                                <strong>Example:</strong> Apple markets privacy as a core value – their strict compliance with data laws boosts sales.
+                            </div>
+                        </div>
+                        
+                        <div class="importance-item">
+                            <div class="item-header">
+                                <i class="fas fa-balance-scale"></i>
+                                <h3>Ethics</h3>
+                            </div>
+                            <p>Compliance forces companies to do the right thing.</p>
+                            <div class="example-box">
+                                <strong>Example:</strong> A food company following FDA rules ensures your snacks aren't poisoned.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- How to Build Strong Compliance Section -->
+            <section class="content-section animate-slide-in delay-400" id="building">
+                <div class="section-header">
+                    <div class="icon-circle">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h2>How to Build Strong Compliance</h2>
+                </div>
+                
+                <div class="content-card">
+                    <div class="steps-container">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Know the Rules</h3>
+                                <ul>
+                                    <li>Laws (e.g., GDPR for data in Europe).</li>
+                                    <li>Industry standards (e.g., PCI DSS for handling credit cards).</li>
+                                    <li>Internal policies (e.g., "No bribes" in a code of conduct).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Train Everyone</h3>
+                                <p>Teach employees why rules matter (e.g., "Leaving passwords on sticky notes risks hacking").</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Monitor Constantly</h3>
+                                <p>Use tools like compliance software (e.g., track expiry dates for licenses).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Fix Fast</h3>
+                                <p>If a mistake happens (e.g., a data breach), report and resolve it ASAP.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Real-World Examples Section -->
+            <section class="content-section animate-slide-in delay-100" id="real-world">
+                <div class="section-header">
+                    <div class="icon-circle">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h2>Real-World Compliance Failures vs. Successes</h2>
+                </div>
+                
+                <div class="content-card">
+                    <div class="case-studies">
+                        <div class="case-study failure">
+                            <div class="case-header">
+                                <div class="case-icon">
+                                    <i class="fas fa-thumbs-down"></i>
+                                </div>
+                                <h3>Failure: Theranos</h3>
+                            </div>
+                            <div class="case-content">
+                                <p>Fake blood-testing tech company lied about compliance with FDA and medical laws.</p>
+                                <div class="case-result">
+                                    <strong>Result:</strong> Company destroyed, CEO in prison.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="case-study success">
+                            <div class="case-header">
+                                <div class="case-icon">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </div>
+                                <h3>Success: Microsoft</h3>
+                            </div>
+                            <div class="case-content">
+                                <p>Spends $1+ billion yearly on compliance (e.g., GDPR, anti-corruption).</p>
+                                <div class="case-result">
+                                    <strong>Result:</strong> Rarely fined, trusted globally.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Final Takeaway Section -->
+            <section class="content-section animate-slide-in delay-200" id="takeaway">
+                <div class="section-header">
+                    <div class="icon-circle">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h2>Final Takeaway</h2>
+                </div>
+                
+                <div class="content-card takeaway-card">
+                    <div class="quote-mark start"><i class="fas fa-quote-left"></i></div>
+                    <p class="takeaway-text">
+                        Compliance isn't about "pleasing regulators" – it's about doing business responsibly. Just like you can't drive safely by memorizing traffic rules once, companies can't survive by treating compliance as a one-time task. It's a daily habit, verified by audits, that builds trust, avoids disasters, and keeps the wheels turning.
+                    </p>
+                    <div class="quote-mark end"><i class="fas fa-quote-right"></i></div>
+                </div>
+            </section>
+            
+            <!-- GRC Integration Section -->
+            <section class="content-section animate-slide-in delay-300" id="grc-integration">
+                <div class="section-header">
+                    <div class="icon-circle">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h2>How Compliance Fits Within GRC</h2>
+                </div>
+                
+                <div class="content-card">
+                    <p class="lead-text">Compliance doesn't operate in isolation—it's one key component of the broader GRC (Governance, Risk, and Compliance) framework:</p>
+                    
+                    <div class="grc-framework">
+                        <div class="grc-component governance">
+                            <div class="component-header">
+                                <div class="component-icon">
+                                    <i class="fas fa-landmark"></i>
+                                </div>
+                                <h3>Governance</h3>
+                            </div>
+                            <div class="component-content">
+                                <p>The leadership, direction, and control of an organization.</p>
+                                <ul>
+                                    <li>Sets company vision, mission, and values</li>
+                                    <li>Designs organizational structure</li>
+                                    <li>Creates policies and procedures</li>
+                                    <li>Establishes accountability</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="grc-component risk">
+                            <div class="component-header">
+                                <div class="component-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Risk Management</h3>
+                            </div>
+                            <div class="component-content">
+                                <p>The identification, assessment, and prioritization of risks.</p>
+                                <ul>
+                                    <li>Identifies potential threats and opportunities</li>
+                                    <li>Evaluates likelihood and impact of risks</li>
+                                    <li>Develops risk treatment strategies</li>
+                                    <li>Monitors and reports on risk status</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="grc-component compliance">
+                            <div class="component-header">
+                                <div class="component-icon">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <h3>Compliance</h3>
+                            </div>
+                            <div class="component-content">
+                                <p>The adherence to laws, regulations, standards, and policies.</p>
+                                <ul>
+                                    <li>Translates external requirements into internal controls</li>
+                                    <li>Monitors adherence to requirements</li>
+                                    <li>Reports compliance status</li>
+                                    <li>Remediates non-compliance issues</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="subsection-title">How They Work Together</h3>
+                    
+                    <div class="grc-interaction">
+                        <div class="interaction-row">
+                            <div class="interaction-arrow">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </div>
+                            <div class="interaction-description">
+                                <p><strong>Governance → Risk:</strong> Governance sets risk appetite and tolerance levels that guide risk management activities.</p>
+                            </div>
+                        </div>
+                        <div class="interaction-row">
+                            <div class="interaction-arrow">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </div>
+                            <div class="interaction-description">
+                                <p><strong>Risk → Compliance:</strong> Risk assessments help prioritize compliance efforts based on potential impact.</p>
+                            </div>
+                        </div>
+                        <div class="interaction-row">
+                            <div class="interaction-arrow">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </div>
+                            <div class="interaction-description">
+                                <p><strong>Compliance → Governance:</strong> Compliance requirements influence governance policies and procedures.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grc-benefits">
+                        <h3>Benefits of an Integrated GRC Approach</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h4>Cost Efficiency</h4>
+                                    <p>Reduces duplicative efforts across departments</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h4>Better Visibility</h4>
+                                    <p>Creates a unified view of risks and compliance status</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h4>Stronger Protection</h4>
+                                    <p>Provides more comprehensive safeguards against threats</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h4>Improved Performance</h4>
+                                    <p>Aligns compliance with business objectives</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert-box success">
+                        <div class="alert-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="alert-content">
+                            <h4>Key Insight</h4>
+                            <p>When compliance is integrated with governance and risk management (rather than operating as a standalone function), organizations spend 40% less on compliance activities while achieving better results.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Compliance Program Structure Section -->
+            <section class="content-section animate-slide-in delay-400" id="program-structure">
+                <div class="section-header">
+                    <div class="icon-circle">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h2>Building an Effective Compliance Program</h2>
+                </div>
+                
+                <div class="content-card">
+                    <p class="lead-text">A robust compliance program is more than just a set of rules—it's a comprehensive system with defined roles, responsibilities, and processes:</p>
+                    
+                    <div class="program-structure">
+                        <div class="structure-visual">
+                            <div class="structure-level board">
+                                <div class="level-header">
+                                    <h3>Board of Directors</h3>
+                                </div>
+                                <div class="level-description">
+                                    <p>Oversight and ultimate accountability</p>
+                                </div>
+                            </div>
+                            <div class="connector"></div>
+                            <div class="structure-level executives">
+                                <div class="level-header">
+                                    <h3>Executive Leadership</h3>
+                                </div>
+                                <div class="level-description">
+                                    <p>Sets tone at the top and allocates resources</p>
+                                </div>
+                            </div>
+                            <div class="connector"></div>
+                            <div class="structure-level cco">
+                                <div class="level-header">
+                                    <h3>Chief Compliance Officer</h3>
+                                </div>
+                                <div class="level-description">
+                                    <p>Program management and reporting</p>
+                                </div>
+                            </div>
+                            <div class="connector"></div>
+                            <div class="structure-level committee">
+                                <div class="level-header">
+                                    <h3>Compliance Committee</h3>
+                                </div>
+                                <div class="level-description">
+                                    <p>Cross-functional guidance and coordination</p>
+                                </div>
+                            </div>
+                            <div class="connector"></div>
+                            <div class="structure-level employees">
+                                <div class="level-header">
+                                    <h3>All Employees</h3>
+                                </div>
+                                <div class="level-description">
+                                    <p>Day-to-day compliance activities</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="subsection-title">7 Essential Elements of an Effective Compliance Program</h3>
+                    
+                    <div class="program-elements">
+                        <div class="element-card">
+                            <div class="element-number">1</div>
+                            <div class="element-content">
+                                <h4>Policies & Procedures</h4>
+                                <p>Written standards of conduct and specific procedures that guide compliant behavior.</p>
+                                <div class="element-example">
+                                    <strong>Example:</strong> Code of Conduct, Anti-Bribery Policy, Data Protection Procedures
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="element-card">
+                            <div class="element-number">2</div>
+                            <div class="element-content">
+                                <h4>Governance & Leadership</h4>
+                                <p>Designated compliance officer and committee with direct board reporting lines.</p>
+                                <div class="element-example">
+                                    <strong>Example:</strong> Chief Compliance Officer with authority and resources to implement program
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="element-card">
+                            <div class="element-number">3</div>
+                            <div class="element-content">
+                                <h4>Risk Assessment</h4>
+                                <p>Systematic identification and evaluation of compliance risks specific to the organization.</p>
+                                <div class="element-example">
+                                    <strong>Example:</strong> Annual assessment mapping regulatory requirements to business activities
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="element-card">
+                            <div class="element-number">4</div>
+                            <div class="element-content">
+                                <h4>Training & Communication</h4>
+                                <p>Education on compliance requirements, tailored to roles and responsibilities.</p>
+                                <div class="element-example">
+                                    <strong>Example:</strong> New hire orientation, role-specific compliance training, regular updates
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="element-card">
+                            <div class="element-number">5</div>
+                            <div class="element-content">
+                                <h4>Monitoring & Testing</h4>
+                                <p>Ongoing review of activities to detect potential violations and program weaknesses.</p>
+                                <div class="element-example">
+                                    <strong>Example:</strong> Transaction monitoring, periodic audits, compliance certifications
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="element-card">
+                            <div class="element-number">6</div>
+                            <div class="element-content">
+                                <h4>Reporting & Investigation</h4>
+                                <p>Mechanisms for reporting concerns and processes for investigating potential violations.</p>
+                                <div class="element-example">
+                                    <strong>Example:</strong> Ethics hotline, case management system, investigative protocols
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="element-card">
+                            <div class="element-number">7</div>
+                            <div class="element-content">
+                                <h4>Enforcement & Incentives</h4>
+                                <p>Disciplinary measures for violations and rewards for compliant behavior.</p>
+                                <div class="element-example">
+                                    <strong>Example:</strong> Compliance metrics in performance reviews, enforcement guidelines
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="program-maturity">
+                        <h3 class="subsection-title">Program Maturity Levels</h3>
+                        <div class="maturity-scale">
+                            <div class="maturity-level level-1">
+                                <div class="level-indicator">
+                                    <span class="level-number">1</span>
+                                </div>
+                                <div class="level-details">
+                                    <h4>Initial/Ad Hoc</h4>
+                                    <p>Reactive approach with informal processes and limited documentation</p>
+                                </div>
+                            </div>
+                            
+                            <div class="maturity-level level-2">
+                                <div class="level-indicator">
+                                    <span class="level-number">2</span>
+                                </div>
+                                <div class="level-details">
+                                    <h4>Developing</h4>
+                                    <p>Basic policies in place with some structured processes but limited coordination</p>
+                                </div>
+                            </div>
+                            
+                            <div class="maturity-level level-3">
+                                <div class="level-indicator">
+                                    <span class="level-number">3</span>
+                                </div>
+                                <div class="level-details">
+                                    <h4>Defined</h4>
+                                    <p>Standardized program with documented policies covering key risks</p>
+                                </div>
+                            </div>
+                            
+                            <div class="maturity-level level-4">
+                                <div class="level-indicator">
+                                    <span class="level-number">4</span>
+                                </div>
+                                <div class="level-details">
+                                    <h4>Managed</h4>
+                                    <p>Measured and controlled program with quantitative objectives</p>
+                                </div>
+                            </div>
+                            
+                            <div class="maturity-level level-5">
+                                <div class="level-indicator">
+                                    <span class="level-number">5</span>
+                                </div>
+                                <div class="level-details">
+                                    <h4>Optimizing</h4>
+                                    <p>Continuous improvement with proactive risk management and innovation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-mini">
+                        <div class="cta-mini-content">
+                            <h4>Ready to assess your compliance program?</h4>
+                            <p>Our experts can help you evaluate your current program and identify improvement opportunities.</p>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Regulatory Landscape Section -->
+            <section class="content-section animate-slide-in delay-200" id="regulatory">
+                <div class="section-header">
+                    <div class="icon-circle">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h2>Navigating the Regulatory Landscape</h2>
+                </div>
+                
+                <div class="content-card">
+                    <p class="lead-text">The regulatory environment is constantly evolving, with new requirements emerging across industries and regions:</p>
+                    
+                    <div class="regulatory-map">
+                        <img src="https://via.placeholder.com/900x450/f1f5f9/0f172a?text=Regulatory+Map" alt="Global Regulatory Map" class="regulatory-image">
+                        <div class="overlay-text">
+                            <p>Organizations face an average of <strong>257 regulatory changes</strong> per day globally</p>
+                        </div>
+                    </div>
+                    
+                    <div class="regulatory-trends">
+                        <h3 class="subsection-title">Key Regulatory Trends</h3>
+                        
+                        <div class="trend-grid">
+                            <div class="trend-card">
+                                <div class="trend-icon">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div class="trend-content">
+                                    <h4>Data Privacy & Protection</h4>
+                                    <p>Regulations like GDPR, CCPA, and emerging state-level privacy laws require comprehensive data management practices.</p>
+                                    <div class="trend-examples">
+                                        <span class="regulation-tag">GDPR</span>
+                                        <span class="regulation-tag">CCPA</span>
+                                        <span class="regulation-tag">CPRA</span>
+                                        <span class="regulation-tag">LGPD</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="trend-card">
+                                <div class="trend-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="trend-content">
+                                    <h4>Cybersecurity</h4>
+                                    <p>Increasing requirements for cybersecurity controls, incident reporting, and risk management frameworks.</p>
+                                    <div class="trend-examples">
+                                        <span class="regulation-tag">NYDFS</span>
+                                        <span class="regulation-tag">NIS2</span>
+                                        <span class="regulation-tag">SEC Rules</span>
+                                        <span class="regulation-tag">CMMC</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="trend-card">
+                                <div class="trend-icon">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div class="trend-content">
+                                    <h4>Financial Regulations</h4>
+                                    <p>Evolving requirements for financial institutions covering anti-money laundering, consumer protection, and risk management.</p>
+                                    <div class="trend-examples">
+                                        <span class="regulation-tag">AML</span>
+                                        <span class="regulation-tag">KYC</span>
+                                        <span class="regulation-tag">Basel IV</span>
+                                        <span class="regulation-tag">PSD2</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="trend-card">
+                                <div class="trend-icon">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <div class="trend-content">
+                                    <h4>Healthcare Compliance</h4>
+                                    <p>Stringent rules governing patient privacy, data security, and quality of care in healthcare organizations.</p>
+                                    <div class="trend-examples">
+                                        <span class="regulation-tag">HIPAA</span>
+                                        <span class="regulation-tag">HITECH</span>
+                                        <span class="regulation-tag">FDA</span>
+                                        <span class="regulation-tag">MDR</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="trend-card">
+                                <div class="trend-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div class="trend-content">
+                                    <h4>ESG & Sustainability</h4>
+                                    <p>Growing requirements for environmental, social, and governance disclosures and practices.</p>
+                                    <div class="trend-examples">
+                                        <span class="regulation-tag">CSRD</span>
+                                        <span class="regulation-tag">SFDR</span>
+                                        <span class="regulation-tag">SEC ESG</span>
+                                        <span class="regulation-tag">SASB</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="trend-card">
+                                <div class="trend-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="trend-content">
+                                    <h4>AI & Emerging Tech</h4>
+                                    <p>New frameworks governing artificial intelligence, blockchain, and other emerging technologies.</p>
+                                    <div class="trend-examples">
+                                        <span class="regulation-tag">EU AI Act</span>
+                                        <span class="regulation-tag">DORA</span>
+                                        <span class="regulation-tag">MiCA</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-section">
+                        <h3 class="subsection-title">Compliance Challenges</h3>
+                        
+                        <div class="challenges-grid">
+                            <div class="challenge-item">
+                                <div class="challenge-header">
+                                    <div class="challenge-icon">
+                                        <i class="fas fa-globe-americas"></i>
+                                    </div>
+                                    <h4>Global Variations</h4>
+                                </div>
+                                <p>Different requirements across jurisdictions create complexity for multinational organizations.</p>
+                            </div>
+                            
+                            <div class="challenge-item">
+                                <div class="challenge-header">
+                                    <div class="challenge-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <h4>Rapid Change</h4>
+                                </div>
+                                <p>Regulatory requirements evolve quickly, requiring agile compliance capabilities.</p>
+                            </div>
+                            
+                            <div class="challenge-item">
+                                <div class="challenge-header">
+                                    <div class="challenge-icon">
+                                        <i class="fas fa-random"></i>
+                                    </div>
+                                    <h4>Overlapping Requirements</h4>
+                                </div>
+                                <p>Multiple regulations often cover similar areas with subtle differences in implementation.</p>
+                            </div>
+                            
+                            <div class="challenge-item">
+                                <div class="challenge-header">
+                                    <div class="challenge-icon">
+                                        <i class="fas fa-balance-scale"></i>
+                                    </div>
+                                    <h4>Interpretation Issues</h4>
+                                </div>
+                                <p>Many regulations require interpretation, creating uncertainty about exact requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="strategy-section">
+                        <h3 class="subsection-title">Strategic Approach to Regulatory Compliance</h3>
+                        
+                        <div class="strategies">
+                            <div class="strategy-step">
+                                <div class="step-marker">
+                                    <span>1</span>
+                                </div>
+                                <div class="strategy-content">
+                                    <h4>Regulatory Intelligence</h4>
+                                    <p>Establish systems to monitor and interpret regulatory changes relevant to your industry.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="strategy-step">
+                                <div class="step-marker">
+                                    <span>2</span>
+                                </div>
+                                <div class="strategy-content">
+                                    <h4>Requirement Mapping</h4>
+                                    <p>Identify common controls across regulations to create a unified compliance framework.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="strategy-step">
+                                <div class="step-marker">
+                                    <span>3</span>
+                                </div>
+                                <div class="strategy-content">
+                                    <h4>Risk-Based Prioritization</h4>
+                                    <p>Focus resources on the highest-risk regulatory areas for your specific organization.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="strategy-step">
+                                <div class="step-marker">
+                                    <span>4</span>
+                                </div>
+                                <div class="strategy-content">
+                                    <h4>Technology Enablement</h4>
+                                    <p>Deploy compliance management tools to automate monitoring and reporting processes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Call to Action Section -->
+            <section class="cta-section animate-slide-in delay-300">
+                <div class="cta-content">
+                    <h2>Ready to Enhance Your Compliance Program?</h2>
+                    <p>Learn how our GRC solutions can help your organization stay compliant and reduce risks.</p>
+                    <a href="contact.html" class="cta-btn">Contact Us <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GRC Portal</h3>
+                <p>Your comprehensive solution for Governance, Risk and Compliance management. Streamline your GRC processes with our enterprise platform.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Frameworks</h3>
+                <ul class="footer-links">
+                    <li><a href="iso27001.html">ISO 27001</a></li>
+                    <li><a href="cobit.html">COBIT</a></li>
+                    <li><a href="nistcsf.html">NIST CSF</a></li>
+                    <li><a href="gdpr.html">GDPR</a></li>
+                    <li><a href="hipaa.html">HIPAA</a></li>
+                    <li><a href="pcidss.html">PCI DSS</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Nr. Visat Three Roads, Visat – Gandhinagar Highway, Chandkheda, Ahmedabad – 382424, Gujarat</li>
+                    <li><i class="fas fa-phone"></i> +91 9016740830</li>
+                    <li><i class="fas fa-envelope"></i> info@grcportal.com</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; <span id="currentYear">2023</span> GRC Portal. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+   
+    <!-- JavaScript -->
+    <script>
+        // Update current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+            
+            // Handle header scroll effect
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        
+        // Add event listener for the logout button in the dropdown menu
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoutBtn = document.getElementById('logoutNavBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Clear user data from storage
+                    localStorage.removeItem('userData');
+                    sessionStorage.removeItem('userData');
+                    localStorage.removeItem('userEmail');
+                    sessionStorage.removeItem('userEmail');
+                    localStorage.removeItem('userName');
+                    sessionStorage.removeItem('userName');
+                    // Redirect to login page
+                    window.location.href = 'login.html';
+                });
+            }
+        });
+
+        // Section navigation highlight based on scroll position
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.section-nav-link');
+            
+            // Function to determine active section
+            function setActiveLink() {
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100; // Offset for sticky header
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            // Initial call and scroll event listener
+            setActiveLink();
+            window.addEventListener('scroll', setActiveLink);
+            
+            // Smooth scrolling for section navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80; // Adjust for sticky header
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL hash without jumping
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,161 @@
+/* Loading indicator styles */
+#loadingIndicator {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loadingMessage {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* Chart container styles */
+.chart-container {
+    margin: 2rem auto;
+    height: 300px;
+    max-width: 500px;
+    position: relative;
+}
+
+/* Enhanced button styles */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.action-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 130px;
+    transition: all 0.3s ease;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.action-buttons i {
+    font-size: 16px;
+}
+
+/* Email form styles */
+#emailForm {
+    background-color: #f5f7fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+#emailForm .form-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#emailForm input {
+    flex: 1;
+    min-width: 250px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#emailStatus {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Accessibility improvements */
+button:focus, 
+input:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible) {
+    outline: none;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Print styles for forms */
+@media print {
+    .nav-wrapper,
+    .form-actions,
+    .action-buttons {
+        display: none !important;
+    }
+
+    .modal-content {
+        position: static;
+        box-shadow: none;
+        max-height: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .chart-container {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .recommendations ul li {
+        page-break-inside: avoid;
+    }
+}
+
+/* Mobile responsive improvements */
+@media screen and (max-width: 600px) {
+    .modal-content {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    .form-actions button,
+    .action-buttons button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+} 

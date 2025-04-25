@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile | GRC Portal</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f4c81',
+                        secondary: '#334155',
+                        success: '#059669',
+                        warning: '#ca8a04',
+                        danger: '#dc2626',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #0f4c81;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .profile-info {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 1.5rem;
+        }
+        
+        .info-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .info-value {
+            font-size: 1.125rem;
+            color: #1f2937;
+        }
+        
+        .edit-profile-btn {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #0f4c81;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .edit-profile-btn:hover {
+            background-color: #0d3f6a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .save-profile-btn {
+            background-color: #10b981;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .save-profile-btn:hover {
+            background-color: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .cancel-edit-btn {
+            background-color: #6b7280;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .cancel-edit-btn:hover {
+            background-color: #4b5563;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        /* Edit mode styles */
+        .edit-form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .edit-form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .edit-form-row {
+            margin-bottom: 1.5rem;
+        }
+
+        .success-message {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #059669;
+            padding: 0.75rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            text-align: center;
+            display: none;
+        }
+
+        .required-field {
+            color: #ef4444;
+            margin-left: 3px;
+        }
+
+        .form-error {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        /* Loading state styling */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(15, 76, 129, 0.2);
+            border-radius: 50%;
+            border-top-color: #0f4c81;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .profile-error {
+            color: #dc2626;
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(220, 38, 38, 0.1);
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 2rem;
+        }
+
+        .logout-btn {
+            background-color: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logout-btn i {
+            margin-right: 8px;
+        }
+
+        .logout-btn:hover {
+            background-color: #dc2626;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 100;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .dropdown-content a i {
+            margin-right: 10px;
+            width: 16px;
+            text-align: center;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f5f9;
+        }
+        
+        .profile-dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .profile-dropdown .profile-btn {
+            cursor: pointer;
+        }
+        
+        .logout-item {
+            color: #ef4444 !important;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .logout-item:hover {
+            background-color: #fef2f2 !important;
+        }
+        
+        /* Adjust header container */
+        .header-container {
+            padding: 0 2rem;
+            justify-content: space-between;
+        }
+        
+        /* Remove extra margin/padding from nav items */
+        nav ul {
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="home.html" class="logo">
+                <i class="fas fa-shield-alt"></i> GRC Portal
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact-us</a></li>
+                    <li class="profile-dropdown">
+                        <a href="#" class="profile-btn">
+                            <i class="fas fa-user-circle"></i>
+                            Profile
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="profile.html">
+                                <i class="fas fa-user"></i> View Profile
+                            </a>
+                            <a href="#" class="logout-item" id="logoutNavBtn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="bg-gradient-to-b from-[#1a2741] to-[#0f4c81] py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-white mb-4">Your Profile</h1>
+                <p class="text-gray-200 max-w-2xl mx-auto">Manage your account information and preferences.</p>
+            </div>
+            
+            <div class="profile-container" id="profileContainer">
+                <div class="loading" id="loadingIndicator">
+                    <div class="loading-spinner"></div>
+                </div>
+                
+                <div id="profileContent" style="display: none;">
+                    <div class="profile-header">
+                        <div class="profile-avatar" id="profileAvatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold" id="profileName">User Name</h1>
+                            <p class="text-gray-500" id="profileEmail">user@example.com</p>
+                        </div>
+                    </div>
+                    
+                    <!-- View Mode -->
+                    <div id="viewMode">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-xl font-semibold">Profile Information</h2>
+                            <button class="edit-profile-btn" id="editProfileBtn">
+                                <i class="fas fa-edit"></i> Edit Profile
+                            </button>
+                        </div>
+                        
+                        <div class="profile-info">
+                            <div class="info-item">
+                                <div class="info-label">Full Name</div>
+                                <div class="info-value" id="fullNameValue">Loading...</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-label">Email Address</div>
+                                <div class="info-value" id="emailValue">Loading...</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-label">Phone Number</div>
+                                <div class="info-value" id="phoneValue">Not provided</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-label">Company</div>
+                                <div class="info-value" id="companyValue">Not provided</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-label">Job Title</div>
+                                <div class="info-value" id="jobTitleValue">Not provided</div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-actions">
+                            <button class="logout-btn" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Edit Mode -->
+                    <div id="editMode" style="display: none;">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-xl font-semibold">Edit Profile</h2>
+                        </div>
+                        
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle mr-2"></i> Profile updated successfully!
+                        </div>
+                        
+                        <form id="editProfileForm">
+                            <div class="edit-form-row">
+                                <div class="info-label">Full Name <span class="required-field">*</span></div>
+                                <input type="text" class="edit-form-input" id="editFullName" required>
+                                <div class="form-error" id="fullNameError"></div>
+                            </div>
+                            
+                            <div class="edit-form-row">
+                                <div class="info-label">Email Address <span class="required-field">*</span></div>
+                                <input type="email" class="edit-form-input" id="editEmail" required>
+                                <div class="form-error" id="emailError"></div>
+                            </div>
+                            
+                            <div class="edit-form-row">
+                                <div class="info-label">Phone Number</div>
+                                <input type="tel" class="edit-form-input" id="editPhone">
+                            </div>
+                            
+                            <div class="edit-form-row">
+                                <div class="info-label">Company</div>
+                                <input type="text" class="edit-form-input" id="editCompany">
+                            </div>
+                            
+                            <div class="edit-form-row">
+                                <div class="info-label">Job Title</div>
+                                <input type="text" class="edit-form-input" id="editJobTitle">
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <button type="submit" class="save-profile-btn">
+                                    <i class="fas fa-save"></i> Save Changes
+                                </button>
+                                <button type="button" class="cancel-edit-btn" id="cancelEditBtn">
+                                    <i class="fas fa-times"></i> Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div id="profileError" class="profile-error" style="display: none;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Unable to load profile information. Please try again later.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="footer-separator">
+
+    <footer class="bg-[#0a3258] text-gray-300 py-10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-5">
+            <!-- Company Section -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Career</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Editorial Team</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Protection</a></li>
+                </ul>
+            </div>
+            
+            <!-- More Section -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">More</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Terms & Condition</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Privacy</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Advertise</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Join as Advisors</a></li>
+                </ul>
+            </div>
+            
+            <!-- Our Partner Section -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Our Partners</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Enterprise Security</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Compliance Solutions</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Risk Consulting</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Section -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                <p class="mb-2">351 Willow Street Franklin, MA 02038</p>
+                <p class="mb-2">701-573-7582</p>
+                <p><a href="mailto:email@domain.net" class="hover:text-blue-400 transition-colors">email@domain.net</a></p>
+                <div class="flex space-x-3 mt-4">
+                    <a href="#" class="text-gray-300 hover:text-blue-400 transition-colors text-xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-blue-400 transition-colors text-xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-blue-400 transition-colors text-xl"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright Section -->
+        <div class="border-t border-gray-700 mt-8 pt-4 text-center">
+            <p>Copyright &copy; <span id="currentYear">2023</span> GRC Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const profileContent = document.getElementById('profileContent');
+            const profileError = document.getElementById('profileError');
+            
+            const viewMode = document.getElementById('viewMode');
+            const editMode = document.getElementById('editMode');
+            const editProfileBtn = document.getElementById('editProfileBtn');
+            const cancelEditBtn = document.getElementById('cancelEditBtn');
+            const editProfileForm = document.getElementById('editProfileForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            // Profile view elements
+            const profileName = document.getElementById('profileName');
+            const profileEmail = document.getElementById('profileEmail');
+            const profileAvatar = document.getElementById('profileAvatar');
+            const fullNameValue = document.getElementById('fullNameValue');
+            const emailValue = document.getElementById('emailValue');
+            const phoneValue = document.getElementById('phoneValue');
+            const companyValue = document.getElementById('companyValue');
+            const jobTitleValue = document.getElementById('jobTitleValue');
+            
+            // Edit form elements
+            const editFullName = document.getElementById('editFullName');
+            const editEmail = document.getElementById('editEmail');
+            const editPhone = document.getElementById('editPhone');
+            const editCompany = document.getElementById('editCompany');
+            const editJobTitle = document.getElementById('editJobTitle');
+            
+            // Check if user is logged in
+            const userEmail = sessionStorage.getItem('userEmail') || localStorage.getItem('userEmail');
+            
+            if (!userEmail) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Load user data
+            loadUserProfile();
+            
+            // Event listeners
+            editProfileBtn.addEventListener('click', showEditMode);
+            cancelEditBtn.addEventListener('click', cancelEdit);
+            editProfileForm.addEventListener('submit', saveProfileChanges);
+            document.getElementById('logoutBtn').addEventListener('click', logout);
+            
+            function loadUserProfile() {
+                // Show loading indicator
+                loadingIndicator.style.display = 'flex';
+                profileContent.style.display = 'none';
+                profileError.style.display = 'none';
+                
+                try {
+                    // Try to get user data from different sources
+                    let userData = null;
+                    
+                    // First check if there's dedicated userData
+                    const storedUserData = localStorage.getItem('userData') || sessionStorage.getItem('userData');
+                    if (storedUserData) {
+                        userData = JSON.parse(storedUserData);
+                    } else {
+                        // If not, check in the users collection
+                        const storedUsers = JSON.parse(localStorage.getItem('grcUsers') || '[]');
+                        const user = storedUsers.find(u => u.email === userEmail);
+                        
+                        if (user) {
+                            userData = user;
+                        }
+                    }
+                    
+                    if (userData) {
+                        // User data found, update profile
+                        updateProfileDisplay(userData);
+                        
+                        // Hide loading, show content
+                        loadingIndicator.style.display = 'none';
+                        profileContent.style.display = 'block';
+                    } else {
+                        // Create basic user data if not found
+                        const userName = sessionStorage.getItem('userName') || localStorage.getItem('userName') || userEmail.split('@')[0];
+                        
+                        const basicUserData = {
+                            fullName: userName,
+                            email: userEmail,
+                            phone: '',
+                            company: '',
+                            jobTitle: ''
+                        };
+                        
+                        // Save and display this basic profile
+                        updateProfileDisplay(basicUserData);
+                        saveUserData(basicUserData);
+                        
+                        // Hide loading, show content
+                        loadingIndicator.style.display = 'none';
+                        profileContent.style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error('Error loading profile:', error);
+                    loadingIndicator.style.display = 'none';
+                    profileError.style.display = 'block';
+                }
+            }
+            
+            function updateProfileDisplay(userData) {
+                // Update navbar and profile header
+                profileName.textContent = userData.fullName || 'User';
+                profileEmail.textContent = userData.email || userEmail;
+                
+                // Set avatar initial
+                const initial = userData.fullName ? userData.fullName.charAt(0).toUpperCase() : 'U';
+                profileAvatar.innerHTML = initial;
+                
+                // Update profile fields
+                fullNameValue.textContent = userData.fullName || 'Not provided';
+                emailValue.textContent = userData.email || userEmail;
+                phoneValue.textContent = userData.phone || 'Not provided';
+                companyValue.textContent = userData.company || 'Not provided';
+                jobTitleValue.textContent = userData.jobTitle || 'Not provided';
+                
+                // Also pre-fill the edit form
+                editFullName.value = userData.fullName || '';
+                editEmail.value = userData.email || userEmail;
+                editPhone.value = userData.phone || '';
+                editCompany.value = userData.company || '';
+                editJobTitle.value = userData.jobTitle || '';
+            }
+            
+            function showEditMode() {
+                viewMode.style.display = 'none';
+                editMode.style.display = 'block';
+                successMessage.style.display = 'none';
+            }
+            
+            function cancelEdit() {
+                viewMode.style.display = 'block';
+                editMode.style.display = 'none';
+                
+                // Reset form validation errors
+                document.getElementById('fullNameError').textContent = '';
+                document.getElementById('emailError').textContent = '';
+            }
+            
+            function saveProfileChanges(event) {
+                event.preventDefault();
+                
+                // Validate form
+                let isValid = true;
+                
+                if (!editFullName.value.trim()) {
+                    document.getElementById('fullNameError').textContent = 'Full name is required';
+                    isValid = false;
+                } else {
+                    document.getElementById('fullNameError').textContent = '';
+                }
+                
+                if (!editEmail.value.trim()) {
+                    document.getElementById('emailError').textContent = 'Email address is required';
+                    isValid = false;
+                } else if (!isValidEmail(editEmail.value.trim())) {
+                    document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                    isValid = false;
+                } else {
+                    document.getElementById('emailError').textContent = '';
+                }
+                
+                if (!isValid) {
+                    return;
+                }
+                
+                // Create updated user data
+                const updatedUserData = {
+                    fullName: editFullName.value.trim(),
+                    email: editEmail.value.trim(),
+                    phone: editPhone.value.trim(),
+                    company: editCompany.value.trim(),
+                    jobTitle: editJobTitle.value.trim()
+                };
+                
+                // Save user data
+                saveUserData(updatedUserData);
+                
+                // Update display
+                updateProfileDisplay(updatedUserData);
+                
+                // Update name in localStorage/sessionStorage
+                if (localStorage.getItem('userEmail')) {
+                    localStorage.setItem('userName', updatedUserData.fullName);
+                } else {
+                    sessionStorage.setItem('userName', updatedUserData.fullName);
+                }
+                
+                // Show success message
+                successMessage.style.display = 'block';
+                
+                // Return to view mode after a delay
+                setTimeout(() => {
+                    viewMode.style.display = 'block';
+                    editMode.style.display = 'none';
+                }, 2000);
+            }
+            
+            function saveUserData(userData) {
+                // Save to userData in storage
+                if (localStorage.getItem('userEmail')) {
+                    localStorage.setItem('userData', JSON.stringify(userData));
+                } else {
+                    sessionStorage.setItem('userData', JSON.stringify(userData));
+                }
+                
+                // Also update in grcUsers if it exists
+                const storedUsers = JSON.parse(localStorage.getItem('grcUsers') || '[]');
+                const userIndex = storedUsers.findIndex(u => u.email === userEmail);
+                
+                if (userIndex !== -1) {
+                    // Update existing user
+                    storedUsers[userIndex] = { 
+                        ...storedUsers[userIndex],
+                        ...userData
+                    };
+                } else {
+                    // Add new user
+                    storedUsers.push(userData);
+                }
+                
+                localStorage.setItem('grcUsers', JSON.stringify(storedUsers));
+            }
+            
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+            
+            function logout() {
+                // Clear all user data from storage
+                sessionStorage.removeItem('userEmail');
+                sessionStorage.removeItem('userName');
+                sessionStorage.removeItem('userData');
+                localStorage.removeItem('userEmail');
+                localStorage.removeItem('userName');
+                localStorage.removeItem('userData');
+                
+                // Redirect to login page
+                window.location.href = 'login.html';
+            }
+        });
+        
+        // Handle header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html> 
+

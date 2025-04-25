@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCI DSS Compliance Framework | Enterprise Security Standards</title>
+    <link rel="stylesheet" href="css/pcidss.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="hero-section">
+        <div class="hero-content">
+            <span class="badge"><i class="fas fa-shield-alt"></i> Security Standard</span>
+            <h1>PCI DSS Compliance</h1>
+            <p class="hero-subtitle">Payment Card Industry Data Security Standard</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Requirements</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Compliance Levels</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">251+</span>
+                    <span class="stat-label">Controls</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="page-nav">
+        <div class="nav-container">
+            <a href="#overview" class="nav-item active">Overview</a>
+            <a href="#importance" class="nav-item">Importance</a>
+            <a href="#levels" class="nav-item">Compliance Levels</a>
+            <a href="#requirements" class="nav-item">Requirements</a>
+            <a href="#implementation" class="nav-item">Implementation</a>
+            <a href="#benefits" class="nav-item">Benefits</a>
+        </div>
+    </nav>
+
+
+
+    <main class="main-content">
+        <section id="overview" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h2>What is PCI DSS?</h2>
+            </div>
+            <div class="content-card highlight-card">
+                <p>The Payment Card Industry Data Security Standard (PCI DSS) is a globally recognized framework designed to protect credit card data and prevent fraud. This comprehensive set of security standards ensures that all companies that accept, process, store, or transmit credit card information maintain a secure environment.</p>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure Transactions</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Data Protection</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Compliance</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Customer Trust</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="importance" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <h2>Why is PCI DSS Important?</h2>
+            </div>
+            <div class="content-card">
+                <div class="importance-grid">
+                    <div class="importance-item">
+                        <div class="item-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Data Protection</h3>
+                        </div>
+                        <p>Ensures credit card details are securely stored, processed, and transmitted using industry-leading encryption standards.</p>
+                    </div>
+                    <div class="importance-item">
+                        <div class="item-header">
+                            <i class="fas fa-user-shield"></i>
+                            <h3>Fraud Prevention</h3>
+                        </div>
+                        <p>Implements robust security measures to reduce the risk of cyberattacks and financial fraud attempts.</p>
+                    </div>
+                    <div class="importance-item">
+                        <div class="item-header">
+                            <i class="fas fa-handshake"></i>
+                            <h3>Customer Trust</h3>
+                        </div>
+                        <p>Builds and maintains customer confidence by demonstrating commitment to data security.</p>
+                    </div>
+                    <div class="importance-item">
+                        <div class="item-header">
+                            <i class="fas fa-gavel"></i>
+                            <h3>Legal Safeguard</h3>
+                        </div>
+                        <p>Protects against penalties, fines, and reputational damage through compliance adherence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="levels" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h2>Compliance Levels</h2>
+            </div>
+            <div class="content-card">
+                <div class="levels-grid">
+                    <div class="level-card level-1">
+                        <div class="level-header">
+                            <span class="level-badge">Level 1</span>
+                            <h3>Enterprise</h3>
+                        </div>
+                        <p>Over 6 million transactions per year</p>
+                        <ul class="level-features">
+                            <li>Annual On-site Assessment</li>
+                            <li>Quarterly Network Scan</li>
+                            <li>Attestation of Compliance</li>
+                        </ul>
+                    </div>
+                    <div class="level-card level-2">
+                        <div class="level-header">
+                            <span class="level-badge">Level 2</span>
+                            <h3>Large Business</h3>
+                        </div>
+                        <p>1 to 6 million transactions per year</p>
+                        <ul class="level-features">
+                            <li>Annual Self-Assessment</li>
+                            <li>Quarterly Network Scan</li>
+                            <li>Security Questionnaire</li>
+                        </ul>
+                    </div>
+                    <div class="level-card level-3">
+                        <div class="level-header">
+                            <span class="level-badge">Level 3</span>
+                            <h3>Mid-sized Business</h3>
+                        </div>
+                        <p>20,000 to 1 million transactions per year</p>
+                        <ul class="level-features">
+                            <li>Annual Self-Assessment</li>
+                            <li>Quarterly Network Scan</li>
+                            <li>Simplified Validation</li>
+                        </ul>
+                    </div>
+                    <div class="level-card level-4">
+                        <div class="level-header">
+                            <span class="level-badge">Level 4</span>
+                            <h3>Small Business</h3>
+                        </div>
+                        <p>Fewer than 20,000 transactions per year</p>
+                        <ul class="level-features">
+                            <li>Self-Assessment Questionnaire</li>
+                            <li>Optional Network Scan</li>
+                            <li>Basic Validation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h2>Benefits of PCI DSS Compliance</h2>
+            </div>
+            <div class="content-card">
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Enhanced Security</h3>
+                        <p>Comprehensive protection of sensitive payment data through industry-leading security measures.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Risk Reduction</h3>
+                        <p>Minimized exposure to data breaches, financial losses, and reputational damage.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-users"></i>
+                        <h3>Customer Confidence</h3>
+                        <p>Increased trust and loyalty from customers through demonstrated security commitment.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Regulatory Compliance</h3>
+                        <p>Adherence to global security standards and protection from compliance penalties.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Sections -->
+        <section id="requirements" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <h2>PCI DSS Requirements</h2>
+            </div>
+            <div class="content-card">
+                <p>PCI DSS is structured around 6 core goals and 12 requirements. These requirements create a comprehensive security framework for organizations handling payment card data:</p>
+                
+                <div class="requirements-grid">
+                    <div class="requirement-group">
+                        <div class="group-header">
+                            <div class="group-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h3>Build and Maintain a Secure Network</h3>
+                        </div>
+                        <ul class="requirement-list">
+                            <li>Install and maintain firewalls to protect cardholder data environments</li>
+                            <li>Eliminate vendor default passwords and security parameters</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="requirement-group">
+                        <div class="group-header">
+                            <div class="group-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <h3>Protect Cardholder Data</h3>
+                        </div>
+                        <ul class="requirement-list">
+                            <li>Encrypt stored cardholder data using methods like tokenization</li>
+                            <li>Encrypt data transmissions over public networks using protocols like TLS</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="requirement-group">
+                        <div class="group-header">
+                            <div class="group-icon">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <h3>Maintain a Vulnerability Management Program</h3>
+                        </div>
+                        <ul class="requirement-list">
+                            <li>Deploy antivirus software and keep it regularly updated</li>
+                            <li>Develop secure systems with patches for vulnerabilities</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="requirement-group">
+                        <div class="group-header">
+                            <div class="group-icon">
+                                <i class="fas fa-user-lock"></i>
+                            </div>
+                            <h3>Implement Strong Access Controls</h3>
+                        </div>
+                        <ul class="requirement-list">
+                            <li>Restrict data access to personnel with a business need</li>
+                            <li>Assign unique IDs to each person with system access</li>
+                            <li>Restrict physical access to cardholder data storage areas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="requirement-group">
+                        <div class="group-header">
+                            <div class="group-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Monitor and Test Networks</h3>
+                        </div>
+                        <ul class="requirement-list">
+                            <li>Track all access to network resources and cardholder data</li>
+                            <li>Regularly test security systems and processes (penetration tests, vulnerability scans)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="requirement-group">
+                        <div class="group-header">
+                            <div class="group-icon">
+                                <i class="fas fa-file-contract"></i>
+                            </div>
+                            <h3>Maintain an Information Security Policy</h3>
+                        </div>
+                        <ul class="requirement-list">
+                            <li>Establish a policy that addresses information security for employees and contractors</li>
+                            <li>Conduct regular security awareness training for all staff</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="implementation" class="content-section">
+            <div class="section-header">
+                <div class="icon-circle">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h2>Implementation Steps</h2>
+            </div>
+            <div class="content-card">
+                <div class="implementation-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Assess Your Environment</h3>
+                            <p>Determine the scope of your cardholder data environment (CDE) by identifying all systems and processes that store, process, or transmit cardholder data.</p>
+                            <ul class="step-details">
+                                <li>Map data flows to understand where card data enters and exits your systems</li>
+                                <li>Document all third-party integrations handling payment data</li>
+                                <li>Consider network segmentation to reduce the scope of compliance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Remediate Gaps</h3>
+                            <p>Address identified vulnerabilities and implement controls to meet each of the 12 PCI DSS requirements.</p>
+                            <ul class="step-details">
+                                <li>Upgrade systems to support strong encryption</li>
+                                <li>Implement multi-factor authentication for all access to the CDE</li>
+                                <li>Deploy file integrity monitoring and intrusion detection systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Complete Appropriate Documentation</h3>
+                            <p>Based on your organization's level, prepare the required compliance documentation.</p>
+                            <ul class="step-details">
+                                <li>Complete the appropriate Self-Assessment Questionnaire (SAQ)</li>
+                                <li>Conduct and document quarterly vulnerability scans</li>
+                                <li>For Level 1 merchants, work with a Qualified Security Assessor (QSA)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Submit Validation Documents</h3>
+                            <p>Provide completed documentation to your acquirer or payment brands as required.</p>
+                            <ul class="step-details">
+                                <li>Submit Attestation of Compliance (AOC)</li>
+                                <li>Include SAQ or Report on Compliance (ROC)</li>
+                                <li>Attach evidence of passing scan results</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Maintain Continuous Compliance</h3>
+                            <p>PCI DSS is not a one-time project but an ongoing program requiring regular maintenance.</p>
+                            <ul class="step-details">
+                                <li>Monitor and log activities daily</li>
+                                <li>Conduct regular penetration testing</li>
+                                <li>Update security awareness training for all staff</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active nav item on scroll
+        window.addEventListener('scroll', function() {
+            let sections = document.querySelectorAll('.content-section');
+            let navItems = document.querySelectorAll('.nav-item');
+            
+            sections.forEach((section, i) => {
+                let top = section.offsetTop - 100;
+                let bottom = top + section.offsetHeight;
+                
+                if (window.scrollY >= top && window.scrollY < bottom) {
+                    navItems.forEach(item => item.classList.remove('active'));
+                    navItems[i].classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+

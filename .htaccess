@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/try1/calculate_score
+RewriteRule ^(.*)$ http://localhost:5000/try1/calculate_score [P,L] 
