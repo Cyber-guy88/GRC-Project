@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Add Google Sign-In API -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <div class="top-navigation">
@@ -71,31 +69,6 @@
                         <i class="fas fa-sign-in-alt btn-icon"></i>
                     </button>
                 </form>
-                
-                <div class="separator">
-                    <span>or</span>
-                </div>
-                
-                <!-- Google Sign-In Button -->
-                <div class="google-signin-container">
-                    <div id="g_id_onload"
-                         data-client_id="177754541604-ne4k16c850nqcmd6ase1qch8g440d65t.apps.googleusercontent.com"
-                         data-context="signin"
-                         data-ux_mode="popup"
-                         data-callback="handleGoogleSignIn"
-                         data-auto_prompt="false">
-                    </div>
-                    
-                    <div class="g_id_signin"
-                         data-type="standard"
-                         data-shape="rectangular"
-                         data-theme="outline"
-                         data-text="signin_with"
-                         data-size="large"
-                         data-logo_alignment="center"
-                         data-width="100%">
-                    </div>
-                </div>
             </div>
 
             <div class="login-footer">
@@ -145,7 +118,7 @@
             });
 
             // Form submission
-            loginForm.addEventListener('submit', async function(e) {
+            loginForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
                 const email = emailInput.value.trim();
@@ -162,106 +135,55 @@
                     return;
                 }
                 
-                // For all addresses, validate with Abstract API
-                try {
-                    // Show loading state
-                    const submitButton = this.querySelector('button[type="submit"]');
-                    const originalButtonText = submitButton.innerHTML;
-                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Validating...';
-                    submitButton.disabled = true;
-                    
-                    // Validate email
+                // Send login request
+                completeLogin(email, password, remember);
+            });
+
+            // Function to complete login
+            function completeLogin(email, password, remember) {
                 const formData = new FormData();
                 formData.append('email', email);
+                formData.append('password', password);
+                formData.append('remember', remember ? '1' : '0');
+                formData.append('action', 'login');
                 
-                    const response = await fetch('email_validator.php', {
+                fetch('user_auth.php', {
                     method: 'POST',
                     body: formData
-                    });
-                    
-                    const validationResult = await response.json();
-                    
-                    // Restore button state
-                    submitButton.innerHTML = originalButtonText;
-                    submitButton.disabled = false;
-                    
-                    if (!validationResult.valid) {
-                        loginError.querySelector('span').textContent = validationResult.message || 'Invalid email address.';
-                        loginError.style.display = 'flex';
-                        return;
-                    }
-                    
-                    // Email is valid, continue with login process
-                    // Continue with normal login for all addresses
-                    const storedUsers = JSON.parse(localStorage.getItem('grcUsers') || '[]');
-                    const user = storedUsers.find(user => user.email === email);
-                    
-                    if (!user) {
-                        // User not found in local storage, check server-side
-                        completeLogin(email, password, remember);
-                    } else if (user.password !== password) {
-                        // Password doesn't match
-                        loginError.querySelector('span').textContent = 'Invalid email or password.';
-                        loginError.style.display = 'flex';
-                    } else {
-                        // Credentials match in local storage
-                        completeLogin(email, password, remember);
-                    }
-                } catch (error) {
-                    console.error('Email validation error:', error);
-                    loginError.querySelector('span').textContent = 'Unable to validate email at this time. Please try again later.';
-                    loginError.style.display = 'flex';
-                }
-            });
-            
-            function tryLocalStorageLogin(email, password, remember) {
-                const storedUsers = JSON.parse(localStorage.getItem('grcUsers') || '[]');
-                const user = storedUsers.find(user => user.email === email && user.password === password);
-                
-                if (user) {
-                    // Store user info in client-side storage
-                    const userData = {
-                        email: email,
-                        fullName: user.fullName,
-                        password: password  // Store for compatibility with other features
-                    };
-                    
-                    if (remember) {
-                        localStorage.setItem('userEmail', email);
-                        localStorage.setItem('userName', user.fullName);
-                        localStorage.setItem('userData', JSON.stringify(userData));
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Store user data based on remember choice
+                        if (remember) {
+                            localStorage.setItem('userEmail', data.email);
+                            localStorage.setItem('userName', data.fullName);
+                            localStorage.setItem('userId', data.userId);
+                        } else {
+                            sessionStorage.setItem('userEmail', data.email);
+                            sessionStorage.setItem('userName', data.fullName);
+                            sessionStorage.setItem('userId', data.userId);
+                        }
                         
-                        // Store username as currentUser for dashboard
-                        localStorage.setItem('currentUser', user.fullName || email.split('@')[0]);
-                    } else {
-                        sessionStorage.setItem('userEmail', email);
-                        sessionStorage.setItem('userName', user.fullName);
-                        sessionStorage.setItem('userData', JSON.stringify(userData));
+                        // Store username for dashboard
+                        localStorage.setItem('currentUser', data.fullName);
                         
-                        // Store username as currentUser for dashboard
-                        localStorage.setItem('currentUser', user.fullName || email.split('@')[0]);
+                        // Redirect to home page
+                        window.location.href = 'home.html';
+                    } else {
+                        loginError.querySelector('span').textContent = data.message || 'Invalid email or password.';
+                        loginError.style.display = 'flex';
                     }
-                    
-                    console.log(`Login successful for user: ${user.fullName}`);
-                    
-                    // Redirect to home page
-                    window.location.href = 'home.html';
-                } else {
-                    const loginError = document.getElementById('loginError');
-                    loginError.querySelector('span').textContent = 'Invalid email or password.';
+                })
+                .catch(error => {
+                    console.error('Login error:', error);
+                    loginError.querySelector('span').textContent = 'An error occurred. Please try again.';
                     loginError.style.display = 'flex';
-                }
-            }
-            
-            // Email validation function if needed
-            function validateEmail(email) {
-                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return re.test(email);
+                });
             }
 
             // Fix checkbox styling
             const checkboxCustom = rememberCheckbox.nextElementSibling;
-            
             rememberCheckbox.addEventListener('change', function() {
                 if (this.checked) {
                     checkboxCustom.classList.add('checked');
@@ -269,214 +191,7 @@
                     checkboxCustom.classList.remove('checked');
                 }
             });
-
-            // Function to complete login after verification
-            function completeLogin(email, password, remember) {
-                // Create form data to send to server
-                const formData = new FormData();
-                formData.append('email', email);
-                formData.append('password', password);
-                formData.append('remember', remember ? '1' : '0');
-                formData.append('action', 'login');
-                
-                // Send request to server
-                fetch('login.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // Store the user data in session or local storage
-                        if (remember) {
-                            localStorage.setItem('userEmail', data.email);
-                            localStorage.setItem('userName', data.fullName || data.email.split('@')[0]);
-                            localStorage.setItem('userId', data.userId || '0');
-                            
-                            // Store username as currentUser for dashboard
-                            localStorage.setItem('currentUser', data.fullName || data.email.split('@')[0]);
-                            
-                            // Store complete user data for consistent access
-                            if (data.userData) {
-                                localStorage.setItem('userData', JSON.stringify(data.userData));
-                            }
-                        } else {
-                            sessionStorage.setItem('userEmail', data.email);
-                            sessionStorage.setItem('userName', data.fullName || data.email.split('@')[0]);
-                            sessionStorage.setItem('userId', data.userId || '0');
-                            
-                            // Store username as currentUser for dashboard
-                            localStorage.setItem('currentUser', data.fullName || data.email.split('@')[0]);
-                            
-                            // Store complete user data for consistent access
-                            if (data.userData) {
-                                sessionStorage.setItem('userData', JSON.stringify(data.userData));
-                            }
-                        }
-                        
-                        console.log(`Login successful for user: ${data.fullName || data.email}`);
-                        
-                        // Redirect to home page
-                        window.location.href = data.redirect || 'home.html';
-                    } else {
-                        // Try local storage fallback
-                        tryLocalStorageLogin(email, password, remember);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    // Try local storage fallback on server error
-                    tryLocalStorageLogin(email, password, remember);
-                });
-            }
         });
-
-        // Google Sign-In callback function
-        function handleGoogleSignIn(response) {
-            // Decode the JWT credential to get user information
-            const responsePayload = decodeJwtResponse(response.credential);
-            
-            console.log("ID: " + responsePayload.sub);
-            console.log('Full Name: ' + responsePayload.name);
-            console.log('Given Name: ' + responsePayload.given_name);
-            console.log('Family Name: ' + responsePayload.family_name);
-            console.log("Image URL: " + responsePayload.picture);
-            console.log("Email: " + responsePayload.email);
-            
-            // Show loading indicator
-            const loginBody = document.querySelector('.login-body');
-            if (loginBody) {
-                const loadingDiv = document.createElement('div');
-                loadingDiv.className = 'loading-indicator';
-                loadingDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging you in...';
-                loadingDiv.style.textAlign = 'center';
-                loadingDiv.style.padding = '15px';
-                loadingDiv.style.color = '#fff';
-                loadingDiv.style.marginTop = '10px';
-                loginBody.appendChild(loadingDiv);
-            }
-            
-            // Prepare data to send to the server - ensure all required fields are included
-            const formData = new FormData();
-            formData.append('email', responsePayload.email);
-            formData.append('fullName', responsePayload.name);
-            formData.append('googleId', responsePayload.sub);
-            formData.append('picture', responsePayload.picture);
-            formData.append('action', 'google_login');
-            
-            // Log form data for debugging
-            console.log('Form data prepared:', {
-                email: responsePayload.email,
-                fullName: responsePayload.name,
-                googleId: responsePayload.sub,
-                picture: responsePayload.picture,
-                action: 'google_login'
-            });
-            
-            // Send to database
-            console.log('Sending Google login data to server...');
-            
-            fetch('user_auth.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                console.log('Server response received, status:', response.status);
-                return response.json();
-            })
-            .then(data => {
-                console.log('Google login response:', data);
-                
-                if (data.success) {
-                    // Store the user data in local storage
-                    localStorage.setItem('userEmail', responsePayload.email);
-                    localStorage.setItem('userName', responsePayload.name);
-                    localStorage.setItem('userPicture', responsePayload.picture);
-                    localStorage.setItem('userId', data.userId || '0');
-                    
-                    // Store username as currentUser for dashboard
-                    localStorage.setItem('currentUser', responsePayload.name);
-                    
-                    // Store complete user data for consistent access
-                    const userData = {
-                        email: responsePayload.email,
-                        fullName: responsePayload.name,
-                        picture: responsePayload.picture,
-                        googleId: responsePayload.sub,
-                        userId: data.userId
-                    };
-                    
-                    localStorage.setItem('userData', JSON.stringify(userData));
-                    
-                    console.log(`Login successful for Google user: ${responsePayload.name}`);
-                    
-                    // Redirect to the URL provided by the server or default to home.html
-                    window.location.href = data.redirect || 'home.html';
-                } else {
-                    // Handle error from server
-                    alert('Login failed: ' + data.message);
-                    console.error('Error from server:', data.message);
-                    
-                    // Check if server wants us to redirect
-                    if (data.redirect) {
-                        window.location.href = data.redirect;
-                        return;
-                    }
-                    
-                    // Remove loading indicator
-                    const loadingIndicator = document.querySelector('.loading-indicator');
-                    if (loadingIndicator) {
-                        loadingIndicator.remove();
-                    }
-                }
-            })
-            .catch(error => {
-                console.error('Error with Google login:', error);
-                
-                // Fallback to local storage if API fails
-                const storedUsers = JSON.parse(localStorage.getItem('grcUsers') || '[]');
-                let user = storedUsers.find(user => user.email === responsePayload.email);
-                
-                // If user doesn't exist in local storage, create new user
-                if (!user) {
-                    user = {
-                        fullName: responsePayload.name,
-                        email: responsePayload.email,
-                        password: '', // No password for Google users
-                        profilePicture: responsePayload.picture,
-                        googleId: responsePayload.sub
-                    };
-                    
-                    storedUsers.push(user);
-                    localStorage.setItem('grcUsers', JSON.stringify(storedUsers));
-                }
-                
-                // Store the user data in local storage
-                localStorage.setItem('userEmail', responsePayload.email);
-                localStorage.setItem('userName', responsePayload.name);
-                localStorage.setItem('userPicture', responsePayload.picture);
-                
-                // Store username as currentUser for dashboard
-                localStorage.setItem('currentUser', responsePayload.name);
-                
-                // Alert user about offline mode
-                alert('Logged in with offline mode. Some features may be limited until you reconnect.');
-                
-                // Redirect to home page
-                window.location.href = 'home.html';
-            });
-        }
-        
-        // Decode the JWT token
-        function decodeJwtResponse(token) {
-            const base64Url = token.split('.')[1];
-            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
-            
-            return JSON.parse(jsonPayload);
-        }
     </script>
 </body>
 </html>

@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/signup.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Add Google Sign-In API -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <div class="top-navigation">
@@ -25,7 +23,7 @@
     </div>
 
     <main>
-    <div class="signup-container">
+        <div class="signup-container">
             <div class="signup-header">
                 <h1 class="signup-title">Create your account</h1>
             </div>
@@ -55,7 +53,7 @@
 
                     <div class="form-group">
                         <label for="password" class="form-label">Password</label>
-            <div class="input-group">
+                        <div class="input-group">
                             <input type="password" id="password" name="password" class="form-input" placeholder="Create a password" required>
                             <i class="fas fa-lock input-icon"></i>
                             <button type="button" class="toggle-password" id="togglePassword">
@@ -85,31 +83,6 @@
                         <i class="fas fa-user-plus btn-icon"></i>
                     </button>
                 </form>
-                
-                <div class="separator">
-                    <span>or</span>
-                </div>
-                
-                <!-- Google Sign-In Button -->
-                <div class="google-signin-container">
-                    <div id="g_id_onload"
-                         data-client_id="177754541604-ne4k16c850nqcmd6ase1qch8g440d65t.apps.googleusercontent.com"
-                         data-context="signup"
-                         data-ux_mode="popup"
-                         data-callback="handleGoogleSignUp"
-                         data-auto_prompt="false">
-                    </div>
-                    
-                    <div class="g_id_signin"
-                         data-type="standard"
-                         data-shape="rectangular"
-                         data-theme="outline"
-                         data-text="signup_with"
-                         data-size="large"
-                         data-logo_alignment="center"
-                         data-width="100%">
-                    </div>
-                </div>
             </div>
 
             <div class="signup-footer">
@@ -127,7 +100,7 @@
             const termsCheckbox = document.getElementById('terms');
             const signupError = document.getElementById('signupError');
             
-            // Clear any stale userData to prevent profile issues
+            // Clear any stale userData
             localStorage.removeItem('userData');
             
             // Password strength elements
@@ -195,7 +168,6 @@
             
             // Fix checkbox styling
             const checkboxCustom = termsCheckbox.nextElementSibling;
-            
             termsCheckbox.addEventListener('change', function() {
                 if (this.checked) {
                     checkboxCustom.classList.add('checked');
@@ -204,36 +176,22 @@
                 }
             });
             
-            // Email validation function
-            function validateEmail(email) {
-                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return re.test(email);
-            }
-            
             // Form submission
-            signupForm.addEventListener('submit', async function(e) {
+            signupForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
                 // Hide any previous errors
                 signupError.style.display = 'none';
                 
-                let hasErrors = false;
-                
-                // Validate full name
-                if (!fullNameInput.value.trim()) {
-                    hasErrors = true;
+                // Basic validation
+                if (!fullNameInput.value.trim() || !emailInput.value.trim() || !passwordInput.value || !termsCheckbox.checked) {
+                    signupError.querySelector('span').textContent = 'All fields are required and you must accept the terms.';
+                    signupError.style.display = 'flex';
+                    return;
                 }
                 
-                // Validate email
-                const email = emailInput.value.trim();
-                if (!validateEmail(email)) {
-                    hasErrors = true;
-                }
-                
-                // Validate password
+                // Password validation
                 const password = passwordInput.value;
-                
-                // Check password requirements
                 const passwordMeetsRequirements = 
                     password.length >= 8 && 
                     /[A-Z]/.test(password) && 
@@ -242,308 +200,46 @@
                     /[!@#$%^&*(),.?":{}|<>]/.test(password);
                 
                 if (!passwordMeetsRequirements) {
-                    hasErrors = true;
-                }
-                
-                // Check terms agreement
-                if (!termsCheckbox.checked) {
-                    hasErrors = true;
-                }
-                
-                if (hasErrors) {
+                    signupError.querySelector('span').textContent = 'Password does not meet the requirements.';
                     signupError.style.display = 'flex';
                     return;
                 }
                 
-                // For all addresses, validate with Abstract API
-                try {
-                    // Show loading state
-                    const submitButton = this.querySelector('button[type="submit"]');
-                    const originalButtonText = submitButton.innerHTML;
-                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Validating...';
-                    submitButton.disabled = true;
-                    
-                    // Validate email
-                    const formData = new FormData();
-                    formData.append('email', email);
-                    
-                    const response = await fetch('email_validator.php', {
-                        method: 'POST',
-                        body: formData
-                    });
-                    
-                    const validationResult = await response.json();
-                    
-                    // Restore button state
-                    submitButton.innerHTML = originalButtonText;
-                    submitButton.disabled = false;
-                    
-                    if (!validationResult.valid) {
-                        signupError.querySelector('span').textContent = validationResult.message || 'Invalid email address.';
-                        signupError.style.display = 'flex';
-                        return;
-                    }
-                    
-                    // Email is valid, proceed with registration
-                    proceedWithRegistration(email);
-                } catch (error) {
-                    console.error('Email validation error:', error);
-                    signupError.querySelector('span').textContent = 'Unable to validate email at this time. Please try again later.';
-                    signupError.style.display = 'flex';
-                    
-                    // Restore button state if not already done
-                    const submitButton = this.querySelector('button[type="submit"]');
-                    if (submitButton.disabled) {
-                        submitButton.innerHTML = 'Create Account <i class="fas fa-user-plus btn-icon"></i>';
-                        submitButton.disabled = false;
-                    }
-                }
-            });
-            
-            // Function to proceed with registration after verification
-            function proceedWithRegistration(email) {
-                // Get form values
-                const fullName = fullNameInput.value.trim();
-                const password = passwordInput.value;
-                
-                // Check if user already exists in local storage
-                const existingUsers = JSON.parse(localStorage.getItem('grcUsers') || '[]');
-                const userExists = existingUsers.some(user => user.email === email);
-                
-                if (userExists) {
-                    signupError.querySelector('span').textContent = 'An account with this email already exists.';
-                    signupError.style.display = 'flex';
-                    return;
-                }
-                
-                // Create form data to send to server
+                // Create form data
                 const formData = new FormData();
-                formData.append('fullName', fullName);
-                formData.append('email', email);
+                formData.append('fullName', fullNameInput.value.trim());
+                formData.append('email', emailInput.value.trim());
                 formData.append('password', password);
                 formData.append('action', 'register');
                 
-                // Send request to server
+                // Send registration request
                 fetch('user_auth.php', {
                     method: 'POST',
                     body: formData
                 })
-                .then(response => {
-                    console.log('Response status:', response.status);
-                    return response.json();
-                })
+                .then(response => response.json())
                 .then(data => {
-                    console.log('Registration response:', data);
-                    
                     if (data.success) {
-                        console.log('Registration successful, preparing redirect...');
+                        // Store email for auto-fill on login page
+                        sessionStorage.setItem('registeredEmail', emailInput.value.trim());
                         
-                        // Add new user to the stored users (local storage for fallback)
-                        const newUser = {
-                            fullName: fullName,
-                            email: email,
-                            password: password // Store original password in localStorage for fallback
-                        };
+                        // Show success message
+                        alert('Account created successfully! Please log in.');
                         
-                        existingUsers.push(newUser);
-                        localStorage.setItem('grcUsers', JSON.stringify(existingUsers));
-                        
-                        // Store the email in session storage (for auto-fill on login page)
-                        sessionStorage.setItem('registeredEmail', email);
-                        
-                        // Show success and redirect
-                        alert('Account created successfully! Redirecting to login page...');
-                        
-                        // Force redirect using timeout
-                        setTimeout(function() {
-                            console.log('Redirecting to login page...');
-                            try {
-                                // Try standard redirect
-                                window.location.href = data.redirect || 'login.html';
-                            } catch (e) {
-                                console.error('Redirect error:', e);
-                                // Fall back to changing location directly
-                                window.location = 'login.html';
-                            }
-                        }, 500);
+                        // Redirect to login page
+                        window.location.href = 'login.html';
                     } else {
-                        console.error('Registration failed:', data.message);
                         signupError.querySelector('span').textContent = data.message || 'Registration failed. Please try again.';
                         signupError.style.display = 'flex';
                     }
                 })
                 .catch(error => {
-                    console.error('Error during registration:', error);
-                    // Fallback to client-side storage if server request fails
-                    
-                    // Add new user to the stored users
-                    const newUser = {
-                        fullName: fullName,
-                        email: email,
-                        password: password
-                    };
-                    
-                    existingUsers.push(newUser);
-                    localStorage.setItem('grcUsers', JSON.stringify(existingUsers));
-                    
-                    // Store the email in session storage (for auto-fill on login page)
-                    sessionStorage.setItem('registeredEmail', email);
-                
-                // Show success and redirect
-                    alert('Account created successfully (offline mode)! Redirecting to login page...');
-                    
-                    // Force redirect using timeout
-                    setTimeout(function() {
-                        console.log('Redirecting to login page from catch block...');
-                        try {
-                            // Try standard redirect
-                window.location.href = 'login.html';
-                        } catch (e) {
-                            console.error('Redirect error:', e);
-                            // Fall back to changing location directly
-                            window.location = 'login.html';
-                        }
-                    }, 500);
+                    console.error('Registration error:', error);
+                    signupError.querySelector('span').textContent = 'An error occurred. Please try again.';
+                    signupError.style.display = 'flex';
                 });
-            }
+            });
         });
-        
-        // Google Sign-In callback function for signup
-        function handleGoogleSignUp(response) {
-            // Decode the JWT credential to get user information
-            const responsePayload = decodeJwtResponse(response.credential);
-            
-            console.log("ID: " + responsePayload.sub);
-            console.log('Full Name: ' + responsePayload.name);
-            console.log('Given Name: ' + responsePayload.given_name);
-            console.log('Family Name: ' + responsePayload.family_name);
-            console.log("Image URL: " + responsePayload.picture);
-            console.log("Email: " + responsePayload.email);
-            
-            // Show loading indicator
-            const signupBody = document.querySelector('.signup-body');
-            if (signupBody) {
-                const loadingDiv = document.createElement('div');
-                loadingDiv.className = 'loading-indicator';
-                loadingDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating your account...';
-                loadingDiv.style.textAlign = 'center';
-                loadingDiv.style.padding = '15px';
-                loadingDiv.style.color = '#fff';
-                loadingDiv.style.marginTop = '10px';
-                signupBody.appendChild(loadingDiv);
-            }
-            
-            // Prepare data to send to the server - ensure all required fields are included
-            const formData = new FormData();
-            formData.append('email', responsePayload.email);
-            formData.append('fullName', responsePayload.name);
-            formData.append('googleId', responsePayload.sub);
-            formData.append('picture', responsePayload.picture);
-            formData.append('action', 'google_signup');
-            
-            // Log form data for debugging
-            console.log('Form data prepared:', {
-                email: responsePayload.email,
-                fullName: responsePayload.name,
-                googleId: responsePayload.sub,
-                picture: responsePayload.picture,
-                action: 'google_signup'
-            });
-            
-            // Send to database
-            console.log('Sending Google signup data to server...');
-            
-            fetch('user_auth.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                console.log('Server response received, status:', response.status);
-                return response.json();
-            })
-            .then(data => {
-                console.log('Google signup response:', data);
-                
-                if (data.success) {
-                    // Store the user data in local storage as well (for backup)
-                    localStorage.setItem('userEmail', responsePayload.email);
-                    localStorage.setItem('userName', responsePayload.name);
-                    localStorage.setItem('userPicture', responsePayload.picture);
-                    
-                    // Store complete user data for consistent access
-                    const userData = {
-                        email: responsePayload.email,
-                        fullName: responsePayload.name,
-                        picture: responsePayload.picture,
-                        googleId: responsePayload.sub,
-                        userId: data.userId
-                    };
-                    
-                    localStorage.setItem('userData', JSON.stringify(userData));
-                    
-                    // Show success and redirect
-                    alert('Account created successfully with Google! Redirecting to home page...');
-                    
-                    // Redirect to home page or to the URL provided by the server
-                    window.location.href = data.redirect || 'home.html';
-                } else {
-                    // Handle error from server
-                    alert('Error creating account: ' + data.message);
-                    console.error('Error from server:', data.message);
-                    
-                    // Check if server wants us to redirect (e.g., to login page)
-                    if (data.redirect) {
-                        window.location.href = data.redirect;
-                        return;
-                    }
-                    
-                    // Remove loading indicator
-                    const loadingIndicator = document.querySelector('.loading-indicator');
-                    if (loadingIndicator) {
-                        loadingIndicator.remove();
-                    }
-                }
-            })
-            .catch(error => {
-                console.error('Error saving Google signup data to database:', error);
-                
-                // Store locally as fallback
-                const storedUsers = JSON.parse(localStorage.getItem('grcUsers') || '[]');
-                const newUser = {
-                    fullName: responsePayload.name,
-                    email: responsePayload.email,
-                    password: '', // No password for Google users
-                    profilePicture: responsePayload.picture,
-                    googleId: responsePayload.sub
-                };
-                
-                // Add to local storage
-                storedUsers.push(newUser);
-                localStorage.setItem('grcUsers', JSON.stringify(storedUsers));
-                
-                // Store the user data for automatic login
-                localStorage.setItem('userEmail', responsePayload.email);
-                localStorage.setItem('userName', responsePayload.name);
-                localStorage.setItem('userPicture', responsePayload.picture);
-                
-                // Alert user about offline mode
-                alert('Account created in offline mode. Some features may be limited until you reconnect.');
-                
-                // Redirect to home page
-                window.location.href = 'home.html';
-            });
-        }
-        
-        // Decode the JWT token
-        function decodeJwtResponse(token) {
-            const base64Url = token.split('.')[1];
-            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
-            
-            return JSON.parse(jsonPayload);
-        }
     </script>
 </body>
 </html>
