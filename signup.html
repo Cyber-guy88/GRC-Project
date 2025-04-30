@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/signup.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <div class="top-navigation">
@@ -83,6 +84,30 @@
                         <i class="fas fa-user-plus btn-icon"></i>
                     </button>
                 </form>
+            </div>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <div class="google-signin-container">
+                <div id="g_id_onload"
+                     data-client_id="177754541604-ne4k16c850nqcmd6ase1qch8g440d65t.apps.googleusercontent.com"
+                     data-context="signup"
+                     data-ux_mode="popup"
+                     data-callback="handleGoogleSignUp"
+                     data-auto_prompt="false">
+                </div>
+                
+                <div class="g_id_signin"
+                     data-type="standard"
+                     data-shape="rectangular"
+                     data-theme="outline"
+                     data-text="signup_with"
+                     data-size="large"
+                     data-logo_alignment="center"
+                     data-width="100%">
+                </div>
             </div>
 
             <div class="signup-footer">
@@ -240,6 +265,41 @@
                 });
             });
         });
+
+        function handleGoogleSignUp(response) {
+            const credential = response.credential;
+            
+            // Send the credential to your backend
+            const formData = new FormData();
+            formData.append('credential', credential);
+            formData.append('action', 'google_signup');
+            
+            fetch('user_auth.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Store email for auto-fill on login page
+                    sessionStorage.setItem('registeredEmail', data.email);
+                    
+                    // Show success message
+                    alert('Account created successfully with Google! You can now sign in.');
+                    
+                    // Redirect to login page
+                    window.location.href = 'login.html';
+                } else {
+                    signupError.querySelector('span').textContent = data.message || 'Google sign-up failed';
+                    signupError.style.display = 'flex';
+                }
+            })
+            .catch(error => {
+                console.error('Google sign-up error:', error);
+                signupError.querySelector('span').textContent = 'An error occurred. Please try again.';
+                signupError.style.display = 'flex';
+            });
+        }
     </script>
 </body>
 </html>
