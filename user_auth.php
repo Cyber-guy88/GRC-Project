@@ -5,44 +5,111 @@ header('Content-Type: application/json');
 // Database file path
 $dbFile = __DIR__ . '/database.sqlite';
 
+// Set permissions for the database file
+exec('icacls ' . escapeshellarg($dbFile) . ' /grant Everyone:(F)');
+
 try {
-    // Create/connect to SQLite database
-    $pdo = new PDO("sqlite:$dbFile", null, null, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ]);
+    $pdo = new PDO("sqlite:$dbFile");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    // Create users table if it doesn't exist (simplified schema)
+    // Create users table if it doesn't exist
     $pdo->exec("CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT,
-        email TEXT UNIQUE,
+        username TEXT NOT NULL,
+        email TEXT UNIQUE NOT NULL,
         password TEXT,
+        google_id TEXT,
+        profile_picture TEXT,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     )");
-    
-    // Determine the action to take
-    $action = isset($_POST['action']) ? $_POST['action'] : null;
-    
-    switch ($action) {
-        case 'register':
-            registerUser($pdo);
-            break;
-        case 'login':
-            loginUser($pdo);
-            break;
-        case 'check_email':
-            checkEmail($pdo);
-            break;
-        case 'reset_password':
-            resetPassword($pdo);
-            break;
-        default:
-            echo json_encode(['success' => false, 'message' => 'Invalid action']);
-            break;
-    }
 } catch (PDOException $e) {
-    echo json_encode(['success' => false, 'message' => 'Database error: ' . $e->getMessage()]);
+    error_log('Database initialization error: ' . $e->getMessage());
+    die(json_encode(['success' => false, 'message' => 'Database initialization failed']));
+}
+
+// Determine the action to take
+$action = isset($_POST['action']) ? $_POST['action'] : null;
+
+switch ($action) {
+    case 'register':
+        registerUser($pdo);
+        break;
+    case 'login':
+        loginUser($pdo);
+        break;
+    case 'check_email':
+        checkEmail($pdo);
+        break;
+    case 'reset_password':
+        resetPassword($pdo);
+        break;
+    case 'google_signup':
+        try {
+            // Enable error reporting for debugging
+            error_reporting(E_ALL);
+            ini_set('display_errors', 1);
+            
+            if (!isset($_POST['credential']) || !isset($_POST['email']) || !isset($_POST['fullName'])) {
+                echo json_encode([
+                    'success' => false, 
+                    'message' => 'Missing required Google sign-up data',
+                    'received' => $_POST
+                ]);
+                exit;
+            }
+            
+            $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+            $fullName = htmlspecialchars($_POST['fullName']);
+            $picture = isset($_POST['picture']) ? $_POST['picture'] : null;
+            
+            // Check if user already exists
+            $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ?");
+            $stmt->execute([$email]);
+            $existingUser = $stmt->fetch();
+            
+            if ($existingUser) {
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Email already registered. Please login instead.'
+                ]);
+                exit;
+            }
+            
+            // Create new user
+            $stmt = $pdo->prepare("INSERT INTO users (username, email, google_id, profile_picture) VALUES (?, ?, ?, ?)");
+            $result = $stmt->execute([$fullName, $email, $_POST['credential'], $picture]);
+            
+            if ($result) {
+                echo json_encode([
+                    'success' => true,
+                    'message' => 'Google account registered successfully',
+                    'email' => $email,
+                    'fullName' => $fullName
+                ]);
+            } else {
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Database error during registration',
+                    'error' => $pdo->errorInfo()
+                ]);
+            }
+        } catch (PDOException $e) {
+            echo json_encode([
+                'success' => false,
+                'message' => 'Database error: ' . $e->getMessage(),
+                'trace' => $e->getTraceAsString()
+            ]);
+        } catch (Exception $e) {
+            echo json_encode([
+                'success' => false,
+                'message' => 'General error: ' . $e->getMessage(),
+                'trace' => $e->getTraceAsString()
+            ]);
+        }
+        break;
+    default:
+        echo json_encode(['success' => false, 'message' => 'Invalid action']);
+        break;
 }
 
 /**

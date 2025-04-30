@@ -269,34 +269,51 @@
         function handleGoogleSignUp(response) {
             const credential = response.credential;
             
-            // Send the credential to your backend
+            // Decode the JWT token to get user info
+            const payload = JSON.parse(atob(credential.split('.')[1]));
+            console.log('Google user info:', payload);
+            
+            // Create form data with complete user info
             const formData = new FormData();
             formData.append('credential', credential);
+            formData.append('email', payload.email);
+            formData.append('fullName', payload.name);
+            formData.append('picture', payload.picture);
             formData.append('action', 'google_signup');
             
             fetch('user_auth.php', {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                // Log raw response for debugging
+                response.text().then(text => {
+                    console.log('Raw server response:', text);
+                    try {
+                        return JSON.parse(text);
+                    } catch (e) {
+                        throw new Error('Invalid JSON response from server');
+                    }
+                });
+            })
             .then(data => {
                 if (data.success) {
-                    // Store email for auto-fill on login page
-                    sessionStorage.setItem('registeredEmail', data.email);
-                    
-                    // Show success message
+                    sessionStorage.setItem('registeredEmail', payload.email);
                     alert('Account created successfully with Google! You can now sign in.');
-                    
-                    // Redirect to login page
                     window.location.href = 'login.html';
                 } else {
+                    const signupError = document.getElementById('signupError');
                     signupError.querySelector('span').textContent = data.message || 'Google sign-up failed';
                     signupError.style.display = 'flex';
                 }
             })
             .catch(error => {
-                console.error('Google sign-up error:', error);
-                signupError.querySelector('span').textContent = 'An error occurred. Please try again.';
+                console.error('Detailed error:', error);
+                const signupError = document.getElementById('signupError');
+                signupError.querySelector('span').textContent = `Error details: ${error.message}`;
                 signupError.style.display = 'flex';
             });
         }
