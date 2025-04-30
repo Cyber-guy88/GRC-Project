@@ -896,8 +896,11 @@ main {
 }
 
 .google-signin-container {
-    margin-bottom: 20px;
-    text-align: center;
+    margin: 20px auto;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Make Google button match site styling */
@@ -965,6 +968,39 @@ main {
     .google-suggestion {
         padding: 12px;
     }
+}
+
+/* Divider */
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    width: 100%;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.divider span {
+    background-color: #fff;
+    padding: 0 10px;
+    color: #666;
+    font-size: 14px;
 }
 
 /* Button loading/validating state */

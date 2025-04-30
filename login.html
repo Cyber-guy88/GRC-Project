@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <head>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+    </head>
     <style>
         .divider {
             text-align: center;
             margin: 20px 0;
             position: relative;
+            width: 100%;
         }
 
         .divider::before,
@@ -40,8 +44,11 @@
         }
 
         .google-signin-container {
-            margin-top: 20px;
-            width: 100%;
+            margin: 20px auto;
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
@@ -106,6 +113,30 @@
                         <i class="fas fa-sign-in-alt btn-icon"></i>
                     </button>
                 </form>
+            
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <div class="google-signin-container">
+                <div id="g_id_onload"
+                     data-client_id="177754541604-ne4k16c850nqcmd6ase1qch8g440d65t.apps.googleusercontent.com"
+                     data-context="signin"
+                     data-callback="handleGoogleSignIn"
+                     data-auto_select="false"
+                     data-itp_support="true">
+                </div>
+                
+                <div class="g_id_signin"
+                     data-type="standard"
+                     data-size="large"
+                     data-theme="outline"
+                     data-text="signin_with"
+                     data-shape="rectangular"
+                     data-logo_alignment="left"
+                     data-width="300">
+                </div>
+            </div>
             </div>
 
             <div class="login-footer">
@@ -229,6 +260,54 @@
                 }
             });
         });
+
+        // Add Google Sign-In handler
+        function handleGoogleSignIn(response) {
+            const credential = response.credential;
+            
+            // Create form data with Google credential
+            const formData = new FormData();
+            formData.append('credential', credential);
+            formData.append('action', 'google_login');
+            
+            fetch('user_auth.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Store user data
+                    sessionStorage.setItem('userEmail', data.email);
+                    sessionStorage.setItem('userName', data.fullName);
+                    sessionStorage.setItem('userId', data.userId);
+                    localStorage.setItem('currentUser', data.fullName);
+                    
+                    // Redirect to home page
+                    window.location.href = 'home.html';
+                } else {
+                    const loginError = document.getElementById('loginError');
+                    loginError.querySelector('span').textContent = data.message || 'Google sign-in failed';
+                    loginError.style.display = 'flex';
+                }
+            })
+            .catch(error => {
+                console.error('Google sign-in error:', error);
+                const loginError = document.getElementById('loginError');
+                loginError.querySelector('span').textContent = 'An error occurred. Please try again.';
+                loginError.style.display = 'flex';
+            });
+        }
+
+        // Initialize Google Sign-In
+        window.onGoogleLibraryLoad = function () {
+            google.accounts.id.initialize({
+                client_id: '177754541604-ne4k16c850nqcmd6ase1qch8g440d65t.apps.googleusercontent.com',
+                callback: handleGoogleSignIn,
+                auto_select: false,
+                cancel_on_tap_outside: true
+            });
+        };
     </script>
 </body>
 </html>
